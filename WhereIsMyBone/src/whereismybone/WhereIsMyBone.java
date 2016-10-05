@@ -22,11 +22,12 @@ public class WhereIsMyBone {
         //Map related
         Map map = new Map();
         map.setColumnCount(5);
-        map.setRowCount(5);
-                
+        map.setRowCount(5);                
+        
         //Test Map related items
         String mapInfo = map.toString();
         System.out.println(mapInfo);
+               
         
     }
     
