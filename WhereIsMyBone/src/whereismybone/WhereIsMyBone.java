@@ -5,10 +5,8 @@
  */
 package whereismybone;
 
-/**
- *
- * @author smiri4
- */
+import model.Map;
+
 public class WhereIsMyBone {
 
     /**
@@ -16,6 +14,16 @@ public class WhereIsMyBone {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        //Map related
+        Map map = new Map();
+        map.setColumnCount(5);
+        map.setRowCount(5);                
+        
+        //Test Map related items
+        String mapInfo = map.toString();
+        System.out.println(mapInfo);
+
     }
     
 }
