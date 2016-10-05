@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package byui.cit260.whereismybone.model;
 
 import java.io.Serializable;
 import java.util.Objects;
 
 /**
  *
- * @author ricte
+ * @author Smith-Rick
  */
 public class Location implements Serializable{
     

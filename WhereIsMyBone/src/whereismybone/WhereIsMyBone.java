@@ -5,7 +5,7 @@
  */
 package whereismybone;
 
-import model.Map;
+import byui.cit260.whereismybone.model.Map;
 
 public class WhereIsMyBone {
 
