@@ -115,7 +115,7 @@ public class WelcomeScreenView {
                 "\n" +
                 "\n" +
                 "\n  Welcome Detective " + playerName + "! You are   " +
-                "\n  the " + childType + " of the famus Ruff McGruff " +
+                "\n  the " + childType + " of the famous Ruff McGruff " +
                 "\n  crime dog who now works for the FBI. You are top" +
                 "\n  dawg, police dog, of K9 City. Are you ready to  " +
                 "\n  take a bite out of crime?" +

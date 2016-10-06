@@ -5,6 +5,7 @@
  */
 package whereismybone;
 
+import byui.cit260.whereismybone.model.Actor;
 import byui.cit260.whereismybone.model.Map;
 import byui.cit260.whereismybone.view.WelcomeScreenView;
 
@@ -31,6 +32,14 @@ public class WhereIsMyBone {
                 "\n";
         
         System.out.println(testMesg);
+        
+        //Actor related
+        Actor catDeVil = new Actor();
+        catDeVil.setName("Cat DeVil");
+        catDeVil.setDiscription("The Main Bad Guy");
+        
+        String catDeVilInfo = catDeVil.toString();
+        System.out.println(catDeVilInfo);
         
         //Map related
         Map map = new Map();
