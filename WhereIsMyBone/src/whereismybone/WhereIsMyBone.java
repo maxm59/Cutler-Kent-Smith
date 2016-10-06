@@ -6,6 +6,7 @@
 package whereismybone;
 
 import byui.cit260.whereismybone.model.Map;
+import byui.cit260.whereismybone.view.WelcomeScreenView;
 
 public class WhereIsMyBone {
 
@@ -14,6 +15,14 @@ public class WhereIsMyBone {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        //Welcome Screen
+        WelcomeScreenView welcomeScreen = new WelcomeScreenView();
+        welcomeScreen.welcomeScreen();
+        
+        
+        //TESTING - TESTING
+        //Display Map to string and display Location Array.
         
         //Map related
         Map map = new Map();
