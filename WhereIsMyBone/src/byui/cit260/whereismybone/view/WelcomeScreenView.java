@@ -179,7 +179,7 @@ public class WelcomeScreenView {
                 isValidGender = true;
                 gender = input;
                 
-                if(input.contentEquals("M")){
+                if(input.contentEquals("M") || input.contentEquals("m")){
                     childType = "son";
                 }
                 else{
