@@ -7,6 +7,7 @@ package whereismybone;
 
 import byui.cit260.whereismybone.model.Actor;
 import byui.cit260.whereismybone.model.Map;
+import byui.cit260.whereismybone.model.TravelLog;
 import byui.cit260.whereismybone.view.WelcomeScreenView;
 
 public class WhereIsMyBone {
@@ -40,6 +41,14 @@ public class WhereIsMyBone {
         
         String catDeVilInfo = catDeVil.toString();
         System.out.println(catDeVilInfo);
+        
+        //TravelLog related
+        TravelLog entryOne = new TravelLog();
+        entryOne.setLocationHistoryDetails("You visited the park.");
+        
+        String entryOneInfo = entryOne.toString();
+        System.out.println(entryOne);
+               
         
         //Map related
         Map map = new Map();
