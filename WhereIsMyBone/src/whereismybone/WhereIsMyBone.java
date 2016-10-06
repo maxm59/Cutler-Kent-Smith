@@ -24,6 +24,14 @@ public class WhereIsMyBone {
         //TESTING - TESTING
         //Display Map to string and display Location Array.
         
+        String testMesg = 
+                "\n==================================================" +
+                "\n=============  DEBUGGING         =================" +
+                "\n==================================================" +
+                "\n";
+        
+        System.out.println(testMesg);
+        
         //Map related
         Map map = new Map();
         map.setColumnCount(5);
@@ -33,6 +41,7 @@ public class WhereIsMyBone {
         String mapInfo = map.toString();
         System.out.println(mapInfo);
 
+        System.out.println(testMesg);
     }
     
 }

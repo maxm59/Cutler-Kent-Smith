@@ -23,7 +23,9 @@ import java.util.Scanner;
  */
 public class WelcomeScreenView {
     
-    private String playerName = "";
+    //Class Variables 
+    private String playerName = ""; //Players Name
+    private String childType = ""; //Is set to son or daughter.
     
     public WelcomeScreenView() {
         
@@ -31,13 +33,20 @@ public class WelcomeScreenView {
     
     public void welcomeScreen(){
         
+        //Display the initial banner
         displayBanner();
         
+        //Prompt for username
         playerName = getPlayerName();
         
+        //Display username and prompt for gender.
         displayBannerWithName();
-        
         getPlayerGender();
+        
+        
+        //Finally display the banner with the intro story.
+        displayBannerWithIntro(); 
+        waitForEnter();
                         
     }
     
@@ -83,6 +92,35 @@ public class WelcomeScreenView {
                 "\n  Welcome Detective " + playerName +
                 "\n" +
                 "\n  Are you (M)ale or (F)emale?" +
+                "\n" +
+                "\n==================================================" +
+                "\n= Game Creators - Rick S. | Maxine C. | Brian K. = " +
+                "\n==================================================" ;
+        
+        System.out.println(welcomeBanner);
+    }
+    
+    private void displayBannerWithIntro()
+    {
+        String welcomeBanner = "";
+        welcomeBanner = 
+                  "==================================================" +
+                "\n=============  WHERE IS MY BONE? =================" +
+                "\n==================================================" +
+                "\n     .-.               .-.    " +
+                "\n    (   `-._________.-'   )   " +
+                "\n     >=     _______     =<    " +
+                "\n    (   ,-'`       `'-,   )   " +
+                "\n     `-'               `-'    " +
+                "\n" +
+                "\n" +
+                "\n  Welcome Detective " + playerName + "! You are   " +
+                "\n  the " + childType + " of the famus Ruff McGruff " +
+                "\n  crime dog who now works for the FBI. You are top" +
+                "\n  dawg, police dog, of K9 City. Are you ready to  " +
+                "\n  take a bite out of crime?" +
+                "\n" +
+                "\n         Press ANY key to continue..." +
                 "\n" +
                 "\n==================================================" +
                 "\n= Game Creators - Rick S. | Maxine C. | Brian K. = " +
@@ -140,14 +178,46 @@ public class WelcomeScreenView {
             {
                 isValidGender = true;
                 gender = input;
+                
+                if(input.contentEquals("M")){
+                    childType = "son";
+                }
+                else{
+                    childType = "daughter";
+                }
+                
             }
             else{
              System.out.println("Invalid Gender. Please type M or F.");
             }
         }
-        
+            //
             //TODO::Set player gender attribute in player instance. 
-                                    
+            //
+            
         }
-    
+    private void waitForEnter()
+    {
+        boolean isValidEnter = false;
+        
+        //Scanner is to read the users input from the keybaord.
+        Scanner keyboard = new Scanner(System.in);
+        
+        //Keep Looping through until Enter or any key is pressed.
+        //We really do not care what key they press.
+        while (!isValidEnter){
+            String input = keyboard.nextLine();
+            
+            //Name validation
+            if(input.length() >= 0)
+            {
+                isValidEnter = true;
+            }
+            else{
+             System.out.println("Please press <ENTER>.");
+            }
+        }
     }
+    
+    
+}
