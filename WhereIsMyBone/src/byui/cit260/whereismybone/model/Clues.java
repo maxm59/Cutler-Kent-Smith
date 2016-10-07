@@ -36,6 +36,12 @@ public class Clues implements Serializable {
     }
 
     @Override
+    public String toString() {
+        return "Clues{" + "Description=" + Description + ", isFound=" + isFound + '}';
+    }
+
+        
+    @Override
     public int hashCode() {
         int hash = 3;
         hash = 41 * hash + Objects.hashCode(this.Description);
