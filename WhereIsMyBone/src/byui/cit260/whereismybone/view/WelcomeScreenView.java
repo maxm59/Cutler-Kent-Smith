@@ -45,7 +45,8 @@ public class WelcomeScreenView {
         
         
         //Finally display the banner with the intro story.
-        displayBannerWithIntro(); 
+        displayBannerWithIntro();
+                
         waitForEnter();
                         
     }
