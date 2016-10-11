@@ -6,6 +6,7 @@
 package whereismybone;
 
 import byui.cit260.whereismybone.model.Actor;
+import byui.cit260.whereismybone.model.ClueLog;
 import byui.cit260.whereismybone.model.Game;
 import byui.cit260.whereismybone.model.Map;
 import byui.cit260.whereismybone.model.Player;
@@ -69,6 +70,16 @@ public class WhereIsMyBone {
         System.out.println(catDeVilInfo);
         
         System.out.println(debugBreak);
+        
+        //ClueLog related
+        ClueLog clueOne = new ClueLog();
+        clueOne.setDescripton("You have gotten this clue");
+                
+        String clueOneInfo = clueOne.toString();
+        System.out.println(clueOneInfo);
+        
+        System.out.println(debugBreak);
+        
         
         //TravelLog related
         TravelLog entryOne = new TravelLog();

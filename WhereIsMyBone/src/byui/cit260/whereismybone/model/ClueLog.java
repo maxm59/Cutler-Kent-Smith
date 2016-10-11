@@ -17,17 +17,17 @@ import java.util.Objects;
  */
 public class ClueLog implements Serializable {
     
-    private String clueFound;
+    private boolean clueFound;
     private String description;
 
     public ClueLog() {
     }
     
-    public String getClueFound() {
+    public boolean getClueFound() {
         return clueFound;
     }
 
-    public void setClueFound(String clueFound) {
+    public void setClueFound(boolean clueFound) {
         this.clueFound = clueFound;
     }
 
@@ -71,6 +71,10 @@ public class ClueLog implements Serializable {
             return false;
         }
         return true;
+    }
+
+    public void setDescripton(String you_have_gotten_this_clue) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     
