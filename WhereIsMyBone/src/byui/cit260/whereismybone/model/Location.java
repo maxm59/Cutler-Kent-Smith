@@ -19,10 +19,14 @@ public class Location implements Serializable{
     private Integer columnCount;
     private String name;
 
-    public Location(Integer rowCount, Integer columnCount, String name) {
-        this.rowCount = rowCount;
-        this.columnCount = columnCount;
-        this.name = name;
+    //public Location(Integer rowCount, Integer columnCount, String name) {
+    //    this.rowCount = rowCount;
+    //    this.columnCount = columnCount;
+    //    this.name = name;
+    //}
+    
+    public Location() {
+        
     }
 
     public void setRowCount(Integer rowCount) {

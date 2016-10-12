@@ -9,6 +9,7 @@ import byui.cit260.whereismybone.model.Actor;
 import byui.cit260.whereismybone.model.BackPack;
 import byui.cit260.whereismybone.model.ClueLog;
 import byui.cit260.whereismybone.model.Game;
+import byui.cit260.whereismybone.model.Location;
 import byui.cit260.whereismybone.model.Map;
 import byui.cit260.whereismybone.model.Player;
 import byui.cit260.whereismybone.model.TravelLog;
@@ -109,6 +110,18 @@ public class WhereIsMyBone {
         System.out.println(mapInfo);
 
         System.out.println(debugMesg);
+        
+        //Location related
+        Location location = new Location();
+        location.setName("Park");
+        location.setColumnCount(1);
+        location.setRowCount(1);
+        
+        String locationInfo = location.toString();
+        System.out.println(locationInfo);
+                
+        System.out.println(debugMesg);
+        
     }
     
 }
