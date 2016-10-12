@@ -6,6 +6,7 @@
 package whereismybone;
 
 import byui.cit260.whereismybone.model.Actor;
+import byui.cit260.whereismybone.model.BackPack;
 import byui.cit260.whereismybone.model.ClueLog;
 import byui.cit260.whereismybone.model.Game;
 import byui.cit260.whereismybone.model.Map;
@@ -86,7 +87,16 @@ public class WhereIsMyBone {
         entryOne.setLocationHistoryDetails("You visited the park.");
         
         String entryOneInfo = entryOne.toString();
-        System.out.println(entryOne);
+        System.out.println(entryOneInfo);
+        
+        System.out.println(debugBreak);
+        
+        //BackPack related
+        BackPack backPack = new BackPack();
+        backPack.setItem("Cat Colar");
+        
+        String backPackInfo = backPack.toString();
+        System.out.println(backPackInfo);
         
         System.out.println(debugBreak);
         
