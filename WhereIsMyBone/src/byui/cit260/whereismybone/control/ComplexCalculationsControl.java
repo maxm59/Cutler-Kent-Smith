@@ -11,4 +11,21 @@ package byui.cit260.whereismybone.control;
  */
 public class ComplexCalculationsControl {
     
+    public double calcSqYard(int width, int length)
+    {
+        if (width <= 0)
+        {
+            return -1;    
+        }
+        if (length <= 0)
+        {
+            return -1;
+        }
+
+        double yard = width * length;
+
+        return yard;
+    }
+     
+    
 }
