@@ -27,5 +27,22 @@ public class ComplexCalculationsControl {
         return yard;
     }
      
-    
+    public double calcCubicInches(int width, int length, int height)
+    {               
+        //All Demensions must be greater than 0
+        if (width <=0 || length <= 0 || height <= 0)
+        {
+            return -1;
+        }
+
+        //Input cannot be greater than 48in (4ft)
+        if (width > 48 || length > 48 || height > 48)
+        {
+            return -1;    
+        }
+        
+        double cubicInch = width * length * height;
+
+        return cubicInch;
+    }
 }
