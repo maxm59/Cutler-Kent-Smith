@@ -6,8 +6,8 @@
 package byui.cit260.whereismybone.control;
 
 /**
- *
- * @author Smith-Rick
+ * Group Assignment
+ * @author Smith-Rick 
  */
 public class ComplexCalculationsControl {
     
@@ -44,5 +44,24 @@ public class ComplexCalculationsControl {
         double cubicInch = width * length * height;
 
         return cubicInch;
+    }
+    
+    public double calcCylinderArea(int height, int diameter)
+    {
+        
+        if (height <= 0) 
+        {
+            return -1;
+        }
+        
+        if (diameter <= 0 || diameter > 36)
+        {
+            return -1;
+        }
+            
+        double radius = diameter/2;
+        double volume = (Math.PI * radius * radius * height)/1728;
+        
+        return volume;
     }
 }

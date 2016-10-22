@@ -231,5 +231,84 @@ public class ComplexCalculationsControlTest {
 
         
     }
+
+    /**
+     * Test of calcCylinderArea method, of class ComplexCalculationsControl.
+     */
+    @Test
+    public void testCalcCylinderArea() {
+        System.out.println("calcCylinderArea");
+        
+        /***********************
+         * TEST CASE #1
+         ***********************/
+        System.out.println("\tTest case #1");
+        int height = 24;
+        int diameter = 12;
+        ComplexCalculationsControl instance = new ComplexCalculationsControl();
+        double expResult = 1.5707963267948966;
+        double result = instance.calcCylinderArea(height, diameter);
+        assertEquals(expResult, result, 0.0);
+
+        /***********************
+         * TEST CASE #2
+         ***********************/
+        System.out.println("\tTest case #2");
+        height = -1;
+        diameter = 12;
+        expResult = -1;
+        result = instance.calcCylinderArea(height, diameter);
+        assertEquals(expResult, result, 0.0);
+    
+        /***********************
+         * TEST CASE #3
+         ***********************/
+        System.out.println("\tTest case #3");
+        height = 12;
+        diameter = -1;
+        expResult = -1;
+        result = instance.calcCylinderArea(height, diameter);
+        assertEquals(expResult, result, 0.0);
+
+        /***********************
+         * TEST CASE #4
+         ***********************/
+        System.out.println("\tTest case #4");
+        height = 24;
+        diameter = 37;
+        expResult = -1;
+        result = instance.calcCylinderArea(height, diameter);
+        assertEquals(expResult, result, 0.0);
+        
+        /***********************
+         * TEST CASE #5
+         ***********************/
+        System.out.println("\tTest case #5");
+        height = 0;
+        diameter = 12;
+        expResult = -1;
+        result = instance.calcCylinderArea(height, diameter);
+        assertEquals(expResult, result, 0.0);
+
+        /***********************
+         * TEST CASE #6
+         ***********************/
+        System.out.println("\tTest case #6");
+        height = 24;
+        diameter = 0;
+        expResult = -1;
+        result = instance.calcCylinderArea(height, diameter);
+        assertEquals(expResult, result, 0.0);
+
+        /***********************
+         * TEST CASE #7
+         ***********************/
+        System.out.println("\tTest case #7");
+        height = 24;
+        diameter = 36;
+        expResult = 14.137166941154069;
+        result = instance.calcCylinderArea(height, diameter);
+        assertEquals(expResult, result, 0.0);
+    }
     
 }
