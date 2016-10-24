@@ -7,7 +7,7 @@ package byui.cit260.whereismybone.control;
 
 /**
  *
- * @author ricte
+ * @author Rick Smith
  */
 public class MapControl {
     
@@ -23,5 +23,17 @@ public class MapControl {
         return true;
     }
     
+    public int[] movePlayer(int nRow, int nCol)
+    {
+       if(!validLocation(nRow, nCol))
+       {
+           //int[] resultFail = null;
+           return null;
+       }
+       
+       int[] newLoc = {nRow, nCol};
+       return newLoc;
+       
+    }
     
 }

@@ -64,4 +64,21 @@ public class ComplexCalculationsControl {
         
         return volume;
     }
+    
+    public int calcWatts(int volts, int amps)
+    {
+        
+        if(amps <= 0 || amps > 1000)
+        {
+            return -1;
+        }
+        
+        if (volts <= 0 || volts > 14)
+        {
+            return -1;
+        }
+        
+        int watts = volts * amps;
+        return watts;
+    }
 }
