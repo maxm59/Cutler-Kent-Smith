@@ -1,10 +1,4 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/*
  * The welcome screen is the first screen to be displayed when the user starts
  * the game. We want to display the game welcome banner and prompt the user for
  * a name.
