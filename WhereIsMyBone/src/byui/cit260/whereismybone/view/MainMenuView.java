@@ -15,7 +15,7 @@ public class MainMenuView {
     
     public MainMenuView() {
 
-       menuOptions = "==================================================" +
+       this.menuOptions = "==================================================" +
                 "\n=============  WHERE IS MY BONE? =================" +
                 "\n==================================================" +
                 "\n================== MAIN MENU =====================" +
@@ -102,10 +102,19 @@ public class MainMenuView {
         choice = choice.toUpperCase();
         
         switch (choice) {
-            case "N": 
+            case "N": //Create and start a new game
                 this.startNewGame();
                 break;
-            case "X":
+            case "L":  //Load an existing game
+                //this.startNewGame();
+                break;
+            case "S": //save the current game
+                //this.startNewGame();
+                break;
+             case "H": //display the help menu
+                //this.startNewGame();
+                break;                                               
+            case "X": //quit the game
                 return true;
             default:
                 System.out.println("invalid selection");
@@ -137,4 +146,21 @@ public class MainMenuView {
             }
         }
     }  
+
+   public void displayMainMenuView() {
+       
+        boolean done = false; //set the flag to not done
+        do{
+            //prompt for menu option
+            String menuOption = this.getMenuOptions();
+            
+            if (menuOption.toUpperCase().equals("X"))//user wants to quit
+            return; //exit the game
+            
+            //do the requested action and display the next view
+            done = this.doAction(menuOption);
+            
+        }while (!done);       
+       
+    }
 }

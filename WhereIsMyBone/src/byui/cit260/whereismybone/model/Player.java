@@ -17,6 +17,7 @@ public class Player {
     private String name = "";
     private String gender = "";
     private int[][] currentLocation; //Not sure how to get this part to work.
+    private String childType = ""; //Is set to son or daughter.
 
     public Player() {
         
@@ -37,6 +38,14 @@ public class Player {
     public void setGender(String gender) {
         this.gender = gender;
     }
+    
+    public String getChildType(){
+        return childType;
+    }
+    
+    public void setChildType(String childType){
+        this.childType = childType;
+    }    
 
     public int[][] getCurrentLocation() {
         return currentLocation;
