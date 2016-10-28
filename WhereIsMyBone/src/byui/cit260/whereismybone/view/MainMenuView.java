@@ -17,7 +17,6 @@ public class MainMenuView {
 
        this.menuOptions = "==================================================" +
                 "\n=============  WHERE IS MY BONE? =================" +
-                "\n==================================================" +
                 "\n================== MAIN MENU =====================" +
                 "\n==================================================" +
                 "\n     .-.               .-.    " +
@@ -25,9 +24,7 @@ public class MainMenuView {
                 "\n     >=     _______     =<    " +
                 "\n    (   ,-'`       `'-,   )   " +
                 "\n     `-'               `-'    " +
-                "\n" +
-                "\n" +                
-                "\n                             " +
+                "\n" + 
                 "\n     N =   New Game          " +
                 "\n     L =   Load a Saved Game " +
                 "\n     S =   Save Game         " +
@@ -46,7 +43,6 @@ public class MainMenuView {
     {
         
         menuOptions = getMenuOptions();
-        
 
     }
 
@@ -106,13 +102,13 @@ public class MainMenuView {
                 this.startNewGame();
                 break;
             case "L":  //Load an existing game
-                //this.startNewGame();
+                this.loadExistingGame();
                 break;
             case "S": //save the current game
-                //this.startNewGame();
+                this.saveGame();
                 break;
              case "H": //display the help menu
-                //this.startNewGame();
+                this.displayHelpMenu();
                 break;                                               
             case "X": //quit the game
                 return true;
@@ -124,8 +120,21 @@ public class MainMenuView {
     
     }
     private void startNewGame(){
-        System.out.println("start new game menu");
+        System.out.println("Start new game menu");
     }
+    
+    private void loadExistingGame(){
+        System.out.println("Load Existing Game");
+    }
+    
+    private void saveGame(){
+        System.out.println("Save Game");
+    }
+    
+    private void displayHelpMenu(){
+        System.out.println("Display Help Menu");
+    }
+     
     
     private void waitForEnter()
     {
@@ -145,9 +154,9 @@ public class MainMenuView {
              System.out.println("Please press <ENTER>.");
             }
         }
-    }  
+    }
 
-   public void displayMainMenuView() {
+    public void displayMainMenuView() {
        
         boolean done = false; //set the flag to not done
         do{
@@ -160,7 +169,7 @@ public class MainMenuView {
             //do the requested action and display the next view
             done = this.doAction(menuOption);
             
-        }while (!done);       
-       
+        }while (!done);  
     }
 }
+
