@@ -15,7 +15,8 @@ public class MainMenuView {
     
     public MainMenuView() {
 
-       this.menuOptions = "==================================================" +
+       this.menuOptions = 
+                  "==================================================" +
                 "\n               WHERE IS MY BONE?                  " +
                 "\n                   MAIN MENU                      " +
                 "\n==================================================" +
@@ -28,8 +29,8 @@ public class MainMenuView {
                 "\n     N =   New Game          " +
                 "\n     L =   Load a Saved Game " +
                 "\n     S =   Save Game         " +
-                "\n     H =   Help              " +
-                "\n     X =   Exit              " +
+                "\n     H =   Get Help          " +
+                "\n     X =   Exit Game         " +
                 "\n" +
                 "\n" +
                 "\n  To begin, please enter your choice:" +
@@ -84,7 +85,18 @@ public class MainMenuView {
 
             if(input.length()  >= 1)
             {
-                exitMenu = doAction(input);
+                
+                char keyEntered = input.toUpperCase().charAt(0);
+                
+                if(keyEntered == 'X'){
+                    //User wants to exit
+                    System.exit(0);
+                }
+                else{
+                    
+                    exitMenu = doAction(input);
+                }
+                
             }
             else{
              System.out.println("Your choice must be at least 1 character.");
@@ -110,10 +122,9 @@ public class MainMenuView {
              case "H": //display the help menu
                 this.displayHelpMenu();
                 break;                                               
-            case "X": //quit the game
-                return true;
             default:
                 System.out.println("\n***Invalid Selection*** Try again");
+                break;
              
         }
         return false;  
@@ -164,7 +175,7 @@ public class MainMenuView {
             String menuOption = this.getMenuOptions();
             
             if (menuOption.toUpperCase().equals("X"))//user wants to quit
-            return; //exit the game
+                return; //exit the game
             
             //do the requested action and display the next view
             done = this.doAction(menuOption);

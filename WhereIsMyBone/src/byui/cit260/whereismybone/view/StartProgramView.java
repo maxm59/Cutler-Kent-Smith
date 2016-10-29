@@ -30,24 +30,26 @@ public class StartProgramView {
     private void displayBannerAndPrompt() {
         String welcomeBanner = "";
         welcomeBanner = 
-                  "==================================================" +
-                "\n=============  WHERE IS MY BONE? =================" +
-                "\n==================================================" +
-                "\n     .-.               .-.    " +
-                "\n    (   `-._________.-'   )   " +
-                "\n     >=     _______     =<    " +
-                "\n    (   ,-'`       `'-,   )   " +
-                "\n     `-'               `-'    " +
-                "\n" +
-                "\n" +
-                "\n  To begin, please enter your name:" +
-                "\n" +
-                "\n" +
-                "\n" +
-                "\n==================================================" +
-                "\n= Game Creators - Rick S. | Maxine C. | Brian K. = " +
-                "\n==================================================" ;
-        
+                  "===================================================" +
+                "\n=============  WHERE IS MY BONE? ==================" +
+                "\n===================================================" +
+                "\n     .-.               .-.                         " +
+                "\n    (   `-._________.-'   )                        " +
+                "\n     >=     _______     =<                         " +
+                "\n    (   ,-'`       `'-,   )                        " +
+                "\n     `-'               `-'                         " +
+                "\n  This game is a Carmen Sandiego style game. You're" +
+                "\n  enemy is teh Cat DeVil Gang. Members of that gang" +
+                "\n  have stolen your bone. Your job is to track down " +
+                "\n  clues to identify which gang member has stolen   " +
+                "\n  your bone. You only have 24 hours to collar the  " +
+                "\n  criminal or they will have gotten away.          " +
+                "\n                                                   " +
+                "\n  To begin, please enter your name:                " +
+                "\n                                                   " +
+                "\n===================================================" +
+                "\n= Game Creators - Rick S. | Maxine C. | Brian K. ==" +
+                "\n===================================================" ;   
         System.out.println(welcomeBanner);
         
         
