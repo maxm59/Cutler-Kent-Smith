@@ -207,22 +207,44 @@ public class StartProgramView {
             return false;
         }
         
-       
-        
-        //TODO - Add Gender prompt, etc. 
+               
+        //Gender prompt. 
         this.displayGenderPrompt(player);
+        this.getPlayerGender(player);
         
-        //TODO
+        //Nice Banner with story Detail
         this.displayBannerWithIntro(player);
+        this.waitForEnter();
         
-        //TODO - Display mainMenuView
-         //display next view
+        //Display mainMenuView || display next view
         this.displayNextView(player);
-
         
         return true;
     }
 
+    private void waitForEnter()
+    {
+        boolean isValidEnter = false;
+        
+        //Scanner is to read the users input from the keybaord.
+        Scanner keyboard = new Scanner(System.in);
+        
+        //Keep Looping through until Enter or any key is pressed.
+        //We really do not care what key they press.
+        while (!isValidEnter){
+            String input = keyboard.nextLine();
+            
+            //Name validation
+            if(input.length() >= 0)
+            {
+                isValidEnter = true;
+            }
+            else{
+             System.out.println("Please press <ENTER>.");
+            }
+        }
+    }
+        
     private void displayNextView(Player player) {
         
         //NOTE: Do not need to display custom welcome message here.
