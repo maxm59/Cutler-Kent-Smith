@@ -4,35 +4,37 @@
  * and open the template in the editor.
  */
 package byui.cit260.whereismybone.view;
+
 import java.util.Scanner;
+
 /**
  *
- * @author Maxi Cutler
+ * @author Maxine Cutler
  */
-public class MainMenuView {
-    
+public class HelpMenuView {
+
     private String menuOptions = "";
     
-    public MainMenuView() {
+    public HelpMenuView() {
 
        this.menuOptions = "==================================================" +
                 "\n               WHERE IS MY BONE?                  " +
-                "\n                   MAIN MENU                      " +
+                "\n                   Help Menu                      " +
                 "\n==================================================" +
-                "\n     .-.               .-.    " +
-                "\n    (   `-._________.-'   )   " +
-                "\n     >=     _______     =<    " +
-                "\n    (   ,-'`       `'-,   )   " +
-                "\n     `-'               `-'    " +
+                "\n             .-.               .-.                " +
+                "\n            (   `-._________.-'   )               " +
+                "\n             >=     _______     =<                " +
+                "\n            (   ,-'`       `'-,   )               " +
+                "\n             `-'               `-'                " +
                 "\n" + 
-                "\n     N =   New Game          " +
-                "\n     L =   Load a Saved Game " +
-                "\n     S =   Save Game         " +
-                "\n     H =   Help              " +
-                "\n     X =   Exit              " +
+                "\n         O =   Obeject of the game.               " +
+                "\n         H =   How to play the game.              " +
+                "\n         M =   How to move around.                " +
+                "\n         C =   Your back pack Clues.              " +
+                "\n         B =   Bad Guys in the game.              " +
+                "\n         X =   Exit Help Menu.                    " +
                 "\n" +
-                "\n" +
-                "\n  To begin, please enter your choice:" +
+                "\n         To begin, please enter your choice:" +
                 "\n" +
                 "\n==================================================" +
                 "\n= Game Creators - Rick S. | Maxine C. | Brian K. = " +
@@ -44,31 +46,6 @@ public class MainMenuView {
         
         menuOptions = getMenuOptions();
 
-    }
-
-    private void displayBannerWarning()
-    {
-        String menuBanner = "==================================================" +
-                "\n=============  WHERE IS MY BONE? =================" +
-                "\n==================================================" +
-                "\n     .-.               .-.    " +
-                "\n    (   `-._________.-'   )   " +
-                "\n     >=     _______     =<    " +
-                "\n    (   ,-'`       `'-,   )   " +
-                "\n     `-'               `-'    " +
-                "\n" +
-                "\n" +
-                "\n  WARNING - You will lose all unsaved progress. +" +
-                "    Proceed? (Y)es or (N)" +
-                "\n" +
-                "\n" +
-                "\n  Please enter your choice:" +
-                "\n" +
-                "\n==================================================" +
-                "\n" +
-                "\n==================================================" ;
-        
-        System.out.println(menuBanner);
     }
     
     private String getMenuOptions() {
@@ -156,7 +133,7 @@ public class MainMenuView {
         }
     }
 
-    public void displayMainMenuView() {
+    public void displayHelpMenuView() {
        
         boolean done = false; //set the flag to not done
         do{
@@ -172,4 +149,3 @@ public class MainMenuView {
         }while (!done);  
     }
 }
-
