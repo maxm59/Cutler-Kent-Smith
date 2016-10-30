@@ -144,6 +144,11 @@ public class MainMenuView {
     
     private void displayHelpMenu(){
         System.out.println("Display Help Menu");
+        //Display the MainMenuView 
+        //Create MainMenuView object
+        HelpMenuView helpMenuView = new HelpMenuView();
+        //Display the main menu view
+        helpMenuView.displayHelpMenuView();
     }
      
     

@@ -30,8 +30,8 @@ public class HelpMenuView {
                 "\n         O =   Obeject of the game.               " +
                 "\n         H =   How to play the game.              " +
                 "\n         M =   How to move around.                " +
-                "\n         C =   Your back pack Clues.              " +
-                "\n         B =   Bad Guys in the game.              " +
+                "\n         C =   Clues.                             " +
+                "\n         B =   Bad Guys.                          " +
                 "\n         X =   Exit Help Menu.                    " +
                 "\n" +
                 "\n         To begin, please enter your choice:" +
@@ -61,57 +61,73 @@ public class HelpMenuView {
 
             if(input.length()  >= 1)
             {
-                exitMenu = doAction(input);
+                char keyEntered = input.toUpperCase().charAt(0);
+                
+                if(keyEntered == 'X'){
+                    //User wants to exit
+                    exitMenu = true;
+                }
+                else{
+                    
+                    exitMenu = doAction(input);
+                }
             }
             else{
              System.out.println("Your choice must be at least 1 character.");
             }
         }   
-            return menu;               
-        }
+        return menu;               
+    }
     
     private boolean doAction(String choice){
         
         choice = choice.toUpperCase();
         
+        //Debugging 
+        System.out.println("DoAction Switch case on: " + choice);
+        
         switch (choice) {
-            case "N": //Create and start a new game
-                this.startNewGame();
+            case "O": //Display Game Objective
+                this.displayObjectGameMenu();
                 break;
-            case "L":  //Load an existing game
-                this.loadExistingGame();
+            case "H": //Display How TO Play Details
+                this.displayHowToMenu();
                 break;
-            case "S": //save the current game
-                this.saveGame();
+            case "M": //Display info on how to move
+                this.displayHowToMove();
                 break;
-             case "H": //display the help menu
-                this.displayHelpMenu();
+            case "C": //display Clue info
+                this.displayClues();
                 break;                                               
-            case "X": //quit the game
-                return true;
+            case "V": //display Villan info
+                this.displayVillans();
+                break;                                               
             default:
                 System.out.println("\n***Invalid Selection*** Try again");
+                break;
              
         }
         return false;  
     
     }
-    private void startNewGame(){
-        System.out.println("Start new game menu");
+    private void displayObjectGameMenu(){
+        System.out.println("Display Game Objective");
     }
     
-    private void loadExistingGame(){
-        System.out.println("Load Existing Game");
+    private void displayHowToMenu(){
+        System.out.println("Display How TO Play Details");
     }
     
-    private void saveGame(){
-        System.out.println("Save Game");
+    private void displayHowToMove(){
+        System.out.println("Display info on how to move");
     }
     
-    private void displayHelpMenu(){
-        System.out.println("Display Help Menu");
+    private void displayClues(){
+        System.out.println("Display Clue info");
     }
-     
+    private void displayVillans(){
+        System.out.println("Display Villan info");
+    }
     
     private void waitForEnter()
     {
