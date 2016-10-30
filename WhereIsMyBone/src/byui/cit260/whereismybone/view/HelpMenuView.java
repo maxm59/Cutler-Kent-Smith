@@ -17,7 +17,8 @@ public class HelpMenuView {
     
     public HelpMenuView() {
 
-       this.menuOptions = "==================================================" +
+       this.menuOptions = 
+                  "==================================================" +
                 "\n               WHERE IS MY BONE?                  " +
                 "\n                   Help Menu                      " +
                 "\n==================================================" +
@@ -26,18 +27,17 @@ public class HelpMenuView {
                 "\n             >=     _______     =<                " +
                 "\n            (   ,-'`       `'-,   )               " +
                 "\n             `-'               `-'                " +
-                "\n" + 
+                "\n                                                  " + 
                 "\n         O =   Obeject of the game.               " +
                 "\n         H =   How to play the game.              " +
                 "\n         M =   How to move around.                " +
-                "\n         C =   Clues.                             " +
-                "\n         B =   Bad Guys.                          " +
+                "\n         C =   How to use Clues.                  " +
+                "\n         V =   Villans Details                    " +
                 "\n         X =   Exit Help Menu.                    " +
-                "\n" +
-                "\n         To begin, please enter your choice:" +
-                "\n" +
+                "\n                                                  " +
+                "\n         To begin, please enter your choice:      " +
+                "\n                                                  " +
                 "\n==================================================" +
-                "\n= Game Creators - Rick S. | Maxine C. | Brian K. = " +
                 "\n==================================================" ;        
     }
     
@@ -65,6 +65,7 @@ public class HelpMenuView {
                 
                 if(keyEntered == 'X'){
                     //User wants to exit
+                    menu = "X";
                     exitMenu = true;
                 }
                 else{
@@ -127,6 +128,38 @@ public class HelpMenuView {
     }
     private void displayVillans(){
         System.out.println("Display Villan info");
+        
+        String details = "";
+        details = 
+                  "==================================================" +
+                "\n== HELP: Villan Details ==========================" +
+                "\n==================================================" +
+                "\n= Mrs. Cat DeVil                                 =" +
+                "\n=  Mrs. DeVil is the leader of the Cat DeVil     =" +
+                "\n=  Gang. She and her mangy crew don't like water.=" +
+                "\n=  Instead they simply lick the filth off of     =" +
+                "\n=  their backs and the cough up hair balls all   =" +
+                "\n=  over town without a care in the world. Few    =" +
+                "\n=  have ever seen her. She is an illusive cat. A =" +
+                "\n=  lot of people say she has white fur and green =" +
+                "\n=  eyes.                                         =" +
+                "\n=                                                =" +
+                "\n= Duh Catcher                                    =" +
+                "\n=  Mr. Catcher is one of the DeVil's henchmen.   =" +
+                "\n=  He will randomly float around the map. If you =" +
+                "\n=  find him, run. He is the equivalent to moving =" +
+                "\n=  back 1 space, which will cost you time.       =" +
+                "\n=                                                =" +
+                "\n= Scarface                                       =" +
+                "\n=  Just another mangy cat gang member with a     =" +
+                "\n=  scar across his right eye. His one good blue  =" +
+                "\n=  eye will pierce you to the bone. He is the    =" +
+                "\n=  blackest of the alley cats.                   =" +
+                "\n=                                                =" +
+                "\n==================================================" ;
+
+
+        System.out.println(details);
     }
     
     private void waitForEnter()
