@@ -26,16 +26,16 @@ public class ComplexCalculationView {
    {
 	   Scanner scanner = new Scanner(System.in);
            
-	   System.out.println("Enter the length of the back yard:");
-	   double length = scanner.nextDouble();
-           
-	   System.out.println("Enter the width of the back yard:");
+	   System.out.println("Enter the width of the backyard:");
 	   double width = scanner.nextDouble();
            
-	   //Area = length*width;
-	   double area = length*width;
+	   System.out.println("Enter the length of the backyard:");
+	   double length = scanner.nextDouble();
            
-	   System.out.println("Area of the Backyard is:"+area);
+	   //yard = width * length;
+	   double yard = width * length;
+           
+	   System.out.println("Area of the Backyard is:"+yard);
    }
 }
 
