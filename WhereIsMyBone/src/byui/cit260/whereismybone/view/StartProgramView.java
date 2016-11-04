@@ -39,7 +39,7 @@ public class StartProgramView {
                 "\n    (   ,-'`       `'-,   )                        " +
                 "\n     `-'               `-'                         " +
                 "\n  This game is a Carmen Sandiego style game. You're" +
-                "\n  enemy is teh Cat DeVil Gang. Members of that gang" +
+                "\n  enemy is the Cat DeVil Gang. Members of that gang" +
                 "\n  have stolen your bone. Your job is to track down " +
                 "\n  clues to identify which gang member has stolen   " +
                 "\n  your bone. You only have 24 hours to collar the  " +
