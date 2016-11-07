@@ -32,7 +32,7 @@ public class HelpMenuView {
                 "\n         H =   How to play the game.              " +
                 "\n         M =   How to move around.                " +
                 "\n         C =   How to use Clues.                  " +
-                "\n         V =   Villains Details                    " +
+                "\n         V =   Villains Details                   " +
                 "\n         X =   Exit Help Menu.                    " +
                 "\n                                                  " +
                 "\n         To begin, please enter your choice:      " +
@@ -80,37 +80,7 @@ public class HelpMenuView {
         return menu;               
     }
     
-    private boolean doAction(String choice){
-        
-        choice = choice.toUpperCase();
-        
-        //Debugging 
-        System.out.println("DoAction Switch case on: " + choice);
-        
-        switch (choice) {
-            case "O": //Display Game Objective
-                this.displayObjectGameMenu();
-                break;
-            case "H": //Display How TO Play Details
-                this.displayHowToMenu();
-                break;
-            case "M": //Display info on how to move
-                this.displayHowToMove();
-                break;
-            case "C": //display Clue info
-                this.displayClues();
-                break;                                               
-            case "V": //display Villan info
-                this.displayVillans();
-                break;                                               
-            default:
-                System.out.println("\n***Invalid Selection*** Try again");
-                break;
-             
-        }
-        return false;  
-    
-    }
+
     private void displayObjectGameMenu(){
         System.out.println("Display Game Objective");
                String details = "";
@@ -294,5 +264,37 @@ public class HelpMenuView {
             done = this.doAction(menuOption);
             
         }while (!done);  
+    }
+    
+    private boolean doAction(String choice){
+        
+        choice = choice.toUpperCase();
+        
+        //Debugging 
+        System.out.println("DoAction Switch case on: " + choice);
+        
+        switch (choice) {
+            case "O": //Display Game Objective
+                this.displayObjectGameMenu();
+                break;
+            case "H": //Display How TO Play Details
+                this.displayHowToMenu();
+                break;
+            case "M": //Display info on how to move
+                this.displayHowToMove();
+                break;
+            case "C": //display Clue info
+                this.displayClues();
+                break;                                               
+            case "V": //display Villan info
+                this.displayVillans();
+                break;                                               
+            default:
+                System.out.println("\n***Invalid Selection*** Try again");
+                break;
+             
+        }
+        return false;  
+    
     }
 }

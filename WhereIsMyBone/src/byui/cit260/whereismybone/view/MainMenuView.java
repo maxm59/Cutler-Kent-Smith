@@ -32,6 +32,8 @@ public class MainMenuView {
                 "\n     H =   Get Help          " +
                 "\n     X =   Exit Game         " +
                 "\n" +
+                "\n     C =   Complex Calculation View Test" +
+                "\n" +
                 "\n" +
                 "\n  To begin, please enter your choice:" +
                 "\n" +
@@ -121,7 +123,10 @@ public class MainMenuView {
                 break;
              case "H": //display the help menu
                 this.displayHelpMenu();
-                break;                                               
+                break; 
+             case "C": //Temporary display of Complex Calculation for testing
+                 this.displayComplexCalculationView();
+                 break;
             default:
                 System.out.println("\n***Invalid Selection*** Try again");
                 break;
@@ -186,6 +191,13 @@ public class MainMenuView {
             done = this.doAction(menuOption);
             
         }while (!done);  
+    }
+
+    private void displayComplexCalculationView() {
+        
+        ComplexCalculationView complexCalculationView = new ComplexCalculationView();
+        complexCalculationView.displayComplexCalculationView();
+    
     }
 }
 
