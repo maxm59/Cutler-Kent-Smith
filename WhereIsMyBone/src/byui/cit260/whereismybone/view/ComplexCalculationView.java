@@ -46,8 +46,7 @@ public class ComplexCalculationView {
                 "\n                                                  " +
                 "\n==================================================" +
                 "\n= Game Creators - Rick S. | Maxine C. | Brian K. =" +
-                "\n==================================================" ; 
-                
+                "\n==================================================" ;           
         
     }
     
@@ -56,23 +55,7 @@ public class ComplexCalculationView {
         menuOptions = getMenuOptions();
         
     }
-
-//    public static void main (String[] args)
-//   {
-//	   Scanner scanner = new Scanner(System.in);
-//          
-//	   System.out.println("Enter the width of the backyard:");
-//	   double width = scanner.nextDouble();
-//           
-//	   System.out.println("Enter the length of the backyard:");
-//	   double length = scanner.nextDouble();
-//         
-//	   //yard = width * length;
-//	   double yard = width * length;
-//           
-//	   System.out.println("Area of the Backyard is:"+yard);
-//   }
-
+    
     private String getMenuOptions() {
         
         boolean exitMenu = false;
@@ -100,10 +83,9 @@ public class ComplexCalculationView {
                 }
                 
             }
-            else{
-             System.out.println("Your choice must be at least 1 character.");
-            }
+            
         }   
+            
         return menu;               
     }
     
@@ -116,7 +98,7 @@ public class ComplexCalculationView {
                 this.displayCubicInchesView();
                 break;
             case "B":  
-                this.displaySquareYardView();
+                this.displaySqYardView();
                 break;
             case "C": 
                 this.displayCylinderVolumeView();
@@ -151,7 +133,7 @@ public class ComplexCalculationView {
     public void displayCubicInchesView(){
         System.out.println("Debug: Display Cubic Inches View");
     }
-    public void displaySquareYardView(){
+    public void displaySqYardView(){
         System.out.println("Debug: Display Square Yard View");
     }
     public void displayCylinderVolumeView(){

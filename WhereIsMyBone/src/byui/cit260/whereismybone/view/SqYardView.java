@@ -9,7 +9,6 @@ import java.util.Scanner;
  * the square area calculation of the backyard.
  * 
  */
-        
 public class SqYardView {
     
     private String menuOptions = "";
@@ -19,16 +18,18 @@ public class SqYardView {
         //this.displayMenu();
         
         this.menuOptions =
-                  "==================================================" +
-                "\n             Is my bone here?                     " +
-                "\n           COMPLEX CALCULATION TEST               " +
-                "\n" +
-                "\n                                                  " +
-                "\n" +
-                "\n                                                  " +
-                "\n==================================================" +
-                "\n" +
-                "\n==================================================" ;           
+                  "***************************************************" +
+                "\n*                                                 *" +
+                "\n*     This is my backyard. My bone has to be      *" +
+                "\n*     here, buried in some hole. Can you help     *" +
+                "\n*     find it? Lets figure out the square area    *" +
+                "\n*     of my backyard.                             *" +
+                "\n*                                                 *" +
+                "\n*     Please enter a number for the width:        *" +
+                "\n*     Please enter a number for the length:       *" +
+                "\n*                                                 *" +
+                "\n*     The total                                             *" +
+                "\n*==================================================" ;           
         
     }
     
@@ -113,7 +114,6 @@ public class SqYardView {
     public void displayLengthOfTheYard(){
         System.out.println("Debug: Display Square Yard View");
     }
-    
     
     private void displaySqYardView() {
         
