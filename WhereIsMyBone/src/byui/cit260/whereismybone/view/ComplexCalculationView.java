@@ -101,10 +101,10 @@ public class ComplexCalculationView {
                 this.displaySqYardView();
                 break;
             case "C": 
-                this.displayCylinderVolumeView();
+                this.displayCylinderAreaView();
                 break;
              case "D": 
-                this.displayWattPowerView();
+                this.displayWattsView();
                 break; 
             default:
                 System.out.println("\n***Invalid Selection*** Try again");
@@ -131,22 +131,36 @@ public class ComplexCalculationView {
     }
     
     public void displayCubicInchesView(){
-        System.out.println("Debug: Display Cubic Inches View");
+        System.out.println("I see a big box. I wonder if my bone is in it?");
         
+//        //Display the CubicInches of cubicInches View
+//        CubicInchesView cubicInchesView = new CubicInchesView();
+//        cubicInchesView.display();
     }
     public void displaySqYardView(){
-        System.out.println("Debug: Display Square Yard View");
+        System.out.println("Back in the yard. Where is my bone?");
         
         //Display the Square Yard View 
         SqYardView sqYardView = new SqYardView();
         sqYardView.display();
         
     }
-    public void displayCylinderVolumeView(){
-        System.out.println("Debug: Display Cylinder Volume View");
+    private void displayCylinderAreaView() {
+        System.out.println("I see a big pipe. I wonder if my bone is in it?");
+        
+        //Display the CylinderArea View 
+        CylinderAreaView cylinderAreaView = new CylinderAreaView();
+        cylinderAreaView.display();
+        
     }
-    public void displayWattPowerView(){
-        System.out.println("Debug: Display Watt Power View");
+    public void displayWattsView(){
+        System.out.println("I see lots of power lines.");
+
+        //Display the WattsView 
+        WattsView wattsView = new WattsView();
+        wattsView.display();
+        
     }
+
 }
 
