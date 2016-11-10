@@ -139,7 +139,7 @@ public class ComplexCalculationView {
         
         //Display the Square Yard View 
         SqYardView sqYardView = new SqYardView();
-        sqYardView.displaySqYardView();
+        sqYardView.display();
         
     }
     public void displayCylinderVolumeView(){
