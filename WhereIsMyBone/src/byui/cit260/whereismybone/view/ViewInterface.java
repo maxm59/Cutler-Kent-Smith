@@ -7,10 +7,12 @@ package byui.cit260.whereismybone.view;
 
 /**
  *
- * @author Maxine Cutler
+ * @author Smith-Rick
  */
-public abstract class View implements ViewInterface {
+public interface ViewInterface {
     
-    
+    public void display();
+    public String getInput();
+    public boolean doAction(String value);
     
 }
