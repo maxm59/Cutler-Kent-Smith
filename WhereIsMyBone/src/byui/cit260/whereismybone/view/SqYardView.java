@@ -30,7 +30,7 @@ public class SqYardView extends View{
                 "\n*                                                 *" +
                 "\n*     Please enter a number for the width:        *" +
                 "\n                                                   " +         
-                "\n*==================================================" );           
+                "\n***************************************************" );           
         
     }
 
@@ -74,7 +74,7 @@ public class SqYardView extends View{
         
         boolean exitMenu = false;
         String value = "";
-        //Double dValue;
+
         Integer iValue;
         
         while (!exitMenu){
@@ -112,8 +112,8 @@ public class SqYardView extends View{
                 "\n*     Width: " + Double.toString(this.width)         +
                 "\n*                                                 *" +
                 "\n*     Please enter a number for the Lenght:       *" +
-                "\n                                                  *" +         
-                "\n*==================================================" ; 
+                "\n                                                   " +         
+                "\n***************************************************";    
 
         System.out.println(prompt);
     }
@@ -132,8 +132,9 @@ public class SqYardView extends View{
                 "\n*     Length: " + this.length       +
                 "\n*                                                 *" +
                 "\n*     Result: " + Double.toString(this.calcResult)   +
+                "\n*     Wow great Job!                              *" +
                 "\n                                                  *" +         
-                "\n*==================================================" ; 
+                "\n***************************************************";    
 
         System.out.println(prompt);
     }
