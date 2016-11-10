@@ -158,7 +158,7 @@ public class MainMenuView extends View{
         //Create MainMenuView object
         HelpMenuView helpMenuView = new HelpMenuView();
         //Display the main menu view
-        helpMenuView.displayHelpMenuView();
+        helpMenuView.display();
     }
      
     

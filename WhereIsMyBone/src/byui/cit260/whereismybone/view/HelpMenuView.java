@@ -11,13 +11,13 @@ import java.util.Scanner;
  *
  * @author Maxine Cutler
  */
-public class HelpMenuView {
+public class HelpMenuView extends View{
 
-    private String menuOptions = "";
+//    private String menuOptions = "";
     
     public HelpMenuView() {
 
-       this.menuOptions = 
+       super(
                   "==================================================" +
                 "\n               WHERE IS MY BONE?                  " +
                 "\n                   Help Menu                      " +
@@ -38,47 +38,47 @@ public class HelpMenuView {
                 "\n         To begin, please enter your choice:      " +
                 "\n                                                  " +
                 "\n==================================================" +
-                "\n==================================================" ;        
+                "\n==================================================" );        
     }
     
-    public void displayBanner()
-    {
-        
-        menuOptions = getMenuOptions();
-
-    }
+//    public void displayBanner()
+//    {
+//        
+//        menuOptions = getMenuOptions();
+//
+//    }
     
-    private String getMenuOptions() {
-        
-        boolean exitMenu = false;
-        String menu = "";
-        
-        Scanner keyboard = new Scanner(System.in);
-        
-        while (!exitMenu){
-            System.out.println(menuOptions);
-            String input = keyboard.nextLine();
-
-            if(input.length()  >= 1)
-            {
-                char keyEntered = input.toUpperCase().charAt(0);
-                
-                if(keyEntered == 'X'){
-                    //User wants to exit
-                    menu = "X";
-                    exitMenu = true;
-                }
-                else{
-                    
-                    exitMenu = doAction(input);
-                }
-            }
-            else{
-             System.out.println("Your choice must be at least 1 character.");
-            }
-        }   
-        return menu;               
-    }
+//    private String getMenuOptions() {
+//        
+//        boolean exitMenu = false;
+//        String menu = "";
+//        
+//        Scanner keyboard = new Scanner(System.in);
+//        
+//        while (!exitMenu){
+//            System.out.println(menuOptions);
+//            String input = keyboard.nextLine();
+//
+//            if(input.length()  >= 1)
+//            {
+//                char keyEntered = input.toUpperCase().charAt(0);
+//                
+//                if(keyEntered == 'X'){
+//                    //User wants to exit
+//                    menu = "X";
+//                    exitMenu = true;
+//                }
+//                else{
+//                    
+//                    exitMenu = doAction(input);
+//                }
+//            }
+//            else{
+//             System.out.println("Your choice must be at least 1 character.");
+//            }
+//        }   
+//        return menu;               
+//    }
     
 
     private void displayObjectGameMenu(){
@@ -250,23 +250,23 @@ public class HelpMenuView {
         }
     }
 
-    public void displayHelpMenuView() {
-       
-        boolean done = false; //set the flag to not done
-        do{
-            //prompt for menu option
-            String menuOption = this.getMenuOptions();
-            
-            if (menuOption.toUpperCase().equals("X"))//user wants to quit
-            return; //exit the game
-            
-            //do the requested action and display the next view
-            done = this.doAction(menuOption);
-            
-        }while (!done);  
-    }
+//    public void displayHelpMenuView() {
+//       
+//        boolean done = false; //set the flag to not done
+//        do{
+//            //prompt for menu option
+//            String menuOption = this.getMenuOptions();
+//            
+//            if (menuOption.toUpperCase().equals("X"))//user wants to quit
+//            return; //exit the game
+//            
+//            //do the requested action and display the next view
+//            done = this.doAction(menuOption);
+//            
+//        }while (!done);  
+//    }
     
-    private boolean doAction(String choice){
+    public boolean doAction(String choice){
         
         choice = choice.toUpperCase();
         
