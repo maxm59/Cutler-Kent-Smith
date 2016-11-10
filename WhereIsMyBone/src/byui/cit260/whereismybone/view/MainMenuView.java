@@ -4,7 +4,9 @@
  * and open the template in the editor.
  */
 package byui.cit260.whereismybone.view;
+import byui.cit260.whereismybone.control.GameControl;
 import java.util.Scanner;
+import whereismybone.WhereIsMyBone;
 /**
  *
  * @author Maxi Cutler
@@ -137,6 +139,11 @@ public class MainMenuView {
     }
     private void startNewGame(){
         System.out.println("Start new game menu");
+        GameControl.createNewGame(WhereIsMyBone.getPlayer());
+        
+        //Display the Game Menu
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.displayMenu();
     }
     
     private void loadExistingGame(){
