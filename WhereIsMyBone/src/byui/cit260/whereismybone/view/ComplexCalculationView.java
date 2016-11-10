@@ -132,9 +132,15 @@ public class ComplexCalculationView {
     
     public void displayCubicInchesView(){
         System.out.println("Debug: Display Cubic Inches View");
+        
     }
     public void displaySqYardView(){
         System.out.println("Debug: Display Square Yard View");
+        
+        //Display the Square Yard View 
+        SqYardView sqYardView = new SqYardView();
+        sqYardView.displaySqYardView();
+        
     }
     public void displayCylinderVolumeView(){
         System.out.println("Debug: Display Cylinder Volume View");

@@ -115,7 +115,7 @@ public class SqYardView {
         System.out.println("Debug: Display Square Yard View");
     }
     
-    private void displaySqYardView() {
+    void displaySqYardView() {
         
         ComplexCalculationView complexCalculationView = new ComplexCalculationView();
         complexCalculationView.displayComplexCalculationView();
