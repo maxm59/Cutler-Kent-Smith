@@ -133,6 +133,8 @@ public class ComplexCalculationView {
     public void displayCubicInchesView(){
         System.out.println("I see a big box. I wonder if my bone is in it?");
         
+        CubicInchesView cubicInchesView = new CubicInchesView();
+        cubicInchesView.display();
 //        //Display the CubicInches of cubicInches View
 //        CubicInchesView cubicInchesView = new CubicInchesView();
 //        cubicInchesView.display();
