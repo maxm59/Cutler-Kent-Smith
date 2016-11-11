@@ -27,15 +27,15 @@ public class MainMenuView extends View{
                 "\n     `-'               `-'    " +
                 "\n" + 
                 "\n     N =   New Game          " +
+                "\n     H =   Get Help          " +
                 "\n     L =   Load a Saved Game " +
                 "\n     S =   Save Game         " +
-                "\n     H =   Get Help          " +
                 "\n     X =   Exit Game         " +
                 "\n" +
                 "\n     C =   Complex Calculation View Test" +
                 "\n" +
                 "\n" +
-                "\n  To begin, please enter your choice:" +
+                "\n     To begin, please enter your choice:" +
                 "\n" +
                 "\n==================================================" +
                 "\n== Game Creators - Rick S. | Maxi C. | Brian K. ==" +

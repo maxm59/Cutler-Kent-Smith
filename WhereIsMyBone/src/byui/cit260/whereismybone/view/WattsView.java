@@ -4,7 +4,7 @@ import byui.cit260.whereismybone.control.ComplexCalculationsControl;
 import java.util.Scanner;
 /**
  *
- * @author Maxine Cutler
+ * @author Maxi Cutler
  */
 public class WattsView extends View {
 

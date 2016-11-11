@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author Maxi C.
+ * @author Maxi Cutler
  */
 public class HelpMenuView extends View{
 
@@ -40,46 +40,7 @@ public class HelpMenuView extends View{
                 "\n==================================================" +
                 "\n==================================================" );        
     }
-    
-//    public void displayBanner()
-//    {
-//        
-//        menuOptions = getMenuOptions();
-//
-//    }
-    
-//    private String getMenuOptions() {
-//        
-//        boolean exitMenu = false;
-//        String menu = "";
-//        
-//        Scanner keyboard = new Scanner(System.in);
-//        
-//        while (!exitMenu){
-//            System.out.println(menuOptions);
-//            String input = keyboard.nextLine();
-//
-//            if(input.length()  >= 1)
-//            {
-//                char keyEntered = input.toUpperCase().charAt(0);
-//                
-//                if(keyEntered == 'X'){
-//                    //User wants to exit
-//                    menu = "X";
-//                    exitMenu = true;
-//                }
-//                else{
-//                    
-//                    exitMenu = doAction(input);
-//                }
-//            }
-//            else{
-//             System.out.println("Your choice must be at least 1 character.");
-//            }
-//        }   
-//        return menu;               
-//    }
-    
+
 
     private void displayObjectGameMenu(){
         System.out.println("Display Game Objective");
@@ -249,22 +210,6 @@ public class HelpMenuView extends View{
             }
         }
     }
-
-//    public void displayHelpMenuView() {
-//       
-//        boolean done = false; //set the flag to not done
-//        do{
-//            //prompt for menu option
-//            String menuOption = this.getMenuOptions();
-//            
-//            if (menuOption.toUpperCase().equals("X"))//user wants to quit
-//            return; //exit the game
-//            
-//            //do the requested action and display the next view
-//            done = this.doAction(menuOption);
-//            
-//        }while (!done);  
-//    }
     
     public boolean doAction(String choice){
         

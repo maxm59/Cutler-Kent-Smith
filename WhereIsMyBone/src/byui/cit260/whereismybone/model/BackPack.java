@@ -8,7 +8,7 @@ import java.io.Serializable;
 import java.util.Objects;
 /**
  *
- * @author Maxine Cutler
+ * @author Maxi Cutler
  */
 public class BackPack implements Serializable{
 

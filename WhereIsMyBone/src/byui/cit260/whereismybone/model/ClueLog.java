@@ -10,7 +10,7 @@ import java.util.Objects;
 
 /**
  *
- * @author Brian
+ * @author Brian Kent
  * corrected Clues to ClueLog by Maxine
  * according to UML Model and fix all the errors
  * errors and add this class to the main

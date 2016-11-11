@@ -9,7 +9,7 @@ import java.util.Objects;
 
 /**
  *
- * @author ricte
+ * @author Smit-Rick
  */
 public class Game {
 

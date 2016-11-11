@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author Brian
+ * @author Brian Kent
  */
 public class CubicInchesView {
     private String menuOptions = "";

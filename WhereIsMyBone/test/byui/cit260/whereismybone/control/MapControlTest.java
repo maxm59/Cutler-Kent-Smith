@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author ricte
+ * @author Smith-Rick
  */
 public class MapControlTest {
     

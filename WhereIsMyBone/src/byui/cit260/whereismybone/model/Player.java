@@ -10,7 +10,7 @@ import java.util.Objects;
 
 /**
  *
- * @author ricte
+ * @author Smith-Rick
  */
 public class Player {
     

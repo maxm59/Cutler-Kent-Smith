@@ -8,7 +8,7 @@ import java.io.Serializable;
 import java.util.Objects;
 /**
  *
- * @author Brian
+ * @author Brian Kent
  */
 public class Actor implements Serializable {
     

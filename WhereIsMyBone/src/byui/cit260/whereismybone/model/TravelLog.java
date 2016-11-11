@@ -9,7 +9,7 @@ import java.util.Objects;
 
 /**
  *
- * @author Maxine Cutler
+ * @author Maxi Cutler
  */
 public class TravelLog implements Serializable {
     

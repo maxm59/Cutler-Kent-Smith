@@ -4,7 +4,7 @@ import byui.cit260.whereismybone.control.ComplexCalculationsControl;
 import java.util.Scanner;
 /**
  *
- * @author Maxi C.
+ * @author Maxi Cutler
  * 
  * This view class contains the view for
  * the square area calculation of the backyard.
