@@ -141,7 +141,7 @@ public class WattsView extends View {
                 "\n    (   ,-'`       `'-,   )   " +
                 "\n     `-'               `-'    " +
                 "\n                                                   " +
-                "\n     Ah, I can seew the wires that are sparking.   " +
+                "\n     Ah, I can see the wires that are sparking.   " +
                 "\n     Thank you for your help. Oh, Oh, there is     " +
                 "\n     cat DeVil laughing at me.                     " +
                 "\n                                                   " +

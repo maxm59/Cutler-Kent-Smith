@@ -75,7 +75,7 @@ public class CylinderAreaView extends View {
        Scanner keyboard = new Scanner(System.in);
         
         boolean exitMenu = false;
-        String value = "";
+        String value;
 
         Integer iValue;
         
