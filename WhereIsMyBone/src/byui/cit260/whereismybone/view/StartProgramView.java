@@ -23,9 +23,7 @@ public class StartProgramView {
         //Our banner contains the banner plus username prompt/ 
         this.displayBannerAndPrompt();
         
-    
     }
-
     
     private void displayBannerAndPrompt() {
         String welcomeBanner = "";
@@ -33,11 +31,11 @@ public class StartProgramView {
                   "===================================================" +
                 "\n=============  WHERE IS MY BONE? ==================" +
                 "\n===================================================" +
-                "\n     .-.               .-.                         " +
-                "\n    (   `-._________.-'   )                        " +
-                "\n     >=     _______     =<                         " +
-                "\n    (   ,-'`       `'-,   )                        " +
-                "\n     `-'               `-'                         " +
+                "\n             .-.               .-.                 " +
+                "\n            (   `-._________.-'   )                " +
+                "\n             >=     _______     =<                 " +
+                "\n            (   ,-'`       `'-,   )                " +
+                "\n             `-'               `-'                 " +
                 "\n  This game is a Carmen Sandiego style game. You're" +
                 "\n  enemy is the Cat DeVil Gang. Members of that gang" +
                 "\n  have stolen your bone. Your job is to track down " +
@@ -48,11 +46,11 @@ public class StartProgramView {
                 "\n  To begin, please enter your name:                " +
                 "\n                                                   " +
                 "\n===================================================" +
-                "\n= Game Creators - Rick S. | Maxine C. | Brian K. ==" +
+                "\n== Game Creators - Rick S. | Maxi C. | Brian K.  ==" +
                 "\n===================================================" ;   
+        
         System.out.println(welcomeBanner);
-        
-        
+
     }
     
     private void displayGenderPrompt(Player player) {
@@ -61,19 +59,17 @@ public class StartProgramView {
                   "==================================================" +
                 "\n=============  WHERE IS MY BONE? =================" +
                 "\n==================================================" +
-                "\n     .-.               .-.    " +
-                "\n    (   `-._________.-'   )   " +
-                "\n     >=     _______     =<    " +
-                "\n    (   ,-'`       `'-,   )   " +
-                "\n     `-'               `-'    " +
+                "\n             .-.               .-.                " +
+                "\n            (   `-._________.-'   )               " +
+                "\n             >=     _______     =<                " +
+                "\n            (   ,-'`       `'-,   )               " +
+                "\n             `-'               `-'                " +
+                "\n   Welcome Detective " + player.getName() +
                 "\n" +
-                "\n" +
-                "\n  Welcome Detective " + player.getName() +
-                "\n" +
-                "\n  Are you (M)ale or (F)emale?" +
+                "\n   Are you (M)ale or (F)emale?" +
                 "\n" +
                 "\n==================================================" +
-                "\n= Game Creators - Rick S. | Maxine C. | Brian K. = " +
+                "\n== Game Creators - Rick S. | Maxi C. | Brian K. ==" +
                 "\n==================================================" ;
         
         System.out.println(welcomeBanner);      
@@ -87,11 +83,11 @@ public class StartProgramView {
                   "==================================================" +
                 "\n=============  WHERE IS MY BONE? =================" +
                 "\n==================================================" +
-                "\n     .-.               .-.    " +
-                "\n    (   `-._________.-'   )   " +
-                "\n     >=     _______     =<    " +
-                "\n    (   ,-'`       `'-,   )   " +
-                "\n     `-'               `-'    " +
+                "\n             .-.               .-.                " +
+                "\n            (   `-._________.-'   )               " +
+                "\n             >=     _______     =<                " +
+                "\n            (   ,-'`       `'-,   )               " +
+                "\n             `-'               `-'                " +
                 "\n" +
                 "\n" +
                 "\n  Welcome Detective " + player.getName() + "! You are   " +
@@ -103,7 +99,7 @@ public class StartProgramView {
                 "\n         Press ANY key to continue..." +
                 "\n" +
                 "\n==================================================" +
-                "\n= Game Creators - Rick S. | Maxine C. | Brian K. = " +
+                "\n== Game Creators - Rick S. | Maxi C. | Brian K. ==" +
                 "\n==================================================" ;
         
         System.out.println(welcomeBanner);

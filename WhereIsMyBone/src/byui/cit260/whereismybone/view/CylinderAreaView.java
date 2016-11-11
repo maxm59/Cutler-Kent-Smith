@@ -4,7 +4,7 @@ import byui.cit260.whereismybone.control.ComplexCalculationsControl;
 import java.util.Scanner;
 /**
  *
- * @author Maxine Cutler
+ * @author Maxi Cutler
  */
 public class CylinderAreaView extends View {
 
@@ -17,15 +17,23 @@ public class CylinderAreaView extends View {
         //this.displayMenu();
         
         super(
-                  "***************************************************" +
-                "\n*                                                 *" +
-                "\n*     I saw this pipe. I wonder if my bone is     *" +
-                "\n*     in here? Can you help me find it? By        *" +
-                "\n*     calculating its area to reveal its secret?  *" +
-                "\n*                                                 *" +
-                "\n*     Please enter a number for the height:       *" +
-                "\n                                                  *" +         
-                "\n*=================================================*" );           
+                  "==================================================" +
+                "\n               WHERE IS MY BONE?                  " +
+                "\n               I found this pipe                  " +
+                "\n==================================================" +
+                "\n     .-.               .-.    " +
+                "\n    (   `-._________.-'   )   " +
+                "\n     >=     _______     =<    " +
+                "\n    (   ,-'`       `'-,   )   " +
+                "\n     `-'               `-'    " +
+                "\n                                                  " +  
+                "\n      I saw this pipe. I wonder if my bone is     " +
+                "\n      in here? Can you help me find it? By        " +
+                "\n      calculating its area to reveal its secret?  " +
+                "\n                                                  " +
+                "\n      Please enter a number for the height:       " +
+                "\n                                                  " +         
+                "\n==================================================" );           
         
     }
 
@@ -96,17 +104,25 @@ public class CylinderAreaView extends View {
     private void promptForDiameter() {
 
         String prompt =
-                  "***************************************************" +
-                "\n*                                                 *" +
-                "\n*     I saw this pipe. I wonder if my bone is     *" +
-                "\n*     in here? Can you help me find it? By        *" +
-                "\n*     calculating its area to reveal the bone.    *" +
-                "\n*                                                 *" +
-                "\n*     Height: " + Double.toString(this.height)       +
-                "\n*                                                 *" +
-                "\n*     Please enter a number for the Diameter:     *" +
-                "\n                                                  *" +         
-                "\n*==================================================" ; 
+                  "==================================================" +
+                "\n               WHERE IS MY BONE?                  " +
+                "\n               I found this pipe                  " +
+                "\n==================================================" +
+                "\n     .-.               .-.    " +
+                "\n    (   `-._________.-'   )   " +
+                "\n     >=     _______     =<    " +
+                "\n    (   ,-'`       `'-,   )   " +
+                "\n     `-'               `-'    " +
+                "\n                                                  " +  
+                "\n      I saw this pipe. I wonder if my bone is     " +
+                "\n      in here? Can you help me fit in it? By      " +
+                "\n      calculating its area to reveal the bone.    " +
+                "\n                                                  " +
+                "\n      Height: " + Double.toString(this.height)      +
+                "\n                                                  " +
+                "\n      Please enter a number for the Diameter:     " +
+                "\n                                                  " +         
+                "\n==================================================" ; 
 
         System.out.println(prompt);
     }
@@ -114,19 +130,27 @@ public class CylinderAreaView extends View {
         private void showResult() {
 
         String prompt =
-                  "***************************************************" +
-                "\n*                                                 *" +                
-                "\n*     I looked inside and saw no bone.            *" +
-                "\n*     Thank you for your help. I wonder where     *" +
-                "\n*     cat DeVille is now. Let's go.               *" +
-                "\n*                                                 *" +
-                "\n*                                                 *" +
-                "\n*     Height: " + this.height         +
-                "\n*     Diameter: " + this.diameter       +
-                "\n*                                                 *" +
-                "\n*     Result: " + Double.toString(this.calcResult)   +
-                "\n                                                  *" +         
-                "\n*==================================================" ; 
+                  "==================================================" +
+                "\n               WHERE IS MY BONE?                  " +
+                "\n               I found this pipe                  " +
+                "\n==================================================" +
+                "\n     .-.               .-.    " +
+                "\n    (   `-._________.-'   )   " +
+                "\n     >=     _______     =<    " +
+                "\n    (   ,-'`       `'-,   )   " +
+                "\n     `-'               `-'    " +
+                "\n                                                  " +              
+                "\n      I can fit and looked inside, ah no bone.    " +
+                "\n      Thank you for your help. I wonder where     " +
+                "\n      cat DeVille is now. Let's go.               " +
+                "\n                                                  " +
+                "\n                                                  " +
+                "\n      Height: " + this.height                       +
+                "\n      Diameter: " + this.diameter                   +
+                "\n                                                  " +
+                "\n      Result: " + Double.toString(this.calcResult)  +
+                "\n                                                  " +         
+                "\n==================================================" ; 
 
         System.out.println(prompt);
     }

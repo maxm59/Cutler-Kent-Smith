@@ -4,7 +4,7 @@ import byui.cit260.whereismybone.control.ComplexCalculationsControl;
 import java.util.Scanner;
 /**
  *
- * @author Maxine Cutler
+ * @author Maxi C.
  * 
  * This view class contains the view for
  * the square area calculation of the backyard.
@@ -21,16 +21,24 @@ public class SqYardView extends View{
         //this.displayMenu();
         
         super(
-                  "***************************************************" +
-                "\n*                                                 *" +
-                "\n*     This is my backyard. My bone has to be      *" +
-                "\n*     here, buried in some hole. Can you help     *" +
-                "\n*     find it? Lets figure out the square area    *" +
-                "\n*     of my backyard. To reveal the secret spot.  *" +
-                "\n*                                                 *" +
-                "\n*     Please enter a number for the width:        *" +
-                "\n                                                   " +         
-                "\n***************************************************" );           
+                  "==================================================" +
+                "\n               WHERE IS MY BONE?                  " +
+                "\n              This is my backyard                 " +
+                "\n==================================================" +
+                "\n     .-.               .-.    " +
+                "\n    (   `-._________.-'   )   " +
+                "\n     >=     _______     =<    " +
+                "\n    (   ,-'`       `'-,   )   " +
+                "\n     `-'               `-'    " +
+                "\n                                                  " +          
+                "\n     My bone has to be here, buried in a hole.    " +
+                "\n     Can you help me find it?                     " +
+                "\n     find it? Lets figure out the square area     " +
+                "\n     of my backyard. To reveal the secret spot.   " +
+                "\n                                                  " +
+                "\n     Please enter a number for the width:         " +
+                "\n                                                  " +         
+                "\n==================================================") ;           
         
     }
 
@@ -102,18 +110,25 @@ public class SqYardView extends View{
     private void promptForLength() {
 
         String prompt =
-                  "***************************************************" +
-                "\n*                                                 *" +
-                "\n*     This is my backyard. My bone has to be      *" +
-                "\n*     here, buried in some hole. Can you help     *" +
-                "\n*     find it? Lets figure out the square area    *" +
-                "\n*     of my backyard. To reveal the secret spot.  *" +
-                "\n*                                                 *" +
-                "\n*     Width: " + Double.toString(this.width)         +
-                "\n*                                                 *" +
-                "\n*     Please enter a number for the Lenght:       *" +
-                "\n                                                   " +         
-                "\n***************************************************";    
+                  "==================================================" +
+                "\n               WHERE IS MY BONE?                  " +
+                "\n              This is my backyard                 " +
+                "\n==================================================" +
+                "\n     .-.               .-.    " +
+                "\n    (   `-._________.-'   )   " +
+                "\n     >=     _______     =<    " +
+                "\n    (   ,-'`       `'-,   )   " +
+                "\n     `-'               `-'    " +
+                "\n                                                  " +          
+                "\n      I just sniffed out the width of the yard.   " +
+                "\n      I don't smell it. Can you help me find      " +
+                "\n      find the length of the yard?                " +
+                "\n                                                  " +
+                "\n      Width: " + Double.toString(this.width)        +
+                "\n                                                  " +
+                "\n      Please enter a number for the Lenght:       " +
+                "\n                                                  " +         
+                "\n==================================================" ;
 
         System.out.println(prompt);
     }
@@ -121,20 +136,28 @@ public class SqYardView extends View{
         private void showResult() {
 
         String prompt =
-                  "***************************************************" +
-                "\n*                                                 *" +
-                "\n*     This is my backyard. My bone has to be      *" +
-                "\n*     here, buried in some hole. Can you help     *" +
-                "\n*     find it? Lets figure out the square area    *" +
-                "\n*     of my backyard. To reveal the secret spot.  *" +
-                "\n*                                                 *" +
-                "\n*     Width: " + this.width         +
-                "\n*     Length: " + this.length       +
-                "\n*                                                 *" +
-                "\n*     Result: " + Double.toString(this.calcResult)   +
-                "\n*     Wow great Job!                              *" +
-                "\n                                                  *" +         
-                "\n***************************************************";    
+                  "==================================================" +
+                "\n               WHERE IS MY BONE?                  " +
+                "\n              This is my backyard                 " +
+                "\n==================================================" +
+                "\n     .-.               .-.    " +
+                "\n    (   `-._________.-'   )   " +
+                "\n     >=     _______     =<    " +
+                "\n    (   ,-'`       `'-,   )   " +
+                "\n     `-'               `-'    " +
+                "\n                                                  " +   
+                "\n     This is my backyard. My bone has to be       " +
+                "\n     here, buried in some hole. Can you help      " +
+                "\n     find it? Lets figure out the square area     " +
+                "\n     of my backyard. To reveal the secret spot.   " +
+                "\n                                                  " +
+                "\n     Width: " + this.width         +
+                "\n     Length: " + this.length       +
+                "\n                                                   " +
+                "\n     Result: " + Double.toString(this.calcResult)    +
+                "\n     Wow great Job!                                " +
+                "\n                                                   " +         
+                "\n===================================================" ;    
 
         System.out.println(prompt);
     }

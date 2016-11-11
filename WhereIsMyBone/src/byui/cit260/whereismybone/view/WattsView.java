@@ -17,15 +17,23 @@ public class WattsView extends View {
         //this.displayMenu();
         
         super(
-                  "***************************************************" +
-                "\n*                                                 *" +
-                "\n*     We need to walk very carefully around here! *" +
-                "\n*     These electrical wires are dangerous.       *" +
-                "\n*     Help me to know which wires are hot.        *" +
-                "\n*                                                 *" +
-                "\n*     Please enter a number for the volts:        *" +
-                "\n                                                   " +         
-                "\n*==================================================" );           
+                  "==================================================" +
+                "\n               WHERE IS MY BONE?                  " +
+                "\n            Beware! Down Power Lines!             " +
+                "\n==================================================" +
+                "\n     .-.               .-.    " +
+                "\n    (   `-._________.-'   )   " +
+                "\n     >=     _______     =<    " +
+                "\n    (   ,-'`       `'-,   )   " +
+                "\n     `-'               `-'    " +
+                "\n                                                  " +
+                "\n     We need to walk very carefully around here!  " +
+                "\n     These electrical wires are dangerous.        " +
+                "\n     Help me to know which wires are hot.         " +
+                "\n                                                  " +
+                "\n     Please enter a number for the volts:         " +
+                "\n                                                  " +         
+                "\n==================================================" );           
         
     }
 
@@ -97,17 +105,25 @@ public class WattsView extends View {
     private void promptForAmps() {
 
         String prompt =
-                  "***************************************************" +
-                "\n*                                                 *" +
-                "\n*     We need to walk very carefully around here! *" +
-                "\n*     These electrical wires are dangerous.       *" +
-                "\n*     Help me to know which wires are hot.        *" +
-                "\n*                                                 *" +
-                "\n*     Volts: " + Double.toString(this.volts)         +
-                "\n*                                                 *" +
-                "\n*     Please enter a number for the Amps:         *" +
-                "\n                                                  *" +         
-                "\n*==================================================" ; 
+                  "==================================================" +
+                "\n               WHERE IS MY BONE?                  " +
+                "\n            Beware! Down Power Lines!             " +
+                "\n==================================================" +
+                "\n     .-.               .-.    " +
+                "\n    (   `-._________.-'   )   " +
+                "\n     >=     _______     =<    " +
+                "\n    (   ,-'`       `'-,   )   " +
+                "\n     `-'               `-'    " +
+                "\n                                                  " +
+                "\n     Thank you, but I don't see the wires that    " +
+                "\n     are sparking. I don't want to step on a hot  " +
+                "\n     wire. Help me!!                              " +
+                "\n                                                  " +
+                "\n     Volts: " + Double.toString(this.volts)         +
+                "\n                                                  " +
+                "\n     Please enter a number for the Amps:          " +
+                "\n                                                  " +         
+                "\n==================================================" ; 
 
         System.out.println(prompt);
     }
@@ -115,18 +131,26 @@ public class WattsView extends View {
         private void showResult() {
 
         String prompt =
-                  "***************************************************" +
-                "\n*                                                 *" +
-                "\n*     Ah, I see now. Thank you for your help.     *" +
-                "\n*     Now, just walk very carefully. I see        *" +
-                "\n*     cat DeVille laughing at me.                 *" +
-                "\n*                                                 *" +
-                "\n*     Volts: " + this.volts                          +
-                "\n*     Amps: " + this.amps                            +
-                "\n*                                                 *" +
-                "\n*     Result: " + Double.toString(this.calcResult)   +
-                "\n                                                  *" +         
-                "\n*==================================================" ; 
+                  "==================================================" +
+                "\n               WHERE IS MY BONE?                  " +
+                "\n            Beware! Down Power Lines!             " +
+                "\n==================================================" +
+                "\n     .-.               .-.    " +
+                "\n    (   `-._________.-'   )   " +
+                "\n     >=     _______     =<    " +
+                "\n    (   ,-'`       `'-,   )   " +
+                "\n     `-'               `-'    " +
+                "\n                                                   " +
+                "\n     Ah, I can seew the wires that are sparking.   " +
+                "\n     Thank you for your help. Oh, Oh, there is     " +
+                "\n     cat DeVil laughing at me.                     " +
+                "\n                                                   " +
+                "\n     Volts: " + this.volts                           +
+                "\n     Amps: " + this.amps                             +
+                "\n                                                   " +
+                "\n     Result: " + Double.toString(this.calcResult)    +
+                "\n                                                   " +         
+                "\n===================================================" ; 
 
         System.out.println(prompt);
     }

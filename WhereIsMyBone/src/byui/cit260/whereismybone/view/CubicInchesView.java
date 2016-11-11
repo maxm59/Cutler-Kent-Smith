@@ -37,7 +37,7 @@ public class CubicInchesView {
                 "\n     X =   Exit This View    " + 
                 "\n" +
                 "\n==================================================" +
-                "\n= Game Creators - Rick S. | Maxine C. | Brian K. = " +
+                "\n== Game Creators - Rick S. | Maxi C. | Brian K. = " +
                 "\n==================================================" ;        
     }
     

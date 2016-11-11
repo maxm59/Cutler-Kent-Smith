@@ -16,7 +16,7 @@ public class MainMenuView extends View{
     public MainMenuView() {
 
        super(
-                "==================================================" +
+                  "==================================================" +
                 "\n               WHERE IS MY BONE?                  " +
                 "\n                   MAIN MENU                      " +
                 "\n==================================================" +
@@ -38,20 +38,14 @@ public class MainMenuView extends View{
                 "\n  To begin, please enter your choice:" +
                 "\n" +
                 "\n==================================================" +
-                "\n= Game Creators - Rick S. | Maxine C. | Brian K. = " +
+                "\n== Game Creators - Rick S. | Maxi C. | Brian K. ==" +
                 "\n==================================================" );        
     }
-    
-//    public void displayBanner()
-//    {
-//        
-//        menuOptions = getMenuOptions();
-//
-//    }
 
     private void displayBannerWarning()
     {
-        String menuBanner = "==================================================" +
+        String menuBanner = 
+                  "==================================================" +
                 "\n=============  WHERE IS MY BONE? =================" +
                 "\n==================================================" +
                 "\n     .-.               .-.    " +
@@ -73,39 +67,6 @@ public class MainMenuView extends View{
         
         System.out.println(menuBanner);
     }
-    
-//    private String getMenuOptions() {
-//        
-//        boolean exitMenu = false;
-//        String menu = "";
-//        
-//        Scanner keyboard = new Scanner(System.in);
-//        
-//        while (!exitMenu){
-//            System.out.println(menuOptions);
-//            String input = keyboard.nextLine();
-//
-//            if(input.length()  >= 1)
-//            {
-//                
-//                char keyEntered = input.toUpperCase().charAt(0);
-//                
-//                if(keyEntered == 'X'){
-//                    //User wants to exit
-//                    System.exit(0);
-//                }
-//                else{
-//                    
-//                    exitMenu = doAction(input);
-//                }
-//                
-//            }
-//            else{
-//             System.out.println("Your choice must be at least 1 character.");
-//            }
-//        }   
-//            return menu;               
-//        }
     
     public boolean doAction(String choice){
         
@@ -181,23 +142,7 @@ public class MainMenuView extends View{
             }
         }
     }
-
-//    public void displayMainMenuView() {
-//       
-//        boolean done = false; //set the flag to not done
-//        do{
-//            //prompt for menu option
-//            String menuOption = this.getMenuOptions();
-//            
-//            if (menuOption.toUpperCase().equals("X"))//user wants to quit
-//                return; //exit the game
-//            
-//            //do the requested action and display the next view
-//            done = this.doAction(menuOption);
-//            
-//        }while (!done);  
-//    }
-
+    
     private void displayComplexCalculationView() {
         
         ComplexCalculationView complexCalculationView = new ComplexCalculationView();
