@@ -28,8 +28,8 @@ public class CylinderAreaView extends View {
                 "\n     `-'               `-'    " +
                 "\n                                                  " +  
                 "\n      I saw this pipe. I wonder if my bone is     " +
-                "\n      in here? Can you help me find it? By        " +
-                "\n      calculating its area to reveal its secret?  " +
+                "\n      in here?       Can you help me?             " +
+                "\n      Lets see if I fit.                          " +
                 "\n                                                  " +
                 "\n      Please enter a number for the height:       " +
                 "\n                                                  " +         
@@ -114,9 +114,9 @@ public class CylinderAreaView extends View {
                 "\n    (   ,-'`       `'-,   )   " +
                 "\n     `-'               `-'    " +
                 "\n                                                  " +  
-                "\n      I saw this pipe. I wonder if my bone is     " +
-                "\n      in here? Can you help me fit in it? By      " +
-                "\n      calculating its area to reveal the bone.    " +
+                "\n      Well, the height looks good, but I need     " +
+                "\n      the diameter. Does my body fit?             " +
+                "\n                                                  " +
                 "\n                                                  " +
                 "\n      Height: " + Double.toString(this.height)      +
                 "\n                                                  " +
@@ -149,7 +149,8 @@ public class CylinderAreaView extends View {
                 "\n      Diameter: " + this.diameter                   +
                 "\n                                                  " +
                 "\n      Result: " + Double.toString(this.calcResult)  +
-                "\n                                                  " +         
+                "\n      Great Job. Gotta keep on moving.            " +   
+                "\n                                                  " +
                 "\n==================================================" ; 
 
         System.out.println(prompt);

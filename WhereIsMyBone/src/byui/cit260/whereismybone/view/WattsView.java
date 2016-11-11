@@ -149,7 +149,7 @@ public class WattsView extends View {
                 "\n     Amps: " + this.amps                             +
                 "\n                                                   " +
                 "\n     Result: " + Double.toString(this.calcResult)    +
-                "\n                                                   " +         
+                "\n     I gotta catch that cat!                       " +         
                 "\n===================================================" ; 
 
         System.out.println(prompt);

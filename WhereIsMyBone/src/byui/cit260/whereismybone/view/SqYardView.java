@@ -32,9 +32,9 @@ public class SqYardView extends View{
                 "\n     `-'               `-'    " +
                 "\n                                                  " +          
                 "\n     My bone has to be here, buried in a hole.    " +
-                "\n     Can you help me find it?                     " +
-                "\n     find it? Lets figure out the square area     " +
-                "\n     of my backyard. To reveal the secret spot.   " +
+                "\n     Can you help me find it? Lets figure out     " +
+                "\n     the square area of my backyard, to reveal    " +
+                "\n     the secret spot.                             " +
                 "\n                                                  " +
                 "\n     Please enter a number for the width:         " +
                 "\n                                                  " +         
@@ -121,12 +121,12 @@ public class SqYardView extends View{
                 "\n     `-'               `-'    " +
                 "\n                                                  " +          
                 "\n      I just sniffed out the width of the yard.   " +
-                "\n      I don't smell it. Can you help me find      " +
-                "\n      find the length of the yard?                " +
+                "\n      I don't find it. Can you help me find       " +
+                "\n      the length of the yard?                     " +
                 "\n                                                  " +
                 "\n      Width: " + Double.toString(this.width)        +
                 "\n                                                  " +
-                "\n      Please enter a number for the Lenght:       " +
+                "\n      Please enter a number for the Length:       " +
                 "\n                                                  " +         
                 "\n==================================================" ;
 
@@ -146,10 +146,10 @@ public class SqYardView extends View{
                 "\n    (   ,-'`       `'-,   )   " +
                 "\n     `-'               `-'    " +
                 "\n                                                  " +   
-                "\n     This is my backyard. My bone has to be       " +
-                "\n     here, buried in some hole. Can you help      " +
-                "\n     find it? Lets figure out the square area     " +
-                "\n     of my backyard. To reveal the secret spot.   " +
+                "\n     I just finished walking and smelling the     " +
+                "\n     entire backyard. I didn't know my yard was   " +
+                "\n     that big. I don't see cat DeVil anywhere!    " +
+                "\n     But, WAIT! what is that? There's my BONE!    " +
                 "\n                                                  " +
                 "\n     Width: " + this.width         +
                 "\n     Length: " + this.length       +
