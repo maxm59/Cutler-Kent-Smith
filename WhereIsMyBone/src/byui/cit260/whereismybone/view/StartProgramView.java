@@ -115,8 +115,8 @@ public class StartProgramView {
             if (playersName.toUpperCase().equals("Q"))//user wants to quit
             return; //exit the game
             
-            //do the requested action and display the next view
-            done = this.doAction(playersName);
+                //do the requested action and display the next view
+                done = this.doAction(playersName);
             
         }while (!done);
         
