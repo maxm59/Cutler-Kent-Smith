@@ -155,7 +155,7 @@ public class ActorsView extends View {
     }
 
     private void displayActork() {
-        System.out.println("Ben is K9 handler/police officer, Nancy is his wife.");
+        System.out.println("Ben is your K9 handler/officer. Nancy is his wife.");
     }
 
     private void displayActorl() {
