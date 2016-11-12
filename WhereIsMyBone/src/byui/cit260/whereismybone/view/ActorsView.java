@@ -115,11 +115,11 @@ public class ActorsView extends View {
     }
 
     private void displayActora() {
-        System.out.print("I am 4yrs old and ParkLand with mommy.");
+        System.out.print("I am 4yrs old and play at ParkLand with mommy.");
     }
 
     private void displayActorb() {
-        System.out.println("I am Officer Pete, a K9 trainer.");
+        System.out.println("I am Officer Pete, a K9 unit trainer.");
     }
 
     private void displayActorc() {
@@ -155,7 +155,7 @@ public class ActorsView extends View {
     }
 
     private void displayActork() {
-        System.out.println("We are your owners. Ben is your handler.");
+        System.out.println("Ben is K9 handler/police officer, Nancy is his wife.");
     }
 
     private void displayActorl() {
