@@ -8,8 +8,10 @@ package byui.cit260.whereismybone.view;
 import java.util.Scanner;
 
 /**
- *
+ * *
  * @author Maxi Cutler
+ * @author Smith-Rick
+ * 
  */
 public abstract class View implements ViewInterface {
     

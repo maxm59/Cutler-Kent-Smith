@@ -4,9 +4,8 @@
  * and open the template in the editor.
  */
 package byui.cit260.whereismybone.view;
-import byui.cit260.whereismybone.control.GameControl;
+
 import java.util.Scanner;
-import whereismybone.WhereIsMyBone;
 
 /**
  *
@@ -17,40 +16,40 @@ public class ActorsView extends View {
     public ActorsView(){
 
        super(
-                  "==================================================" +
-                "\n               WHERE IS MY BONE?                  " +
-                "\n             Description of Charactors            " +
-                "\n==================================================" +
-                "\n                .-.               .-.             " +
-                "\n               (   `-._________.-'   )            " +
-                "\n                >=     _______     =<             " +
-                "\n               (   ,-'`       `'-,   )            " +
-                "\n                `-'               `-'             " +
-                "\n                                                  " + 
-                "\n             Tommy        =  ParkLand             " + 
-                "\n             Pete         =  K9 Precinct          " + 
-                "\n             Dr Mice      =  Animal Care          " + 
-                "\n             Mr Sam       =  Animal Selter        " + 
-                "\n             Mr Jones     =  Jones Bakery         " + 
-                "\n             Mr Steele    =  Steak Heaven         " + 
-                "\n             Ms Coco      =  Tex Mix Drive Inn    " +  
-                "\n             Ducks        =  ParkLand             " + 
-                "\n             Miss Ellie   =  Senior Care          " +  
-                "\n             The Smiths   =  Neighbor             " + 
-                "\n             Ben & Nancy  =  Owners               " + 
-                "\n             Mr Nono      =  ZooLand              " +            
-                "\n             Mr Catch     =  Seafood Eatery       " +
-                "\n             Animals      =  Zooland              " + 
-                "\n             Brad         =  Trump School         " + 
-                "\n             Mr Sneed     =  Trump School         " + 
-                "\n                                                  " +
-                "\n      To begin, please enter your choice:         " +  
-                "\n                                                  " +
-                "\n                   X   =  Exit                    " +
-                "\n                                                  " +
-                "\n==================================================" +
-                "\n     Find out who we are and Are we suspects?     " +
-                "\n==================================================" );        
+              "==================================================" +
+            "\n               WHERE IS MY BONE?                  " +
+            "\n             Description of Charactors            " +
+            "\n==================================================" +
+            "\n             .-.               .-.                " +
+            "\n            (   `-._________.-'   )               " +
+            "\n             >=     _______     =<                " +
+            "\n            (   ,-'`       `'-,   )               " +
+            "\n             `-'               `-'                " +
+            "\n                                                  " + 
+            "\n             A  =  Tommy, ParkLand                " + 
+            "\n             B  =  Pete, K9 Precinct              " + 
+            "\n             C  =  Dr. Mice, Animal Care          " + 
+            "\n             D  =  Mr Sam, Animal Shelter         " + 
+            "\n             E  =  Mr Jones, Jones Bakery         " + 
+            "\n             F  =  Mr Steele, Steak Heaven        " + 
+            "\n             G  =  Ms CoCo, Tex Mix Drive Inn     " +  
+            "\n             H  =  Ducks, ParkLand                " + 
+            "\n             I  =  Miss Ellie, Senior Care        " +  
+            "\n             J  =  The Smiths, Neighbor           " + 
+            "\n             K  =  Ben & Nancy,Owners             " + 
+            "\n             L  =  Mr Nono, ZooLand               " +            
+            "\n             M  =  Mr Catch, Seafood Eatery       " +
+            "\n             N  =  Animals, Zooland               " + 
+            "\n             O  =  Brad, Trump School             " + 
+            "\n             P  =  Mr Sneed, Trump School         " + 
+            "\n                                                  " +
+            "\n      To begin, please enter your choice:         " +  
+            "\n                                                  " +
+            "\n                   X   =  Exit                    " +
+            "\n                                                  " +
+            "\n==================================================" +
+            "\n     Find out who we are and Are we suspects?     " +
+            "\n==================================================" );        
     }
     
     @Override
@@ -58,53 +57,54 @@ public class ActorsView extends View {
         choice = choice.toUpperCase();
         
         switch (choice) {
-            case "Tommy": 
+            case "A": 
                 this.displayActora();
                 break;
-            case "Pete":
+            case "B":
                 this.displayActorb();
                 break;
-            case "Dr Mice":
+            case "C":
                 this.displayActorc();
                 break;
-            case "Mr Sam":
+            case "D":
                 this.displayActord();
                 break; 
-            case "Mr Jones":
+            case "E":
                 this.displayActore();
                 break;
-            case "Mr Steele": 
+            case "F": 
                 this.displayActorf();
                 break;
-            case "Ms Coco":
+            case "G":
                 this.displayActorg();
                 break;
-            case "Ducks":
+            case "H":
                 this.displayActorh();
                 break;
-            case "Miss Ellie":
+            case "I":
                 this.displayActori();
                 break; 
-            case "The Smiths":
+            case "J":
                 this.displayActorj();
                 break;
-            case "Ben & Nancy": 
+            case "K": 
                 this.displayActork();
                 break;
-            case "Mr NonoPete":
+            case "L":
                 this.displayActorl();
                 break;
-            case "Mr Catch":
+            case "M":
                 this.displayActorm();
                 break;
-            case "Animals":
+            case "N":
                 this.displayActorn();
                 break; 
-            case "Brad":
+            case "O":
                 this.displayActoro();
                 break;
-            case "Mr Sneed":
+            case "P":
                 this.displayActorp();
+                break;
             default:
                 System.out.println("\n***Invalid Selection*** Try again");
                 break; 
@@ -188,14 +188,12 @@ public class ActorsView extends View {
             String input = keyboard.nextLine();
             
             //Name validation
-            if(input.length() <= 0){
-                isValidEnter = true;
+            if(input.length() >0){
+                System.out.println("Please press <ENTER>.");
             }
             else {
-             System.out.println("Please press <ENTER>.");
+                isValidEnter = true;
             }
         }
     }
-    
-    
 }
