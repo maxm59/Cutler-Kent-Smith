@@ -30,8 +30,9 @@ public class HelpMenuView extends View{
                 "\n                                                  " + 
                 "\n         O =   Object of the game                 " +
                 "\n         C =   How to use Clues                   " +
-                "\n         M =   How to moove around                " +
-                "\n         A =   Actors Details                     " +                 
+                "\n         M =   How to move around                 " +        
+                "\n         A =   Actors Details                     " +
+                "\n         S =   Scenes Details                     " +   
                 "\n         V =   Villains Details                   " +
                 "\n         X =   Exit Help Menu                     " +
                 "\n                                                  " +
@@ -205,6 +206,9 @@ public class HelpMenuView extends View{
             case "A": //Display How TO Play Details
                 this.displayActorsView();
                 break;
+            case "S": //Display How TO Play Details
+                this.displaySceneView();
+                break;
             case "M": //Display info on how to move
                 this.displayHowToMove();
                 break;
@@ -229,6 +233,13 @@ public class HelpMenuView extends View{
         ActorsView actorsView = new ActorsView();
         actorsView.display();
 
+    }
+
+    private void displaySceneView() {
+        System.out.println("Display Scene Details.");
+        
+        SceneView sceneView = new SceneView();
+        sceneView.display();
     }
 
 }
