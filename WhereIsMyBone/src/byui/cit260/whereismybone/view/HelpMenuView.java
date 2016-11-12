@@ -8,7 +8,7 @@ package byui.cit260.whereismybone.view;
 import java.util.Scanner;
 
 /**
- *
+ * @author Smith-Rick
  * @author Maxi Cutler
  */
 public class HelpMenuView extends View{
@@ -28,12 +28,12 @@ public class HelpMenuView extends View{
                 "\n            (   ,-'`       `'-,   )               " +
                 "\n             `-'               `-'                " +
                 "\n                                                  " + 
-                "\n         O =   Obeject of the game.               " +
-                "\n         H =   How to play the game.              " +
-                "\n         M =   How to move around.                " +
-                "\n         C =   How to use Clues.                  " +
+                "\n         O =   Object of the game                 " +
+                "\n         C =   How to use Clues                   " +
+                "\n         M =   How to moove around                " +
+                "\n         A =   Actors Details                     " +                 
                 "\n         V =   Villains Details                   " +
-                "\n         X =   Exit Help Menu.                    " +
+                "\n         X =   Exit Help Menu                     " +
                 "\n                                                  " +
                 "\n         To begin, please enter your choice:      " +
                 "\n                                                  " +
@@ -44,7 +44,7 @@ public class HelpMenuView extends View{
 
     private void displayObjectGameMenu(){
         System.out.println("Display Game Objective");
-               String details = "";
+        String details = "";
         details = 
                   "==================================================" +
                 "\n== HELP: Game Objectives =========================" +
@@ -73,28 +73,9 @@ public class HelpMenuView extends View{
         System.out.println(details);
     }
     
-    private void displayHowToMenu(){
-        System.out.println("Display How TO Play Details");
-               String details = "";
-        details = 
-                  "==================================================" +
-                "\n== HELP: How to Play =============================" +
-                "\n==================================================" +
-                "\n=                                                =" +
-                "\n= EVALUATING IF THIS IS NEEDED. SEEMS REDUNDANT  =" +
-                "\n= TO THE OBJECTIVE MENU.                         =" +
-                "\n=                                                =" +
-                "\n=                                                =" +
-                "\n=                                                =" +
-                "\n==================================================" ;
-
-
-        System.out.println(details);
-    }
-    
     private void displayHowToMove(){
         System.out.println("Display info on how to move");
-               String details = "";
+        String details = "";
         details = 
                   "==================================================" +
                 "\n== HELP: How To Move =============================" +
@@ -132,7 +113,7 @@ public class HelpMenuView extends View{
     
     private void displayClues(){
         System.out.println("Display Clue info");       
-        String details = "";
+        String details;
         details = 
                   "==================================================" +
                 "\n== HELP: Clues ===================================" +
@@ -147,9 +128,8 @@ public class HelpMenuView extends View{
         System.out.println(details);
     }
     private void displayVillans(){
-        System.out.println("Display Villan info");
-        
-        String details = "";
+        System.out.println("Display Villan info");       
+        String details;
         details = 
                   "==================================================" +
                 "\n== HELP: Villain Details =========================" +
@@ -222,8 +202,8 @@ public class HelpMenuView extends View{
             case "O": //Display Game Objective
                 this.displayObjectGameMenu();
                 break;
-            case "H": //Display How TO Play Details
-                this.displayHowToMenu();
+            case "A": //Display How TO Play Details
+                this.displayActorsView();
                 break;
             case "M": //Display info on how to move
                 this.displayHowToMove();
@@ -242,4 +222,13 @@ public class HelpMenuView extends View{
         return false;  
     
     }
+
+    private void displayActorsView() {
+        System.out.println("Display Actors Details.");
+        
+        ActorsView actorsView = new ActorsView();
+        actorsView.display();
+
+    }
+
 }

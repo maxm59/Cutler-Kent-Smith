@@ -7,13 +7,18 @@ package byui.cit260.whereismybone.view;
 import byui.cit260.whereismybone.control.GameControl;
 import java.util.Scanner;
 import whereismybone.WhereIsMyBone;
+
 /**
  *
  * @author Maxi Cutler
  */
-public class MainMenuView extends View{
-        
-    public MainMenuView() {
+public class MainMenuView extends View {
+
+    private int height;
+    private int diameter;
+    private double calcResult;
+
+    public MainMenuView(){
 
        super(
                   "==================================================" +
@@ -68,6 +73,7 @@ public class MainMenuView extends View{
         System.out.println(menuBanner);
     }
     
+    @Override
     public boolean doAction(String choice){
         
         choice = choice.toUpperCase();
