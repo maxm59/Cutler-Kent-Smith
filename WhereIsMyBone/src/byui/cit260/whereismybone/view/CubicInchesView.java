@@ -5,18 +5,26 @@
  */
 package byui.cit260.whereismybone.view;
 
+import byui.cit260.whereismybone.control.ComplexCalculationsControl;
 import java.util.Scanner;
 
 /**
  *
  * @author Brian Kent
+ * @auther Maxi: Super class this view
+ * @auther Maxi: Coded all formulas
+ * 
  */
-public class CubicInchesView {
-    private String menuOptions = "";
-    
+public class CubicInchesView extends View {
+
+    private int width;
+    private int length;
+    private int height;
+    private double calcResult;
+             
     public CubicInchesView() {
 
-       this.menuOptions = 
+       super( 
                   "==================================================" +
                 "\n               WHERE IS MY BONE?                  " +
                 "\n               Is it in the Box?                  " +
@@ -31,157 +39,195 @@ public class CubicInchesView {
                 "\n     will fit in this box    " +
                 "\n     that we have found      " +
                 "\n                             " +
-                "\n     Please enter the size   " +
-                "\n     of the box.             " +
+                "\n     Please enter the width  " +
+                "\n     of the box:             " +
                 "\n" +
                 "\n     X =   Exit This View    " + 
                 "\n" +
                 "\n==================================================" +
                 "\n== Game Creators - Rick S. | Maxi C. | Brian K. = " +
-                "\n==================================================" ;        
+                "\n==================================================") ;        
     }
     
-    public void display()
-    {
+    @Override
+    public boolean doAction(String value){
         
-        menuOptions = getMenuOptions();
-
+        //double dValue = Double.parseDouble(value);
+        int iValue = Integer.parseInt(value);
+             
+        if(iValue <= 0){
+            System.out.println("\nInvalid value: "
+                    + "  The value must be greater than 0.");
+            return false;
+        }
+         
+        //Set Width
+        this.width = iValue;
+        
+        //Get Length
+        promptForLength();
+        getLength();
+        
+        //Get Height
+        promptForHeight();
+        getHeight();
+        
+        //Run calculation
+        ComplexCalculationsControl ccc = new ComplexCalculationsControl();
+        this.calcResult = ccc.calcCubicInches(this.width, this.length, this.height);
+        
+        //Display results - Temporary... 
+        showResult();
+        
+        return true;  
+    
     }
+    
+    private void promptForLength() {
 
-    private void displayBannerWarning()
-    {
-        String menuBanner = "==================================================" +
-                "\n=============  WHERE IS MY BONE? =================" +
+        String prompt =
+                  "==================================================" +
+                "\n               WHERE IS MY BONE?                  " +
+                "\n               Is it in the Box?                  " +
                 "\n==================================================" +
                 "\n     .-.               .-.    " +
                 "\n    (   `-._________.-'   )   " +
                 "\n     >=     _______     =<    " +
                 "\n    (   ,-'`       `'-,   )   " +
                 "\n     `-'               `-'    " +
-                "\n" +
-                "\n" +
-                "\n  WARNING - You will lose all unsaved progress. +" +
-                "    Proceed? (Y)es or (N)" +
-                "\n" +
-                "\n" +
-                "\n  Please enter your choice:" +
-                "\n" +
-                "\n==================================================" +
-                "\n" +
+                "\n                                                  " +          
+                "\n      My keen senses says I might be able to      " +
+                "\n      to see whats in the box, but I do need      " +
+                "\n      the length of the box.                      " +
+                "\n                                                  " +
+                "\n      Width: " + Double.toString(this.width)        +
+                "\n                                                  " +
+                "\n      Please enter a number for the Length:       " +
+                "\n                                                  " +         
                 "\n==================================================" ;
-        
-        System.out.println(menuBanner);
+
+        System.out.println(prompt);
     }
     
-    private String getMenuOptions() {
+    public void getLength(){
+       Scanner keyboard = new Scanner(System.in);
         
         boolean exitMenu = false;
-        String menu = "";
-        
-        Scanner keyboard = new Scanner(System.in);
+        String value;
+
+        Integer iValue;
         
         while (!exitMenu){
-            System.out.println(menuOptions);
-            String input = keyboard.nextLine();
-
-            if(input.length()  >= 1)
-            {
-                
-                char keyEntered = input.toUpperCase().charAt(0);
-                
-                if(keyEntered == 'X'){
-                    //User wants to exit
-                    System.exit(0);
-                }
-                else{
+                       
+            value = keyboard.nextLine();
+            value = value.trim();
+            
+            //dValue = Double.parseDouble(value);  
+            iValue = Integer.parseInt(value);
                     
-                    exitMenu = doAction(input);
-                }
-                
+           if(iValue <= 0){
+                System.out.println("\nInvalid value: "
+                    + "  The value must be greater than 0.");
+                continue;
             }
-            else{
-             System.out.println("Your choice must be at least 1 character.");
-            }
+           else{
+               this.length = iValue;
+           }
+            break;
         }   
-            return menu;               
-        }
-    
-    private boolean doAction(String choice){
-        
-        choice = choice.toUpperCase();
-        
-        switch (choice) {
-            case "W": //Show width of box
-                this.displayWidthOfBox();
-                break;
-            case "L":  //Show length of box
-                this.displayLengthOfBox();
-                break;
-            case "H": //Show height of box
-                this.displayHeightOfBox();
-                break;
-            default:
-                System.out.println("\n***Invalid Selection*** Try again");
-                break;
-             
-        }
-        return false;  
-    
-    }
-    private void displayWidthOfBox() {
-        System.out.println("The Width of the box is");
+          
     }
     
-    private void displayLengthOfBox(){
-        System.out.println("The Length of the box is");
+    private void promptForHeight() {
+
+        String prompt =
+                  "==================================================" +
+                "\n               WHERE IS MY BONE?                  " +
+                "\n               Is it in the box?                  " +
+                "\n==================================================" +
+                "\n     .-.               .-.    " +
+                "\n    (   `-._________.-'   )   " +
+                "\n     >=     _______     =<    " +
+                "\n    (   ,-'`       `'-,   )   " +
+                "\n     `-'               `-'    " +
+                "\n                                                  " +   
+                "\n     Oh, oh, I can't quite figure out if the      " +
+                "\n     bone is in it. And I can smell Cat DeVil     " +
+                "\n     was here. Do you think you can give me the   " +
+                "\n     height of the box?                           " +
+                "\n                                                  " +
+                "\n     Width: " + this.width         +
+                "\n     Length: " + this.length       +
+                "\n                                                  " +
+                "\n      Please enter a number for the Height:       " +
+                
+                "\n     Result: " + Double.toString(this.calcResult)    +
+                "\n                                                   " +
+                "\n                                                   " +         
+                "\n===================================================" ;    
+
+        System.out.println(prompt);
     }
     
-    private void displayHeightOfBox(){
-        System.out.println("The Height of the box is");
-    }
-    
-            
-    private void waitForEnter()
-    {
-        boolean isValidEnter = false;
+    private void getHeight() {
 
-        Scanner keyboard = new Scanner(System.in);
+        String prompt =
+                  "==================================================" +
+                "\n               WHERE IS MY BONE?                  " +
+                "\n               Is it in the box?                  " +
+                "\n==================================================" +
+                "\n     .-.               .-.    " +
+                "\n    (   `-._________.-'   )   " +
+                "\n     >=     _______     =<    " +
+                "\n    (   ,-'`       `'-,   )   " +
+                "\n     `-'               `-'    " +
+                "\n                                                  " +   
+                "\n     Oh, oh, I can't quite figure out if the      " +
+                "\n     bone is in it. And I can smell Cat DeVil     " +
+                "\n     was here. Do you think you can give me the   " +
+                "\n     height of the box?                           " +
+                "\n                                                  " +
+                "\n     Width: " + this.width         +
+                "\n     Length: " + this.length       +
+                "\n                                                  " +
+                "\n      Please enter a number for the Height:       " +
+                
+                "\n     Result: " + Double.toString(this.calcResult)    +
+                "\n                                                   " +
+                "\n                                                   " +         
+                "\n===================================================" ;
 
-        while (!isValidEnter){
-            String input = keyboard.nextLine();
-            
-            //Name validation
-            if(input.length() >= 0)
-            {
-                isValidEnter = true;
-            }
-            else{
-             System.out.println("Please press <ENTER>.");
-            }
-        }
-    }
-
-    public void displayMainMenuView() {
-       
-        boolean done = false; //set the flag to not done
-        do{
-            //prompt for menu option
-            String menuOption = this.getMenuOptions();
-            
-            if (menuOption.toUpperCase().equals("X"))//user wants to quit
-                return; //exit the game
-            
-            //do the requested action and display the next view
-            done = this.doAction(menuOption);
-            
-        }while (!done);  
+        System.out.println(prompt);
     }
 
-    public void displayCubicInchesView() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private void showResult() {
+ 
+        String prompt =
+                  "==================================================" +
+                "\n               WHERE IS MY BONE?                  " +
+                "\n               Is it in the box?                  " +
+                "\n==================================================" +
+                "\n     .-.               .-.    " +
+                "\n    (   `-._________.-'   )   " +
+                "\n     >=     _______     =<    " +
+                "\n    (   ,-'`       `'-,   )   " +
+                "\n     `-'               `-'    " +
+                "\n                                                  " +   
+                "\n     Oh, oh, I can't quite figure out if the      " +
+                "\n     bone is in it. And I can smell Cat DeVil     " +
+                "\n     was here. Do you think you can give me the   " +
+                "\n     height of the box?                           " +
+                "\n                                                  " +
+                "\n     Width: " + this.width   +
+                "\n     Length: " + this.length +
+                "\n     Height: " + this.height +
+                "\n                                                   " +                
+                "\n     Result: " + Double.toString(this.calcResult)    +
+                "\n     Wow great Job!                                " +
+                "\n                                                   " +         
+                "\n===================================================" ;    
+
+        System.out.println(prompt);
     }
 
-
-      
-    
 }

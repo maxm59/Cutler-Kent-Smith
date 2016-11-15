@@ -38,6 +38,7 @@ public class SceneView extends View {
             "\n                K  =  ZooLand                     " +            
             "\n                L  =  Seafood Eatery              " +
             "\n                M  =  Trump School                " + 
+            "\n                N  =  Cat Alley                   " +
             "\n                                                  " +
             "\n        To begin, please enter your choice:       " +  
             "\n                                                  " +
@@ -92,6 +93,9 @@ public class SceneView extends View {
             case "M":
                 this.displayScenem();
                 break;
+            case "N":
+                this.displayScenen();
+                break;
             default:
                 System.out.println("\n***Invalid Selection*** Try again");
                 break; 
@@ -114,45 +118,49 @@ public class SceneView extends View {
     }
     
     private void displayScened() {
-         System.out.println("Work in progress.");
+        System.out.println("Work in progress.");
     }
     
     private void displayScenee() {
-             System.out.println("Work in progress.");
+        System.out.println("Work in progress.");
     }
     
     private void displayScenef() {
-            System.out.println("Work in progress.");
+        System.out.println("Work in progress.");
     }
     
     private void displaySceneg() {
-             System.out.println("Work in progress.");
+        System.out.println("Work in progress.");
     }
     
     private void displaySceneh() {
-             System.out.println("Work in progress.");
+        System.out.println("Work in progress.");
     }
     
     private void displayScenei() {
-             System.out.println("Work in progress.");
+        System.out.println("Work in progress.");
     }
     
 
     private void displayScenej() {
-             System.out.println("Work in progress.");
+        System.out.println("Work in progress.");
     }
     
     private void displayScenek() {
-             System.out.println("Work in progress.");
+        System.out.println("Work in progress.");
     }
     
 
     private void displayScenel() {
-              System.out.println("Work in progress.");
+        System.out.println("Work in progress.");
     }
     
     private void displayScenem() {
-             System.out.println("Work in progress.");
+        System.out.println("Work in progress.");
+    }
+    
+    private void displayScenen() {
+        System.out.println("Work in progress.");
     }
     
     private void waitForEnter() {
@@ -173,4 +181,5 @@ public class SceneView extends View {
             }
         }
     }
+
 }
