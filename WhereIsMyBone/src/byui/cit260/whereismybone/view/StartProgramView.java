@@ -190,21 +190,17 @@ public class StartProgramView {
     
     private boolean doAction(String playersName) {
         
-        if(playersName.length() < 2){
+        if(playersName.length() < 2 || playersName == null){
             System.out.println("\nInvalid players name: "
                     + "  The name must be greater than two character in lenght");
             return false;
         }
         
+        Player player = new Player();
+        player.setName(playersName);
+
         //call createPLayer() control function
-        Player player = GameControl.createPlayer(playersName);
-        
-        if (player == null){
-            //if unsuccessful
-            System.out.println("\nError creating the player.");
-            return false;
-        }
-        
+        player = GameControl.createPlayer(player);
                
         //Gender prompt. 
         this.displayGenderPrompt(player);
