@@ -10,8 +10,6 @@ import byui.cit260.whereismybone.model.Game;
 import byui.cit260.whereismybone.model.Item;
 import byui.cit260.whereismybone.model.Map;
 import byui.cit260.whereismybone.model.Player;
-import java.util.HashSet;
-import java.util.Set;
 import whereismybone.WhereIsMyBone;
 
 /**
@@ -40,23 +38,19 @@ public class GameControl {
         //Move actors to starting positions in the map
         MapControl.moveActorsToStartingLocation(map);
               
-        
-//        if (playersName == null)
-//        {
-//            return null;
-//        }
-//        
-//        Player player = new Player();
-//        player.setName(playersName);
-//        
-//        WhereIsMyBone.setPlayer(player); //save the player
-        
         return player;
         
      }
 
     public static void createNewGame(Player player) {
-        System.out.println("\n*** createNewGame stub function called ***");
+        
+        Game game = new Game();
+        game.setPlayer(player);
+        
+        Map map = new Map();
+        game.setMap(map);
+                
+        WhereIsMyBone.setCurrentGame(game);
     }
 
     private static Item[] createItemList() {
@@ -68,8 +62,5 @@ public class GameControl {
         System.out.println("\n*** called createClueList() in GameControl ***");
         return null;
     }
-    
-    
-    
     
 }
