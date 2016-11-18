@@ -24,6 +24,18 @@ public class MapControl {
 
     static void moveActorsToStartingLocation(Map map) {
         System.out.println("\n*** called moveActorsToStartingLocation() in MapControl ***");
+        //movePlayer(map, 2, 2;
+        movePlayer(map,0,0);
+    }
+
+    public static void movePlayer(Map map, int row, int column) {
+        System.out.println("\n*** called movePlayer() in MapControl ***");
+//        map.setCurrentLocation(map.getLocations()[row][column]);
+//        map.getCurrentLocation().setVisited(true);
+//        
+//        map.setCurrentRow(row);
+//        map.setCurrentColumn(column);
+                        
     }
     
     public boolean validLocation(int row,int column){

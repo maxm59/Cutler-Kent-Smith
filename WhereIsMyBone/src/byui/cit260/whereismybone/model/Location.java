@@ -5,7 +5,9 @@
  */
 package byui.cit260.whereismybone.model;
 
+import byui.cit260.whereismybone.enums.Actor;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
@@ -15,8 +17,35 @@ import java.util.Objects;
 public class Location implements Serializable{
     
     //class instance variables
-    private Integer rowCount;
-    private Integer columnCount;
+    private int rowCount;
+    private int columnCount;
+    private boolean visited;
+    private Scene scene;
+    private ArrayList<Actor> actors;
+
+    public boolean isVisited() {
+        return visited;
+    }
+
+    public void setVisited(boolean visited) {
+        this.visited = visited;
+    }
+
+    public Scene getScene() {
+        return scene;
+    }
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
+    }
+
+    public ArrayList<Actor> getActors() {
+        return actors;
+    }
+
+    public void setActors(ArrayList<Actor> actors) {
+        this.actors = actors;
+    }
     private String name;
 
     //public Location(Integer rowCount, Integer columnCount, String name) {
