@@ -103,7 +103,7 @@ public class MainMenuView extends View {
     
     }
     private void startNewGame(){
-        System.out.println("Start new game menu");
+        //System.out.println("Start new game menu");
         GameControl.createNewGame(WhereIsMyBone.getPlayer());
         
         //Display the Game Menu

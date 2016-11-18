@@ -5,11 +5,26 @@
  */
 package byui.cit260.whereismybone.control;
 
+import byui.cit260.whereismybone.model.Map;
+
 /**
  *
  * @author Rick Smith
  */
 public class MapControl {
+
+    public static Map createMap() {
+        
+        //create the map
+        Map map = null;
+        
+        System.out.println("\n*** called createMap() in MapControl ***");
+        return map;
+    }
+
+    static void moveActorsToStartingLocation(Map map) {
+        System.out.println("\n*** called moveActorsToStartingLocation() in MapControl ***");
+    }
     
     public boolean validLocation(int row,int column){
         if (row < 1 || row > 5) {

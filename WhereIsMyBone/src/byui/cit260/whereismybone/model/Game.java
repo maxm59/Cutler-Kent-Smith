@@ -17,6 +17,45 @@ public class Game {
     //  number, which is why we use a Double vs an Integer.
     private Double totalTime; 
     
+    private Player player;
+    private Map map;
+    private Clue[] clueList;
+    private Item[] itemList;
+
+    public Item[] getItemList() {
+        return itemList;
+    }
+
+    public void setItemList(Item[] itemList) {
+        this.itemList = itemList;
+    }
+
+    public Clue[] getClueList() {
+        return clueList;
+    }
+
+    public void setClueList(Clue[] clueList) {
+        this.clueList = clueList;
+    }
+
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
+    
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+    
+    
     public Game() {
                 
     }

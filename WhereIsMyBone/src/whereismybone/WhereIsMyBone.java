@@ -1,6 +1,5 @@
 package whereismybone;
 
-import byui.cit260.whereismybone.model.Actor;
 import byui.cit260.whereismybone.model.BackPack;
 import byui.cit260.whereismybone.model.ClueLog;
 import byui.cit260.whereismybone.model.Game;
