@@ -5,13 +5,14 @@
  */
 package byui.cit260.whereismybone.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  *
  * @author Smit-Rick
  */
-public class Game {
+public class Game implements Serializable{
 
     //Starts at 24 hours. It can be reduced by hole numbers or fractions of a 
     //  number, which is why we use a Double vs an Integer.
