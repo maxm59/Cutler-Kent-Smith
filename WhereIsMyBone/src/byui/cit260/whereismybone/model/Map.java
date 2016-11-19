@@ -8,21 +8,21 @@ package byui.cit260.whereismybone.model;
 //
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Objects;
 
 /**
  *
  * @author Smith-Rick
+ * 
  */
 public class Map implements Serializable{
         
     //class instance variables
-    private int rowCount;
-    private int columnCount;
     private Location[][] locations;
     
     //composition 'has-a' relationship... to the Locations class
-    private ArrayList <Location> location;
+//    private ArrayList <Location> location;
     private int noOfRows;
     private int noOfColumns;
     
@@ -87,8 +87,8 @@ public class Map implements Serializable{
             for (int column = 0; column < noOfColumns; column++){
                 //create and initialize new Location object instance
                 Location location = new Location();
-                location.setColumnCount(columnCount);
-                location.setRowCount(rowCount);
+                location.setColumnCount(column);
+                location.setRowCount(row);
                 location.setVisited(false);
 
                 //Assign the Location object to the current position in array
@@ -97,49 +97,65 @@ public class Map implements Serializable{
         }        
     }
 
-    public ArrayList<Location> getLocation() {
-        return location;
+    public Location[][] getLocations() {
+        return locations;
     }
 
-    public Integer getRowCount() {
-        return rowCount;
+    public void setLocations(Location[][] locations) {
+        this.locations = locations;
     }
 
-    public void setRowCount(Integer rowCount) {
-        this.rowCount = rowCount;
+    public int getNoOfRows() {
+        return noOfRows;
     }
 
-    public Integer getColumnCount() {
-        return columnCount;
+    public void setNoOfRows(int noOfRows) {
+        this.noOfRows = noOfRows;
     }
 
-    public void setColumnCount(Integer columnCount) {
-        this.columnCount = columnCount;
+    public int getNoOfColumns() {
+        return noOfColumns;
     }
-    
-//    public Boolean getVisited() {
-//        return visited;
-//    }
-//
-//    public void setVisited(Boolean visited) {
-//        this.visited = visited;
-//    }
+
+    public void setNoOfColumns(int noOfColumns) {
+        this.noOfColumns = noOfColumns;
+    }
+
+    public int getCurrentRow() {
+        return currentRow;
+    }
+
+    public void setCurrentRow(int currentRow) {
+        this.currentRow = currentRow;
+    }
+
+    public int getCurrentColumn() {
+        return currentColumn;
+    }
+
+    public void setCurrentColumn(int currentColumn) {
+        this.currentColumn = currentColumn;
+    }
+
+    public Location getCurrentLocation() {
+        return currentLocation;
+    }
+
+    public void setCurrentLocation(Location currentLocation) {
+        this.currentLocation = currentLocation;
+    }
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 11 * hash + Objects.hashCode(this.rowCount);
-        hash = 11 * hash + Objects.hashCode(this.columnCount);
+        int hash = 5;
+        hash = 29 * hash + Arrays.deepHashCode(this.locations);
+        hash = 29 * hash + this.noOfRows;
+        hash = 29 * hash + this.noOfColumns;
+        hash = 29 * hash + this.currentRow;
+        hash = 29 * hash + this.currentColumn;
+        hash = 29 * hash + Objects.hashCode(this.currentLocation);
         return hash;
     }
-
-    @Override
-    public String toString() {
-        return "Map{" + "rowCount=" + rowCount + ", columnCount=" + 
-                columnCount + '}';
-    }
-    
-    
 
     @Override
     public boolean equals(Object obj) {
@@ -153,38 +169,29 @@ public class Map implements Serializable{
             return false;
         }
         final Map other = (Map) obj;
-        if (!Objects.equals(this.rowCount, other.rowCount)) {
+        if (this.noOfRows != other.noOfRows) {
             return false;
         }
-        if (!Objects.equals(this.columnCount, other.columnCount)) {
+        if (this.noOfColumns != other.noOfColumns) {
+            return false;
+        }
+        if (this.currentRow != other.currentRow) {
+            return false;
+        }
+        if (this.currentColumn != other.currentColumn) {
+            return false;
+        }
+        if (!Arrays.deepEquals(this.locations, other.locations)) {
+            return false;
+        }
+        if (!Objects.equals(this.currentLocation, other.currentLocation)) {
             return false;
         }
         return true;
     }
 
-    public Location[][] getLocations() {
-            System.out.println("Called Location[][]");
-            return this.locations;
+    @Override
+    public String toString() {
+        return "Map{" + "locations=" + locations + ", noOfRows=" + noOfRows + ", noOfColumns=" + noOfColumns + ", currentRow=" + currentRow + ", currentColumn=" + currentColumn + ", currentLocation=" + currentLocation + '}';
     }
-
-    public void setCurrentLocation(Location location) {
-            System.out.println("Called setCurrentLocation.");
-    }
-
-    public Object getCurrentLocation() {
-        return location;
-    }
-
-    public void setCurrentRow(int row) {
-            System.out.println("Called LsetCirremtRow");
-            this.currentRow = row;
-    }
-
-    public void setCurrentColumn(int column) {
-            System.out.println("Called LsetCirremtColumn");
-            this.currentColumn = column;
-    }
-
-    
-    
 }

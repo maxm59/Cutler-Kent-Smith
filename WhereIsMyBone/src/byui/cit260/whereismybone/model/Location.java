@@ -5,7 +5,6 @@
  */
 package byui.cit260.whereismybone.model;
 
-import byui.cit260.whereismybone.enums.Actor;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Objects;

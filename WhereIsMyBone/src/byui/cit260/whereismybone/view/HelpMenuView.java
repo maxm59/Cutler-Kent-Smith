@@ -90,20 +90,20 @@ public class HelpMenuView extends View{
                 "\n= ___________________________________________   =" +
                 "\n=    |   1   |   2   |   3   |   4   |   5   |   =" +
                 "\n= ___|-------|-------|-------|-------|-------|   =" +
-                "\n=    | Park  |Vacant |Police |Animal | Pound |   =" +
-                "\n=  1 |       | House | Office| Care  |       |   =" +
+                "\n=    | Park  |Vacant | K9    |Animal | Animal|   =" +
+                "\n=  1 |  Land | House | Police| Care  |Shelter|   =" +
                 "\n= ___|_______|_______|_______|_______|_______|   =" +
-                "\n=    |Bakery |Food   |Drive  |Da Lake|Cat    |   =" +
-                "\n=  2 |       | Place | Inn   |       | Alley |   =" +
+                "\n=    |Jones  |Seafood| Tex   | Pond  |Cat    |   =" +
+                "\n=  2 |Bakery | Eatery| Mix   |       | Alley |   =" +
                 "\n= ___|_______|_______|_______|_______|_______|   =" +
-                "\n=    |Care   |Smith  |  YOUR |DeVil  |Grocery|   =" +
-                "\n=  3 | Home  | House |  HOME | House | Store |   =" +
+                "\n=    |Senior |Smith  | Home  |DeVil  | Super |   =" +
+                "\n=  3 | Care  | House | Start | House | Max   |   =" +
                 "\n= ___|_______|_______|_______|_______|_______|   =" +
-                "\n=    |Fish-  |Zoo    |Zoo    |Zoo    |Zoo    |   =" +
-                "\n=  4 | monger|       |       |       |       |   =" +
+                "\n=    |Fish-  | Zoo   | Eleph | Tiger | Gir   |   =" +
+                "\n=  4 | monger|       |  Cage |  Cage |  Cage |   =" +
                 "\n= ___|_______|_______|_______|_______|_______|   =" +
-                "\n=    |School |School |School |School |Zoo    |   =" +
-                "\n=  5 | Front | Cafe  |Playgrd|Parking|       |   =" +
+                "\n=    |School |School |School |School | Steak |   =" +
+                "\n=  5 | Front | Cafe  |Playgrd|Parking| Out   |   =" +
                 "\n= ___|_______|_______|_______|_______|_______|   =" +
                 "\n=                                                =" +
                 "\n==================================================" ;

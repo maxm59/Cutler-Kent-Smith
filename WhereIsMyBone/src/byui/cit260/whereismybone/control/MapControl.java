@@ -5,7 +5,11 @@
  */
 package byui.cit260.whereismybone.control;
 
+import byui.cit260.whereismybone.model.Actor;
+import byui.cit260.whereismybone.model.Item;
 import byui.cit260.whereismybone.model.Map;
+import byui.cit260.whereismybone.model.Scene;
+import byui.cit260.whereismybone.model.SceneType;
 
 /**
  *
@@ -16,9 +20,12 @@ public class MapControl {
     public static Map createMap() {
         
         //create the map
-        Map map = null;
+        Map map =   new Map (5, 5);
         
-        System.out.println("\n*** called createMap() in MapControl ***");
+        Scene[] scenes = createScenes();
+        
+        GameControl.assignScenesToLocations(map, scenes);        
+
         return map;
     }
 
@@ -36,6 +43,38 @@ public class MapControl {
 //        map.setCurrentRow(row);
 //        map.setCurrentColumn(column);
                         
+    }
+
+    private static Scene[] createScenes() {
+        Scene[] scenes = new Scene[SceneType.values().length];
+    
+        //location 0,0
+        Scene currentScene = new Scene();
+        currentScene.setName("ParkLand");
+        currentScene.setMapSymbol("PK");      
+        currentScene.setDescription("A beautiful city park with mature oak trees, grass, and picnic tables.");
+        currentScene.setDialog("I saw Cat DeVil and he went that way.");
+        currentScene.setActor(Actor.Tommy);
+        currentScene.setItem(Item.CatColar);
+        currentScene.setMinute(5);
+        
+        scenes[SceneType.Parkland.ordinal()] = currentScene;
+        
+        //location 0,1
+        currentScene = new Scene();
+        currentScene.setName("VacantHouse");
+        currentScene.setMapSymbol("VH");      
+        currentScene.setDescription("An old abandon house, very creepy.");
+        currentScene.setDialog("You think my bone must be hear. I can smell it.");
+        currentScene.setActor(Actor.Rats);
+        currentScene.setItem(Item.CatColar); //TODO finsih Brian's list
+        currentScene.setMinute(5);
+        
+        scenes[SceneType.AnimalCare.ordinal()] = currentScene;
+        
+        // TODO make sure all the scenes are added
+        
+        return scenes;
     }
     
     public boolean validLocation(int row,int column){

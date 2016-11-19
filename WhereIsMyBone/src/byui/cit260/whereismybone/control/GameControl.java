@@ -8,8 +8,11 @@ package byui.cit260.whereismybone.control;
 import byui.cit260.whereismybone.model.Clue;
 import byui.cit260.whereismybone.model.Game;
 import byui.cit260.whereismybone.model.Item;
+import byui.cit260.whereismybone.model.Location;
 import byui.cit260.whereismybone.model.Map;
 import byui.cit260.whereismybone.model.Player;
+import byui.cit260.whereismybone.model.Scene;
+import byui.cit260.whereismybone.model.SceneType;
 import whereismybone.WhereIsMyBone;
 
 /**
@@ -61,6 +64,36 @@ public class GameControl {
     private static Clue[] createClueList() {
         System.out.println("\n*** called createClueList() in GameControl ***");
         return null;
+    }
+
+    public static void assignScenesToLocations(Map map, Scene[] scenes) {
+        Location[][] locations = map.getLocations();
+        
+        locations[0][0].setScene(scenes[SceneType.Parkland.ordinal()]);
+        locations[0][1].setScene(scenes[SceneType.VacantHouse.ordinal()]);
+        locations[0][2].setScene(scenes[SceneType.K9Precinct.ordinal()]);
+        locations[0][3].setScene(scenes[SceneType.AnimalCare.ordinal()]);
+        locations[0][4].setScene(scenes[SceneType.AnimalShelter.ordinal()]);
+        locations[1][0].setScene(scenes[SceneType.JonesBakery.ordinal()]);
+        locations[1][1].setScene(scenes[SceneType.SeafoodEatery.ordinal()]);
+        locations[1][2].setScene(scenes[SceneType.TexMixDriveInn.ordinal()]);
+        locations[1][3].setScene(scenes[SceneType.Pond.ordinal()]);
+        locations[1][4].setScene(scenes[SceneType.CatsAlley.ordinal()]);
+        locations[2][0].setScene(scenes[SceneType.SeniorCare.ordinal()]);
+        locations[2][1].setScene(scenes[SceneType.SmithHouse.ordinal()]);
+        locations[2][2].setScene(scenes[SceneType.Home.ordinal()]);
+        locations[2][3].setScene(scenes[SceneType.DeVilHouse.ordinal()]);
+        locations[2][4].setScene(scenes[SceneType.SuperMax.ordinal()]);
+        locations[3][0].setScene(scenes[SceneType.Fishmonger.ordinal()]);
+        locations[3][1].setScene(scenes[SceneType.Zoo.ordinal()]);
+        locations[3][2].setScene(scenes[SceneType.ElephantsCage.ordinal()]);
+        locations[3][3].setScene(scenes[SceneType.GiraffesCage.ordinal()]);
+        locations[3][4].setScene(scenes[SceneType.TigerCage.ordinal()]);
+        locations[4][0].setScene(scenes[SceneType.SchoolFront.ordinal()]);
+        locations[4][1].setScene(scenes[SceneType.SchoolCafe.ordinal()]);
+        locations[4][2].setScene(scenes[SceneType.PlayGround.ordinal()]);
+        locations[4][3].setScene(scenes[SceneType.TrumpElementry.ordinal()]);
+        locations[4][4].setScene(scenes[SceneType.SteakHeaven.ordinal()]);
     }
     
 }

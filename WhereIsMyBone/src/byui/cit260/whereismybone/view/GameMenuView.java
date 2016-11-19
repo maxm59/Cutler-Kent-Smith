@@ -14,24 +14,24 @@ public class GameMenuView extends View{
     public GameMenuView(){
         super(
                  "==================================================" +
-                "\n               WHERE IS MY BONE?                  " +
-                "\n                   GAME MENU                      " +
-                "\n==================================================" +
-                "\n" + 
-                "\n     M =   Move          " +
-                "\n     S =   Search Location for Clues          " +
-                "\n     B =   Backpack Inventory " +
-                "\n     C =   Clue List         " +
-                "\n     D =   Display Map         " +
-                "\n" +
-                "\n     H =   Display Help         " +
-                "\n     X =   Exit Game         " +
-                "\n" +
-                "\n     Please make a selection:" +
-                "\n" +
-                "\n==================================================" +
-                "\n==                                              ==" +
-                "\n==================================================" );
+                "\n               WHERE IS MY BONE?                 " +
+                "\n                   GAME MENU                     " +
+                "\n=================================================" +
+                "\n                                                 " +
+                "\n         B  =  Backpack Inventory                " +
+                "\n         C  =  Clue List                         " +                         
+                "\n         D  =  Display Map                       " +                         
+                "\n         H  =  Display Help                      " +                       
+                "\n         M  =  Move                              " +
+                "\n         S  =  Search Location for Clues         " +
+                "\n                                                 " +
+                "\n         X  =  Exit Game                         " +
+                "\n                                                 " +
+                "\n         Please make a selection:                " +
+                "\n                                                 " +
+                "\n=================================================" +
+                "\n==                                             ==" +
+                "\n=================================================" );
     
     }
 

@@ -75,7 +75,6 @@ public class ClueLog implements Serializable {
 
     public void setDescripton(String you_have_gotten_this_clue) {
           // Commmenting this line out, it's breaking the compile.
-          //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     

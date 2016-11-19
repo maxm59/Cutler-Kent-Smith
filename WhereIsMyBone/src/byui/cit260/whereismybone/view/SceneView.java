@@ -33,8 +33,8 @@ public class SceneView extends View {
             "\n                F  =  Steak Heaven                " + 
             "\n                G  =  Tex Mix Drive Inn           " +  
             "\n                H  =  Senior Care                 " +  
-            "\n                I  =  Neighbor                    " + 
-            "\n                J  =  Home                        " + 
+            "\n                I  =  The Smiths Home                    " + 
+            "\n                J  =  Home Sweet Home                       " + 
             "\n                K  =  ZooLand                     " +            
             "\n                L  =  Seafood Eatery              " +
             "\n                M  =  Trump School                " + 
