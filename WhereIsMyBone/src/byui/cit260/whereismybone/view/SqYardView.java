@@ -18,8 +18,6 @@ public class SqYardView extends View{
 
     public SqYardView(){
         
-        //this.displayMenu();
-        
         super(
                   "==================================================" +
                 "\n               WHERE IS MY BONE?                  " +
@@ -69,9 +67,6 @@ public class SqYardView extends View{
         //Display results - Temporary... 
         showResult();
         
-        //TODO: Check for correct answer. If answer correct, show displayCorrect
-        //      else show displayIncorrect.
-                
         return true;  
     
     }

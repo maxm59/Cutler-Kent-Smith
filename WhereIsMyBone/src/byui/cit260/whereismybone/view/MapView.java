@@ -13,7 +13,11 @@ import whereismybone.WhereIsMyBone;
 
 /**
  *
- * @author Smith-Rick
+ * @author Smith-Rick-originator
+ *    this a code to move player
+ * @author Maxi Cutler-unified classes
+ *    need code to display map
+ * 
  */
 public class MapView extends View {
     
