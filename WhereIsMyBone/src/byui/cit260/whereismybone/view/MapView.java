@@ -9,6 +9,7 @@ import byui.cit260.whereismybone.control.MapControl;
 import byui.cit260.whereismybone.model.Location;
 import byui.cit260.whereismybone.model.Map;
 import byui.cit260.whereismybone.model.Game;
+import java.io.Console;
 import whereismybone.WhereIsMyBone;
 
 /**
@@ -23,7 +24,9 @@ import whereismybone.WhereIsMyBone;
 public class MapView extends View {
     
     //private final String map;
-    private String promptMessage;    
+    private String promptMessage; 
+    
+    private Console console = System.console();
     
     public MapView(){
         super("\n"+
@@ -62,16 +65,16 @@ public class MapView extends View {
             Location[][] locations = map.getLocations();
 
         try{
-            this.console.print("   |");
+            this.console.writer().println("   |");
 
             for(int column = 0; column < locations[0].length; column++){
-                this.console.print("   " +column + "   |");
+                this.console.writer().println("   " +column + "   |");
             }
-            this.console.println();
-            int row = 0;
+            this.console.writer().println();
+            //int row;
 
-            for(int = 0, row < locations.length, row++){
-                this.console.print(row + "   ")
+            for (int row = 0; row < locations.length; row++){
+                this.console.writer().println(row + "   ");
 
                 for(int column = 0; column < locations[row].length; column++){
                     leftIndicator = "   ";
@@ -81,24 +84,28 @@ public class MapView extends View {
                         leftIndicator = " X ";
                         rightIndicator = " X ";
 
-                            else if (locations[row][column].isVisited()){
+                            if (locations[row][column].isVisited()){
                                 leftIndicator = " X ";
                                 rightIndicator = " X ";
-                                this.console.print("   |");
+                                this.console.writer().println("   |");
 
                                 if(locations[row][column].getScene()== null)
-                                    this.console.print(leftIndicator + "? ?" + rightIndicator);
+                                    this.console.writer().println(leftIndicator + "? ?" + rightIndicator);
                                     else{
-                                    this.console.print(leftIndicator + locations[row][column].getScene().getMapSymbol() + rightIndicator);
+                                    this.console.writer().println(leftIndicator + locations[row][column].getScene().getMapSymbol() + rightIndicator);
                                     }
-                                this.console.prinlin("|");
+                                this.console.writer().println("|");
                             }
-                            finally(Exception e){
-                        System.out.printlin("Error");
-                        };
+//                            finally(Exception e){
+//                        System.out.printlin("Error");
+//                        };
                     }
                 }
             }
         }
+        catch (Exception ex){
+            System.out.println(ex.toString());
+        }
+        
     }
 }

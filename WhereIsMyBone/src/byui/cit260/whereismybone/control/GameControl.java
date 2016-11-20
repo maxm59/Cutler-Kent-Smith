@@ -59,6 +59,7 @@ public class GameControl {
         game.setPlayer(player);
         
         Map map = new Map();
+        map = MapControl.createMap();
         game.setMap(map);
         
         GameTime gt = new GameTime();

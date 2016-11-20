@@ -98,7 +98,9 @@ public class GameMenuView extends View{
     }
 
     private void showMap() {
-                System.out.println("TODO - Display Map");
+                System.out.println("DEBUG: Display Map");
+                MapView mapView = new MapView();
+                mapView.displayMap();
     }
     
     
