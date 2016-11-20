@@ -299,36 +299,36 @@ public class MapControl {
         currentScene.setName("SchoolFront");
         currentScene.setMapSymbol("SF");      
         currentScene.setDescription("Trump Elementry School where you spend your days guarding the children.");
-        currentScene.setDialog("Hey, I see She was here, bones and hairballs all over the place.");
-        currentScene.setActor(Actor.MrCatch);
-        currentScene.setItem(Item.FishBones);
+        currentScene.setDialog("Oh, you missed her this morning. She's in the Cat Alley.");
+        currentScene.setActor(Actor.Felix);
+        currentScene.setItem(Item.CatHair);
         currentScene.setMinute(5);
         
-        scenes[SceneType.Fishmonger.ordinal()] = currentScene;
+        scenes[SceneType.SchoolFront.ordinal()] = currentScene;
         
 //location 4, 1
         currentScene = new Scene();
-        currentScene.setName("ParkLand");
-        currentScene.setMapSymbol("PK");      
-        currentScene.setDescription("A beautiful city park with mature oak trees, grass, and picnic tables.");
-        currentScene.setDialog("I saw Cat DeVil and he went that way.");
-        currentScene.setActor(Actor.Tommy);
-        currentScene.setItem(Item.CatColar);
+        currentScene.setName("SchoolCafe");
+        currentScene.setMapSymbol("SL");      
+        currentScene.setDescription("The children loves to feed Cat DeVil and his gang. You too!");
+        currentScene.setDialog("You are are my Hero.");
+        currentScene.setActor(Actor.Brad);
+        currentScene.setItem(Item.Bacon);
         currentScene.setMinute(5);
         
-        scenes[SceneType.Parkland.ordinal()] = currentScene;
+        scenes[SceneType.SchoolCafe.ordinal()] = currentScene;
         
 //location 4, 2
         currentScene = new Scene();
-        currentScene.setName("VacantHouse");
-        currentScene.setMapSymbol("VH");      
-        currentScene.setDescription("An old abandon house, very creepy.");
-        currentScene.setDialog("My bone must be hear. I can smell it.");
-        currentScene.setActor(Actor.Rats);
-        currentScene.setItem(Item.FishBones);
+        currentScene.setName("PlayGround");
+        currentScene.setMapSymbol("PG");      
+        currentScene.setDescription("This is where you meet MrSneed.");
+        currentScene.setDialog("How are you today? Ready to work? Do need a drink of water?");
+        currentScene.setActor(Actor.MrSneed);
+        currentScene.setItem(Item.Water);
         currentScene.setMinute(5);
         
-        scenes[SceneType.VacantHouse.ordinal()] = currentScene;
+        scenes[SceneType.PlayGround.ordinal()] = currentScene;
         
 //location 4, 3
         currentScene = new Scene();
@@ -358,15 +358,11 @@ public class MapControl {
     }
     
     public boolean validLocation(int row,int column){
-        if (row < 1 || row > 5) {
+        if (row < 0 || row > 4) {
                 return false;
         }
-        
-        if (column < 1 || column >  5) {
-                return false;
-        }
-        
-        return true;
+
+        return !(column < 0 || row > 4);
     }
     
     public int[] movePlayer(int nRow, int nCol)

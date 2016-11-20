@@ -30,13 +30,7 @@ public class Map implements Serializable{
     private int currentColumn = 0;
     private Location currentLocation;
     
-//    private Boolean visited;
-
-    public Map() {
-
-        
-    }
-    
+//    private Boolean visited;    
     public Map(int noOfRows, int noOfColumns){
         if (noOfRows < 1 || noOfColumns < 1){
             System.out.println("The number of rows and columns must be > zero");
@@ -61,6 +55,10 @@ public class Map implements Serializable{
                 locations[row][column] = location;                
             }            
         }        
+    }
+
+    public Map() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public Location[][] getLocations() {

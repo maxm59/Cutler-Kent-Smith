@@ -7,7 +7,8 @@ package byui.cit260.whereismybone.control;
 
 /**
  *
- * @author Smith-Rick
+ * @author Brian Kent
+ * 
  */
 public class ClueControl {
     

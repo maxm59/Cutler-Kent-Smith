@@ -11,8 +11,9 @@ import java.io.Serializable;
  *
  * @author Brian Kent
  * don't do coordinates here
+ * 
  * @author Maxi Cutler
- * add more items
+ * added 12 items.
  * 
  * 
  */
@@ -30,9 +31,7 @@ public enum Item implements Serializable {
     FishBones("Just a normal flashlight."),
     Hamburger("Your treat during your morning break."),
     Water("You are very thirsty, you lap-up some water."),
-    
     Pipe("A hiding place for the bone."),
-
     None("Keep moving");
     
     //private String name;

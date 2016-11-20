@@ -84,14 +84,7 @@ public class GameMenuView extends View{
     }
 
     private void movePlayer() {
-        
-        
-        
-        MapView mapView = new MapView();
-        mapView.display();
-        
-     
-
+        System.out.println("TODO - Search Location Results");
     }
 
     private void searchLocation() {

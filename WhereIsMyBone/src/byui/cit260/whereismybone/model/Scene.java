@@ -19,13 +19,13 @@ import java.util.logging.Logger;
  */
 public class Scene implements Serializable {
 
-    private String description;
-    private Actor actor;    
-    private String dialog; //what the actor says to the user
-    private String name; //name of current scene
-    private Item item; //perhaps null, if there is an item, need dialog
-    public String mapSymbol;
-    public int minute;
+    private String description; //description of the location with sceneType
+    private Actor actor;        //who is the actor at this location
+    private String dialog;      //what the actor says to the user
+    private String name;        //name of current scene
+    private Item item;          //perhaps null, if there is an item, need dialog
+    public String mapSymbol;    //already visted the spot
+    public int minute;          //timed per location
     
     public Scene(){ 
         this.description = "";
@@ -41,7 +41,10 @@ public class Scene implements Serializable {
 
     @Override
     public String toString() {
-        return "Scene{" + "description=" + description + ", actor=" + actor + ", dialog=" + dialog + ", name=" + name + ", item=" + item + ", mapSymbol=" + mapSymbol + '}';
+        return "Scene{" + "description=" + description + ", " +
+                "actor=" + actor + ", " + "dialog=" + dialog + ", " +
+                "name=" + name + ", " + "item=" + item + ", " +
+                "mapSymbol=" + mapSymbol + '}';
     }
 
     @Override
