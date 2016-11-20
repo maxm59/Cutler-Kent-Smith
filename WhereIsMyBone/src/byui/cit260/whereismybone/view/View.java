@@ -5,7 +5,9 @@
  */
 package byui.cit260.whereismybone.view;
 
+import java.io.PrintWriter;
 import java.util.Scanner;
+import whereismybone.WhereIsMyBone;
 
 /**
  * *
@@ -16,7 +18,7 @@ import java.util.Scanner;
 public abstract class View implements ViewInterface {
     
     protected String displayMessage;
-    
+        
     public View(){
     
     }

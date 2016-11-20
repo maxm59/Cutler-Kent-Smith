@@ -18,9 +18,28 @@ public class Location implements Serializable{
     //class instance variables
     private int rowCount;
     private int columnCount;
+    private int row;
+    private int col;
     private boolean visited;
     private Scene scene;
     private ArrayList<Actor> actors;
+    private SceneType sceneType;
+
+    public int getRow() {
+        return row;
+    }
+
+    public void setRow(int row) {
+        this.row = row;
+    }
+
+    public int getCol() {
+        return col;
+    }
+
+    public void setCol(int col) {
+        this.col = col;
+    }
 
     public boolean isVisited() {
         return visited;
@@ -54,6 +73,8 @@ public class Location implements Serializable{
     //}
     
     public Location() {
+        //Default Setting
+        sceneType = SceneType.Home; 
         
     }
 
@@ -119,5 +140,15 @@ public class Location implements Serializable{
         }
         return true;
     }
+
+    public SceneType getSceneType() {
+        return sceneType;
+    }
+
+    public void setSceneType(SceneType sceneType) {
+        this.sceneType = sceneType;
+    }
+
+
         
 }

@@ -4,6 +4,7 @@ import byui.cit260.whereismybone.model.Game;
 import byui.cit260.whereismybone.model.GameTime;
 import byui.cit260.whereismybone.model.Player;
 import byui.cit260.whereismybone.view.StartProgramView;
+import java.io.PrintWriter;
 
 public class WhereIsMyBone {
     
@@ -42,5 +43,9 @@ public class WhereIsMyBone {
 
     public static void setGameTime(GameTime gameTime) {
         WhereIsMyBone.gameTime = gameTime;
+    }
+
+    public static PrintWriter getOutFile() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

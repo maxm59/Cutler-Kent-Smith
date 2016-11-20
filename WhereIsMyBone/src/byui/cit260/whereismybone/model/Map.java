@@ -7,7 +7,6 @@ package byui.cit260.whereismybone.model;
 
 //
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Objects;
 
@@ -20,17 +19,24 @@ public class Map implements Serializable{
         
     //class instance variables
     private Location[][] locations;
+    private Location currentLocation;
     
     //composition 'has-a' relationship... to the Locations class
     //private ArrayList <Location> location;
-    private int noOfRows;
-    private int noOfColumns;
+    public int noOfRows = 5;
+    public int noOfColumns = 5;
     
     private int currentRow = 0;
     private int currentColumn = 0;
-    private Location currentLocation;
+    private Location[][] location;
     
 //    private Boolean visited;    
+    
+    public Map() {
+        location = new Location[noOfRows][noOfColumns];
+        init();
+    }
+    
     public Map(int noOfRows, int noOfColumns){
         if (noOfRows < 1 || noOfColumns < 1){
             System.out.println("The number of rows and columns must be > zero");
@@ -55,9 +61,6 @@ public class Map implements Serializable{
                 locations[row][column] = location;                
             }            
         }        
-    }
-
-    public Map() {
     }
 
     public Location[][] getLocations() {
@@ -155,6 +158,22 @@ public class Map implements Serializable{
 
     @Override
     public String toString() {
-        return "Map{" + "locations=" + locations + ", noOfRows=" + noOfRows + ", noOfColumns=" + noOfColumns + ", currentRow=" + currentRow + ", currentColumn=" + currentColumn + ", currentLocation=" + currentLocation + '}';
+        //return "Map{" + "locations=" + locations + ", noOfRows=" + noOfRows + ", noOfColumns=" + noOfColumns + ", currentRow=" + currentRow + ", currentColumn=" + currentColumn + ", currentLocation=" + currentLocation + '}';
+    
+        String strMap = "Where Is My bone Map\r\n,1,2,3,4,5\r\n";
+        for (int row = 0; row < noOfRows; row++) {
+            strMap += Integer.toString(row + 1) + ",";
+            for (int col = 0; col < noOfColumns; col++) {                
+                
+    //            strMap += location[row][col].getSceneType() + ",";
+            }
+            strMap += "\r\n";
+        }
+        return strMap;       
+    
+    }
+
+    private void init() {
+        System.out.println("Map init() called");
     }
 }

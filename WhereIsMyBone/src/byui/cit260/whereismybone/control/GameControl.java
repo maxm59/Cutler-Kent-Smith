@@ -58,12 +58,12 @@ public class GameControl {
         Game game = new Game();
         game.setPlayer(player);
         
-        Map map = new Map();
-        map = MapControl.createMap();
+        //Map map = new Map();
+        Map map = MapControl.createMap();
         game.setMap(map);
         
-        GameTime gt = new GameTime();
-        gt = GameControl.createGameTime();
+        //GameTime gt = new GameTime();
+        GameTime gt = GameControl.createGameTime();
         game.setGameTime(gt);
                 
         WhereIsMyBone.setCurrentGame(game);

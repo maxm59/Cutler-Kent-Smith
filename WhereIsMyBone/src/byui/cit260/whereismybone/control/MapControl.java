@@ -25,11 +25,13 @@ public class MapControl {
 
     public static Map createMap() {
         
-        //create the map
-        Map map =   new Map (5, 5);
+        //Create and initialize new map
+        Map map = new Map (5, 5);
         
+        //Create all of the scenes for the map
         Scene[] scenes = createScenes();
         
+        //Assign each scene to a location in the map
         GameControl.assignScenesToLocations(map, scenes);        
 
         return map;

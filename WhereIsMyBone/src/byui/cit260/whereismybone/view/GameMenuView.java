@@ -5,6 +5,8 @@
  */
 package byui.cit260.whereismybone.view;
 
+import whereismybone.WhereIsMyBone;
+
 
 /**
  *
@@ -42,27 +44,27 @@ public class GameMenuView extends View{
             
             case 'M':
                 System.out.println("Display the Move Location View");
-                movePlayer();
+                this.movePlayer();
                 break;
             case 'S':
                 System.out.println("Search Location");
-                searchLocation();
+                this.searchLocation();
                 break;
             case 'B':
                 System.out.println("Display Backpack Inventory");
-                showBackpack();
+                this.showBackpack();
                 break;
             case 'C':
                 System.out.println("Display Clue List");
-                showClues();
+                this.showClues();
                 break;
             case 'D':
                 System.out.println("Display Map");
-                showMap();
+                this.showMap();
                 break;
             case 'H':
                 System.out.println("Display Help Menu");
-                showHelpMenu();
+                this.showHelpMenu();
                 break;
             case 'X':
                 System.out.println("Exit the Game Menu");
@@ -99,8 +101,11 @@ public class GameMenuView extends View{
 
     private void showMap() {
                 System.out.println("DEBUG: Display Map");
-                MapView mapView = new MapView();
-                mapView.displayMap();
+//                MapView mapView = new MapView();
+//                mapView.displayMap();
+
+                System.out.println(WhereIsMyBone.getCurrentGame().getMap().toString());
+                
     }
     
     
