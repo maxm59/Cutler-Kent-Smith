@@ -8,7 +8,7 @@ package byui.cit260.whereismybone.model;
 /**
  *
  * @author Maxine Cutler
- * coordinates to start with 0,0 
+ * per Brother Jones coordinates to start with 0,0 
  * 
  * 
  */

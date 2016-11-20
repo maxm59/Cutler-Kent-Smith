@@ -4,16 +4,18 @@
  * and open the template in the editor.
  */
 package byui.cit260.whereismybone.model;
+
 import java.io.Serializable;
 import java.util.Objects;
 
-
 /**
  *
- * @author Brian Kent
+ * @author Brian Kent-originator
+ * 
  * corrected Clues to ClueLog by Maxine
  * according to UML Model and fix all the errors
  * errors and add this class to the main
+ * 
  */
 public class ClueLog implements Serializable {
     

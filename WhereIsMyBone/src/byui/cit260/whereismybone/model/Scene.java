@@ -5,10 +5,8 @@
  */
 package byui.cit260.whereismybone.model;
 
-import java.awt.Point;
 import java.io.Serializable;
 import java.util.Objects;
-import java.util.logging.Logger;
 
 /**
  *
@@ -31,20 +29,12 @@ public class Scene implements Serializable {
         this.description = "";
     }
 
-    public int getMinute() {
-        return minute;
-    }
-
-    public void setMinute(int minute) {
-        this.minute = minute;
-    }
-
     @Override
     public String toString() {
         return "Scene{" + "description=" + description + ", " +
                 "actor=" + actor + ", " + "dialog=" + dialog + ", " +
                 "name=" + name + ", " + "item=" + item + ", " +
-                "mapSymbol=" + mapSymbol + '}';
+                "mapSymbol=" + mapSymbol + ", " + "minute=" + minute + ", ";
     }
 
     @Override
@@ -56,6 +46,7 @@ public class Scene implements Serializable {
         hash = 71 * hash + Objects.hashCode(this.name);
         hash = 71 * hash + Objects.hashCode(this.item);
         hash = 71 * hash + Objects.hashCode(this.mapSymbol);
+        hash = 71 * hash + Objects.hashCode(this.minute);
         return hash;
     }
 
@@ -86,16 +77,12 @@ public class Scene implements Serializable {
         if (this.actor != other.actor) {
             return false;
         }
-        if (this.item != other.item) {
-            return false;
-        }
-        return true;
+        return this.item == other.item;
     }
     
     public Actor getActor() {
         return actor;
     }
-
     public void setActor(Actor actor) {
         this.actor = actor;
     }
@@ -103,19 +90,27 @@ public class Scene implements Serializable {
     public String getDialog() {
         return dialog;
     }
-
     public void setDialog(String dialog) {
         this.dialog = dialog;
     }
     
+    public String getDescription() {
+    return description;
+    }
     public void setDescription(String description){
         this.description = description;
+    }
+    
+    public int getMinute() {
+        return minute;
+    }
+    public void setMinute(int minute) {
+        this.minute = minute;
     }
 
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
@@ -123,7 +118,6 @@ public class Scene implements Serializable {
     public Item getItem() {
         return item;
     }
-
     public void setItem(Item item) {
         this.item = item;
     }
@@ -131,14 +125,7 @@ public class Scene implements Serializable {
     public String getMapSymbol() {
         return mapSymbol;
     }
-
     public void setMapSymbol(String mapSymbol) {
         this.mapSymbol = mapSymbol;
-    }
-    
-    
-    public String getDescription() {
-        return description;
-    }
-    
+    }   
 }

@@ -22,7 +22,7 @@ public class Map implements Serializable{
     private Location[][] locations;
     
     //composition 'has-a' relationship... to the Locations class
-//    private ArrayList <Location> location;
+    //private ArrayList <Location> location;
     private int noOfRows;
     private int noOfColumns;
     
@@ -55,10 +55,6 @@ public class Map implements Serializable{
                 locations[row][column] = location;                
             }            
         }        
-    }
-
-    public Map() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public Location[][] getLocations() {

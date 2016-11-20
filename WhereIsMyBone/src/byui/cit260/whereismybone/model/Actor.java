@@ -10,9 +10,10 @@ import java.io.Serializable;
 /**
  *
  * @author Smith-Rick-original creator
+ * per Brother Jones remove coordinates
+ * 
  * @author Maxi Cutler-added more actors for
  * interaction and dialog for each location.
- * 
  * 
  */
 public enum Actor implements Serializable{
@@ -41,13 +42,13 @@ public enum Actor implements Serializable{
     Toby("Your average tom cat."),
     Rex("You know what a T-Rex is? I am the muscule in the group."), 
     Rats("We live in the vacant house.");
-    
-    private final String description;
   
+    private final String description;
+    
     Actor(String description){
         this.description = description;
     }
-
+    
     public String getDescription() {
         return description;
     }

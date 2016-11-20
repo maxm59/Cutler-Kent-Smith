@@ -10,7 +10,7 @@ import java.io.Serializable;
 /**
  *
  * @author Brian Kent
- * don't do coordinates here
+ * per Brother Jones remove coordinates
  * 
  * @author Maxi Cutler
  * added 12 items.
@@ -33,15 +33,13 @@ public enum Item implements Serializable {
     Water("You are very thirsty, you lap-up some water."),
     Pipe("A hiding place for the bone."),
     None("Keep moving");
-    
-    //private String name;
+
     private final String description;
 
     Item(String description) {
         this.description = description;
-
     }
-
+    
     public String getDiscription() {
         return description;
     }
