@@ -9,7 +9,11 @@ import java.io.Serializable;
 
 /**
  *
- * @author Smith-Rick
+ * @author Smith-Rick-original creator
+ * @author Maxi Cutler-added more actors for
+ * interaction and dialog for each location.
+ * 
+ * 
  */
 public enum Actor implements Serializable{
     
@@ -26,9 +30,16 @@ public enum Actor implements Serializable{
     BenAndNancy("Ben is your K9 handler/officer. Nancy is his wife."),
     MrNono("I am a service animal technician."),
     MrCatch("I am the owner of Seafood Eatery"),
-    Animals("Elephants, Giraffes, and Tigers at ZooLand."),
+    Elephants("There are 3 of us living at the Zoo."),
+    Giraffes("A pair of long legs with long necks"),
+    Tigers("We are top of the food chain. Beware when hanging out with us."),
     Brad("I am 8 years old and a student at Trump Elementry"),
     MrSneed("I am a teacher at Trump Elementary School."),
+    MrsCatDeVil("I am a White with Green eyes illusive ghost cat."),
+    Scarface("A gang member with a scare across his blue eyes."),
+    Felix("I am a round overfed, overwieght, ball of fuzz."),
+    Toby("Your average tom cat."),
+    Rex("You know what a T-Rex is? I am the muscule in the group."), 
     Rats("We live in the vacant house.");
     
     private final String description;

@@ -5,6 +5,7 @@
  */
 package byui.cit260.whereismybone.view;
 
+
 /**
  *
  * @author Smith-Rick
@@ -83,7 +84,14 @@ public class GameMenuView extends View{
     }
 
     private void movePlayer() {
-                System.out.println("TODO - Display Move Player Prompt");
+        
+        
+        
+        MapView mapView = new MapView();
+        mapView.display();
+        
+     
+
     }
 
     private void searchLocation() {
@@ -101,4 +109,6 @@ public class GameMenuView extends View{
     private void showMap() {
                 System.out.println("TODO - Display Map");
     }
+    
+    
 }

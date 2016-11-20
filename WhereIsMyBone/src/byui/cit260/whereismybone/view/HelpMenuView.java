@@ -157,10 +157,10 @@ public class HelpMenuView extends View{
                 "\n=  eye will pierce you to the bone. He is the    =" +
                 "\n=  blackest of the alley cats.                   =" +
                 "\n=                                                =" +
-                "\n= Tom                                            =" +
+                "\n= Toby                                           =" +
                 "\n=  Your average tom cat.                         =" +
                 "\n=                                                =" +
-                "\n= Kit                                            =" +
+                "\n= Felix                                          =" +
                 "\n=  This guy is a ball of fuzz.                   =" +
                 "\n=                                                =" +
                 "\n= Rex                                            =" +

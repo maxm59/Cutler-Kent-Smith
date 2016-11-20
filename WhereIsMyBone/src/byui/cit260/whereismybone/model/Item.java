@@ -19,12 +19,21 @@ import java.io.Serializable;
 public enum Item implements Serializable {
     
     Bone("Just a normal flashlight."),
-    Box("A box at the zoo."),
+    Badge("You put your badge on."),
+    Bacon("Donuts with bacon bits."),
     Bell("A cat colar bell."),
+    Box("A box at the zoo."),
+    Cages("Humm empty cages, I can smell the cat gang was here."),
     CatColar("A red cat colar. The he tag where the cat's name should be is all scratched out."),
     CatHair("Just a normal flashlight."),
+    Cats("Lots of cats at the pond."),
     FishBones("Just a normal flashlight."),
-    Pipe("A hiding place for the bone.");
+    Hamburger("Your treat during your morning break."),
+    Water("You are very thirsty, you lap-up some water."),
+    
+    Pipe("A hiding place for the bone."),
+
+    None("Keep moving");
     
     //private String name;
     private final String description;

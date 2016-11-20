@@ -30,6 +30,31 @@ public class MapView extends View {
                 "\n Enter your desired location" +
                 "\n==================================================" );
     }
+    
+    public void displayMap(){
+        
+        String leftIndicator;
+        String rightIndicator;
+        
+        Game game = WhereIsMyBone.getCurrentGame();
+        Map map = game.getMap();
+        Location[][] locations = map.getLocations();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    }
 
     @Override
     public boolean doAction(String value) {
@@ -51,4 +76,6 @@ public class MapView extends View {
      System.out.println("\n*** Invalid selection *** Try Again later");
      return false;
    }
+    
+    
 }
