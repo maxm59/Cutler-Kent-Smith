@@ -55,6 +55,7 @@ public abstract class View implements ViewInterface {
         while (!exitMenu){
             
             System.out.println("\n"+this.displayMessage);
+            this.showGameTime();
             
             value = keyboard.nextLine();
             value = value.trim();
@@ -70,6 +71,12 @@ public abstract class View implements ViewInterface {
         }   
             
         return value;               
+    }
+    
+    protected void showGameTime(){
+        GameTimeView gt = new GameTimeView();
+        gt.display();
+        
     }
     
     

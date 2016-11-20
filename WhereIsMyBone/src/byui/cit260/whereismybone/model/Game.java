@@ -16,13 +16,18 @@ public class Game implements Serializable{
 
     //Starts at 24 hours. It can be reduced by hole numbers or fractions of a 
     //  number, which is why we use a Double vs an Integer.
-    private Double totalTime; 
+//    private Double totalTime; - Using GameTime & GameTimeControl
     
+    private GameTime gameTime;
     private Player player;
     private Map map;
     private Clue[] clueList;
     private Item[] itemList;
 
+    public Game() {
+                
+    }
+    
     public Item[] getItemList() {
         return itemList;
     }
@@ -55,52 +60,52 @@ public class Game implements Serializable{
     public void setPlayer(Player player) {
         this.player = player;
     }
-    
-    
-    public Game() {
-                
+
+    public GameTime getGameTime() {
+        return gameTime;
     }
 
-    public Double getTotalTime() {
-        return totalTime;
-    }
-
-    public void setTotalTime(Double totalTime) {
-        this.totalTime = totalTime;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 3;
-        hash = 71 * hash + Objects.hashCode(this.totalTime);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Game other = (Game) obj;
-        if (!Objects.equals(this.totalTime, other.totalTime)) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "Game{" + "totalTime=" + totalTime + '}';
+    public void setGameTime(GameTime gameTime) {
+        this.gameTime = gameTime;
     }
     
-    
-    
-    
+//    public Double getTotalTime() {
+//        return totalTime;
+//    }
+//
+//    public void setTotalTime(Double totalTime) {
+//        this.totalTime = totalTime;
+//    }
+//    
+
+//    @Override
+//    public int hashCode() {
+//        int hash = 3;
+//        hash = 71 * hash + Objects.hashCode(this.totalTime);
+//        return hash;
+//    }
+//
+//    @Override
+//    public boolean equals(Object obj) {
+//        if (this == obj) {
+//            return true;
+//        }
+//        if (obj == null) {
+//            return false;
+//        }
+//        if (getClass() != obj.getClass()) {
+//            return false;
+//        }
+//        final Game other = (Game) obj;
+//        if (!Objects.equals(this.totalTime, other.totalTime)) {
+//            return false;
+//        }
+//        return true;
+//    }
+//
+//    @Override
+//    public String toString() {
+//        return "Game{" + "totalTime=" + totalTime + '}';
+//    }
     
 }

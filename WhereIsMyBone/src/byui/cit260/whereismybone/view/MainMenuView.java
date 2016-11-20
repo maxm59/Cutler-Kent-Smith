@@ -41,10 +41,7 @@ public class MainMenuView extends View {
                 "\n" +
                 "\n" +
                 "\n     To begin, please enter your choice:" +
-                "\n" +
-                "\n==================================================" +
-                "\n== Game Creators - Rick S. | Maxi C. | Brian K. ==" +
-                "\n==================================================" );        
+                "\n");        
     }
 
     private void displayBannerWarning()

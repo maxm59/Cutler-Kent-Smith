@@ -7,6 +7,7 @@ package byui.cit260.whereismybone.control;
 
 import byui.cit260.whereismybone.model.Clue;
 import byui.cit260.whereismybone.model.Game;
+import byui.cit260.whereismybone.model.GameTime;
 import byui.cit260.whereismybone.model.Item;
 import byui.cit260.whereismybone.model.Location;
 import byui.cit260.whereismybone.model.Map;
@@ -25,8 +26,12 @@ public class GameControl {
         
         Game game = new Game(); //Create new game.
         WhereIsMyBone.setCurrentGame(game); //save in WhereIsMyBone
-        
+                
         game.setPlayer(player); //Save Player In Game
+        
+        //Create GameTime in game.
+        GameTime gameTime = GameControl.createGameTime();
+        game.setGameTime(gameTime);
         
         //create the inventory list and save in the game.
         Item[] itemList = GameControl.createItemList();
@@ -52,6 +57,10 @@ public class GameControl {
         
         Map map = new Map();
         game.setMap(map);
+        
+        GameTime gt = new GameTime();
+        gt = GameControl.createGameTime();
+        game.setGameTime(gt);
                 
         WhereIsMyBone.setCurrentGame(game);
     }
@@ -94,6 +103,17 @@ public class GameControl {
         locations[4][2].setScene(scenes[SceneType.PlayGround.ordinal()]);
         locations[4][3].setScene(scenes[SceneType.TrumpElementry.ordinal()]);
         locations[4][4].setScene(scenes[SceneType.SteakHeaven.ordinal()]);
+    }
+
+    private static GameTime createGameTime() {
+        System.out.println("\n*** called createGameTime() in GameControl ***");
+        
+        GameTime gameTime = new GameTime();
+        gameTime.setTimeRemaining(24.0);
+                
+        System.out.println("\n***DEBUG: Time remaining is: "+ gameTime.getTimeRemaining() +"  ***");
+        
+        return gameTime;
     }
     
 }

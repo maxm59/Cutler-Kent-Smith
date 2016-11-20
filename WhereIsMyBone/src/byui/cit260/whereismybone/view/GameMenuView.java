@@ -28,15 +28,13 @@ public class GameMenuView extends View{
                 "\n         X  =  Exit Game                         " +
                 "\n                                                 " +
                 "\n         Please make a selection:                " +
-                "\n                                                 " +
-                "\n=================================================" +
-                "\n==                                             ==" +
-                "\n=================================================" );
-    
+                "\n                                                 ");
+            
     }
 
     @Override
     public boolean doAction(String value) {
+        
         char charSel = value.toUpperCase().charAt(0);
         
         switch (charSel) {

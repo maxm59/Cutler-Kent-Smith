@@ -1,6 +1,7 @@
 package whereismybone;
 
 import byui.cit260.whereismybone.model.Game;
+import byui.cit260.whereismybone.model.GameTime;
 import byui.cit260.whereismybone.model.Player;
 import byui.cit260.whereismybone.view.StartProgramView;
 
@@ -8,6 +9,7 @@ public class WhereIsMyBone {
     
     private static Game currentGame = null;
     private static Player player = null;
+    private static GameTime gameTime = null;
 
      /**
      * @param args the command line arguments
@@ -34,5 +36,11 @@ public class WhereIsMyBone {
     {
         WhereIsMyBone.player = player;
     }
+    public static GameTime getGameTime() {
+        return gameTime;
+    }
 
+    public static void setGameTime(GameTime gameTime) {
+        WhereIsMyBone.gameTime = gameTime;
+    }
 }
