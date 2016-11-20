@@ -10,6 +10,7 @@ import java.util.Scanner;
 /**
  *
  * @author Maxine Cutler
+ * 
  */
 public class ActorsView extends View {
 

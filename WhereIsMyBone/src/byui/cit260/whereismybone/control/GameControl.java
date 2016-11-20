@@ -18,7 +18,10 @@ import whereismybone.WhereIsMyBone;
 
 /**
  *
- * @author Smith-Rick
+ * @author Smith-Rick - originaltoe
+ * @author Maxi Cutler - update get classes from 
+ * MapControl and added location coordinates
+ * 
  */
 public class GameControl {
 
