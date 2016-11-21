@@ -34,7 +34,7 @@ public class Map implements Serializable{
     
     public Map() {
         location = new Location[noOfRows][noOfColumns];
-        init();
+//        int()
     }
     
     public Map(int noOfRows, int noOfColumns){
@@ -54,7 +54,7 @@ public class Map implements Serializable{
                 //create and initialize new Location object instance
                 Location location = new Location();
                 location.setColumnCount(column);
-                location.setRowCount(row);
+                location.setRow(row);
                 location.setVisited(false);
 
                 //Assign the Location object to the current position in array
@@ -158,22 +158,23 @@ public class Map implements Serializable{
 
     @Override
     public String toString() {
-        //return "Map{" + "locations=" + locations + ", noOfRows=" + noOfRows + ", noOfColumns=" + noOfColumns + ", currentRow=" + currentRow + ", currentColumn=" + currentColumn + ", currentLocation=" + currentLocation + '}';
+        return "Map{" + "locations=" + locations + ", noOfRows=" + noOfRows + ", noOfColumns=" + noOfColumns + ", currentRow=" + currentRow + ", currentColumn=" + currentColumn + ", currentLocation=" + currentLocation + '}';
     
-        String strMap = "Where Is My bone Map\r\n,1,2,3,4,5\r\n";
-        for (int row = 0; row < noOfRows; row++) {
-            strMap += Integer.toString(row + 1) + ",";
-            for (int col = 0; col < noOfColumns; col++) {                
+//        String strMap = "Where Is My bone Map\r\n,1,2,3,4,5\r\n";
+//        for (int row = 0; row < noOfRows; row++) {
+//            strMap += Integer.toString(row + 1) + ",";
+//            for (int col = 0; col < noOfColumns; col++) {                
                 
-    //            strMap += location[row][col].getSceneType() + ",";
-            }
-            strMap += "\r\n";
-        }
-        return strMap;       
-    
-    }
-
-    private void init() {
-        System.out.println("Map init() called");
+//                strMap += location[row][col].getSceneType() + ",";
+//            }
+//            strMap += "\r\n";
+//        }
+//        return strMap;       
+//    
+//    }
+//
+//    private void init() {
+//        System.out.println("Map init() called");
+//    }
     }
 }

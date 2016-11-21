@@ -26,7 +26,7 @@ public class MapView extends View {
     //private final String map;
     private String promptMessage; 
     
-    private Console console = System.console();
+    private final Console console = System.console();
     
     public MapView(){
         super("\n"+
@@ -76,26 +76,23 @@ public class MapView extends View {
             for (int row = 0; row < locations.length; row++){
                 this.console.writer().println(row + "   ");
 
-                for(int column = 0; column < locations[row].length; column++){
+                for (Location location : locations[row]) {
                     leftIndicator = "   ";
                     rightIndicator = "   ";
-
-                    if(locations[row][column] == map.getCurrentLocation()){
+                    if (location == map.getCurrentLocation()) {
                         leftIndicator = " X ";
                         rightIndicator = " X ";
-
-                            if (locations[row][column].isVisited()){
-                                leftIndicator = " X ";
-                                rightIndicator = " X ";
-                                this.console.writer().println("   |");
-
-                                if(locations[row][column].getScene()== null)
-                                    this.console.writer().println(leftIndicator + "? ?" + rightIndicator);
-                                    else{
-                                    this.console.writer().println(leftIndicator + locations[row][column].getScene().getMapSymbol() + rightIndicator);
-                                    }
-                                this.console.writer().println("|");
+                        if (location.isVisited()) {
+                            leftIndicator = " X ";
+                            rightIndicator = " X ";
+                            this.console.writer().println("   |");
+                            if (location.getScene() == null) {
+                                this.console.writer().println(leftIndicator + "? ?" + rightIndicator);
+                            } else {
+                                this.console.writer().println(leftIndicator + location.getScene().getMapSymbol() + rightIndicator);
                             }
+                            this.console.writer().println("|");
+                        }
 //                            finally(Exception e){
 //                        System.out.printlin("Error");
 //                        };

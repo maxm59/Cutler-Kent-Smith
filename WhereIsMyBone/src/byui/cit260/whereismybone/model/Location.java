@@ -64,13 +64,14 @@ public class Location implements Serializable{
     public void setActors(ArrayList<Actor> actors) {
         this.actors = actors;
     }
+    
     private String name;
 
-    //public Location(Integer rowCount, Integer columnCount, String name) {
-    //    this.rowCount = rowCount;
-    //    this.columnCount = columnCount;
-    //    this.name = name;
-    //}
+    public Location(Integer rowCount, Integer columnCount, String name) {
+        this.rowCount = rowCount;
+        this.columnCount = columnCount;
+        this.name = name;
+    }
     
     public Location() {
         //Default Setting
@@ -149,6 +150,4 @@ public class Location implements Serializable{
         this.sceneType = sceneType;
     }
 
-
-        
 }
