@@ -40,7 +40,7 @@ public class MapControl {
     static void moveActorsToStartingLocation(Map map) {
         System.out.println("\n*** called moveActorsToStartingLocation() in MapControl ***");
         //movePlayer(map, 2, 2;
-        movePlayer(map, 2, 2);
+        //movePlayer(map, 2, 2);
     }
 
     public static void movePlayer(Map map, int row, int column) {
@@ -50,15 +50,19 @@ public class MapControl {
         
         map.setCurrentRow(row);
         map.setCurrentColumn(column);
+        
+        
                         
     }
 
     private static Scene[] createScenes() {
         Scene[] scenes = new Scene[SceneType.values().length];
+        
+        Scene currentScene = null;
     
 //location 0,0
-        Scene currentScene = new Scene();
-        currentScene.setName("ParkLand");
+        currentScene = new Scene();
+        currentScene.setName("Parkland");
         currentScene.setMapSymbol("PK");      
         currentScene.setDescription("A beautiful city park with mature oak trees, grass, and picnic tables.");
         currentScene.setDialog("I saw Cat DeVil and he went that way.");
@@ -215,14 +219,14 @@ public class MapControl {
 //location 2, 3
         currentScene = new Scene();
         currentScene.setName("DeVilHouse");
-        currentScene.setMapSymbol("DE");      
+        currentScene.setMapSymbol("DH");      
         currentScene.setDescription("Cat DeVil lives here just two houses away.");
         currentScene.setDialog("Ruff, Ruff, Where are you? What are you doing here?");
         currentScene.setActor(Actor.Rats);
         currentScene.setItem(Item.FishBones);
         currentScene.setMinute(5);
         
-        scenes[SceneType.VacantHouse.ordinal()] = currentScene;
+        scenes[SceneType.DeVilHouse.ordinal()] = currentScene;
         
 //location 2, 4
         currentScene = new Scene();
@@ -286,7 +290,7 @@ public class MapControl {
         
 //location 3, 4
         currentScene = new Scene();
-        currentScene.setName("TigersCage");
+        currentScene.setName("TigerCage");
         currentScene.setMapSymbol("TC");      
         currentScene.setDescription("The Bengal tigers hangout in Zooland and can roar so loud.");
         currentScene.setDialog("Umm, you look good to eat. If she was here she would of made a tasty treat.");
@@ -342,7 +346,7 @@ public class MapControl {
         currentScene.setItem(Item.CatColar);
         currentScene.setMinute(5);
         
-        scenes[SceneType.Parkland.ordinal()] = currentScene;
+        scenes[SceneType.TrumpElementry.ordinal()] = currentScene;
         
 //location 4, 4
         currentScene = new Scene();

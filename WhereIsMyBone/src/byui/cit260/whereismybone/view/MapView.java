@@ -23,7 +23,7 @@ import whereismybone.WhereIsMyBone;
 public class MapView extends View {
     
     //private final String map;
-    private String promptMessage; 
+    //private String promptMessage; 
     
     public MapView(){
         super("\n"+
@@ -49,58 +49,57 @@ public class MapView extends View {
                 }
             }
         System.out.println("\n*** Invalid selection *** Try Again later");
-    }
-    return false;
+        }
+        return false;
    }
         
     public void displayMap(){
         
         System.out.println("DEBUG: ENTERING DISPLAY MAP");
-        
-            //Game game = WhereIsMyBone.getCurrentGame();
-            Map map = WhereIsMyBone.getCurrentGame().getMap();
-            Location[][] locations = map.getLocations();
-                        
-            String header = "   0   |   1   |   2   |   3   |   4   |";
-            System.out.println(header);
+         
+        //Game game = WhereIsMyBone.getCurrentGame();
+        Map map = WhereIsMyBone.getCurrentGame().getMap();
+        Location[][] locations = map.getLocations();
 
-            for (int row = 0; row < locations.length; row++){
-                //System.out.println("DEBUGGING: Trying to loop through rows.");
-                String mapLine = "";
-                System.out.println(row + "   ");
+        String header = "   0   |   1   |   2   |   3   |   4   |";
+        System.out.println(header);
 
-                for (Location location : locations[row]) {
-                    
-                    String leftIndicator;
-                    String rightIndicator;
-                    
-                    leftIndicator = "   ";
-                    rightIndicator = "   ";
-//                    if (location = WhereIsMyBone.getCurrentGame().getPlayer().getCurrentLocation()) {
-//                        
-//                        System.out.println("DEBUGGING: set current location.");
-//                        
-//                        leftIndicator = " H ";
-//                        rightIndicator = " H ";}
-                    
-                    if (location.isVisited()) {
-                            
-                        //System.out.println("DEBUGGING: checking for visiting.");
-                        
-                            leftIndicator = " | ";
-                            rightIndicator = " | ";
-                            System.out.println("   |");
-                            if (location.getScene() == null) {
-                                System.out.println(leftIndicator + "? ?" + rightIndicator);
-                            } else {
-                                System.out.println(leftIndicator + location.getScene().getMapSymbol() + rightIndicator);
-                            }
-                            System.out.println("|");
-                            
-                           
+        String leftIndicator;
+        String rightIndicator;
+
+        for (int row = 0; row < locations.length; row++){
+            //System.out.println("DEBUGGING: Trying to loop through rows.");
+            String mapLine = row + "|";
+            //System.out.println(row + "   ");
+
+            for (Location location : locations[row]) {
+
+
+                leftIndicator = " ";
+                rightIndicator = " ";
+                
+                if (location.getScene() == null) {
+                    leftIndicator = "  ";
+                    rightIndicator = "  ";
+                    System.out.println(leftIndicator + "??" + rightIndicator);
+                } 
+                else {
+
+                        if(location.isVisited()){
+                            leftIndicator = " v";
+                            rightIndicator = "v ";
+
                         }
+
                     }
-                }
-            }       
+
+                //System.out.println(leftIndicator + location.getScene().getMapSymbol() + rightIndicator);
+                mapLine = mapLine + " " + leftIndicator + location.getScene().getMapSymbol() + rightIndicator + " |"
+            }
+
+            System.out.println(mapLine);
+        }
+
     }
 }
+ 
