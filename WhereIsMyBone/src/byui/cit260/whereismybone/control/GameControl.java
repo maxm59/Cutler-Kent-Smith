@@ -25,7 +25,7 @@ import whereismybone.WhereIsMyBone;
  */
 public class GameControl {
 
-    public static void createPlayer(Player player) {
+    public static Player createPlayer(Player player) {
         
         Game game = new Game(); //Create new game.
         WhereIsMyBone.setCurrentGame(game); //save in WhereIsMyBone
@@ -48,6 +48,8 @@ public class GameControl {
         
         //Move actors to starting positions in the map
         MapControl.moveActorsToStartingLocation(map);
+        
+        return player;
         
      }
 
