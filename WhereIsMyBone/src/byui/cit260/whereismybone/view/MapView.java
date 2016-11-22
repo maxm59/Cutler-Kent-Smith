@@ -93,9 +93,6 @@ public class MapView extends View {
                             }
                             this.console.writer().println("|");
                         }
-//                            finally(Exception e){
-//                        System.out.printlin("Error");
-//                        };
                     }
                 }
             }

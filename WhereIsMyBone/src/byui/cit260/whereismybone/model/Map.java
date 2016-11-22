@@ -5,7 +5,6 @@
  */
 package byui.cit260.whereismybone.model;
 
-//
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Objects;
@@ -28,17 +27,16 @@ public class Map implements Serializable{
     
     private int currentRow = 0;
     private int currentColumn = 0;
-    private Location[][] location;
     
 //    private Boolean visited;    
     
-    public Map() {
-        location = new Location[noOfRows][noOfColumns];
-//        int()
-    }
+//    public Map() {
+//        location = new Location[noOfRows][noOfColumns];
+//    }
     
     public Map(int noOfRows, int noOfColumns){
-        if (noOfRows < 1 || noOfColumns < 1){
+        locations = new Location[noOfRows][noOfColumns];
+        if (noOfRows < 0 || noOfColumns < 0){
             System.out.println("The number of rows and columns must be > zero");
             return;
         }
@@ -55,12 +53,12 @@ public class Map implements Serializable{
                 Location location = new Location();
                 location.setColumnCount(column);
                 location.setRow(row);
-                location.setVisited(false);
+                location.setVisited(true);
 
                 //Assign the Location object to the current position in array
                 locations[row][column] = location;                
             }            
-        }        
+        }
     }
 
     public Location[][] getLocations() {
@@ -130,30 +128,29 @@ public class Map implements Serializable{
         }
         if (obj == null) {
             return false;
+        } 
+        else {
         }
-        if (getClass() != obj.getClass()) {
-            return false;
+            if (getClass() != obj.getClass()) {
+                return false;
+            }
+            final Map other = (Map) obj;
+            if (this.noOfRows != other.noOfRows) {
+                return false;
+            }
+            if (this.noOfColumns != other.noOfColumns) {
+                return false;
+            }
+            if (this.currentRow != other.currentRow) {
+                return false;
+            }
+            if (this.currentColumn != other.currentColumn) {
+                return false;
+            }
+            if (!Arrays.deepEquals(this.locations, other.locations)) {
+                return false;
         }
-        final Map other = (Map) obj;
-        if (this.noOfRows != other.noOfRows) {
-            return false;
-        }
-        if (this.noOfColumns != other.noOfColumns) {
-            return false;
-        }
-        if (this.currentRow != other.currentRow) {
-            return false;
-        }
-        if (this.currentColumn != other.currentColumn) {
-            return false;
-        }
-        if (!Arrays.deepEquals(this.locations, other.locations)) {
-            return false;
-        }
-        if (!Objects.equals(this.currentLocation, other.currentLocation)) {
-            return false;
-        }
-        return true;
+        return Objects.equals(this.currentLocation, other.currentLocation);
     }
 
     @Override
@@ -164,17 +161,16 @@ public class Map implements Serializable{
 //        for (int row = 0; row < noOfRows; row++) {
 //            strMap += Integer.toString(row + 1) + ",";
 //            for (int col = 0; col < noOfColumns; col++) {                
-                
+//                
 //                strMap += location[row][col].getSceneType() + ",";
 //            }
 //            strMap += "\r\n";
 //        }
 //        return strMap;       
-//    
-//    }
-//
+    
+    }
+
 //    private void init() {
 //        System.out.println("Map init() called");
-//    }
-    }
+//    }    
 }

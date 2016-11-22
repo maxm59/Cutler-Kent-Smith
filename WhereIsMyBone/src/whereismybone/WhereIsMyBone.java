@@ -45,7 +45,4 @@ public class WhereIsMyBone {
         WhereIsMyBone.gameTime = gameTime;
     }
 
-    public static PrintWriter getOutFile() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }
