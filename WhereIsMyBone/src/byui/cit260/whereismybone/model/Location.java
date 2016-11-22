@@ -24,7 +24,24 @@ public class Location implements Serializable{
     private Scene scene;
     private ArrayList<Actor> actors;
     private SceneType sceneType;
+    private String name;
+    
+    public Integer getRowCount() {
+        return rowCount;
+    }
+    
+    public void setRowCount(Integer rowCount) {
+        this.rowCount = rowCount;
+    }
 
+  public Integer getColumnCount() {
+        return columnCount;
+    }
+      
+    public void setColumnCount(Integer columnCount) {
+        this.columnCount = columnCount;
+    }
+    
     public int getRow() {
         return row;
     }
@@ -65,8 +82,22 @@ public class Location implements Serializable{
         this.actors = actors;
     }
     
-    private String name;
+    public SceneType getSceneType() {
+        return sceneType;
+    }
 
+    public void setSceneType(SceneType sceneType) {
+        this.sceneType = sceneType;
+    }
+    
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+    
     public Location(Integer rowCount, Integer columnCount, String name) {
         this.rowCount = rowCount;
         this.columnCount = columnCount;
@@ -77,30 +108,6 @@ public class Location implements Serializable{
         //Default Setting
         sceneType = SceneType.Home; 
         
-    }
-
-    public void setRowCount(Integer rowCount) {
-        this.rowCount = rowCount;
-    }
-
-    public void setColumnCount(Integer columnCount) {
-        this.columnCount = columnCount;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-    
-    public Integer getRowCount() {
-        return rowCount;
-    }
-
-      public Integer getColumnCount() {
-        return columnCount;
-    }
-
-    public String getName() {
-        return name;
     }
 
     @Override
@@ -140,14 +147,11 @@ public class Location implements Serializable{
             return false;
         }
         return true;
+        
+        
     }
 
-    public SceneType getSceneType() {
-        return sceneType;
-    }
-
-    public void setSceneType(SceneType sceneType) {
-        this.sceneType = sceneType;
-    }
-
+    
+    
+    
 }

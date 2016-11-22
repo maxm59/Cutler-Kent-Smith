@@ -203,10 +203,10 @@ public class HelpMenuView extends View{
             case "O": //Display Game Objective
                 this.displayObjectGameMenu();
                 break;
-            case "A": //Display How TO Play Details
+            case "A": //Display List of Actors
                 this.displayActorsView();
                 break;
-            case "S": //Display How TO Play Details
+            case "S": //Display The 25 Scenes in the game.
                 this.displaySceneView();
                 break;
             case "M": //Display info on how to move
@@ -240,6 +240,13 @@ public class HelpMenuView extends View{
         
         SceneView sceneView = new SceneView();
         sceneView.display();
+    }
+    
+    private void displayMap(){
+        System.out.println("Display Map Details");
+        
+        MapView mapView = new MapView();
+        mapView.display();
     }
 
 }
