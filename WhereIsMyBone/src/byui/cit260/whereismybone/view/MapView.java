@@ -9,7 +9,6 @@ import byui.cit260.whereismybone.control.MapControl;
 import byui.cit260.whereismybone.model.Location;
 import byui.cit260.whereismybone.model.Map;
 import byui.cit260.whereismybone.model.Game;
-import java.io.Console;
 import whereismybone.WhereIsMyBone;
 
 /**
@@ -25,8 +24,6 @@ public class MapView extends View {
     
     //private final String map;
     private String promptMessage; 
-    
-    private final Console console = System.console();
     
     public MapView(){
         super("\n"+
@@ -51,55 +48,59 @@ public class MapView extends View {
                     }
                 }
             }
-    System.out.println("\n*** Invalid selection *** Try Again later");
+        System.out.println("\n*** Invalid selection *** Try Again later");
     }
     return false;
    }
         
     public void displayMap(){
-        String leftIndicator;
-        String rightIndicator;
+        
+        System.out.println("DEBUG: ENTERING DISPLAY MAP");
         
             //Game game = WhereIsMyBone.getCurrentGame();
             Map map = WhereIsMyBone.getCurrentGame().getMap();
             Location[][] locations = map.getLocations();
-            
-        try{
-            this.console.writer().println("   |");
-
-            for(int column = 0; column < locations[0].length; column++){
-                this.console.writer().println("   " +column + "   |");
-            }
-            this.console.writer().println();
-            //int row;
+                        
+            String header = "   0   |   1   |   2   |   3   |   4   |";
+            System.out.println(header);
 
             for (int row = 0; row < locations.length; row++){
-                this.console.writer().println(row + "   ");
+                //System.out.println("DEBUGGING: Trying to loop through rows.");
+                String mapLine = "";
+                System.out.println(row + "   ");
 
                 for (Location location : locations[row]) {
+                    
+                    String leftIndicator;
+                    String rightIndicator;
+                    
                     leftIndicator = "   ";
                     rightIndicator = "   ";
-                    if (location == map.getCurrentLocation()) {
-                        leftIndicator = " X ";
-                        rightIndicator = " X ";
-                        if (location.isVisited()) {
-                            leftIndicator = " X ";
-                            rightIndicator = " X ";
-                            this.console.writer().println("   |");
+//                    if (location = WhereIsMyBone.getCurrentGame().getPlayer().getCurrentLocation()) {
+//                        
+//                        System.out.println("DEBUGGING: set current location.");
+//                        
+//                        leftIndicator = " H ";
+//                        rightIndicator = " H ";}
+                    
+                    if (location.isVisited()) {
+                            
+                        //System.out.println("DEBUGGING: checking for visiting.");
+                        
+                            leftIndicator = " | ";
+                            rightIndicator = " | ";
+                            System.out.println("   |");
                             if (location.getScene() == null) {
-                                this.console.writer().println(leftIndicator + "? ?" + rightIndicator);
+                                System.out.println(leftIndicator + "? ?" + rightIndicator);
                             } else {
-                                this.console.writer().println(leftIndicator + location.getScene().getMapSymbol() + rightIndicator);
+                                System.out.println(leftIndicator + location.getScene().getMapSymbol() + rightIndicator);
                             }
-                            this.console.writer().println("|");
+                            System.out.println("|");
+                            
+                           
                         }
                     }
                 }
-            }
-        }
-        catch (Exception ex){
-            System.out.println("EXCEPTION: " + ex.toString());
-        }
-        
+            }       
     }
 }

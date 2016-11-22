@@ -29,7 +29,7 @@ public class GameControl {
         
         Game game = new Game(); //Create new game.
         WhereIsMyBone.setCurrentGame(game); //save in WhereIsMyBone
-                
+        
         game.setPlayer(player); //Save Player In Game
         
         //Create GameTime in game.

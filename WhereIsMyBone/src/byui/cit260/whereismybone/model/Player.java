@@ -16,11 +16,21 @@ public class Player {
     
     private String name = "";
     private String gender = "";
-    private int[][] currentLocation; //Not sure how to get this part to work.
+    private int[][] currentLocation; //Not sure how to get this part to work. Should be replaced by Location location
+    
+    private Location location;
     private String childType = ""; //Is set to son or daughter.
 
     public Player() {
         
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
     }
 
     public String getName() {
