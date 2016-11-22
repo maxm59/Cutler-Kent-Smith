@@ -60,10 +60,10 @@ public class MapView extends View {
         String leftIndicator;
         String rightIndicator;
         
-            Game game = WhereIsMyBone.getCurrentGame();
-            Map map = game.getMap();
+            //Game game = WhereIsMyBone.getCurrentGame();
+            Map map = WhereIsMyBone.getCurrentGame().getMap();
             Location[][] locations = map.getLocations();
-
+            
         try{
             this.console.writer().println("   |");
 
@@ -101,7 +101,7 @@ public class MapView extends View {
             }
         }
         catch (Exception ex){
-            System.out.println(ex.toString());
+            System.out.println("EXCEPTION: " + ex.toString());
         }
         
     }
