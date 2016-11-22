@@ -4,7 +4,6 @@ import byui.cit260.whereismybone.model.Game;
 import byui.cit260.whereismybone.model.GameTime;
 import byui.cit260.whereismybone.model.Player;
 import byui.cit260.whereismybone.view.StartProgramView;
-import java.io.PrintWriter;
 
 public class WhereIsMyBone {
     

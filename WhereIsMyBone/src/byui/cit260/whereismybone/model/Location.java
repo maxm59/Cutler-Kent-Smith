@@ -147,11 +147,7 @@ public class Location implements Serializable{
             return false;
         }
         return true;
-        
-        
     }
-
-    
     
     
 }

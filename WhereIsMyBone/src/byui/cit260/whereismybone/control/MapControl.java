@@ -40,7 +40,7 @@ public class MapControl {
     static void moveActorsToStartingLocation(Map map) {
         System.out.println("\n*** called moveActorsToStartingLocation() in MapControl ***");
         //movePlayer(map, 2, 2;
-        //movePlayer(map, 2, 2);
+        movePlayer(map, 0, 0);
     }
 
     public static void movePlayer(Map map, int row, int column) {
@@ -49,10 +49,7 @@ public class MapControl {
         map.getCurrentLocation().setVisited(true);
         
         map.setCurrentRow(row);
-        map.setCurrentColumn(column);
-        
-        
-                        
+        map.setCurrentColumn(column);                        
     }
 
     private static Scene[] createScenes() {

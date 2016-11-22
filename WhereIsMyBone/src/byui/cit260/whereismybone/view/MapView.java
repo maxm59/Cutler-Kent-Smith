@@ -21,6 +21,8 @@ import whereismybone.WhereIsMyBone;
  * 
  */
 public class MapView extends View {
+
+    private int column;
     
     //private final String map;
     //private String promptMessage; 
@@ -61,45 +63,43 @@ public class MapView extends View {
         Map map = WhereIsMyBone.getCurrentGame().getMap();
         Location[][] locations = map.getLocations();
 
-        String header = "   0   |   1   |   2   |   3   |   4   |";
+        String header = "   0    |   1  |  2   |  3   |  4   |";
         System.out.println(header);
 
         String leftIndicator;
         String rightIndicator;
-
+        
         for (int row = 0; row < locations.length; row++){
-            //System.out.println("DEBUGGING: Trying to loop through rows.");
+
             String mapLine = row + "|";
             //System.out.println(row + "   ");
 
             for (Location location : locations[row]) {
 
-
-                leftIndicator = " ";
-                rightIndicator = " ";
+                leftIndicator = "  ";
+                rightIndicator = "  ";
                 
                 if (location.getScene() == null) {
                     leftIndicator = "  ";
                     rightIndicator = "  ";
+                    
                     System.out.println(leftIndicator + "??" + rightIndicator);
                 } 
                 else {
-
-                        if(location.isVisited()){
-                            leftIndicator = " v";
-                            rightIndicator = "v ";
+                    if(location.isVisited()){
+                        leftIndicator = " ";
+                        rightIndicator = " ";
 
                         }
-
                     }
 
-                //System.out.println(leftIndicator + location.getScene().getMapSymbol() + rightIndicator);
-                mapLine = mapLine + " " + leftIndicator + location.getScene().getMapSymbol() + rightIndicator + " |"
+//            System.out.println(leftIndicator + location.getScene().getMapSymbol() + rightIndicator);
+            mapLine = mapLine + " " + leftIndicator + location.getScene().getMapSymbol() + rightIndicator + " |";
             }
 
             System.out.println(mapLine);
         }
-
     }
 }
+
  
