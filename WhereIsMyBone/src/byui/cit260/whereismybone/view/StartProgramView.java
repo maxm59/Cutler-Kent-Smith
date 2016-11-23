@@ -162,18 +162,19 @@ public class StartProgramView {
         //Keep Looping through until a valid name is entered.
         while (!isValidGender){
             String input = keyboard.nextLine();
+            input = input.toUpperCase();
             
             //Name validation
-            if(input == null || input.length() == 1 || input.contentEquals("M")
-                    || input.contentEquals("F"))
+            if(input.contentEquals("M") | input.contentEquals("F"))
             {
                 isValidGender = true;
                 gender = input;
                 
-                if(input.contentEquals("M") || input.contentEquals("m")){
+                if(input.contentEquals("M") | input.contentEquals("m")){
                      player.setChildType("son");
                 }
                 else{
+                    
                     player.setChildType("daughter");
                 }
                 
@@ -196,11 +197,11 @@ public class StartProgramView {
             return false;
         }
         
-        Player player = new Player();
-        player.setName(playersName);
+//        Player player = new Player();
+//        player.setName(playersName);
 
         //call createPLayer() control function
-        player = GameControl.createPlayer(player);
+        Player player = GameControl.createPlayer(playersName);
                
         //Gender prompt. 
         this.displayGenderPrompt(player);

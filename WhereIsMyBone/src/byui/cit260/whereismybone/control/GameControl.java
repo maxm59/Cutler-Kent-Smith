@@ -24,41 +24,11 @@ import whereismybone.WhereIsMyBone;
  * 
  */
 public class GameControl {
-
-    public static Player createPlayer(Player player) {
-        
-        Game game = new Game(); //Create new game.
-        WhereIsMyBone.setCurrentGame(game); //save in WhereIsMyBone
-        
-        
-        //Create GameTime in game.
-        GameTime gameTime = GameControl.createGameTime();
-        game.setGameTime(gameTime);
-        
-        //create the inventory list and save in the game.
-        Item[] itemList = GameControl.createItemList();
-        
-        //create the clue list and save in the game.
-        Clue[] clueList = GameControl.createClueList();
-        
-        //Create and initialize new map
-        Map map = MapControl.createMap();
-        game.setMap(map); //save map in game.
-                
-        //Move actors to starting positions in the map
-        MapControl.moveActorsToStartingLocation(map); 
-        
-        Location location = new Location();
-        location.setRow(2);
-        location.setCol(2);
-        player.setLocation(location);
-        
-        game.setPlayer(player); //Save Player In Game
-        
-        return player;
-        
-     }
-
+    
+    //Default constructor
+    public GameControl(){
+    }
+    
     public static void createNewGame(Player player) {
         
         Game game = new Game();
@@ -71,9 +41,61 @@ public class GameControl {
         //GameTime gt = new GameTime();
         GameTime gt = GameControl.createGameTime();
         game.setGameTime(gt);
-                
+
         WhereIsMyBone.setCurrentGame(game);
     }
+
+    public static Player createPlayer(String name) {
+        
+        if (name == null){
+            return null;
+        }
+        
+        Player player = new Player();
+        player.setName(name);
+        
+        //set player default location
+        Location location = new Location();
+        location.setRow(2);
+        location.setCol(2);
+        player.setLocation(location);
+        
+        //MOVING MOST OF THIS INTO CREATE NEW GAME
+//        
+//        Game game = new Game(); //Create new game.
+//        WhereIsMyBone.setCurrentGame(game); //save in WhereIsMyBone
+        
+//        
+//        //Create GameTime in game.
+//        GameTime gameTime = GameControl.createGameTime();
+//        game.setGameTime(gameTime);
+//        
+//        //create the inventory list and save in the game.
+//        Item[] itemList = GameControl.createItemList();
+//        
+//        //create the clue list and save in the game.
+//        Clue[] clueList = GameControl.createClueList();
+//        
+//        //Create and initialize new map
+//        Map map = MapControl.createMap();
+//        game.setMap(map); //save map in game.
+//                
+//        //Move actors to starting positions in the map
+//        MapControl.moveActorsToStartingLocation(map); 
+//        
+//        //Set default location for player. 
+//        Location location = new Location();
+//        location.setRow(2);
+//        location.setCol(2);
+//        player.setLocation(location);
+//        
+//        game.setPlayer(player); //Save Player In Game
+        
+        return player;
+        
+     }
+
+
 
     private static Item[] createItemList() {
         System.out.println("\n*** called createItemList() in GameControl ***");
@@ -116,12 +138,12 @@ public class GameControl {
     }
 
     private static GameTime createGameTime() {
-        System.out.println("\n*** called createGameTime() in GameControl ***");
+        //System.out.println("\n*** called createGameTime() in GameControl ***");
         
         GameTime gameTime = new GameTime();
         gameTime.setTimeRemaining(24.0);
                 
-        System.out.println("\n***DEBUG: Time remaining is: "+ gameTime.getTimeRemaining() +"  ***");
+        //System.out.println("\n***DEBUG: Time remaining is: "+ gameTime.getTimeRemaining() +"  ***");
         
         return gameTime;
     }

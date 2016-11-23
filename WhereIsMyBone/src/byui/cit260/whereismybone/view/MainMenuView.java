@@ -5,6 +5,8 @@
  */
 package byui.cit260.whereismybone.view;
 import byui.cit260.whereismybone.control.GameControl;
+import byui.cit260.whereismybone.exception.GameControlException;
+import byui.cit260.whereismybone.exception.MapControlException;
 import java.util.Scanner;
 import whereismybone.WhereIsMyBone;
 
@@ -100,9 +102,9 @@ public class MainMenuView extends View {
     
     }
     private void startNewGame(){
-        //System.out.println("Start new game menu");
-        GameControl.createNewGame(WhereIsMyBone.getPlayer());
         
+        GameControl.createNewGame(WhereIsMyBone.getPlayer());
+ 
         //Display the Game Menu
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();

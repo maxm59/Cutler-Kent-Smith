@@ -76,9 +76,15 @@ public abstract class View implements ViewInterface {
     }
     
     protected void showGameTime(){
-        GameTimeView gt = new GameTimeView();
-        gt.display();
         
+        GameTimeView gt = new GameTimeView();
+        
+        try{
+            gt.display();
+        }
+        catch(Exception ex){
+            gt.displayWhenNull();
+        }
     }
     
     

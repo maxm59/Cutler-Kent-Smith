@@ -13,19 +13,25 @@ import whereismybone.WhereIsMyBone;
  */
 public class GameTimeView{
     
-    private double currentTime = WhereIsMyBone.getCurrentGame().getGameTime().getTimeRemaining();
-
     public GameTimeView() {
         
     }
 
     public void display() {
+        double currentTime = WhereIsMyBone.getCurrentGame().getGameTime().getTimeRemaining();
                 
         System.out.println(
                 "==================================================" +
                 "\n You have " + currentTime + " time left." +
                 "\n==================================================" 
         );
+    }
+    
+    public void displayWhenNull(){
+                System.out.println(
+                "==================================================" +
+                "\n  " +
+                "\n==================================================");
     }
     
 }
