@@ -12,22 +12,23 @@ import java.util.Scanner;
  *
  * @author Smith-Rick
  */
-public class SaveGame extends View{
+public class GameOverView extends View{
     
-    public SaveGame(){
+    public GameOverView(){
          super(
                   "==================================================" +
                 "\n               WHERE IS MY BONE?                  " +
                 "\n==================================================" +
+                "\n             .-.               .-.                " +
+                "\n            (   `-._________.-'   )               " +
+                "\n             >=     _______     =<                " +
+                "\n            (   ,-'`       `'-,   )               " +
+                "\n             `-'               `-'                " +
                 "\n                                                  " +
-                "\n  SAVE GAME:                                      " +
-                "\n                                                  " +
-                "\n    A) EMPTY" +
-                "\n    B) EMPTY" +
-                "\n    C) EMPTY" +
+                "\n      -= GAME OVER - YOU RAN OUT OF TIME =-       " +
                 "\n                                                  " +         
                 "\n==================================================" +
-                "\n  Please enter your choice: ____                  " +
+                "\n  Please Q to quit.                               " +
                 "\n=================================================="  ); 
         
     }
@@ -38,14 +39,9 @@ public class SaveGame extends View{
         choice = choice.toUpperCase();
         
         switch (choice) {
-            case "A": 
-                System.out.println("\n*** Saving to Space A ***");
-                break;
-            case "B":
-                System.out.println("\n*** Saving to Space B ***");
-                break;
-            case "C":
-                System.out.println("\n*** Saving to Space C ***");
+            
+            case "Q":
+                System.exit(0);
                 break;
             default:
                 System.out.println("\n***Invalid Selection*** Try again");

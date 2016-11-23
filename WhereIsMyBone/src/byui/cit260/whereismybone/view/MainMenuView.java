@@ -35,7 +35,7 @@ public class MainMenuView extends View {
                 "\n" + 
                 "\n     N =   New Game          " +
                 "\n     H =   Get Help          " +
-                "\n     L =   Load a Saved Game " +
+                "\n     L =   Load Saved Game " +
                 "\n     S =   Save Game         " +
                 "\n     X =   Exit Game         " +
                 "\n" +
@@ -111,11 +111,15 @@ public class MainMenuView extends View {
     }
     
     private void loadExistingGame(){
-        System.out.println("Load Existing Game");
+        //System.out.println("Load Existing Game");
+        LoadGameView lgv = new LoadGameView();
+        lgv.display();
     }
     
     private void saveGame(){
-        System.out.println("Save Game");
+        //System.out.println("Save Game");
+        SaveGameView sgv = new SaveGameView();
+        sgv.display();
     }
     
     private void displayHelpMenu(){

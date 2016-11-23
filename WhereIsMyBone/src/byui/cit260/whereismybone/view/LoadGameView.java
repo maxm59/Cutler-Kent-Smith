@@ -12,9 +12,9 @@ import java.util.Scanner;
  *
  * @author Smith-Rick
  */
-public class LoadGame extends View{
+public class LoadGameView extends View{
     
-    public LoadGame(){
+    public LoadGameView(){
          super(
                   "==================================================" +
                 "\n               WHERE IS MY BONE?                  " +
@@ -25,6 +25,8 @@ public class LoadGame extends View{
                 "\n    A) EMPTY" +
                 "\n    B) EMPTY" +
                 "\n    C) EMPTY" +
+                "\n                                                  " +   
+                "\n    X) Go Back                                    " +   
                 "\n                                                  " +         
                 "\n==================================================" +
                 "\n  Please enter your choice: ____                  " +
