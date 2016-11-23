@@ -158,21 +158,22 @@ public class MapView extends View {
 //            else
 //            {
                 //Loop through all the locations. 
-                for(Location[] loc : locations)
+                for(Location[] locArr : locations)
                 {
-                    for(Location scene: loc)
+                    for(Location location: locArr)
                     {
-                        Scene symb = scene.getScene();
+                        Scene symb = location.getScene();
                         if(symb.getMapSymbol().equals(choice))
                         {
-                            int row = scene.getRow();
-                            int column = scene.getCol();
+                            int row = location.getRow();
+                            int column = location.getCol();
 
                             System.out.println("DEBUG: Attempting to move player to: " 
                                 + choice +" at " + row + "," + column);
                             
                             //WhereIsMyBone.getCurrentGame().getPlayer().setLocation(loc);
                             MapControl.movePlayer(map, row, column);
+                            //MapControl.movePlayer(map, location);
                             
                             double currentTime = WhereIsMyBone.getCurrentGame().getGameTime().getTimeRemaining();
                             double moveTime = symb.minute;
@@ -182,7 +183,7 @@ public class MapView extends View {
                             
                             WhereIsMyBone.getCurrentGame().setGameTime(gt);
                             
-                            //String test = WhereIsMyBone.getPlayer().getLocation().getName();
+//                            String test = WhereIsMyBone.getCurrentGame().getPlayer().getLocation().getName();
                             //System.out.println("DEBUG: Player now at: " + test);
                             
                         }

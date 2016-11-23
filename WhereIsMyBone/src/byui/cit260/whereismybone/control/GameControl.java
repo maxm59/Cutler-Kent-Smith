@@ -38,6 +38,8 @@ public class GameControl {
         Map map = MapControl.createMap();
         game.setMap(map);
         
+        //TODO need to post players current starting position.
+        
         //GameTime gt = new GameTime();
         GameTime gt = GameControl.createGameTime();
         game.setGameTime(gt);
@@ -53,12 +55,6 @@ public class GameControl {
         
         Player player = new Player();
         player.setName(name);
-        
-        //set player default location
-        Location location = new Location();
-        location.setRow(2);
-        location.setCol(2);
-        player.setLocation(location);
         
         //MOVING MOST OF THIS INTO CREATE NEW GAME
 //        

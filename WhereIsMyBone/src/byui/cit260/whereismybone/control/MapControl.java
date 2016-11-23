@@ -7,9 +7,12 @@ package byui.cit260.whereismybone.control;
 
 import byui.cit260.whereismybone.model.Actor;
 import byui.cit260.whereismybone.model.Item;
+import byui.cit260.whereismybone.model.Location;
 import byui.cit260.whereismybone.model.Map;
+import byui.cit260.whereismybone.model.Player;
 import byui.cit260.whereismybone.model.Scene;
 import byui.cit260.whereismybone.model.SceneType;
+import whereismybone.WhereIsMyBone;
 
 /**
  *
@@ -44,7 +47,9 @@ public class MapControl {
     }
 
     public static void movePlayer(Map map, int row, int column) {
-        System.out.println("\n*** called movePlayer() in MapControl ***");
+                
+        System.out.println("\n*** called movePlayer() in MapControl ***"); 
+                                
         map.setCurrentLocation(map.getLocations()[row][column]);
         map.getCurrentLocation().setVisited(true);
         
@@ -358,6 +363,12 @@ public class MapControl {
         scenes[SceneType.SteakHeaven.ordinal()] = currentScene;
         
         return scenes;
+    }
+
+    public static void movePlayer(Map map, Location location) {
+        
+        Player player = WhereIsMyBone.getCurrentGame().getPlayer();
+        player.setLocation(location);
     }
     
     public boolean validLocation(int row,int column){

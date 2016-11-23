@@ -34,6 +34,11 @@ public class Map implements Serializable{
 //        location = new Location[noOfRows][noOfColumns];
 //    }
     
+    //Default Constructor
+    public Map(){
+    }
+    
+    //Overload
     public Map(int noOfRows, int noOfColumns){
         locations = new Location[noOfRows][noOfColumns];
         if (noOfRows < 0 || noOfColumns < 0){
