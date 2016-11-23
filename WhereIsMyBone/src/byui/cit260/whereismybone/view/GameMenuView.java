@@ -43,7 +43,7 @@ public class GameMenuView extends View{
         switch (charSel) {
             
             case 'M':
-                System.out.println("Display the Move Location View");
+                //System.out.println("Display the Move Location View");
                 this.movePlayer();
                 break;
             case 'S':
@@ -59,7 +59,7 @@ public class GameMenuView extends View{
                 this.showClues();
                 break;
             case 'D':
-                System.out.println("Display Map");
+                //System.out.println("Display Map");
                 this.showMap();
                 break;
             case 'H':
@@ -84,7 +84,12 @@ public class GameMenuView extends View{
     }
 
     private void movePlayer() {
-        System.out.println("TODO - Search Location Results");
+        //System.out.println("TODO - Search Location Results");
+        
+        MapView mapView = new MapView();
+        mapView.display();
+        
+        
     }
 
     private void searchLocation() {
@@ -100,12 +105,9 @@ public class GameMenuView extends View{
     }
 
     private void showMap() {
-                System.out.println("DEBUG: Display Map");
+                //System.out.println("DEBUG: Display Map");
                 MapView mapView = new MapView();
                 mapView.displayMap();
-
-                System.out.println(WhereIsMyBone.getCurrentGame().getMap().toString());
-                
     }    
     
 }

@@ -30,7 +30,6 @@ public class GameControl {
         Game game = new Game(); //Create new game.
         WhereIsMyBone.setCurrentGame(game); //save in WhereIsMyBone
         
-        game.setPlayer(player); //Save Player In Game
         
         //Create GameTime in game.
         GameTime gameTime = GameControl.createGameTime();
@@ -45,9 +44,16 @@ public class GameControl {
         //Create and initialize new map
         Map map = MapControl.createMap();
         game.setMap(map); //save map in game.
-        
+                
         //Move actors to starting positions in the map
-        MapControl.moveActorsToStartingLocation(map);
+        MapControl.moveActorsToStartingLocation(map); 
+        
+        Location location = new Location();
+        location.setRow(2);
+        location.setCol(2);
+        player.setLocation(location);
+        
+        game.setPlayer(player); //Save Player In Game
         
         return player;
         
