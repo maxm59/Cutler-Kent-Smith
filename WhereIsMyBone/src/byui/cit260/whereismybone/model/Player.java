@@ -7,6 +7,7 @@ package byui.cit260.whereismybone.model;
 
 import java.util.Arrays;
 import java.util.Objects;
+import whereismybone.WhereIsMyBone;
 
 /**
  *
@@ -18,8 +19,10 @@ public class Player {
     private String gender = "";    
     private Location location;
     private String childType = ""; //Is set to son or daughter.
+    
 
     public Player() {
+        
         
     }
 
@@ -29,6 +32,7 @@ public class Player {
 
     public void setLocation(Location location) {
         this.location = location;
+        
     }
 
     public String getName() {

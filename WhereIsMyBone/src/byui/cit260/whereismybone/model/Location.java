@@ -26,6 +26,22 @@ public class Location implements Serializable{
     private SceneType sceneType;
     private String name;
     
+    public Location() {
+        //Default Setting
+        //sceneType = SceneType.Home; 
+        this.visited = false;
+        
+    }
+    
+    public Location(Integer rowCount, Integer columnCount, String name) {
+        this.rowCount = rowCount;
+        this.columnCount = columnCount;
+        this.name = name;
+        this.visited = false;
+        
+    }
+    
+    
     public Integer getRowCount() {
         return rowCount;
     }
@@ -72,6 +88,7 @@ public class Location implements Serializable{
 
     public void setScene(Scene scene) {
         this.scene = scene;
+        this.name = scene.getName(); //used for debugging
     }
 
     public ArrayList<Actor> getActors() {
@@ -98,17 +115,7 @@ public class Location implements Serializable{
         this.name = name;
     }
     
-    public Location(Integer rowCount, Integer columnCount, String name) {
-        this.rowCount = rowCount;
-        this.columnCount = columnCount;
-        this.name = name;
-    }
-    
-    public Location() {
-        //Default Setting
-        sceneType = SceneType.Home; 
-        
-    }
+
 
     @Override
     public int hashCode() {

@@ -37,6 +37,10 @@ public class MapControl {
         //Assign each scene to a location in the map
         GameControl.assignScenesToLocations(map, scenes);        
 
+        
+//        System.out.println("\n*** MapControl - Setting start Location ***" + map.getLocations()[2][2].getName());//DEBUG
+        map.setCurrentLocation(map.getLocations()[2][2]);
+        
         return map;
     }
 
@@ -44,17 +48,6 @@ public class MapControl {
         System.out.println("\n*** called moveActorsToStartingLocation() in MapControl ***");
         //movePlayer(map, 2, 2;
         movePlayer(map, 0, 0);
-    }
-
-    public static void movePlayer(Map map, int row, int column) {
-                
-        System.out.println("\n*** called movePlayer() in MapControl ***"); 
-                                
-        map.setCurrentLocation(map.getLocations()[row][column]);
-        map.getCurrentLocation().setVisited(true);
-        
-        map.setCurrentRow(row);
-        map.setCurrentColumn(column);                        
     }
 
     private static Scene[] createScenes() {
@@ -70,7 +63,7 @@ public class MapControl {
         currentScene.setDialog("I saw Cat DeVil and he went that way.");
         currentScene.setActor(Actor.Tommy);
         currentScene.setItem(Item.CatHair);
-        currentScene.setMinute(5);
+        currentScene.setMinute(0.15);
         
         scenes[SceneType.Parkland.ordinal()] = currentScene;
         
@@ -82,7 +75,7 @@ public class MapControl {
         currentScene.setDialog("My bone must be hear. I can smell it.");
         currentScene.setActor(Actor.Toby);
         currentScene.setItem(Item.FishBones);
-        currentScene.setMinute(5);
+        currentScene.setMinute(0.15);
         
         scenes[SceneType.VacantHouse.ordinal()] = currentScene;
         
@@ -94,7 +87,7 @@ public class MapControl {
         currentScene.setDialog("Hi Buddy how you doing? On the hunt for Cat DeVil?");
         currentScene.setActor(Actor.Pete);
         currentScene.setItem(Item.Badge);
-        currentScene.setMinute(5);
+        currentScene.setMinute(0.15);
         
         scenes[SceneType.K9Precinct.ordinal()] = currentScene;
         
@@ -106,7 +99,7 @@ public class MapControl {
         currentScene.setDialog("Hello there? Looking for that darn cat?");
         currentScene.setActor(Actor.DrMice);
         currentScene.setItem(Item.Bell);
-        currentScene.setMinute(5);
+        currentScene.setMinute(0.15);
         
         scenes[SceneType.AnimalCare.ordinal()] = currentScene;
         
@@ -118,7 +111,7 @@ public class MapControl {
         currentScene.setDialog("I saw Cat DeVil. He was looking for his gang and left.");
         currentScene.setActor(Actor.MrSam);
         currentScene.setItem(Item.Cages);
-        currentScene.setMinute(5);
+        currentScene.setMinute(0.15);
         
         scenes[SceneType.AnimalShelter.ordinal()] = currentScene;
              
@@ -130,7 +123,7 @@ public class MapControl {
         currentScene.setDialog("Would you like some bacon?");
         currentScene.setActor(Actor.MrJones);
         currentScene.setItem(Item.Bacon);
-        currentScene.setMinute(5);
+        currentScene.setMinute(0.15);
         
         scenes[SceneType.JonesBakery.ordinal()] = currentScene;
         
@@ -142,7 +135,7 @@ public class MapControl {
         currentScene.setDialog("If that cat was here, I would tell you. I never saw him.");
         currentScene.setActor(Actor.MrCatch);
         currentScene.setItem(Item.FishBones);
-        currentScene.setMinute(5);
+        currentScene.setMinute(0.15);
         
         scenes[SceneType.SeafoodEatery.ordinal()] = currentScene;
         
@@ -154,7 +147,7 @@ public class MapControl {
         currentScene.setDialog("Yes, Cat DeVil and his gang was here and went that way.");
         currentScene.setActor(Actor.MsCoCo);
         currentScene.setItem(Item.Hamburger);
-        currentScene.setMinute(5);
+        currentScene.setMinute(0.15);
         
         scenes[SceneType.TexMixDriveInn.ordinal()] = currentScene;
 
@@ -166,7 +159,7 @@ public class MapControl {
         currentScene.setDialog("Quack, Quack, I saw that cat.");
         currentScene.setActor(Actor.Ducks);
         currentScene.setItem(Item.CatHair);
-        currentScene.setMinute(5);
+        currentScene.setMinute(0.15);
         
         scenes[SceneType.Pond.ordinal()] = currentScene;
         
@@ -178,7 +171,7 @@ public class MapControl {
         currentScene.setDialog("You came alone...the boss is not here.");
         currentScene.setActor(Actor.Rex);
         currentScene.setItem(Item.FishBones);
-        currentScene.setMinute(5);
+        currentScene.setMinute(0.15);
         
         scenes[SceneType.CatsAlley.ordinal()] = currentScene;
         
@@ -190,7 +183,7 @@ public class MapControl {
         currentScene.setDialog("Hi there Officer, would like some water?");
         currentScene.setActor(Actor.MissEllie);
         currentScene.setItem(Item.Water);
-        currentScene.setMinute(5);
+        currentScene.setMinute(0.15);
         
         scenes[SceneType.SeniorCare.ordinal()] = currentScene;
         
@@ -202,7 +195,7 @@ public class MapControl {
         currentScene.setDialog("Hi, there off to catch her I see? Good Luck Officer.");
         currentScene.setActor(Actor.TheSmiths);
         currentScene.setItem(Item.None);
-        currentScene.setMinute(5);
+        currentScene.setMinute(0.15);
         
         scenes[SceneType.SmithHouse.ordinal()] = currentScene;
         
@@ -214,7 +207,7 @@ public class MapControl {
         currentScene.setDialog("Lets go buddy, off to find your bone.");
         currentScene.setActor(Actor.BenAndNancy);
         currentScene.setItem(Item.Bone);
-        currentScene.setMinute(5);
+        currentScene.setMinute(0.15);
         
         scenes[SceneType.Home.ordinal()] = currentScene;
         
@@ -226,7 +219,7 @@ public class MapControl {
         currentScene.setDialog("Ruff, Ruff, Where are you? What are you doing here?");
         currentScene.setActor(Actor.Rats);
         currentScene.setItem(Item.FishBones);
-        currentScene.setMinute(5);
+        currentScene.setMinute(0.15);
         
         scenes[SceneType.DeVilHouse.ordinal()] = currentScene;
         
@@ -238,7 +231,7 @@ public class MapControl {
         currentScene.setDialog("I saw Cat DeVil and she went that way.");
         currentScene.setActor(Actor.Scarface);
         currentScene.setItem(Item.CatHair);
-        currentScene.setMinute(5);
+        currentScene.setMinute(0.15);
         
         scenes[SceneType.SuperMax.ordinal()] = currentScene;
         
@@ -250,7 +243,7 @@ public class MapControl {
         currentScene.setDialog("She was here, bones and hairballs all over the place.");
         currentScene.setActor(Actor.MrCatch);
         currentScene.setItem(Item.FishBones);
-        currentScene.setMinute(5);
+        currentScene.setMinute(0.15);
         
         scenes[SceneType.Fishmonger.ordinal()] = currentScene;
         
@@ -262,7 +255,7 @@ public class MapControl {
         currentScene.setDialog("I saw Cat DeVil and she around here and has a bone.");
         currentScene.setActor(Actor.MrNono);
         currentScene.setItem(Item.CatHair);
-        currentScene.setMinute(5);
+        currentScene.setMinute(0.15);
         
         scenes[SceneType.Zoo.ordinal()] = currentScene;
         
@@ -274,7 +267,7 @@ public class MapControl {
         currentScene.setDialog("I see a box over there, maybe shes hiding in it.");
         currentScene.setActor(Actor.Elephants);
         currentScene.setItem(Item.Box);
-        currentScene.setMinute(5);
+        currentScene.setMinute(0.15);
         
         scenes[SceneType.ElephantsCage.ordinal()] = currentScene;
         
@@ -286,7 +279,7 @@ public class MapControl {
         currentScene.setDialog("I saw Cat DeVil. Quickly, she's in the pipe.");
         currentScene.setActor(Actor.Giraffes);
         currentScene.setItem(Item.Pipe);
-        currentScene.setMinute(5);
+        currentScene.setMinute(0.15);
         
         scenes[SceneType.GiraffesCage.ordinal()] = currentScene;
         
@@ -298,7 +291,7 @@ public class MapControl {
         currentScene.setDialog("Umm, you look good to eat. If she was here she would of made a tasty treat.");
         currentScene.setActor(Actor.Tigers);
         currentScene.setItem(Item.FishBones);
-        currentScene.setMinute(5);
+        currentScene.setMinute(0.15);
         
         scenes[SceneType.TigerCage.ordinal()] = currentScene;
         
@@ -310,7 +303,7 @@ public class MapControl {
         currentScene.setDialog("Oh, you missed her this morning. She's in the Cat Alley.");
         currentScene.setActor(Actor.Felix);
         currentScene.setItem(Item.CatHair);
-        currentScene.setMinute(5);
+        currentScene.setMinute(0.15);
         
         scenes[SceneType.SchoolFront.ordinal()] = currentScene;
         
@@ -322,7 +315,7 @@ public class MapControl {
         currentScene.setDialog("You are are my Hero.");
         currentScene.setActor(Actor.Brad);
         currentScene.setItem(Item.Bacon);
-        currentScene.setMinute(5);
+        currentScene.setMinute(0.15);
         
         scenes[SceneType.SchoolCafe.ordinal()] = currentScene;
         
@@ -334,7 +327,7 @@ public class MapControl {
         currentScene.setDialog("How are you today? Ready to work? Do need a drink of water?");
         currentScene.setActor(Actor.MrSneed);
         currentScene.setItem(Item.Water);
-        currentScene.setMinute(5);
+        currentScene.setMinute(0.15);
         
         scenes[SceneType.PlayGround.ordinal()] = currentScene;
         
@@ -346,7 +339,7 @@ public class MapControl {
         currentScene.setDialog("Come here doggy.");
         currentScene.setActor(Actor.Brad);
         currentScene.setItem(Item.CatColar);
-        currentScene.setMinute(5);
+        currentScene.setMinute(0.15);
         
         scenes[SceneType.TrumpElementry.ordinal()] = currentScene;
         
@@ -358,25 +351,24 @@ public class MapControl {
         currentScene.setDialog("Here's a bone for my favorite K9 dog. Enjoy!");
         currentScene.setActor(Actor.MrSteele);
         currentScene.setItem(Item.Bone);
-        currentScene.setMinute(5);
+        currentScene.setMinute(0.15);
         
         scenes[SceneType.SteakHeaven.ordinal()] = currentScene;
         
         return scenes;
     }
 
-    public static void movePlayer(Map map, Location location) {
-        
-        Player player = WhereIsMyBone.getCurrentGame().getPlayer();
-        player.setLocation(location);
-    }
-    
     public boolean validLocation(int row,int column){
         if (row < 0 || row > 4) {
                 return false;
         }
 
         return !(column < 0 || row > 4);
+    }
+    
+    public static void movePlayerToStartingLocation(Map map)
+    {
+        movePlayer(map, 2, 2);
     }
     
     public int[] movePlayer(int nRow, int nCol)
@@ -391,4 +383,26 @@ public class MapControl {
        return newLoc;
        
      }
+     public static void movePlayer(Map map, Location location) {
+        
+        Player player = WhereIsMyBone.getCurrentGame().getPlayer();
+        player.setLocation(location);
+    }
+
+    public static void movePlayer(Map map, int row, int column) {
+                
+        System.out.println("\n*** called movePlayer() in MapControl ***"); 
+        System.out.println("\n*** called movePlayer() in row *** " + row);
+        System.out.println("\n*** called movePlayer() in column *** " + column);
+                                        
+        map.setCurrentLocation(map.getLocations()[row][column]);
+        map.getCurrentLocation().setVisited(true);
+        
+        map.setCurrentRow(row);
+        map.setCurrentColumn(column);
+        
+        WhereIsMyBone.getCurrentGame().getPlayer().setLocation(map.getCurrentLocation());
+        
+    }
+        
 }

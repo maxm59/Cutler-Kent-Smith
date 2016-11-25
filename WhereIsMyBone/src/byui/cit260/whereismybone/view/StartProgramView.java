@@ -8,6 +8,7 @@ package byui.cit260.whereismybone.view;
 import byui.cit260.whereismybone.control.GameControl;
 import byui.cit260.whereismybone.model.Player;
 import java.util.Scanner;
+import whereismybone.WhereIsMyBone;
 
 /**
  *
@@ -201,8 +202,9 @@ public class StartProgramView {
 //        player.setName(playersName);
 
         //call createPLayer() control function
-        Player player = GameControl.createPlayer(playersName);
-               
+        WhereIsMyBone.setPlayer(GameControl.createPlayer(playersName));
+        
+        Player player = WhereIsMyBone.getPlayer();
         //Gender prompt. 
         this.displayGenderPrompt(player);
         this.getPlayerGender(player);

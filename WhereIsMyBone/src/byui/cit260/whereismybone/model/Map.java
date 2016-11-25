@@ -28,7 +28,7 @@ public class Map implements Serializable{
     private int currentRow = 0;
     private int currentColumn = 0;
     
-//    private Boolean visited;    
+    private Boolean visited;    
     
 //    public Map() {
 //        location = new Location[noOfRows][noOfColumns];
@@ -56,7 +56,7 @@ public class Map implements Serializable{
             for (int column = 0; column < noOfColumns; column++){
                 //create and initialize new Location object instance
                 Location location = new Location();
-                location.setColumnCount(column);
+                location.setCol(column);
                 location.setRow(row);
                 location.setVisited(true);
 
@@ -112,6 +112,14 @@ public class Map implements Serializable{
 
     public void setCurrentLocation(Location currentLocation) {
         this.currentLocation = currentLocation;
+    }
+
+    public Boolean getVisited() {
+        return visited;
+    }
+
+    public void setVisited(Boolean visited) {
+        this.visited = visited;
     }
 
     @Override

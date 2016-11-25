@@ -23,7 +23,7 @@ public class Scene implements Serializable {
     private String name;        //name of current scene
     private Item item;          //perhaps null, if there is an item, need dialog
     public String mapSymbol;    //already visted the spot
-    public int minute;          //timed per location
+    public Double minute;          //timed per location
     
     public Scene(){ 
         this.description = "";
@@ -131,10 +131,10 @@ public class Scene implements Serializable {
         this.description = description;
     }
     
-    public int getMinute() {
+    public Double getMinute() {
         return minute;
     }
-    public void setMinute(int minute) {
+    public void setMinute(Double minute) {
         this.minute = minute;
     }
 

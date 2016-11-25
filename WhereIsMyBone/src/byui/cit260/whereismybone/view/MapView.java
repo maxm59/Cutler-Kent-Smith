@@ -121,12 +121,19 @@ public class MapView extends View {
                     System.out.println(leftIndicator + "??" + rightIndicator);
                 } 
                 else {
+                                        
+                    //isVisited is currently not working. Leaving the indicators blank for now.
                     if(location.isVisited()){
-                        leftIndicator = " ";
-                        rightIndicator = " ";
-
+                        leftIndicator = "   ";
+                        rightIndicator = "   ";
+                        
                         }
+                    if(location == WhereIsMyBone.getCurrentGame().getPlayer().getLocation())
+                    {                       
+                        leftIndicator = " >";
+                        rightIndicator = "< ";
                     }
+                }
 
 //            System.out.println(leftIndicator + location.getScene().getMapSymbol() + rightIndicator);
             mapLine = mapLine + " " + leftIndicator + location.getScene().getMapSymbol() + rightIndicator + " |";
@@ -165,14 +172,19 @@ public class MapView extends View {
                         Scene symb = location.getScene();
                         if(symb.getMapSymbol().equals(choice))
                         {
+
                             int row = location.getRow();
                             int column = location.getCol();
 
-                            System.out.println("DEBUG: Attempting to move player to: " 
-                                + choice +" at " + row + "," + column);
-                            
+//                            System.out.println("DEBUG: Attempting to move player to: " 
+//                                + choice +" at " + row + "," + column);
+//                            
                             //WhereIsMyBone.getCurrentGame().getPlayer().setLocation(loc);
                             MapControl.movePlayer(map, row, column);
+//                            System.out.println("\n*** DEBUG MapControl.movePlayer *** " + map);
+//                            System.out.println("\n*** DEBUG MapControl.movePlayer *** " + row);
+//                            System.out.println("\n*** DEBUG MapControl.movePlayer *** " + column);
+//                            
                             //MapControl.movePlayer(map, location);
                             
                             double currentTime = WhereIsMyBone.getCurrentGame().getGameTime().getTimeRemaining();
@@ -183,9 +195,10 @@ public class MapView extends View {
                             
                             WhereIsMyBone.getCurrentGame().setGameTime(gt);
                             
+//                            //For Debugging
 //                            String test = WhereIsMyBone.getCurrentGame().getPlayer().getLocation().getName();
-                            //System.out.println("DEBUG: Player now at: " + test);
-                            
+//                            System.out.println("DEBUG: Player now at: " + test);
+//                            
                         }
 
                     }

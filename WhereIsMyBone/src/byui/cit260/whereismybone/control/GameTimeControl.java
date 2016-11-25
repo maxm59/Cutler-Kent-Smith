@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package byui.cit260.whereismybone.control;
+import java.text.*;
 
 /**
  *
@@ -38,6 +39,11 @@ public class GameTimeControl {
         {
             newTime = 0;
         }
+        
+        //format the time so that only 2 decimal points are returned
+        DecimalFormat df = new DecimalFormat("#.##"); 
+        
+        newTime = Double.valueOf(df.format(newTime));
         
         return newTime;
     }
