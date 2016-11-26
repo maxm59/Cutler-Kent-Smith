@@ -19,9 +19,11 @@ public class GameTimeView{
 
     public void display() {
         double currentTime = WhereIsMyBone.getCurrentGame().getGameTime().getTimeRemaining();
+        String currentLoc = WhereIsMyBone.getCurrentGame().getPlayer().getLocation().getName();
                 
         System.out.println(
                 "==================================================" +
+                "\n Your current location is: " + currentLoc +
                 "\n You have " + currentTime + " time left." +
                 "\n==================================================" 
         );
@@ -33,5 +35,4 @@ public class GameTimeView{
                 "\n  " +
                 "\n==================================================");
     }
-    
 }
