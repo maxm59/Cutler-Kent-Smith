@@ -19,13 +19,13 @@ public class GameMenuView extends View{
                  "==================================================" +
                 "\n               WHERE IS MY BONE?                 " +
                 "\n                   GAME MENU                     " +
-                "\n=================================================" +
+                "\n==================================================" +
                 "\n                                                 " +
-                "\n         B  =  Backpack Inventory                " +
+                "\n         B  =  Backpack Inventory List           " +        
                 "\n         C  =  Clue List                         " +                         
                 "\n         D  =  Display Map                       " +                         
                 "\n         H  =  Display Help                      " +                       
-                "\n         M  =  Move                              " +
+                "\n         M  =  Move Player                       " +
                 "\n         S  =  Search Location for Clues         " +
                 "\n                                                 " +
                 "\n         X  =  Exit Game                         " +
@@ -42,14 +42,6 @@ public class GameMenuView extends View{
         
         switch (charSel) {
             
-            case 'M':
-                //System.out.println("Display the Move Location View");
-                this.movePlayer();
-                break;
-            case 'S':
-                System.out.println("Search Location");
-                this.searchLocation();
-                break;
             case 'B':
                 System.out.println("Display Backpack Inventory");
                 this.showBackpack();
@@ -66,6 +58,14 @@ public class GameMenuView extends View{
                 System.out.println("Display Help Menu");
                 this.showHelpMenu();
                 break;
+            case 'M':
+                //System.out.println("Display the Move Location View");
+                this.movePlayer();
+                break;
+            case 'S':
+                System.out.println("Search Location");
+                this.searchLocation();
+                break;
             case 'X':
                 System.out.println("Exit the Game Menu");
                 return true;
@@ -74,40 +74,37 @@ public class GameMenuView extends View{
                 break;
         }
         return false;
-    
     }
-
+    
+    private void showBackpack() {
+        BackpackView backpackView = new BackpackView();
+        backpackView.display();
+//        System.out.println("TODO - Display BackPack Inventory List");
+    }
+    private void showClues() {
+        System.out.println("TODO - Display Clue List");
+    }
+    private void showMap() {
+        //System.out.println("DEBUG: Display Map");
+        MapView mapView = new MapView();
+        mapView.displayMap();
+    }    
     private void showHelpMenu() {
-        
         HelpMenuView helpMenuView = new HelpMenuView();
         helpMenuView.display();
     }
-
     private void movePlayer() {
         //System.out.println("TODO - Search Location Results");
-        
         MapView mapView = new MapView();
-        mapView.display();
-        
-        
+        mapView.display();  
     }
-
     private void searchLocation() {
                 System.out.println("TODO - Search Location Results");
     }
 
-    private void showBackpack() {
-                System.out.println("TODO - Display BackPack Inventory");
-    }
 
-    private void showClues() {
-                System.out.println("TODO - Display Clue List");
-    }
 
-    private void showMap() {
-                //System.out.println("DEBUG: Display Map");
-                MapView mapView = new MapView();
-                mapView.displayMap();
-    }    
+
+
     
 }

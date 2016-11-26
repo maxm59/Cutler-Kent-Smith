@@ -98,7 +98,7 @@ public class MapView extends View {
         Map map = WhereIsMyBone.getCurrentGame().getMap();
         Location[][] locations = map.getLocations();
 
-        String header = "   0    |   1  |  2   |  3   |  4   |";
+        String header = "      0     |     1    |     2    |    3     |    4     |";
         System.out.println(header);
 
         String leftIndicator;

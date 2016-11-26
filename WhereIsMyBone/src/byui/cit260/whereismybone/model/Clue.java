@@ -13,7 +13,8 @@ import java.io.Serializable;
 public enum Clue implements Serializable {
     
     Clue1("Cat paw prints are near your bowl. Your bone is missing."),
-    Clue2("The birds chirped. They saw nothing.");
+    Clue2("The birds chirped. They saw nothing."),
+    clue3("Cat fur ball");
     
     //private String name;
     private final String description;
