@@ -130,8 +130,8 @@ public class MapView extends View {
                         }
                     if(location == WhereIsMyBone.getCurrentGame().getPlayer().getLocation())
                     {                       
-                        leftIndicator = " >";
-                        rightIndicator = "< ";
+                        leftIndicator = "  >";
+                        rightIndicator = "<  ";
                     }
                 }
 
