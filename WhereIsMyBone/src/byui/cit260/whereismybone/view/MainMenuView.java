@@ -5,8 +5,7 @@
  */
 package byui.cit260.whereismybone.view;
 import byui.cit260.whereismybone.control.GameControl;
-import byui.cit260.whereismybone.exception.GameControlException;
-import byui.cit260.whereismybone.exception.MapControlException;
+import byui.cit260.whereismybone.model.ErrorView;
 import java.util.Scanner;
 import whereismybone.WhereIsMyBone;
 
@@ -103,32 +102,66 @@ public class MainMenuView extends View {
     }
     private void startNewGame(){
         
-        GameControl.createNewGame(WhereIsMyBone.getPlayer());
+        try{
+            
+            GameControl.createNewGame(WhereIsMyBone.getPlayer());
  
-        //Display the Game Menu
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.display();
+            //Display the Game Menu
+            GameMenuView gameMenu = new GameMenuView();
+            gameMenu.display();
+            
+        }
+        catch (Exception ex){
+            ErrorView.display(this.getClass().getName(), 
+                    "Error starting New Game.");
+        }
+        
+
     }
     
     private void loadExistingGame(){
-        //System.out.println("Load Existing Game");
-        LoadGameView lgv = new LoadGameView();
-        lgv.display();
+        
+        try{
+            //System.out.println("Load Existing Game");
+            LoadGameView lgv = new LoadGameView();
+            lgv.display();
+            
+        }
+        catch(Exception ex)
+        {
+            ErrorView.display(this.getClass().getName(), 
+                    "Error Loading Game.");
+        }
     }
     
     private void saveGame(){
-        //System.out.println("Save Game");
-        SaveGameView sgv = new SaveGameView();
-        sgv.display();
+        
+        try{
+            //System.out.println("Save Game");
+            SaveGameView sgv = new SaveGameView();
+            sgv.display();
+            
+        }
+        catch(Exception ex)
+        {
+            ErrorView.display(this.getClass().getName(), 
+                    "Error Saving Game.");
+        }
     }
     
     private void displayHelpMenu(){
-        System.out.println("Display Help Menu");
-        //Display the MainMenuView 
-        //Create MainMenuView object
-        HelpMenuView helpMenuView = new HelpMenuView();
-        //Display the main menu view
-        helpMenuView.display();
+        try{
+            //System.out.println("Display Help Menu");
+            HelpMenuView helpMenuView = new HelpMenuView();
+            helpMenuView.display();
+            
+        }
+        catch(Exception ex)
+        {
+            ErrorView.display(this.getClass().getName(), 
+                    "Error with Help Menu.");
+        }
+
     }
      
     
@@ -153,9 +186,18 @@ public class MainMenuView extends View {
     }
     
     private void displayComplexCalculationView() {
+        try{
+
+            ComplexCalculationView complexCalculationView = new ComplexCalculationView();
+            complexCalculationView.displayComplexCalculationView();
+            
+        }
+        catch(Exception ex)
+        {
+            ErrorView.display(this.getClass().getName(), 
+                    "Error the Complex Calculation View.");
+        }
         
-        ComplexCalculationView complexCalculationView = new ComplexCalculationView();
-        complexCalculationView.displayComplexCalculationView();
     
     }
 }

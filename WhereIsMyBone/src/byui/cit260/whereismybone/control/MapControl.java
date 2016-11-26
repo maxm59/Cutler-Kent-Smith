@@ -5,7 +5,9 @@
  */
 package byui.cit260.whereismybone.control;
 
+import byui.cit260.whereismybone.exception.MapControlException;
 import byui.cit260.whereismybone.model.Actor;
+import byui.cit260.whereismybone.model.ErrorView;
 import byui.cit260.whereismybone.model.Item;
 import byui.cit260.whereismybone.model.Location;
 import byui.cit260.whereismybone.model.Map;
@@ -44,10 +46,12 @@ public class MapControl {
         return map;
     }
 
-    static void moveActorsToStartingLocation(Map map) {
+    public static void moveActorsToStartingLocation(Map map) throws MapControlException
+    {
         //System.out.println("\n*** called moveActorsToStartingLocation() in MapControl ***");
         //movePlayer(map, 2, 2;
         movePlayer(map, 2, 2);
+        
     }
 
     private static Scene[] createScenes() {
@@ -358,29 +362,31 @@ public class MapControl {
         return scenes;
     }
 
-    public boolean validLocation(int row,int column){
+    public boolean validLocation(int row,int column) throws MapControlException
+    {
         if (row < 0 || row > 4) {
-                return false;
+            return false;
         }
 
         return !(column < 0 || row > 4);
     }
     
-    public static void movePlayerToStartingLocation(Map map)
+    public static void movePlayerToStartingLocation(Map map) throws MapControlException
     {
         movePlayer(map, 2, 2);
-    }
+}
     
-    public int[] movePlayer(int nRow, int nCol)
+    public int[] movePlayer(int nRow, int nCol) throws MapControlException
     {
-       if(!validLocation(nRow, nCol))
-       {
-           //int[] resultFail = null;
-           return null;
-       }
-       
-       int[] newLoc = {nRow, nCol};
-       return newLoc;
+        if(!validLocation(nRow, nCol))
+        {
+            //int[] resultFail = null;
+            return null;
+        }
+
+        int[] newLoc = {nRow, nCol};
+
+        return newLoc;
        
      }
      public static void movePlayer(Map map, Location location) {
@@ -389,8 +395,9 @@ public class MapControl {
         player.setLocation(location);
     }
 
-    public static void movePlayer(Map map, int row, int column) {
-                
+    public static void movePlayer(Map map, int row, int column)
+    {
+       
         //System.out.println("\n*** called movePlayer() in MapControl ***"); 
         //System.out.println("\n*** called movePlayer() in row *** " + row);
         //System.out.println("\n*** called movePlayer() in column *** " + column);

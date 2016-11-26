@@ -6,6 +6,7 @@
 package byui.cit260.whereismybone.view;
 
 import byui.cit260.whereismybone.control.GameControl;
+import byui.cit260.whereismybone.model.ErrorView;
 import byui.cit260.whereismybone.model.Player;
 import java.util.Scanner;
 import whereismybone.WhereIsMyBone;
@@ -132,17 +133,23 @@ public class StartProgramView {
         
         while(!valid){
             //loop while an invalid value is entered
-            
             //System.out.println("\n" + this.promptMessage);  
-            
-            value = keyboard.nextLine(); //get the next line typed on the keyboard
-            value = value.trim(); //trim off leading and trailing blanks
-            
-            if(value.length() < 1)
-            {
-                //value is blank
-                System.out.println("\nInvalid Value: value cannot be blank");
-                continue;        
+            try{
+                //get the next line typed on the keyboard
+                value = keyboard.nextLine(); 
+                //trim off leading and trailing blanks
+                value = value.trim();
+                
+                if(value.length() < 1)
+                {
+                    //value is blank
+                    System.out.println("\nInvalid Value: value cannot be blank");
+                    continue;        
+                }
+            }
+            catch(Exception ex){
+                ErrorView.display(this.getClass().getName(), 
+                        "Error getting player name");              
             }
             
             break; //end the loop
@@ -184,11 +191,8 @@ public class StartProgramView {
              System.out.println("Invalid Gender. Please type M or F.");
             }
         }
-            //
-            //TODO::Set player gender attribute in player instance. 
-            //
             
-        }
+    }
     
     private boolean doAction(String playersName) {
         
@@ -253,6 +257,4 @@ public class StartProgramView {
         //Display the main menu view
         mainMenuView.display();
     }
-    
-    
 }
