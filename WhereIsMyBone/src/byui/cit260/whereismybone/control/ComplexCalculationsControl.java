@@ -81,14 +81,14 @@ public class ComplexCalculationsControl {
     public int calcWatts(int volts, int amps) //throws ComplexCalcException
     {
         
-        if(amps <= 0 | amps > 1000)
+        if(amps <= 0 || amps > 1000)
         {
             //throw new ComplexCalcException("Invalid entry, amps cannot be less "
             //        + "than 1 or more than 1000.");
             return -1;
         }
         
-        if (volts <= 0 | volts > 14)
+        if (volts <= 0 || volts > 14)
         {
             //throw new ComplexCalcException("Invalid entry, volts cannot be less "
             //        + "than 1 or more than 14.");
