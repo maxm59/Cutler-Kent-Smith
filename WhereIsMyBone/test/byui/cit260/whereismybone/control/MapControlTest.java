@@ -5,6 +5,7 @@
  */
 package byui.cit260.whereismybone.control;
 
+import byui.cit260.whereismybone.exception.MapControlException;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -21,7 +22,7 @@ public class MapControlTest {
      * Test of validLocation method, of class MapControl.
      */
     @Test
-    public void testValidLocation() {
+    public void testValidLocation() throws MapControlException {
         System.out.println("validLocation");
                        
         /***********************

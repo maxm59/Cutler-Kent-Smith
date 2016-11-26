@@ -40,11 +40,11 @@ public class GameMenuView extends View{
         
         switch (charSel) { 
             case 'B':
-                System.out.println("Display Backpack Inventory");
+                //System.out.println("Display Backpack Inventory");
                 this.showBackpack();
                 break;
             case 'C':
-                System.out.println("Display Clue List");
+                //System.out.println("Display Clue List");
                 this.showClues();
                 break;
             case 'D':
@@ -52,7 +52,7 @@ public class GameMenuView extends View{
                 this.showMap();
                 break;
             case 'H':
-                System.out.println("Display Help Menu");
+                //System.out.println("Display Help Menu");
                 this.showHelpMenu();
                 break;
             case 'M':
@@ -60,11 +60,11 @@ public class GameMenuView extends View{
                 this.movePlayer();
                 break;
             case 'S':
-                System.out.println("Search Location");
+                //System.out.println("Search Location");
                 this.searchLocation();
                 break;
             case 'X':
-                System.out.println("Exit the Game Menu");
+                //System.out.println("Exit the Game Menu");
                 return true;
             default:
                 System.out.println("Invalid option");

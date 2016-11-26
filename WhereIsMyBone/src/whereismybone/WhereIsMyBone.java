@@ -16,8 +16,18 @@ public class WhereIsMyBone {
      */
     public static void main(String[] args) {
         
-        StartProgramView startProgramView = new StartProgramView();
-        startProgramView.displayStartProgramView();
+        try{
+            StartProgramView startProgramView = new StartProgramView();
+            startProgramView.displayStartProgramView();
+        
+        }
+        catch(Exception ex){
+            ex.printStackTrace();
+        }
+        finally{
+            
+        }
+
     }
    
     public static Game getCurrentGame() {

@@ -4,15 +4,16 @@
  * and open the template in the editor.
  */
 package byui.cit260.whereismybone.control;
+import byui.cit260.whereismybone.exception.MapControlException;
 
 import byui.cit260.whereismybone.model.Actor;
+import byui.cit260.whereismybone.model.BackpackItem;
+import byui.cit260.whereismybone.model.Clue;
 import byui.cit260.whereismybone.model.Location;
 import byui.cit260.whereismybone.model.Map;
 import byui.cit260.whereismybone.model.Player;
 import byui.cit260.whereismybone.model.Scene;
 import byui.cit260.whereismybone.enums.SceneType;
-import byui.cit260.whereismybone.model.BackpackItem;
-import byui.cit260.whereismybone.model.Clue;
 import whereismybone.WhereIsMyBone;
 
 /**
@@ -47,10 +48,12 @@ public class MapControl {
         return map;
     }
 
-    static void moveActorsToStartingLocation(Map map) {
-        System.out.println("\n*** called moveActorsToStartingLocation() in MapControl ***");
+    public static void moveActorsToStartingLocation(Map map) throws MapControlException
+    {
+        //System.out.println("\n*** called moveActorsToStartingLocation() in MapControl ***");
         //movePlayer(map, 2, 2;
         movePlayer(map, 2, 2);
+        
     }
 
     private static Scene[] createScenes() {
@@ -93,7 +96,7 @@ public class MapControl {
         currentScene.setActor(Actor.Pete);
         currentScene.setBackpack(BackpackItem.Badge);
         currentScene.setMinute(0.15);
-        
+
         scenes[SceneType.K9Precinct.ordinal()] = currentScene;
         
 //location 0,3
@@ -144,7 +147,7 @@ public class MapControl {
         currentScene.setClue(Clue.Clue11);
         currentScene.setBackpack(BackpackItem.FishBones);
         currentScene.setMinute(0.15);
-        
+
         scenes[SceneType.SeafoodEatery.ordinal()] = currentScene;
         
 //location 1, 2
@@ -157,7 +160,7 @@ public class MapControl {
         currentScene.setClue(Clue.Clue3);
         currentScene.setBackpack(BackpackItem.CatHairballs);
         currentScene.setMinute(0.15);
-        
+
         scenes[SceneType.TexMixDriveInn.ordinal()] = currentScene;
 
 //location 1, 3
@@ -170,7 +173,7 @@ public class MapControl {
         currentScene.setClue(Clue.Clue2);
         currentScene.setBackpack(BackpackItem.CatHairballs);
         currentScene.setMinute(0.15);
-        
+
         scenes[SceneType.Pond.ordinal()] = currentScene;
         
 //location 1, 4
@@ -183,7 +186,7 @@ public class MapControl {
         currentScene.setClue(Clue.Clue5);
         currentScene.setBackpack(BackpackItem.CatColar);
         currentScene.setMinute(0.15);
-        
+
         scenes[SceneType.CatsAlley.ordinal()] = currentScene;
         
 //location 2, 0
@@ -248,7 +251,7 @@ public class MapControl {
         currentScene.setClue(Clue.Clue2);
         currentScene.setBackpack(BackpackItem.CatHair);
         currentScene.setMinute(0.15);
-        
+
         scenes[SceneType.SuperMax.ordinal()] = currentScene;
         
 //location 3, 0
@@ -274,7 +277,7 @@ public class MapControl {
         currentScene.setClue(Clue.Clue7);
         currentScene.setBackpack(BackpackItem.CatHair);
         currentScene.setMinute(0.15);
-        
+
         scenes[SceneType.Zoo.ordinal()] = currentScene;
         
 //location 3, 2
@@ -287,7 +290,7 @@ public class MapControl {
         currentScene.setClue(Clue.Clue6);
         currentScene.setBackpack(BackpackItem.Box);
         currentScene.setMinute(0.15);
-        
+
         scenes[SceneType.ElephantsCage.ordinal()] = currentScene;
         
 //location 3, 3
@@ -300,7 +303,7 @@ public class MapControl {
         currentScene.setClue(Clue.Clue2);
         currentScene.setBackpack(BackpackItem.CatHair);
         currentScene.setMinute(0.15);
-        
+
         scenes[SceneType.GiraffesCage.ordinal()] = currentScene;
         
 //location 3, 4
@@ -313,7 +316,7 @@ public class MapControl {
         currentScene.setClue(Clue.Clue9);
         currentScene.setBackpack(BackpackItem.Pipe);
         currentScene.setMinute(0.15);
-        
+
         scenes[SceneType.TigerCage.ordinal()] = currentScene;
         
 //location 4, 0
@@ -326,7 +329,7 @@ public class MapControl {
         currentScene.setClue(Clue.Clue2);
         currentScene.setBackpack(BackpackItem.CatHair);
         currentScene.setMinute(0.15);
-        
+
         scenes[SceneType.SchoolFront.ordinal()] = currentScene;
         
 //location 4, 1
@@ -339,7 +342,7 @@ public class MapControl {
         currentScene.setClue(Clue.Clue13);
         currentScene.setBackpack(BackpackItem.CatHair);
         currentScene.setMinute(0.15);
-        
+
         scenes[SceneType.SchoolCafe.ordinal()] = currentScene;
         
 //location 4, 2
@@ -352,7 +355,7 @@ public class MapControl {
         currentScene.setClue(Clue.Clue3);
         currentScene.setBackpack(BackpackItem.CatHairballs);
         currentScene.setMinute(0.15);
-        
+
         scenes[SceneType.PlayGround.ordinal()] = currentScene;
         
 //location 4, 3
@@ -365,7 +368,7 @@ public class MapControl {
         currentScene.setClue(Clue.Clue8);
         currentScene.setBackpack(BackpackItem.CatColar);
         currentScene.setMinute(0.15);
-        
+
         scenes[SceneType.TrumpElementry.ordinal()] = currentScene;
         
 //location 4, 4
@@ -378,35 +381,37 @@ public class MapControl {
         currentScene.setClue(Clue.Clue2);
         currentScene.setBackpack(BackpackItem.Bone);
         currentScene.setMinute(0.15);
-        
+
         scenes[SceneType.SteakHeaven.ordinal()] = currentScene;
         
         return scenes;
     }
 
-    public boolean validLocation(int row,int column){
+    public boolean validLocation(int row,int column) throws MapControlException
+    {
         if (row < 0 || row > 4) {
-                return false;
+            return false;
         }
 
         return !(column < 0 || row > 4);
     }
     
-    public static void movePlayerToStartingLocation(Map map)
+    public static void movePlayerToStartingLocation(Map map) throws MapControlException
     {
         movePlayer(map, 2, 2);
-    }
+}
     
-    public int[] movePlayer(int nRow, int nCol)
+    public int[] movePlayer(int nRow, int nCol) throws MapControlException
     {
-       if(!validLocation(nRow, nCol))
-       {
-           //int[] resultFail = null;
-           return null;
-       }
-       
-       int[] newLoc = {nRow, nCol};
-       return newLoc;
+        if(!validLocation(nRow, nCol))
+        {
+            //int[] resultFail = null;
+            return null;
+        }
+
+        int[] newLoc = {nRow, nCol};
+
+        return newLoc;
        
      }
      public static void movePlayer(Map map, Location location) {
@@ -415,11 +420,12 @@ public class MapControl {
         player.setLocation(location);
     }
 
-    public static void movePlayer(Map map, int row, int column) {
-                
-        System.out.println("\n*** called movePlayer() in MapControl ***"); 
-        System.out.println("\n*** called movePlayer() in row *** " + row);
-        System.out.println("\n*** called movePlayer() in column *** " + column);
+    public static void movePlayer(Map map, int row, int column)
+    {
+       
+        //System.out.println("\n*** called movePlayer() in MapControl ***"); 
+        //System.out.println("\n*** called movePlayer() in row *** " + row);
+        //System.out.println("\n*** called movePlayer() in column *** " + column);
                                         
         map.setCurrentLocation(map.getLocations()[row][column]);
         map.getCurrentLocation().setVisited(true);
