@@ -13,7 +13,7 @@ import byui.cit260.whereismybone.model.Map;
 import byui.cit260.whereismybone.model.Game;
 import byui.cit260.whereismybone.model.GameTime;
 import byui.cit260.whereismybone.model.Scene;
-import byui.cit260.whereismybone.model.SceneType;
+import byui.cit260.whereismybone.enums.SceneType;
 import whereismybone.WhereIsMyBone;
 
 /**
@@ -44,24 +44,26 @@ public class MapView extends View {
         choice = choice.toUpperCase();
         
         //System.out.println("DEBUG: User Chose: " + choice);
-        
+        if( this.movePlayerToLocation(choice))
+         return true;
+         
         //Check if the entry is valid
-        if(choice.equals("PK")||choice.equals("VH")||choice.equals("K9")||choice.equals("AC")||choice.equals("AS")
-                ||choice.equals("JB")||choice.equals("SE")||choice.equals("TM")||choice.equals("PD")||choice.equals("CA")
-                ||choice.equals("SC")||choice.equals("SH")||choice.equals("HM")||choice.equals("DH")||choice.equals("SM")
-                ||choice.equals("FM")||choice.equals("ZO")||choice.equals("EC")||choice.equals("GC")||choice.equals("TC")
-                ||choice.equals("SF")||choice.equals("SL")||choice.equals("PG")||choice.equals("TE")||choice.equals("SK"))
-        {
-            
-            this.movePlayerToLocation(choice);
-
-            return true;
-        }
-        else
-        {
-            System.out.println("\n***Invalid Selection*** Try again");
-        }
-        
+//        if(choice.equals("PK")||choice.equals("VH")||choice.equals("K9")||choice.equals("AC")||choice.equals("AS")
+//                ||choice.equals("JB")||choice.equals("SE")||choice.equals("TM")||choice.equals("PD")||choice.equals("CA")
+//                ||choice.equals("SC")||choice.equals("SH")||choice.equals("HM")||choice.equals("DH")||choice.equals("SM")
+//                ||choice.equals("FM")||choice.equals("ZO")||choice.equals("EC")||choice.equals("GC")||choice.equals("TC")
+//                ||choice.equals("SF")||choice.equals("SL")||choice.equals("PG")||choice.equals("TE")||choice.equals("SK"))
+//        {
+//            //make a boolean statement true and false
+//            this.movePlayerToLocation(choice);
+//
+//            return true;
+//        }
+//        else
+//        {
+//            System.out.println("\n***Invalid Selection*** Try again");
+//        }
+        System.out.println("\n***Invalid Selection*** Try again");
         return false;
     }
     
@@ -143,7 +145,7 @@ public class MapView extends View {
         }
     }
 
-    private void movePlayerToLocation(String choice) {
+    private boolean movePlayerToLocation(String choice) {
         
         System.out.println("DEBUG: Move Player to: " + choice);
         
@@ -194,6 +196,8 @@ public class MapView extends View {
                             gt.setTimeRemaining(newTime);
                             
                             WhereIsMyBone.getCurrentGame().setGameTime(gt);
+                            return true;
+                            
                             
 //                            //For Debugging
 //                            String test = WhereIsMyBone.getCurrentGame().getPlayer().getLocation().getName();
@@ -209,7 +213,7 @@ public class MapView extends View {
 //        else{
 //            System.out.println("\n*** ERROR: Players current lcoation is null."); 
 //        }
-        
+        return false;
     }
 }
 

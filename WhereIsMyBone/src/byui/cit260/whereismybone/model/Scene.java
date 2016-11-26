@@ -5,6 +5,7 @@
  */
 package byui.cit260.whereismybone.model;
 
+import byui.cit260.whereismybone.enums.SceneType;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -16,19 +17,20 @@ import java.util.Objects;
  * 
  */
 public class Scene implements Serializable {
-
+    
+    private String name;        //name of current scene  
+    public String mapSymbol;    //already visted the spot 
     private String description; //description of the location with sceneType
-    private Actor actor;        //who is the actor at this location
     private String dialog;      //what the actor says to the user
-    private String name;        //name of current scene
-    private Item item;          //perhaps null, if there is an item, need dialog
-    public String mapSymbol;    //already visted the spot
+    private Actor actor;        //who is the actor at this location
+    private Clue clue;          //gives the user clues for each scene
+    private BackpackItem item;  //get items for backpack
     public Double minute;          //timed per location
     
     public Scene(){ 
         this.description = "";
     }
-    
+
     public static void assignScenesToLocations(Map map, Scene[] scenes) {
         Location[][] locations = map.getLocations();
         
@@ -61,22 +63,79 @@ public class Scene implements Serializable {
 
     @Override
     public String toString() {
-        return "Scene{" + "description=" + description + ", " +
-                "actor=" + actor + ", " + "dialog=" + dialog + ", " +
-                "name=" + name + ", " + "item=" + item + ", " +
-                "mapSymbol=" + mapSymbol + ", " + "minute=" + minute + ", ";
+        return "Scene{" + "name=" + name + ", mapSymbol=" + mapSymbol + ", description=" + description + ", dialog=" + dialog + ", actor=" + actor + ", clue=" + clue + ", item=" + item + ", minute=" + minute + '}';
+    }
+
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getMapSymbol() {
+        return mapSymbol;
+    }
+    public void setMapSymbol(String mapSymbol) {
+        this.mapSymbol = mapSymbol;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getDialog() {
+        return dialog;
+    }
+    public void setDialog(String dialog) {
+        this.dialog = dialog;
+    }
+
+    public Actor getActor() {
+        return actor;
+    }
+    public void setActor(Actor actor) {
+        this.actor = actor;
+    }
+
+    public Clue getClue() {
+        return clue;
+    }
+    public void setClue(Clue clue) {
+        this.clue = clue;
+    }
+
+    public BackpackItem getItem() {
+        return item;
+    }
+    public void setItem(BackpackItem item) {
+        this.item = item;
+    }
+    public void setBackpack(BackpackItem backpackItem) {
+        this.item = item;
+    }    
+
+    public Double getMinute() {
+        return minute;
+    }
+    public void setMinute(Double minute) {
+        this.minute = minute;
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 71 * hash + Objects.hashCode(this.description);
-        hash = 71 * hash + Objects.hashCode(this.actor);
-        hash = 71 * hash + Objects.hashCode(this.dialog);
-        hash = 71 * hash + Objects.hashCode(this.name);
-        hash = 71 * hash + Objects.hashCode(this.item);
-        hash = 71 * hash + Objects.hashCode(this.mapSymbol);
-        hash = 71 * hash + Objects.hashCode(this.minute);
+        hash = 19 * hash + Objects.hashCode(this.name);
+        hash = 19 * hash + Objects.hashCode(this.mapSymbol);
+        hash = 19 * hash + Objects.hashCode(this.description);
+        hash = 19 * hash + Objects.hashCode(this.dialog);
+        hash = 19 * hash + Objects.hashCode(this.actor);
+        hash = 19 * hash + Objects.hashCode(this.clue);
+        hash = 19 * hash + Objects.hashCode(this.item);
+        hash = 19 * hash + Objects.hashCode(this.minute);
         return hash;
     }
 
@@ -92,70 +151,31 @@ public class Scene implements Serializable {
             return false;
         }
         final Scene other = (Scene) obj;
-        if (!Objects.equals(this.description, other.description)) {
-            return false;
-        }
-        if (!Objects.equals(this.dialog, other.dialog)) {
-            return false;
-        }
         if (!Objects.equals(this.name, other.name)) {
             return false;
         }
         if (!Objects.equals(this.mapSymbol, other.mapSymbol)) {
             return false;
         }
+        if (!Objects.equals(this.description, other.description)) {
+            return false;
+        }
+        if (!Objects.equals(this.dialog, other.dialog)) {
+            return false;
+        }
         if (this.actor != other.actor) {
             return false;
         }
-        return this.item == other.item;
-    }
-    
-    public Actor getActor() {
-        return actor;
-    }
-    public void setActor(Actor actor) {
-        this.actor = actor;
-    }
+        if (this.clue != other.clue) {
+            return false;
+        }
+        if (this.item != other.item) {
+            return false;
+        }
+        if (!Objects.equals(this.minute, other.minute)) {
+            return false;
+        }
+        return true;
+    } 
 
-    public String getDialog() {
-        return dialog;
-    }
-    public void setDialog(String dialog) {
-        this.dialog = dialog;
-    }
-    
-    public String getDescription() {
-    return description;
-    }
-    public void setDescription(String description){
-        this.description = description;
-    }
-    
-    public Double getMinute() {
-        return minute;
-    }
-    public void setMinute(Double minute) {
-        this.minute = minute;
-    }
-
-    public String getName() {
-        return name;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Item getItem() {
-        return item;
-    }
-    public void setItem(Item item) {
-        this.item = item;
-    }
-
-    public String getMapSymbol() {
-        return mapSymbol;
-    }
-    public void setMapSymbol(String mapSymbol) {
-        this.mapSymbol = mapSymbol;
-    }   
 }

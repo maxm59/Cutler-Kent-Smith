@@ -12,6 +12,7 @@ import whereismybone.WhereIsMyBone;
 /**
  *
  * @author Smith-Rick
+ * Maxi: added backpack to player
  */
 public class Player {
     
@@ -19,13 +20,14 @@ public class Player {
     private String gender = "";    
     private Location location;
     private String childType = ""; //Is set to son or daughter.
-    
+//    private Backpack backpack;
 
     public Player() {
-        
-        
+//        backpack = new Backpack();
+//        backpack.addItem(new BackpackItem("Bone", "Steak Bone"));
+//        backpack.addItem(new BackpackItem("Bell", "Cat Devil's lost bell."));
     }
-
+    
     public Location getLocation() {
         return location;
     }

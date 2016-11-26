@@ -22,17 +22,17 @@ public class Game implements Serializable{
     private Player player;
     private Map map;
     private Clue[] clueList;
-    private Item[] itemList;
+    private BackpackItem[] itemList;
 
     public Game() {
                 
     }
     
-    public Item[] getItemList() {
+    public BackpackItem[] getBackpackItemList() {
         return itemList;
     }
 
-    public void setItemList(Item[] itemList) {
+    public void setBackpackItemList(BackpackItem[] itemList) {
         this.itemList = itemList;
     }
 
@@ -68,44 +68,4 @@ public class Game implements Serializable{
     public void setGameTime(GameTime gameTime) {
         this.gameTime = gameTime;
     }
-    
-//    public Double getTotalTime() {
-//        return totalTime;
-//    }
-//
-//    public void setTotalTime(Double totalTime) {
-//        this.totalTime = totalTime;
-//    }
-//    
-
-//    @Override
-//    public int hashCode() {
-//        int hash = 3;
-//        hash = 71 * hash + Objects.hashCode(this.totalTime);
-//        return hash;
-//    }
-//
-//    @Override
-//    public boolean equals(Object obj) {
-//        if (this == obj) {
-//            return true;
-//        }
-//        if (obj == null) {
-//            return false;
-//        }
-//        if (getClass() != obj.getClass()) {
-//            return false;
-//        }
-//        final Game other = (Game) obj;
-//        if (!Objects.equals(this.totalTime, other.totalTime)) {
-//            return false;
-//        }
-//        return true;
-//    }
-//
-//    @Override
-//    public String toString() {
-//        return "Game{" + "totalTime=" + totalTime + '}';
-//    }
-    
 }

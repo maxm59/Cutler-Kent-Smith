@@ -6,22 +6,25 @@
 package byui.cit260.whereismybone.control;
 
 import byui.cit260.whereismybone.model.Actor;
-import byui.cit260.whereismybone.model.Item;
 import byui.cit260.whereismybone.model.Location;
 import byui.cit260.whereismybone.model.Map;
 import byui.cit260.whereismybone.model.Player;
 import byui.cit260.whereismybone.model.Scene;
-import byui.cit260.whereismybone.model.SceneType;
+import byui.cit260.whereismybone.enums.SceneType;
+import byui.cit260.whereismybone.model.BackpackItem;
+import byui.cit260.whereismybone.model.Clue;
 import whereismybone.WhereIsMyBone;
 
 /**
  *
- * @author Rick Smith-original creator
- * coded the basics
- * @author Maxi Cutler-scenes
- * add all 25 scenes with name,mapSymbol,description
- * dialog,actor,item, and minute = time limit for each scene
- * finish this team assignment 
+ * @author Rick Smith-original creator coder
+ * 
+ *11/18/16 added all 25 scenes with name,mapSymbol,description,dialog,
+ * actor,backpackItem, and minute = time limit for each scene
+ * 11/26/16 Maxi fixed errors BackpackItem, and added the 14 clues
+ * 11/26/16 Maxi fixed 11 items for Backpack requirement
+ * 14 clues plus 11 items for the Backpack = 25 scenes
+ * 
  * 
  */
 public class MapControl {
@@ -62,7 +65,8 @@ public class MapControl {
         currentScene.setDescription("A beautiful city park with mature oak trees, grass, and picnic tables.");
         currentScene.setDialog("I saw Cat DeVil and he went that way.");
         currentScene.setActor(Actor.Tommy);
-        currentScene.setItem(Item.CatHair);
+        currentScene.setClue(Clue.Clue1);
+        currentScene.setBackpack(BackpackItem.CatHairballs);
         currentScene.setMinute(0.15);
         
         scenes[SceneType.Parkland.ordinal()] = currentScene;
@@ -74,7 +78,8 @@ public class MapControl {
         currentScene.setDescription("An old abandon house, very creepy.");
         currentScene.setDialog("My bone must be hear. I can smell it.");
         currentScene.setActor(Actor.Toby);
-        currentScene.setItem(Item.FishBones);
+        currentScene.setClue(Clue.Clue9);
+        currentScene.setBackpack(BackpackItem.FishBones);
         currentScene.setMinute(0.15);
         
         scenes[SceneType.VacantHouse.ordinal()] = currentScene;
@@ -86,7 +91,7 @@ public class MapControl {
         currentScene.setDescription("K9 Police Headquarters and Training Center.");
         currentScene.setDialog("Hi Buddy how you doing? On the hunt for Cat DeVil?");
         currentScene.setActor(Actor.Pete);
-        currentScene.setItem(Item.Badge);
+        currentScene.setBackpack(BackpackItem.Badge);
         currentScene.setMinute(0.15);
         
         scenes[SceneType.K9Precinct.ordinal()] = currentScene;
@@ -98,7 +103,8 @@ public class MapControl {
         currentScene.setDescription("The only animal emergency hospital in the city.");
         currentScene.setDialog("Hello there? Looking for that darn cat?");
         currentScene.setActor(Actor.DrMice);
-        currentScene.setItem(Item.Bell);
+        currentScene.setClue(Clue.Clue5);
+        currentScene.setBackpack(BackpackItem.Bell);
         currentScene.setMinute(0.15);
         
         scenes[SceneType.AnimalCare.ordinal()] = currentScene;
@@ -110,7 +116,7 @@ public class MapControl {
         currentScene.setDescription("This is the pound where stray animals are kept.");
         currentScene.setDialog("I saw Cat DeVil. He was looking for his gang and left.");
         currentScene.setActor(Actor.MrSam);
-        currentScene.setItem(Item.Cages);
+        currentScene.setClue(Clue.Clue13);
         currentScene.setMinute(0.15);
         
         scenes[SceneType.AnimalShelter.ordinal()] = currentScene;
@@ -122,7 +128,8 @@ public class MapControl {
         currentScene.setDescription("Fresh baked goods and your favorite plase for bacon donuts.");
         currentScene.setDialog("Would you like some bacon?");
         currentScene.setActor(Actor.MrJones);
-        currentScene.setItem(Item.Bacon);
+        currentScene.setClue(Clue.Clue4);
+        currentScene.setBackpack(BackpackItem.Bacon);
         currentScene.setMinute(0.15);
         
         scenes[SceneType.JonesBakery.ordinal()] = currentScene;
@@ -134,7 +141,8 @@ public class MapControl {
         currentScene.setDescription("A seafood resturant and Cat Devils favorite place to dine.");
         currentScene.setDialog("If that cat was here, I would tell you. I never saw him.");
         currentScene.setActor(Actor.MrCatch);
-        currentScene.setItem(Item.FishBones);
+        currentScene.setClue(Clue.Clue11);
+        currentScene.setBackpack(BackpackItem.FishBones);
         currentScene.setMinute(0.15);
         
         scenes[SceneType.SeafoodEatery.ordinal()] = currentScene;
@@ -146,7 +154,8 @@ public class MapControl {
         currentScene.setDescription("A fast food establishment and a good source for snacks.");
         currentScene.setDialog("Yes, Cat DeVil and his gang was here and went that way.");
         currentScene.setActor(Actor.MsCoCo);
-        currentScene.setItem(Item.Hamburger);
+        currentScene.setClue(Clue.Clue3);
+        currentScene.setBackpack(BackpackItem.CatHairballs);
         currentScene.setMinute(0.15);
         
         scenes[SceneType.TexMixDriveInn.ordinal()] = currentScene;
@@ -158,7 +167,8 @@ public class MapControl {
         currentScene.setDescription("Ducks and fishes love the pond at Parkland.");
         currentScene.setDialog("Quack, Quack, I saw that cat.");
         currentScene.setActor(Actor.Ducks);
-        currentScene.setItem(Item.CatHair);
+        currentScene.setClue(Clue.Clue2);
+        currentScene.setBackpack(BackpackItem.CatHairballs);
         currentScene.setMinute(0.15);
         
         scenes[SceneType.Pond.ordinal()] = currentScene;
@@ -170,7 +180,8 @@ public class MapControl {
         currentScene.setDescription("This is Cat DeVil's and the bad cats hangout.");
         currentScene.setDialog("You came alone...the boss is not here.");
         currentScene.setActor(Actor.Rex);
-        currentScene.setItem(Item.FishBones);
+        currentScene.setClue(Clue.Clue5);
+        currentScene.setBackpack(BackpackItem.CatColar);
         currentScene.setMinute(0.15);
         
         scenes[SceneType.CatsAlley.ordinal()] = currentScene;
@@ -182,7 +193,8 @@ public class MapControl {
         currentScene.setDescription("Elderly Care Home, the best in town.");
         currentScene.setDialog("Hi there Officer, would like some water?");
         currentScene.setActor(Actor.MissEllie);
-        currentScene.setItem(Item.Water);
+        currentScene.setClue(Clue.Clue9);
+        currentScene.setBackpack(BackpackItem.CatHair);
         currentScene.setMinute(0.15);
         
         scenes[SceneType.SeniorCare.ordinal()] = currentScene;
@@ -194,7 +206,8 @@ public class MapControl {
         currentScene.setDescription("The Smiths live here, very nice family.");
         currentScene.setDialog("Hi, there off to catch her I see? Good Luck Officer.");
         currentScene.setActor(Actor.TheSmiths);
-        currentScene.setItem(Item.None);
+        currentScene.setClue(Clue.Clue2);
+        currentScene.setBackpack(BackpackItem.CatHairballs);
         currentScene.setMinute(0.15);
         
         scenes[SceneType.SmithHouse.ordinal()] = currentScene;
@@ -206,7 +219,8 @@ public class MapControl {
         currentScene.setDescription("Ben and Nancy provides you with all the comforts of home.");
         currentScene.setDialog("Lets go buddy, off to find your bone.");
         currentScene.setActor(Actor.BenAndNancy);
-        currentScene.setItem(Item.Bone);
+        currentScene.setClue(Clue.Clue1);
+        currentScene.setBackpack(BackpackItem.Bone);
         currentScene.setMinute(0.15);
         
         scenes[SceneType.Home.ordinal()] = currentScene;
@@ -218,7 +232,8 @@ public class MapControl {
         currentScene.setDescription("Cat DeVil lives here just two houses away.");
         currentScene.setDialog("Ruff, Ruff, Where are you? What are you doing here?");
         currentScene.setActor(Actor.Rats);
-        currentScene.setItem(Item.FishBones);
+        currentScene.setClue(Clue.Clue3);
+        currentScene.setBackpack(BackpackItem.CatHairballs);
         currentScene.setMinute(0.15);
         
         scenes[SceneType.DeVilHouse.ordinal()] = currentScene;
@@ -230,7 +245,8 @@ public class MapControl {
         currentScene.setDescription("Local grocery store where you find evidence that Cat DeVil was there.");
         currentScene.setDialog("I saw Cat DeVil and she went that way.");
         currentScene.setActor(Actor.Scarface);
-        currentScene.setItem(Item.CatHair);
+        currentScene.setClue(Clue.Clue2);
+        currentScene.setBackpack(BackpackItem.CatHair);
         currentScene.setMinute(0.15);
         
         scenes[SceneType.SuperMax.ordinal()] = currentScene;
@@ -242,7 +258,8 @@ public class MapControl {
         currentScene.setDescription("Cat DeVil's favorite dining place and the largest in the city.");
         currentScene.setDialog("She was here, bones and hairballs all over the place.");
         currentScene.setActor(Actor.MrCatch);
-        currentScene.setItem(Item.FishBones);
+        currentScene.setClue(Clue.Clue11);
+        currentScene.setBackpack(BackpackItem.FishBones);
         currentScene.setMinute(0.15);
         
         scenes[SceneType.Fishmonger.ordinal()] = currentScene;
@@ -254,7 +271,8 @@ public class MapControl {
         currentScene.setDescription("This is the local zoo, Mr. Nono is a zookeeper.");
         currentScene.setDialog("I saw Cat DeVil and she around here and has a bone.");
         currentScene.setActor(Actor.MrNono);
-        currentScene.setItem(Item.CatHair);
+        currentScene.setClue(Clue.Clue7);
+        currentScene.setBackpack(BackpackItem.CatHair);
         currentScene.setMinute(0.15);
         
         scenes[SceneType.Zoo.ordinal()] = currentScene;
@@ -266,7 +284,8 @@ public class MapControl {
         currentScene.setDescription("There are three afircan elephants at Zooland.");
         currentScene.setDialog("I see a box over there, maybe shes hiding in it.");
         currentScene.setActor(Actor.Elephants);
-        currentScene.setItem(Item.Box);
+        currentScene.setClue(Clue.Clue6);
+        currentScene.setBackpack(BackpackItem.Box);
         currentScene.setMinute(0.15);
         
         scenes[SceneType.ElephantsCage.ordinal()] = currentScene;
@@ -278,7 +297,8 @@ public class MapControl {
         currentScene.setDescription("The girrafes are so tall with long legs at Zooland.");
         currentScene.setDialog("I saw Cat DeVil. Quickly, she's in the pipe.");
         currentScene.setActor(Actor.Giraffes);
-        currentScene.setItem(Item.Pipe);
+        currentScene.setClue(Clue.Clue2);
+        currentScene.setBackpack(BackpackItem.CatHair);
         currentScene.setMinute(0.15);
         
         scenes[SceneType.GiraffesCage.ordinal()] = currentScene;
@@ -290,7 +310,8 @@ public class MapControl {
         currentScene.setDescription("The Bengal tigers hangout in Zooland and can roar so loud.");
         currentScene.setDialog("Umm, you look good to eat. If she was here she would of made a tasty treat.");
         currentScene.setActor(Actor.Tigers);
-        currentScene.setItem(Item.FishBones);
+        currentScene.setClue(Clue.Clue9);
+        currentScene.setBackpack(BackpackItem.Pipe);
         currentScene.setMinute(0.15);
         
         scenes[SceneType.TigerCage.ordinal()] = currentScene;
@@ -302,7 +323,8 @@ public class MapControl {
         currentScene.setDescription("Trump Elementry School where you spend your days guarding the children.");
         currentScene.setDialog("Oh, you missed her this morning. She's in the Cat Alley.");
         currentScene.setActor(Actor.Felix);
-        currentScene.setItem(Item.CatHair);
+        currentScene.setClue(Clue.Clue2);
+        currentScene.setBackpack(BackpackItem.CatHair);
         currentScene.setMinute(0.15);
         
         scenes[SceneType.SchoolFront.ordinal()] = currentScene;
@@ -314,7 +336,8 @@ public class MapControl {
         currentScene.setDescription("The children loves to feed Cat DeVil and his gang. You too!");
         currentScene.setDialog("You are are my Hero.");
         currentScene.setActor(Actor.Brad);
-        currentScene.setItem(Item.Bacon);
+        currentScene.setClue(Clue.Clue13);
+        currentScene.setBackpack(BackpackItem.CatHair);
         currentScene.setMinute(0.15);
         
         scenes[SceneType.SchoolCafe.ordinal()] = currentScene;
@@ -326,7 +349,8 @@ public class MapControl {
         currentScene.setDescription("This is where you meet MrSneed.");
         currentScene.setDialog("How are you today? Ready to work? Do need a drink of water?");
         currentScene.setActor(Actor.MrSneed);
-        currentScene.setItem(Item.Water);
+        currentScene.setClue(Clue.Clue3);
+        currentScene.setBackpack(BackpackItem.CatHairballs);
         currentScene.setMinute(0.15);
         
         scenes[SceneType.PlayGround.ordinal()] = currentScene;
@@ -338,7 +362,8 @@ public class MapControl {
         currentScene.setDescription("K9's love the attention the children gives them.");
         currentScene.setDialog("Come here doggy.");
         currentScene.setActor(Actor.Brad);
-        currentScene.setItem(Item.CatColar);
+        currentScene.setClue(Clue.Clue8);
+        currentScene.setBackpack(BackpackItem.CatColar);
         currentScene.setMinute(0.15);
         
         scenes[SceneType.TrumpElementry.ordinal()] = currentScene;
@@ -350,7 +375,8 @@ public class MapControl {
         currentScene.setDescription("Famous cuts of meats. This is where you got that bone.");
         currentScene.setDialog("Here's a bone for my favorite K9 dog. Enjoy!");
         currentScene.setActor(Actor.MrSteele);
-        currentScene.setItem(Item.Bone);
+        currentScene.setClue(Clue.Clue2);
+        currentScene.setBackpack(BackpackItem.Bone);
         currentScene.setMinute(0.15);
         
         scenes[SceneType.SteakHeaven.ordinal()] = currentScene;

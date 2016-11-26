@@ -169,21 +169,6 @@ public class Map implements Serializable{
     @Override
     public String toString() {
         return "Map{" + "locations=" + locations + ", noOfRows=" + noOfRows + ", noOfColumns=" + noOfColumns + ", currentRow=" + currentRow + ", currentColumn=" + currentColumn + ", currentLocation=" + currentLocation + '}';
-    
-//        String strMap = "Where Is My bone Map\r\n,1,2,3,4,5\r\n";
-//        for (int row = 0; row < noOfRows; row++) {
-//            strMap += Integer.toString(row + 1) + ",";
-//            for (int col = 0; col < noOfColumns; col++) {                
-//                
-//                strMap += location[row][col].getSceneType() + ",";
-//            }
-//            strMap += "\r\n";
-//        }
-//        return strMap;       
-    
     }
 
-//    private void init() {
-//        System.out.println("Map init() called");
-//    }    
 }

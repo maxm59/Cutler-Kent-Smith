@@ -5,8 +5,6 @@
  */
 package byui.cit260.whereismybone.view;
 
-import whereismybone.WhereIsMyBone;
-
 
 /**
  *
@@ -21,7 +19,8 @@ public class GameMenuView extends View{
                 "\n                   GAME MENU                     " +
                 "\n==================================================" +
                 "\n                                                 " +
-                "\n         B  =  Backpack Inventory List           " +        
+                "\n         B  =  Backpack Inventory List           " +
+                "\n         V  =  View Your Backpack Items          " +        
                 "\n         C  =  Clue List                         " +                         
                 "\n         D  =  Display Map                       " +                         
                 "\n         H  =  Display Help                      " +                       
@@ -31,8 +30,7 @@ public class GameMenuView extends View{
                 "\n         X  =  Exit Game                         " +
                 "\n                                                 " +
                 "\n         Please make a selection:                " +
-                "\n                                                 ");
-            
+                "\n                                                 ");      
     }
 
     @Override
@@ -40,8 +38,7 @@ public class GameMenuView extends View{
         
         char charSel = value.toUpperCase().charAt(0);
         
-        switch (charSel) {
-            
+        switch (charSel) { 
             case 'B':
                 System.out.println("Display Backpack Inventory");
                 this.showBackpack();
@@ -75,12 +72,12 @@ public class GameMenuView extends View{
         }
         return false;
     }
-    
+
     private void showBackpack() {
         BackpackView backpackView = new BackpackView();
         backpackView.display();
-//        System.out.println("TODO - Display BackPack Inventory List");
     }
+ 
     private void showClues() {
         System.out.println("TODO - Display Clue List");
     }
@@ -99,12 +96,7 @@ public class GameMenuView extends View{
         mapView.display();  
     }
     private void searchLocation() {
-                System.out.println("TODO - Search Location Results");
+        System.out.println("TODO - Search Location Results");
     }
 
-
-
-
-
-    
 }

@@ -5,6 +5,7 @@
  */
 package byui.cit260.whereismybone.model;
 
+import byui.cit260.whereismybone.enums.SceneType;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Objects;
@@ -12,6 +13,7 @@ import java.util.Objects;
 /**
  *
  * @author Smith-Rick
+ * 
  */
 public class Location implements Serializable{
     

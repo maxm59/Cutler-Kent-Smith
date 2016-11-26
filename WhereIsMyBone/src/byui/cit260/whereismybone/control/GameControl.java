@@ -8,12 +8,12 @@ package byui.cit260.whereismybone.control;
 import byui.cit260.whereismybone.model.Clue;
 import byui.cit260.whereismybone.model.Game;
 import byui.cit260.whereismybone.model.GameTime;
-import byui.cit260.whereismybone.model.Item;
+import byui.cit260.whereismybone.model.BackpackItem;
 import byui.cit260.whereismybone.model.Location;
 import byui.cit260.whereismybone.model.Map;
 import byui.cit260.whereismybone.model.Player;
 import byui.cit260.whereismybone.model.Scene;
-import byui.cit260.whereismybone.model.SceneType;
+import byui.cit260.whereismybone.enums.SceneType;
 import whereismybone.WhereIsMyBone;
 
 /**
@@ -61,44 +61,11 @@ public class GameControl {
         Player player = new Player();
         player.setName(name);
         
-        //MOVING MOST OF THIS INTO CREATE NEW GAME
-//        
-//        Game game = new Game(); //Create new game.
-//        WhereIsMyBone.setCurrentGame(game); //save in WhereIsMyBone
-        
-//        
-//        //Create GameTime in game.
-//        GameTime gameTime = GameControl.createGameTime();
-//        game.setGameTime(gameTime);
-//        
-//        //create the inventory list and save in the game.
-//        Item[] itemList = GameControl.createItemList();
-//        
-//        //create the clue list and save in the game.
-//        Clue[] clueList = GameControl.createClueList();
-//        
-//        //Create and initialize new map
-//        Map map = MapControl.createMap();
-//        game.setMap(map); //save map in game.
-//                
-//        //Move actors to starting positions in the map
-//        MapControl.moveActorsToStartingLocation(map); 
-//        
-//        //Set default location for player. 
-//        Location location = new Location();
-//        location.setRow(2);
-//        location.setCol(2);
-//        player.setLocation(location);
-//        
-//        game.setPlayer(player); //Save Player In Game
-        
         return player;
         
      }
 
-
-
-    private static Item[] createItemList() {
+    private static BackpackItem[] createItemList() {
         System.out.println("\n*** called createItemList() in GameControl ***");
         return null;
     }
@@ -107,7 +74,8 @@ public class GameControl {
         System.out.println("\n*** called createClueList() in GameControl ***");
         return null;
     }
-
+    
+    //my thinking is that this coding needs to be in the location.java class? Need to brainstorm with Richard.
     public static void assignScenesToLocations(Map map, Scene[] scenes) {
         Location[][] locations = map.getLocations();
         
