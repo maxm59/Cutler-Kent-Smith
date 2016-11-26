@@ -43,6 +43,10 @@ public abstract class View implements ViewInterface {
             
         }while (!done);  
        
+        if(WhereIsMyBone.getCurrentGame().getGameTime().getTimeRemaining() <= 0){
+            GameOverView go = new GameOverView();
+            go.display();
+        }
        
    }
    
