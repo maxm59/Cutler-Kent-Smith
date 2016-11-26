@@ -145,7 +145,7 @@ public class MapView extends View {
 
     private void movePlayerToLocation(String choice) {
         
-        System.out.println("DEBUG: Move Player to: " + choice);
+        //System.out.println("DEBUG: Move Player to: " + choice);
         
         
         Map map = WhereIsMyBone.getCurrentGame().getMap();

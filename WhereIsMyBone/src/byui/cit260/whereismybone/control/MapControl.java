@@ -45,7 +45,7 @@ public class MapControl {
     }
 
     static void moveActorsToStartingLocation(Map map) {
-        System.out.println("\n*** called moveActorsToStartingLocation() in MapControl ***");
+        //System.out.println("\n*** called moveActorsToStartingLocation() in MapControl ***");
         //movePlayer(map, 2, 2;
         movePlayer(map, 2, 2);
     }
@@ -391,9 +391,9 @@ public class MapControl {
 
     public static void movePlayer(Map map, int row, int column) {
                 
-        System.out.println("\n*** called movePlayer() in MapControl ***"); 
-        System.out.println("\n*** called movePlayer() in row *** " + row);
-        System.out.println("\n*** called movePlayer() in column *** " + column);
+        //System.out.println("\n*** called movePlayer() in MapControl ***"); 
+        //System.out.println("\n*** called movePlayer() in row *** " + row);
+        //System.out.println("\n*** called movePlayer() in column *** " + column);
                                         
         map.setCurrentLocation(map.getLocations()[row][column]);
         map.getCurrentLocation().setVisited(true);
