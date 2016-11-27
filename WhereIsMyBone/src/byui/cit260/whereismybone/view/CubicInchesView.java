@@ -10,9 +10,12 @@ import java.util.Scanner;
 
 /**
  *
- * @author Brian Kent
- * @auther Maxi: Super class this view
- * @auther Maxi: Coded all formulas
+ * @author Brian Kent originator
+ * 
+ * @auther Maxi: Super class this view and
+ * coded all equation and left some for Brian to do.
+ * 11/26/16 checked equation still not working. I
+ * finished the equation and ran test.
  * 
  */
 public class CubicInchesView extends View {

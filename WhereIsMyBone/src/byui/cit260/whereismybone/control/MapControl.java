@@ -70,7 +70,7 @@ public class MapControl {
         currentScene.setActor(Actor.Tommy);
         currentScene.setClue(Clue.Clue1);
         currentScene.setBackpack(BackpackItem.CatHairballs);
-        currentScene.setMinute(0.15);
+        currentScene.setMinute(0.25);
         
         scenes[SceneType.Parkland.ordinal()] = currentScene;
         
@@ -83,7 +83,7 @@ public class MapControl {
         currentScene.setActor(Actor.Toby);
         currentScene.setClue(Clue.Clue9);
         currentScene.setBackpack(BackpackItem.FishBones);
-        currentScene.setMinute(0.15);
+        currentScene.setMinute(0.25);
         
         scenes[SceneType.VacantHouse.ordinal()] = currentScene;
         
@@ -95,7 +95,7 @@ public class MapControl {
         currentScene.setDialog("Hi Buddy how you doing? On the hunt for Cat DeVil?");
         currentScene.setActor(Actor.Pete);
         currentScene.setBackpack(BackpackItem.Badge);
-        currentScene.setMinute(0.15);
+        currentScene.setMinute(0.25);
 
         scenes[SceneType.K9Precinct.ordinal()] = currentScene;
         
@@ -108,7 +108,7 @@ public class MapControl {
         currentScene.setActor(Actor.DrMice);
         currentScene.setClue(Clue.Clue5);
         currentScene.setBackpack(BackpackItem.Bell);
-        currentScene.setMinute(0.15);
+        currentScene.setMinute(0.25);
         
         scenes[SceneType.AnimalCare.ordinal()] = currentScene;
         
@@ -120,7 +120,7 @@ public class MapControl {
         currentScene.setDialog("I saw Cat DeVil. He was looking for his gang and left.");
         currentScene.setActor(Actor.MrSam);
         currentScene.setClue(Clue.Clue13);
-        currentScene.setMinute(0.15);
+        currentScene.setMinute(0.25);
         
         scenes[SceneType.AnimalShelter.ordinal()] = currentScene;
              
@@ -133,7 +133,7 @@ public class MapControl {
         currentScene.setActor(Actor.MrJones);
         currentScene.setClue(Clue.Clue4);
         currentScene.setBackpack(BackpackItem.Bacon);
-        currentScene.setMinute(0.15);
+        currentScene.setMinute(0.25);
         
         scenes[SceneType.JonesBakery.ordinal()] = currentScene;
         
@@ -146,7 +146,7 @@ public class MapControl {
         currentScene.setActor(Actor.MrCatch);
         currentScene.setClue(Clue.Clue11);
         currentScene.setBackpack(BackpackItem.FishBones);
-        currentScene.setMinute(0.15);
+        currentScene.setMinute(0.25);
 
         scenes[SceneType.SeafoodEatery.ordinal()] = currentScene;
         
@@ -159,7 +159,7 @@ public class MapControl {
         currentScene.setActor(Actor.MsCoCo);
         currentScene.setClue(Clue.Clue3);
         currentScene.setBackpack(BackpackItem.CatHairballs);
-        currentScene.setMinute(0.15);
+        currentScene.setMinute(0.25);
 
         scenes[SceneType.TexMixDriveInn.ordinal()] = currentScene;
 
@@ -172,7 +172,7 @@ public class MapControl {
         currentScene.setActor(Actor.Ducks);
         currentScene.setClue(Clue.Clue2);
         currentScene.setBackpack(BackpackItem.CatHairballs);
-        currentScene.setMinute(0.15);
+        currentScene.setMinute(0.25);
 
         scenes[SceneType.Pond.ordinal()] = currentScene;
         
@@ -185,7 +185,7 @@ public class MapControl {
         currentScene.setActor(Actor.Rex);
         currentScene.setClue(Clue.Clue5);
         currentScene.setBackpack(BackpackItem.CatColar);
-        currentScene.setMinute(0.15);
+        currentScene.setMinute(0.25);
 
         scenes[SceneType.CatsAlley.ordinal()] = currentScene;
         
@@ -198,7 +198,7 @@ public class MapControl {
         currentScene.setActor(Actor.MissEllie);
         currentScene.setClue(Clue.Clue9);
         currentScene.setBackpack(BackpackItem.CatHair);
-        currentScene.setMinute(0.15);
+        currentScene.setMinute(0.25);
         
         scenes[SceneType.SeniorCare.ordinal()] = currentScene;
         
@@ -211,7 +211,7 @@ public class MapControl {
         currentScene.setActor(Actor.TheSmiths);
         currentScene.setClue(Clue.Clue2);
         currentScene.setBackpack(BackpackItem.CatHairballs);
-        currentScene.setMinute(0.15);
+        currentScene.setMinute(0.25);
         
         scenes[SceneType.SmithHouse.ordinal()] = currentScene;
         
@@ -224,7 +224,7 @@ public class MapControl {
         currentScene.setActor(Actor.BenAndNancy);
         currentScene.setClue(Clue.Clue1);
         currentScene.setBackpack(BackpackItem.Bone);
-        currentScene.setMinute(0.15);
+        currentScene.setMinute(0.25);
         
         scenes[SceneType.Home.ordinal()] = currentScene;
         
@@ -237,7 +237,7 @@ public class MapControl {
         currentScene.setActor(Actor.Rats);
         currentScene.setClue(Clue.Clue3);
         currentScene.setBackpack(BackpackItem.CatHairballs);
-        currentScene.setMinute(0.15);
+        currentScene.setMinute(0.25);
         
         scenes[SceneType.DeVilHouse.ordinal()] = currentScene;
         
@@ -250,7 +250,7 @@ public class MapControl {
         currentScene.setActor(Actor.Scarface);
         currentScene.setClue(Clue.Clue2);
         currentScene.setBackpack(BackpackItem.CatHair);
-        currentScene.setMinute(0.15);
+        currentScene.setMinute(0.25);
 
         scenes[SceneType.SuperMax.ordinal()] = currentScene;
         
@@ -263,7 +263,7 @@ public class MapControl {
         currentScene.setActor(Actor.MrCatch);
         currentScene.setClue(Clue.Clue11);
         currentScene.setBackpack(BackpackItem.FishBones);
-        currentScene.setMinute(0.15);
+        currentScene.setMinute(0.25);
         
         scenes[SceneType.Fishmonger.ordinal()] = currentScene;
         
@@ -276,7 +276,7 @@ public class MapControl {
         currentScene.setActor(Actor.MrNono);
         currentScene.setClue(Clue.Clue7);
         currentScene.setBackpack(BackpackItem.CatHair);
-        currentScene.setMinute(0.15);
+        currentScene.setMinute(0.25);
 
         scenes[SceneType.Zoo.ordinal()] = currentScene;
         
@@ -289,7 +289,7 @@ public class MapControl {
         currentScene.setActor(Actor.Elephants);
         currentScene.setClue(Clue.Clue6);
         currentScene.setBackpack(BackpackItem.Box);
-        currentScene.setMinute(0.15);
+        currentScene.setMinute(0.25);
 
         scenes[SceneType.ElephantsCage.ordinal()] = currentScene;
         
@@ -302,7 +302,7 @@ public class MapControl {
         currentScene.setActor(Actor.Giraffes);
         currentScene.setClue(Clue.Clue2);
         currentScene.setBackpack(BackpackItem.CatHair);
-        currentScene.setMinute(0.15);
+        currentScene.setMinute(0.25);
 
         scenes[SceneType.GiraffesCage.ordinal()] = currentScene;
         
@@ -315,7 +315,7 @@ public class MapControl {
         currentScene.setActor(Actor.Tigers);
         currentScene.setClue(Clue.Clue9);
         currentScene.setBackpack(BackpackItem.Pipe);
-        currentScene.setMinute(0.15);
+        currentScene.setMinute(0.25);
 
         scenes[SceneType.TigerCage.ordinal()] = currentScene;
         
@@ -328,7 +328,7 @@ public class MapControl {
         currentScene.setActor(Actor.Felix);
         currentScene.setClue(Clue.Clue2);
         currentScene.setBackpack(BackpackItem.CatHair);
-        currentScene.setMinute(0.15);
+        currentScene.setMinute(0.25);
 
         scenes[SceneType.SchoolFront.ordinal()] = currentScene;
         
@@ -341,7 +341,7 @@ public class MapControl {
         currentScene.setActor(Actor.Brad);
         currentScene.setClue(Clue.Clue13);
         currentScene.setBackpack(BackpackItem.CatHair);
-        currentScene.setMinute(0.15);
+        currentScene.setMinute(0.25);
 
         scenes[SceneType.SchoolCafe.ordinal()] = currentScene;
         
@@ -354,7 +354,7 @@ public class MapControl {
         currentScene.setActor(Actor.MrSneed);
         currentScene.setClue(Clue.Clue3);
         currentScene.setBackpack(BackpackItem.CatHairballs);
-        currentScene.setMinute(0.15);
+        currentScene.setMinute(0.25);
 
         scenes[SceneType.PlayGround.ordinal()] = currentScene;
         
@@ -367,7 +367,7 @@ public class MapControl {
         currentScene.setActor(Actor.Brad);
         currentScene.setClue(Clue.Clue8);
         currentScene.setBackpack(BackpackItem.CatColar);
-        currentScene.setMinute(0.15);
+        currentScene.setMinute(0.25);
 
         scenes[SceneType.TrumpElementry.ordinal()] = currentScene;
         
@@ -380,7 +380,7 @@ public class MapControl {
         currentScene.setActor(Actor.MrSteele);
         currentScene.setClue(Clue.Clue2);
         currentScene.setBackpack(BackpackItem.Bone);
-        currentScene.setMinute(0.15);
+        currentScene.setMinute(0.25);
 
         scenes[SceneType.SteakHeaven.ordinal()] = currentScene;
         
