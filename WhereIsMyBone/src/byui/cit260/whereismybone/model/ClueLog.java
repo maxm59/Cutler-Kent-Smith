@@ -79,6 +79,10 @@ public class ClueLog implements Serializable {
           // Commmenting this line out, it's breaking the compile.
     }
 
+    public void setClueLog() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     
     
 }
