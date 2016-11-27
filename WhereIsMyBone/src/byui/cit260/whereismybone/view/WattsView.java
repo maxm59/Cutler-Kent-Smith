@@ -21,11 +21,11 @@ public class WattsView extends View {
                 "\n               WHERE IS MY BONE?                  " +
                 "\n            Beware! Down Power Lines!             " +
                 "\n==================================================" +
-                "\n     .-.               .-.    " +
-                "\n    (   `-._________.-'   )   " +
-                "\n     >=     _______     =<    " +
-                "\n    (   ,-'`       `'-,   )   " +
-                "\n     `-'               `-'    " +
+                "\n             .-.               .-.                " +
+                "\n            (   `-._________.-'   )               " +
+                "\n             >=     _______     =<                " +
+                "\n            (   ,-'`       `'-,   )               " +
+                "\n             `-'               `-'                " +
                 "\n                                                  " +
                 "\n     We need to walk very carefully around here!  " +
                 "\n     These electrical wires are dangerous.        " +
@@ -109,11 +109,11 @@ public class WattsView extends View {
                 "\n               WHERE IS MY BONE?                  " +
                 "\n            Beware! Down Power Lines!             " +
                 "\n==================================================" +
-                "\n     .-.               .-.    " +
-                "\n    (   `-._________.-'   )   " +
-                "\n     >=     _______     =<    " +
-                "\n    (   ,-'`       `'-,   )   " +
-                "\n     `-'               `-'    " +
+                "\n             .-.               .-.                " +
+                "\n            (   `-._________.-'   )               " +
+                "\n             >=     _______     =<                " +
+                "\n            (   ,-'`       `'-,   )               " +
+                "\n             `-'               `-'                " +
                 "\n                                                  " +
                 "\n     Thank you, but I don't see the wires that    " +
                 "\n     are sparking. I don't want to step on a hot  " +
@@ -135,22 +135,22 @@ public class WattsView extends View {
                 "\n               WHERE IS MY BONE?                  " +
                 "\n            Beware! Down Power Lines!             " +
                 "\n==================================================" +
-                "\n     .-.               .-.    " +
-                "\n    (   `-._________.-'   )   " +
-                "\n     >=     _______     =<    " +
-                "\n    (   ,-'`       `'-,   )   " +
-                "\n     `-'               `-'    " +
-                "\n                                                   " +
+                "\n             .-.               .-.                " +
+                "\n            (   `-._________.-'   )               " +
+                "\n             >=     _______     =<                " +
+                "\n            (   ,-'`       `'-,   )               " +
+                "\n             `-'               `-'                " +
+                "\n                                                  " +
                 "\n     Ah, I can see the wires that are sparking.   " +
-                "\n     Thank you for your help. Oh, Oh, there is     " +
-                "\n     cat DeVil laughing at me.                     " +
-                "\n                                                   " +
-                "\n     Volts: " + this.volts                           +
-                "\n     Amps: " + this.amps                             +
-                "\n                                                   " +
-                "\n     Result: " + Double.toString(this.calcResult)    +
-                "\n     I gotta catch that cat!                       " +         
-                "\n===================================================" ; 
+                "\n     Thank you for your help. Oh, Oh, there is    " +
+                "\n     cat DeVil laughing at me.                    " +
+                "\n                                                  " +
+                "\n     Volts: " + this.volts                          +
+                "\n     Amps: " + this.amps                            +
+                "\n                                                  " +
+                "\n     Result: " + Double.toString(this.calcResult)   +
+                "\n     I gotta catch that cat!                      " +         
+                "\n==================================================" ; 
 
         System.out.println(prompt);
     }

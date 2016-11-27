@@ -32,21 +32,20 @@ public class CubicInchesView extends View {
                 "\n               WHERE IS MY BONE?                  " +
                 "\n               Is it in the Box?                  " +
                 "\n==================================================" +
-                "\n     .-.               .-.    " +
-                "\n    (   `-._________.-'   )   " +
-                "\n     >=     _______     =<    " +
-                "\n    (   ,-'`       `'-,   )   " +
-                "\n     `-'               `-'    " +
-                "\n" + 
-                "\n     Let's see if the bone   " +
-                "\n     will fit in this box    " +
-                "\n     that we have found      " +
-                "\n                             " +
-                "\n     Please enter the width  " +
-                "\n     of the box:             " +
-                "\n" +
-                "\n     X =   Exit This View    " + 
-                "\n" +
+                "\n             .-.               .-.                " +
+                "\n            (   `-._________.-'   )               " +
+                "\n             >=     _______     =<                " +
+                "\n            (   ,-'`       `'-,   )               " +
+                "\n             `-'               `-'                " +
+                "\n                                                  " + 
+                "\n         Let's see if the bone will fit in        " +
+                "\n         this box that we have found or if        " +
+                "\n         there is evidence that Cat DeVil         " +
+                "\n         was here. Please help by entering        " +
+                "\n         width in inches:                         " +
+                "\n                                                  " +
+                "\n             X =   Exit This View                 " + 
+                "\n                                                  " +
                 "\n==================================================" +
                 "\n== Game Creators - Rick S. | Maxi C. | Brian K. = " +
                 "\n==================================================") ;        
@@ -93,11 +92,11 @@ public class CubicInchesView extends View {
                 "\n               WHERE IS MY BONE?                  " +
                 "\n               Is it in the Box?                  " +
                 "\n==================================================" +
-                "\n     .-.               .-.    " +
-                "\n    (   `-._________.-'   )   " +
-                "\n     >=     _______     =<    " +
-                "\n    (   ,-'`       `'-,   )   " +
-                "\n     `-'               `-'    " +
+                "\n             .-.               .-.                " +
+                "\n            (   `-._________.-'   )               " +
+                "\n             >=     _______     =<                " +
+                "\n            (   ,-'`       `'-,   )               " +
+                "\n             `-'               `-'                " +
                 "\n                                                  " +          
                 "\n      My keen senses says I might be able to      " +
                 "\n      to see whats in the box, but I do need      " +
@@ -148,12 +147,11 @@ public class CubicInchesView extends View {
                 "\n               WHERE IS MY BONE?                  " +
                 "\n               Is it in the box?                  " +
                 "\n==================================================" +
-                "\n     .-.               .-.    " +
-                "\n    (   `-._________.-'   )   " +
-                "\n     >=     _______     =<    " +
-                "\n    (   ,-'`       `'-,   )   " +
-                "\n     `-'               `-'    " +
-                "\n                                                  " +   
+                "\n             .-.               .-.                " +
+                "\n            (   `-._________.-'   )               " +
+                "\n             >=     _______     =<                " +
+                "\n            (   ,-'`       `'-,   )               " +
+                "\n             `-'               `-'                " +   
                 "\n     Oh, oh, I can't quite figure out if the      " +
                 "\n     bone is in it. And I can smell Cat DeVil     " +
                 "\n     was here. Do you think you can give me the   " +
@@ -162,12 +160,11 @@ public class CubicInchesView extends View {
                 "\n     Width: " + this.width         +
                 "\n     Length: " + this.length       +
                 "\n                                                  " +
-                "\n      Please enter a number for the Height:       " +
-                
-                "\n     Result: " + Double.toString(this.calcResult)    +
-                "\n                                                   " +
-                "\n                                                   " +         
-                "\n===================================================" ;    
+                "\n     Please enter a number for the Length:        " +
+                "\n                                                  " +
+                "\n     Result: " + Double.toString(this.calcResult)   +
+                "\n                                                  " +
+                "\n==================================================" ;    
 
         System.out.println(prompt);
     }
@@ -208,26 +205,26 @@ public class CubicInchesView extends View {
                 "\n               WHERE IS MY BONE?                  " +
                 "\n               Is it in the box?                  " +
                 "\n==================================================" +
-                "\n     .-.               .-.    " +
-                "\n    (   `-._________.-'   )   " +
-                "\n     >=     _______     =<    " +
-                "\n    (   ,-'`       `'-,   )   " +
-                "\n     `-'               `-'    " +
-                "\n                                                  " +   
+                "\n             .-.               .-.                " +
+                "\n            (   `-._________.-'   )               " +
+                "\n             >=     _______     =<                " +
+                "\n            (   ,-'`       `'-,   )               " +
+                "\n             `-'               `-'                " + 
                 "\n     Oh, oh, I can't quite figure out if the      " +
                 "\n     bone is in it. And I can smell Cat DeVil     " +
                 "\n     was here. Do you think you can give me the   " +
                 "\n     height of the box?                           " +
                 "\n                                                  " +
-                "\n     Width: " + this.width         +
-                "\n     Length: " + this.length       +
+                "\n             Width: " + this.width                  +
+                "\n             Length: " + this.length                +
+                "\n             Height: " + this.height                +
+                "\n                                                  " +  
+                "\n     Please enter a number for the Height:        " +
+                "\n                                                  " +  
+                "\n     Result: " + Double.toString(this.calcResult)   +
                 "\n                                                  " +
-                "\n      Please enter a number for the Height:       " +
-                
-                "\n     Result: " + Double.toString(this.calcResult)    +
-                "\n                                                   " +
-                "\n                                                   " +         
-                "\n===================================================" ;
+                "\n                                                  " +         
+                "\n==================================================" ;
 
         System.out.println(prompt);
     }
@@ -239,25 +236,25 @@ public class CubicInchesView extends View {
                 "\n               WHERE IS MY BONE?                  " +
                 "\n               Is it in the box?                  " +
                 "\n==================================================" +
-                "\n     .-.               .-.    " +
-                "\n    (   `-._________.-'   )   " +
-                "\n     >=     _______     =<    " +
-                "\n    (   ,-'`       `'-,   )   " +
-                "\n     `-'               `-'    " +
+                "\n             .-.               .-.                " +
+                "\n            (   `-._________.-'   )               " +
+                "\n             >=     _______     =<                " +
+                "\n            (   ,-'`       `'-,   )               " +
+                "\n             `-'               `-'                " +
                 "\n                                                  " +   
                 "\n     Oh, oh, I can't quite figure out if the      " +
                 "\n     bone is in it. And I can smell Cat DeVil     " +
                 "\n     was here. Do you think you can give me the   " +
                 "\n     height of the box?                           " +
                 "\n                                                  " +
-                "\n     Width: " + this.width   +
-                "\n     Length: " + this.length +
-                "\n     Height: " + this.height +
-                "\n                                                   " +                
-                "\n     Result: " + Double.toString(this.calcResult)    +
-                "\n     Wow great Job!                                " +
-                "\n                                                   " +         
-                "\n===================================================" ;    
+                "\n             Width: " + this.width                  +
+                "\n             Length: " + this.length                +
+                "\n             Height: " + this.height                +
+                "\n                                                  " +                
+                "\n     Result: " + Double.toString(this.calcResult)   +
+                "\n                                                  " +
+                "\n                                                  " +         
+                "\n==================================================" ;    
 
         System.out.println(prompt);
     }

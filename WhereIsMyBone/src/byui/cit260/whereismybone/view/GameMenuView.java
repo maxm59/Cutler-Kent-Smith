@@ -14,23 +14,28 @@ public class GameMenuView extends View{
 
     public GameMenuView(){
         super(
-                 "==================================================" +
-                "\n               WHERE IS MY BONE?                 " +
-                "\n                   GAME MENU                     " +
+                  "==================================================" +
+                "\n                WHERE IS MY BONE?                 " +
+                "\n                    GAME MENU                     " +
                 "\n==================================================" +
-                "\n                                                 " +
-                "\n         B  =  Backpack Inventory List           " +
-                "\n         V  =  View Your Backpack Items          " +        
-                "\n         C  =  Clue List                         " +                         
-                "\n         D  =  Display Map                       " +                         
-                "\n         H  =  Display Help                      " +                       
-                "\n         M  =  Move Player                       " +
-                "\n         S  =  Search Location for Clues         " +
-                "\n                                                 " +
-                "\n         X  =  Exit Game                         " +
-                "\n                                                 " +
-                "\n         Please make a selection:                " +
-                "\n                                                 ");      
+                "\n             .-.               .-.                " +
+                "\n            (   `-._________.-'   )               " +
+                "\n             >=     _______     =<                " +
+                "\n            (   ,-'`       `'-,   )               " +
+                "\n             `-'               `-'                " +                        
+                "\n                                                  " +
+                "\n         B  =  Backpack Inventory List            " +
+                "\n         V  =  View Your Backpack Items           " +        
+                "\n         C  =  Clue List                          " +                         
+                "\n         D  =  Display Map                        " +                         
+                "\n         H  =  Help Menu                          " +                       
+                "\n         M  =  Move Player                        " +
+                "\n         S  =  Search Location for Clues          " +
+                "\n                                                  " +
+                "\n         X  =  Exit Game                          " +
+                "\n                                                  " +
+                "\n         Please make a selection:                 " +
+                "\n                                                  ");      
     }
 
     @Override

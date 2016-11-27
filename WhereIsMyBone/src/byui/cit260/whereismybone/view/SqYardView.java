@@ -23,11 +23,11 @@ public class SqYardView extends View{
                 "\n               WHERE IS MY BONE?                  " +
                 "\n              This is my backyard                 " +
                 "\n==================================================" +
-                "\n     .-.               .-.    " +
-                "\n    (   `-._________.-'   )   " +
-                "\n     >=     _______     =<    " +
-                "\n    (   ,-'`       `'-,   )   " +
-                "\n     `-'               `-'    " +
+                "\n             .-.               .-.                " +
+                "\n            (   `-._________.-'   )               " +
+                "\n             >=     _______     =<                " +
+                "\n            (   ,-'`       `'-,   )               " +
+                "\n             `-'               `-'                " +
                 "\n                                                  " +          
                 "\n     My bone has to be here, buried in a hole.    " +
                 "\n     Can you help me find it? Lets figure out     " +
@@ -109,11 +109,11 @@ public class SqYardView extends View{
                 "\n               WHERE IS MY BONE?                  " +
                 "\n              This is my backyard                 " +
                 "\n==================================================" +
-                "\n     .-.               .-.    " +
-                "\n    (   `-._________.-'   )   " +
-                "\n     >=     _______     =<    " +
-                "\n    (   ,-'`       `'-,   )   " +
-                "\n     `-'               `-'    " +
+                "\n             .-.               .-.                " +
+                "\n            (   `-._________.-'   )               " +
+                "\n             >=     _______     =<                " +
+                "\n            (   ,-'`       `'-,   )               " +
+                "\n             `-'               `-'                " +
                 "\n                                                  " +          
                 "\n      I just sniffed out the width of the yard.   " +
                 "\n      I don't find it. Can you help me find       " +
@@ -135,11 +135,11 @@ public class SqYardView extends View{
                 "\n               WHERE IS MY BONE?                  " +
                 "\n              This is my backyard                 " +
                 "\n==================================================" +
-                "\n     .-.               .-.    " +
-                "\n    (   `-._________.-'   )   " +
-                "\n     >=     _______     =<    " +
-                "\n    (   ,-'`       `'-,   )   " +
-                "\n     `-'               `-'    " +
+                "\n             .-.               .-.                " +
+                "\n            (   `-._________.-'   )               " +
+                "\n             >=     _______     =<                " +
+                "\n            (   ,-'`       `'-,   )               " +
+                "\n             `-'               `-'                " +
                 "\n                                                  " +   
                 "\n     I just finished walking and smelling the     " +
                 "\n     entire backyard. I didn't know my yard was   " +

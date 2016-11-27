@@ -26,46 +26,44 @@ public class MainMenuView extends View {
                 "\n               WHERE IS MY BONE?                  " +
                 "\n                   MAIN MENU                      " +
                 "\n==================================================" +
-                "\n     .-.               .-.    " +
-                "\n    (   `-._________.-'   )   " +
-                "\n     >=     _______     =<    " +
-                "\n    (   ,-'`       `'-,   )   " +
-                "\n     `-'               `-'    " +
-                "\n" + 
-                "\n     N =   New Game          " +
-                "\n     H =   Get Help          " +
-                "\n     L =   Load Saved Game " +
-                "\n     S =   Save Game         " +
-                "\n     X =   Exit Game         " +
-                "\n" +
-                "\n     C =   Complex Calculation View Test" +
-                "\n" +
-                "\n" +
-                "\n     To begin, please enter your choice:" +
-                "\n");        
+                "\n             .-.               .-.                " +
+                "\n            (   `-._________.-'   )               " +
+                "\n             >=     _______     =<                " +
+                "\n            (   ,-'`       `'-,   )               " +
+                "\n             `-'               `-'                " +
+                "\n                                                  " + 
+                "\n               N  =   New Game                    " +
+                "\n               H  =   Help Menu                   " +
+                "\n               L  =   Load Saved Game             " +
+                "\n               S  =   Save Game                   " +
+                "\n               X  =   Exit Game                   " +
+                "\n                                                  " +
+                "\n            C =   Calculation Test For Clues      " +
+                "\n                                                  " +
+                "\n                                                  " +
+                "\n     To begin, please enter your choice:          " +
+                "\n==================================================");       
     }
 
-    private void displayBannerWarning()
-    {
+    private void displayBannerWarning(){
+        
         String menuBanner = 
                   "==================================================" +
                 "\n=============  WHERE IS MY BONE? =================" +
                 "\n==================================================" +
-                "\n     .-.               .-.    " +
-                "\n    (   `-._________.-'   )   " +
-                "\n     >=     _______     =<    " +
-                "\n    (   ,-'`       `'-,   )   " +
-                "\n     `-'               `-'    " +
-                "\n" +
-                "\n" +
-                "\n  WARNING - You will lose all unsaved progress. +" +
-                "    Proceed? (Y)es or (N)" +
-                "\n" +
-                "\n" +
-                "\n  Please enter your choice:" +
-                "\n" +
+                "\n             .-.               .-.                " +
+                "\n            (   `-._________.-'   )               " +
+                "\n             >=     _______     =<                " +
+                "\n            (   ,-'`       `'-,   )               " +
+                "\n             `-'               `-'                " +
+                "\n                                                  " +
+                "\n               ---  WARNING  ---                  " +
+                "\n        You will lose all unsaved progress.       " +
+                "\n                Proceed? (Y)es or (N)             " +
+                "\n                                                  " +
+                "\n             Please enter your choice:            " +
+                "\n                                                  " +
                 "\n==================================================" +
-                "\n" +
                 "\n==================================================" ;
         
         System.out.println(menuBanner);
@@ -103,20 +101,16 @@ public class MainMenuView extends View {
     private void startNewGame(){
         
         try{
-            
             GameControl.createNewGame(WhereIsMyBone.getPlayer());
  
             //Display the Game Menu
             GameMenuView gameMenu = new GameMenuView();
-            gameMenu.display();
-            
+            gameMenu.display();  
         }
         catch (Exception ex){
             ErrorView.display(this.getClass().getName(), 
                     "Error starting New Game.");
         }
-        
-
     }
     
     private void loadExistingGame(){
@@ -163,8 +157,7 @@ public class MainMenuView extends View {
         }
 
     }
-     
-    
+
     private void waitForEnter()
     {
         boolean isValidEnter = false;
@@ -190,7 +183,7 @@ public class MainMenuView extends View {
 
             ComplexCalculationView complexCalculationView = new ComplexCalculationView();
             complexCalculationView.displayComplexCalculationView();
-            
+  
         }
         catch(Exception ex)
         {

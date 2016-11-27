@@ -21,7 +21,11 @@ public class BackpackView extends View {
                 "\n               WHERE IS MY BONE?                  " +
                 "\n                   GAME MENU                      " +
                 "\n==================================================" +
-                "\n                                                  " +
+                "\n             .-.               .-.                " +
+                "\n            (   `-._________.-'   )               " +
+                "\n             >=     _______     =<                " +
+                "\n            (   ,-'`       `'-,   )               " +
+                "\n             `-'               `-'                " +                         
                 "\n                 A  =  Bone                       " +
                 "\n                 B  =  Badge                      " +
                 "\n                 C  =  Bacon                      " +
@@ -36,7 +40,7 @@ public class BackpackView extends View {
                 "\n                X  =  Exit Game                   " +
                 "\n                                                  " +
                 "\n              Please make a selection:            " +
-                "\n                                                  ");     
+                "\n==================================================" );     
     }
         
 @Override

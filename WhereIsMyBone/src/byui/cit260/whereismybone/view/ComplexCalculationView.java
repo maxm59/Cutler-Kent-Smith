@@ -24,36 +24,33 @@ public class ComplexCalculationView {
     
     private String menuOptions = "";
     
-    public ComplexCalculationView(){
-        
-        //this.displayMenu();
-        
+    public ComplexCalculationView(){        
         this.menuOptions =
                   "==================================================" +
                 "\n               WHERE IS MY BONE?                  " +
-                "\n           COMPLEX CALCULATION TEST               " +
+                "\n           CALCULATION TEST FOR CLUES             " +
                 "\n==================================================" +
+                "\n             .-.               .-.                " +
+                "\n            (   `-._________.-'   )               " +
+                "\n             >=     _______     =<                " +
+                "\n            (   ,-'`       `'-,   )               " +
+                "\n             `-'               `-'                " +
+                "\n             A =   Size of a Box                  " +
+                "\n             B =   Backyare Area                  " +
+                "\n             C =   Size of a Pipe                 " +
+                "\n             D =   Danger! Electrical Lines       " +
                 "\n                                                  " +
+                "\n             X =   Exit Testing View              " +
                 "\n                                                  " +
-                "\n     A =   Cubic Inches                           " +
-                "\n     B =   Square Yard                            " +
-                "\n     C =   Cylinder Volume                        " +
-                "\n     D =   Watt Power                             " +
-                "\n                                                  " +
-                "\n     X =   Exit Testing View                      " +
-                "\n                                                  " +
-                "\n  Please choose a test:                           " +
+                "\n             Please choose a test:                " +
                 "\n                                                  " +
                 "\n==================================================" +
                 "\n= Game Creators - Rick S. | Maxine C. | Brian K. =" +
-                "\n==================================================" ;           
-        
+                "\n==================================================" ;  
     }
     
     private void displayMenu() {
-        
-        menuOptions = getMenuOptions();
-        
+        menuOptions = getMenuOptions(); 
     }
     
     private String getMenuOptions() {
@@ -67,32 +64,23 @@ public class ComplexCalculationView {
             System.out.println(menuOptions);
             String input = keyboard.nextLine();
 
-            if(input.length()  >= 1)
-            {
-                
+            if(input.length()  >= 1){
                 char keyEntered = input.toUpperCase().charAt(0);
-                
                 if(keyEntered == 'X'){
                     //User wants to exit
                     menu = "X";
                     exitMenu = true;
                 }
                 else{
-                    
                     exitMenu = doAction(input);
                 }
-                
             }
-            
-        }   
-            
+        }    
         return menu;               
     }
     
     private boolean doAction(String choice){
-        
         choice = choice.toUpperCase();
-        
         switch (choice) {
             case "A": 
                 this.displayCubicInchesView();
@@ -132,37 +120,23 @@ public class ComplexCalculationView {
     
     public void displayCubicInchesView(){
         System.out.println("I see a big box. I wonder if my bone is in it?");
-        
         CubicInchesView cubicInchesView = new CubicInchesView();
         cubicInchesView.display();
-//        //Display the CubicInches of cubicInches View
-//        CubicInchesView cubicInchesView = new CubicInchesView();
-//        cubicInchesView.display();
     }
     public void displaySqYardView(){
         System.out.println("Back in the yard. Where is my bone?");
-        
-        //Display the Square Yard View 
         SqYardView sqYardView = new SqYardView();
-        sqYardView.display();
-        
+        sqYardView.display();        
     }
     private void displayCylinderAreaView() {
         System.out.println("I see a big pipe. I wonder if my bone is in it?");
-        
-        //Display the CylinderArea View 
         CylinderAreaView cylinderAreaView = new CylinderAreaView();
-        cylinderAreaView.display();
-        
+        cylinderAreaView.display();        
     }
     public void displayWattsView(){
-        System.out.println("I see lots of power lines.");
-
-        //Display the WattsView 
+        System.out.println("I see lots of power lines."); 
         WattsView wattsView = new WattsView();
-        wattsView.display();
-        
+        wattsView.display();        
     }
-
 }
 
