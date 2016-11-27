@@ -39,7 +39,7 @@ public enum Clue implements Serializable {
         this.description = description;
 
     }
-    public String getDiscription() {
+    public String getDescription() {
         return description;
     }    
 }
