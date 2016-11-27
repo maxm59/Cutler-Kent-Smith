@@ -117,8 +117,7 @@ public class Location implements Serializable{
         this.name = name;
     }
     
-
-
+    
     @Override
     public int hashCode() {
         int hash = 7;

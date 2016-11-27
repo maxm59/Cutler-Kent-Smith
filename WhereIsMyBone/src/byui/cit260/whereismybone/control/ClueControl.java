@@ -12,4 +12,10 @@ package byui.cit260.whereismybone.control;
  */
 public class ClueControl {
     
+    
+    
+    
+    
+    
+    
 }

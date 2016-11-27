@@ -20,9 +20,11 @@ import whereismybone.WhereIsMyBone;
  *
  * @author Rick Smith-original creator coder
  * 
- *11/18/16 added all 25 scenes with name,mapSymbol,description,dialog,
+ * 11/18/16 added all 25 scenes with name,mapSymbol,description,dialog,
  * actor,backpackItem, and minute = time limit for each scene
+ * 
  * 11/26/16 Maxi fixed errors BackpackItem, and added the 14 clues
+ * 
  * 11/26/16 Maxi fixed 11 items for Backpack requirement
  * 14 clues plus 11 items for the Backpack = 25 scenes
  * 
