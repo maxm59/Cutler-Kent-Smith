@@ -80,7 +80,7 @@ public class ClueLog implements Serializable {
     }
 
     public void setClueLog() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       System.out.println("DEBUG this area for clueControl");
     }
 
     

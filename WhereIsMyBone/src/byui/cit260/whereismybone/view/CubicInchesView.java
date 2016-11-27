@@ -86,7 +86,7 @@ public class CubicInchesView extends View {
     
     }
     
-    private void promptForLength() {
+    private void promptForWidth() {
 
         String prompt =
                   "==================================================" +
@@ -141,7 +141,7 @@ public class CubicInchesView extends View {
           
     }
     
-    private void promptForHeight() {
+    private void promptForLength() {
 
         String prompt =
                   "==================================================" +
@@ -172,7 +172,36 @@ public class CubicInchesView extends View {
         System.out.println(prompt);
     }
     
-    private void getHeight() {
+    public void getHeight(){
+       Scanner keyboard = new Scanner(System.in);
+        
+        boolean exitMenu = false;
+        String value;
+
+        Integer iValue;
+        
+        while (!exitMenu){
+                       
+            value = keyboard.nextLine();
+            value = value.trim();
+            
+            //dValue = Double.parseDouble(value);  
+            iValue = Integer.parseInt(value);
+                    
+           if(iValue <= 0){
+                System.out.println("\nInvalid value: "
+                    + "  The value must be greater than 0.");
+                continue;
+            }
+           else{
+               this.height = iValue;
+           }
+            break;
+        }   
+          
+    }
+    
+    private void promptForHeight() {
 
         String prompt =
                   "==================================================" +
