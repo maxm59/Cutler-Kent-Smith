@@ -42,11 +42,11 @@ public class WattsView extends View {
         ComplexCalculationsControl ccc = new ComplexCalculationsControl();
         try{
             
-            System.out.println("DEBUG - User entered: " + value);
+            //System.out.println("DEBUG - User entered: " + value);
             
             //Did the user guess the right answer? 100,000,000
             boolean result = ccc.validateWatts(value, 400000, 250);
-            System.out.println("DEBUG - Result was: " + result);
+            //System.out.println("DEBUG - Result was: " + result);
             
             
             if(result)
@@ -65,6 +65,26 @@ public class WattsView extends View {
         catch(ComplexCalcException ex){
             ErrorView.display(this.getClass().getName(), ex.getMessage());
             return false;
+        }
+    }
+    
+    private void waitForEnter()
+    {
+        boolean isValidEnter = false;
+
+        Scanner keyboard = new Scanner(System.in);
+
+        while (!isValidEnter){
+            String input = keyboard.nextLine();
+            
+            //Name validation
+            if(input.length() >= 0)
+            {
+                isValidEnter = true;
+            }
+            else{
+             System.out.println("Please press <ENTER>.");
+            }
         }
     }
     
@@ -208,9 +228,12 @@ public class WattsView extends View {
                 "\n                                                  " +
                 "\n     Watts: 100,000,000 Watts" +
                 "\n     Thats a lot of juice! Let's catch that cat!  " +         
+                "\n==================================================" +
+                "\n   Press <ENTER> to continue...                   " +
                 "\n==================================================" ; 
 
         System.out.println(display);
+        this.waitForEnter();
     }
         
     private void showNotCorrect (){

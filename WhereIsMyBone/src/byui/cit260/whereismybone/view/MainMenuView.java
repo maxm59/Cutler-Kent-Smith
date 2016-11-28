@@ -37,7 +37,6 @@ public class MainMenuView extends View {
                 "\n               S  =   Save Game                   " +
                 "\n               X  =   Exit Game                   " +
                 "\n                                                  " +
-                "\n            C =   Calculation Test For Clues      " +
                 "\n                                                  " +
                 "\n                                                  " +
                 "\n     To begin, please enter your choice:          " +
@@ -86,9 +85,6 @@ public class MainMenuView extends View {
              case "H": //display the help menu
                 this.displayHelpMenu();
                 break; 
-             case "C": //Temporary display of Complex Calculation for testing
-                 this.displayComplexCalculationView();
-                 break;
             default:
                 System.out.println("\n***Invalid Selection*** Try again");
                 break;
@@ -177,20 +173,6 @@ public class MainMenuView extends View {
         }
     }
     
-    private void displayComplexCalculationView() {
-        try{
-
-            ComplexCalculationView complexCalculationView = new ComplexCalculationView();
-            complexCalculationView.displayComplexCalculationView();
-  
-        }
-        catch(Exception ex)
-        {
-            ErrorView.display(this.getClass().getName(), 
-                    "Error the Complex Calculation View.");
-        }
-        
     
-    }
 }
 

@@ -314,97 +314,97 @@ public class ComplexCalculationsControlTest {
     /**
      * Test of calcWatts method, of class ComplexCalculationsControl.
      */
-    @Test
-    public void testCalcWatts() {
-        System.out.println("calcWatts");
-        
-        /***********************
-         * TEST CASE #1
-         ***********************/
-        
-        System.out.println("\tTest case #1");
-        
-        int volts = 12;
-        int amps = 650;
-        ComplexCalculationsControl instance = new ComplexCalculationsControl();
-        int expResult = 7800;
-        int result = instance.calcWatts(volts, amps);
-        assertEquals(expResult, result);
-        
-        /***********************
-         * TEST CASE #2
-         ***********************/
-        
-        System.out.println("\tTest case #2");
-        
-        volts = 0;
-        amps = 1000;
-        expResult = -1;
-        result = instance.calcWatts(volts, amps);
-        assertEquals(expResult, result);
-        
-        /***********************
-         * TEST CASE #3
-         ***********************/
-        
-        System.out.println("\tTest case #3");
-        
-        volts = 15;
-        amps = 0;
-        expResult = -1;
-        result = instance.calcWatts(volts, amps);
-        assertEquals(expResult, result);
-        
-        /***********************
-         * TEST CASE #4
-         ***********************/
-        
-        System.out.println("\tTest case #4");
-        
-        volts = -1;
-        amps = 5;
-        expResult = -1;
-        result = instance.calcWatts(volts, amps);
-        assertEquals(expResult, result);
-        
-        /***********************
-         * TEST CASE #5
-         ***********************/
-        
-        System.out.println("\tTest case #5");
-        
-        volts = 14;
-        amps = -1;
-        expResult = -1;
-        result = instance.calcWatts(volts, amps);
-        assertEquals(expResult, result);
-        
-        /***********************
-         * TEST CASE #6
-         ***********************/
-        
-        System.out.println("\tTest case #6");
-        
-        volts = 1;
-        amps = 1;
-        expResult = 1;
-        result = instance.calcWatts(volts, amps);
-        assertEquals(expResult, result);
-        
-        /***********************
-         * TEST CASE #7
-         ***********************/
-        
-        System.out.println("\tTest case #7");
-        
-        volts = 14;
-        amps = 1000;
-        expResult = 14000;
-        result = instance.calcWatts(volts, amps);
-        assertEquals(expResult, result);
-
-        
-        
-    }
+//    @Test
+//    public void testCalcWatts() {
+//        System.out.println("calcWatts");
+//        
+//        /***********************
+//         * TEST CASE #1
+//         ***********************/
+//        
+//        System.out.println("\tTest case #1");
+//        
+//        int volts = 12;
+//        int amps = 650;
+//        ComplexCalculationsControl instance = new ComplexCalculationsControl();
+//        int expResult = 7800;
+//        int result = instance.calcWatts(volts, amps);
+//        assertEquals(expResult, result);
+//        
+//        /***********************
+//         * TEST CASE #2
+//         ***********************/
+//        
+//        System.out.println("\tTest case #2");
+//        
+//        volts = 0;
+//        amps = 1000;
+//        expResult = -1;
+//        result = instance.calcWatts(volts, amps);
+//        assertEquals(expResult, result);
+//        
+//        /***********************
+//         * TEST CASE #3
+//         ***********************/
+//        
+//        System.out.println("\tTest case #3");
+//        
+//        volts = 15;
+//        amps = 0;
+//        expResult = -1;
+//        result = instance.calcWatts(volts, amps);
+//        assertEquals(expResult, result);
+//        
+//        /***********************
+//         * TEST CASE #4
+//         ***********************/
+//        
+//        System.out.println("\tTest case #4");
+//        
+//        volts = -1;
+//        amps = 5;
+//        expResult = -1;
+//        result = instance.calcWatts(volts, amps);
+//        assertEquals(expResult, result);
+//        
+//        /***********************
+//         * TEST CASE #5
+//         ***********************/
+//        
+//        System.out.println("\tTest case #5");
+//        
+//        volts = 14;
+//        amps = -1;
+//        expResult = -1;
+//        result = instance.calcWatts(volts, amps);
+//        assertEquals(expResult, result);
+//        
+//        /***********************
+//         * TEST CASE #6
+//         ***********************/
+//        
+//        System.out.println("\tTest case #6");
+//        
+//        volts = 1;
+//        amps = 1;
+//        expResult = 1;
+//        result = instance.calcWatts(volts, amps);
+//        assertEquals(expResult, result);
+//        
+//        /***********************
+//         * TEST CASE #7
+//         ***********************/
+//        
+//        System.out.println("\tTest case #7");
+//        
+//        volts = 14;
+//        amps = 1000;
+//        expResult = 14000;
+//        result = instance.calcWatts(volts, amps);
+//        assertEquals(expResult, result);
+//
+//        
+//        
+//    }
     
 }

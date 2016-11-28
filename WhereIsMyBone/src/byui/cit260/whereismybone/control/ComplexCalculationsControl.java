@@ -107,8 +107,8 @@ public class ComplexCalculationsControl {
             throws ComplexCalcException
     {
         
-        System.out.println("DEBUG - Entering valdiate Watts");
-        System.out.println("DEBUG - User Guessed: " + guess);
+        //System.out.println("DEBUG - Entering valdiate Watts");
+        //System.out.println("DEBUG - User Guessed: " + guess);
         try{
             Long answer = new Long(this.calcWatts(volts, amps));
             Integer i = Integer.parseInt(guess);
@@ -116,8 +116,8 @@ public class ComplexCalculationsControl {
             Long lValue = new Long(i.longValue());
                        
             
-            System.out.println("Expected Answer: " + answer);
-            System.out.println("User Guessed: " + i);
+            //System.out.println("Expected Answer: " + answer);
+            //System.out.println("User Guessed: " + i);
             
             return lValue.compareTo(answer) == 0;
         }

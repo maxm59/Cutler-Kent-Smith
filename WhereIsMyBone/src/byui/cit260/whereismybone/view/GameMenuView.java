@@ -32,6 +32,8 @@ public class GameMenuView extends View{
                 "\n         M  =  Move Player                        " +
                 "\n         S  =  Search Location for Clues          " +
                 "\n                                                  " +
+                "\n         T =   Test Complex Calculations          " +
+                "\n                                                  " +
                 "\n         X  =  Exit Game                          " +
                 "\n                                                  " +
                 "\n         Please make a selection:                 " +
@@ -68,6 +70,9 @@ public class GameMenuView extends View{
                 //System.out.println("Search Location");
                 this.searchLocation();
                 break;
+            case 'T': //Temporary display of Complex Calculation for testing
+                 this.displayComplexCalculationView();
+                 break;
             case 'X':
                 //System.out.println("Exit the Game Menu");
                 return true;
@@ -103,5 +108,20 @@ public class GameMenuView extends View{
     private void searchLocation() {
         System.out.println("TODO - Search Location Results");
     }
+    private void displayComplexCalculationView() {
+        try{
 
+            ComplexCalculationView complexCalculationView = new ComplexCalculationView();
+            complexCalculationView.display();
+  
+        }
+        catch(Exception ex)
+        {
+            ErrorView.display(this.getClass().getName(), 
+                    "Error the Complex Calculation View.");
+            ErrorView.display(this.getClass().getName(), ex.getMessage());
+        }
+        
+    
+    }
 }

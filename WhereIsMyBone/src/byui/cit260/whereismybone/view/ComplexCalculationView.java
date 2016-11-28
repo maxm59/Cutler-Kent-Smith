@@ -20,12 +20,10 @@ import java.util.Scanner;
  * 4) Energy Conversion - Rick
  */
 
-public class ComplexCalculationView {
-    
-    private String menuOptions = "";
+public class ComplexCalculationView extends View{
     
     public ComplexCalculationView(){        
-        this.menuOptions =
+        super(
                   "==================================================" +
                 "\n               WHERE IS MY BONE?                  " +
                 "\n           CALCULATION TEST FOR CLUES             " +
@@ -46,41 +44,13 @@ public class ComplexCalculationView {
                 "\n                                                  " +
                 "\n==================================================" +
                 "\n= Game Creators - Rick S. | Maxine C. | Brian K. =" +
-                "\n==================================================" ;  
+                "\n==================================================") ;  
     }
     
-    private void displayMenu() {
-        menuOptions = getMenuOptions(); 
-    }
-    
-    private String getMenuOptions() {
-        
-        boolean exitMenu = false;
-        String menu = "";
-        
-        Scanner keyboard = new Scanner(System.in);
-        
-        while (!exitMenu){
-            System.out.println(menuOptions);
-            String input = keyboard.nextLine();
-
-            if(input.length()  >= 1){
-                char keyEntered = input.toUpperCase().charAt(0);
-                if(keyEntered == 'X'){
-                    //User wants to exit
-                    menu = "X";
-                    exitMenu = true;
-                }
-                else{
-                    exitMenu = doAction(input);
-                }
-            }
-        }    
-        return menu;               
-    }
-    
-    private boolean doAction(String choice){
-        choice = choice.toUpperCase();
+  
+  @Override
+    public boolean doAction(String choice){
+          choice = choice.toUpperCase();
         switch (choice) {
             case "A": 
                 this.displayCubicInchesView();
@@ -102,21 +72,7 @@ public class ComplexCalculationView {
         return false;  
     
     }
-    public void displayComplexCalculationView() {
-       
-        boolean done = false; //set the flag to not done
-        do{
-            //prompt for menu option
-            String menuOption = this.getMenuOptions();
-            
-            if (menuOption.toUpperCase().equals("X"))//user wants to quit
-                return; //exit the game
-            
-            //do the requested action and display the next view
-            done = this.doAction(menuOption);
-            
-        }while (!done);  
-    }
+    
     
     public void displayCubicInchesView(){
         System.out.println("I see a big box. I wonder if my bone is in it?");
