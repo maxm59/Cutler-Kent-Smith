@@ -220,9 +220,6 @@ public class CubicInchesView extends View {
                 "\n             Height: " + this.height                +
                 "\n                                                  " +  
                 "\n     Please enter a number for the Height:        " +
-                "\n                                                  " +  
-                "\n     Result: " + Double.toString(this.calcResult)   +
-                "\n                                                  " +
                 "\n                                                  " +         
                 "\n==================================================" ;
 

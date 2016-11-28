@@ -5,9 +5,8 @@ import java.util.Scanner;
 /**
  *
  * @author Maxi Cutler
- * 
- * This view class contains the view for
- * the square area calculation of the backyard.
+ * This view class contains the view for the square area 
+ * calculation of the backyard.
  * 
  */
 public class SqYardView extends View{
@@ -42,64 +41,48 @@ public class SqYardView extends View{
 
     @Override
     public boolean doAction(String value){
-        
-        //double dValue = Double.parseDouble(value);
         int iValue = Integer.parseInt(value);
-        
-        
-        if(iValue <= 0){
-            System.out.println("\nInvalid value: "
-                    + "  The value must be greater than 0.");
-            return false;
+        try{
+            if(iValue <= 0){
+                return false;
+                }         
+                this.width = iValue;
+            
+                ComplexCalculationsControl ccc = new ComplexCalculationsControl();
+                this.calcResult = ccc.calcSqYard(this.width, this.length);
+            
+                promptForLength();
+                getLength();        
+                showResult();
         }
-         
-        //Set Width
-        this.width = iValue;
-        
-        //Get Length
-        promptForLength();
-        getLength();
-        
-        //Run calculation
-        ComplexCalculationsControl ccc = new ComplexCalculationsControl();
-        this.calcResult = ccc.calcSqYard(this.width, this.length);
-        
-        //Display results - Temporary... 
-        showResult();
-        
-        return true;  
-    
+        catch(Exception e){
+        System.out.println("The number must be greater than 0.");
+        }
+        return true;
     }
     
-    public void getLength()
-    {
-       Scanner keyboard = new Scanner(System.in);
-        
-        boolean exitMenu = false;
-        String value = "";
-
+    public void getLength(){
+   
+        Scanner keyboard = new Scanner(System.in);
+        boolean exitMenu = false;   
         Integer iValue;
         
-        while (!exitMenu){
-                       
+        String value = "";
+            while (!exitMenu){
             value = keyboard.nextLine();
             value = value.trim();
-            
             //dValue = Double.parseDouble(value);  
-            iValue = Integer.parseInt(value);
-                    
-           if(iValue <= 0){
-                System.out.println("\nInvalid value: "
-                    + "  The value must be greater than 0.");
-                continue;
-            }
-           else
-           {
-               this.length = iValue;
-           }
-            break;
-        }   
-          
+                iValue = Integer.parseInt(value);
+
+                if(iValue <= 0){
+                    continue;
+                    }
+                    else 
+                    {
+                        this.length = iValue;
+                    }
+                break;
+            } 
     }
 
     private void promptForLength() {

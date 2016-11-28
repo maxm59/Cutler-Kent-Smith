@@ -13,39 +13,35 @@ import byui.cit260.whereismybone.exception.ComplexCalcException;
  */
 public class ComplexCalculationsControl {
     
-    public double calcSqYard(int width, int length) //throws ComplexCalcException
-    {
-        if (width <= 0)
-        {
-            //throw new ComplexCalcException("Invalid width. Please try again.");
-            return -1;    
-        }
-        if (length <= 0)
-        {
-            //throw new ComplexCalcException("Invalid length. Please try again.");
-            return -1;
-        }
-
-        double yard = width * length;
-
-        return yard;
+    public double calcSqYard(int width, int length){
+        
+//        try{
+            if (width <= 0)
+                return -1;
+//            } catch (Exception e) {
+//                System.out.println("Input must be an integer and more than 0.");  
+            if (length <= 0)
+                return -1; 
+            double yard = width * length;
+            return yard; 
     }
+
      
     public double calcCubicInches(int width, int length, int height) //throws ComplexCalcException
     {               
         //All Demensions must be greater than 0
         if (width <=0 || length <= 0 || height <= 0)
         {
-            //throw new ComplexCalcException("Invalid entry, value cannot be less"
-            //        + " than 0. Please try again.");
+//            throw new ComplexCalcException("Invalid entry, value cannot be less"
+//                    + " than 0. Please try again.");
             return -1;
         }
 
         //Input cannot be greater than 48in (4ft)
         if (width > 48 || length > 48 || height > 48)
         {
-            //throw new ComplexCalcException("Invalid entry, value cannot be "
-            //        + "greater than 48. Please try again.");
+//            throw new ComplexCalcException("Invalid entry, value cannot be "
+//                    + "greater than 48. Please try again.");
             return -1;    
         }
         
