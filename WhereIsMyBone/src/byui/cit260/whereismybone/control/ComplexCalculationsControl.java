@@ -6,6 +6,7 @@
 package byui.cit260.whereismybone.control;
 
 import byui.cit260.whereismybone.exception.ComplexCalcException;
+import byui.cit260.whereismybone.view.ErrorView;
 
 /**
  * Group Assignment
@@ -74,24 +75,61 @@ public class ComplexCalculationsControl {
         return volume;
     }
     
-    public int calcWatts(int volts, int amps) //throws ComplexCalcException
+    public long calcWatts(int volts, int amps) 
     {
         
-        if(amps <= 0 || amps > 1000)
+//        System.out.println("DEBUG - Entering Calc Watts");
+//        System.out.println("DEBUG - Volts: " + volts);
+//        System.out.println("DEBUG - Amps: " + amps);
+        
+        if(amps <= 0 || amps > 250)
         {
-            //throw new ComplexCalcException("Invalid entry, amps cannot be less "
-            //        + "than 1 or more than 1000.");
+
+            //System.out.println("DEBUG - Failed Amps validation: " + amps);
             return -1;
         }
         
-        if (volts <= 0 || volts > 14)
+        if (volts <= 0 || volts > 400000)
         {
-            //throw new ComplexCalcException("Invalid entry, volts cannot be less "
-            //        + "than 1 or more than 14.");
+
+            //System.out.println("DEBUG - Failed Volgs validation: " + volts);
             return -1;
         }
         
-        int watts = volts * amps;
+        long watts = volts * amps;
+        
+        //System.out.println("DEBUG - Watts result: " + watts);
         return watts;
     }
+    
+    //This public boolean is to complete the assingment for L11
+    public boolean validateWatts(String guess, int volts, int amps) 
+            throws ComplexCalcException
+    {
+        
+        System.out.println("DEBUG - Entering valdiate Watts");
+        System.out.println("DEBUG - User Guessed: " + guess);
+        try{
+            Long answer = new Long(this.calcWatts(volts, amps));
+            Integer i = Integer.parseInt(guess);
+            
+            Long lValue = new Long(i.longValue());
+                       
+            
+            System.out.println("Expected Answer: " + answer);
+            System.out.println("User Guessed: " + i);
+            
+            return lValue.compareTo(answer) == 0;
+        }
+        catch(NumberFormatException ex){
+            
+            //System.out.println("DEBUG - Number format Exception entered");
+            ErrorView.display(this.getClass().getName(), "Error validating Watts: "
+            + ex.getMessage());
+            
+            throw new ComplexCalcException("A numerical value is required.");
+            
+        }
+    }
+    
 }

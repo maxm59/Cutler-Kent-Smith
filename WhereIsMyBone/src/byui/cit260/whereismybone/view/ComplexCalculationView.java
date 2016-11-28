@@ -134,7 +134,7 @@ public class ComplexCalculationView {
         cylinderAreaView.display();        
     }
     public void displayWattsView(){
-        System.out.println("I see lots of power lines."); 
+        //System.out.println("I see lots of power lines."); 
         WattsView wattsView = new WattsView();
         wattsView.display();        
     }

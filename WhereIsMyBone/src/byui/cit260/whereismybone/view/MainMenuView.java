@@ -5,7 +5,6 @@
  */
 package byui.cit260.whereismybone.view;
 import byui.cit260.whereismybone.control.GameControl;
-import byui.cit260.whereismybone.model.ErrorView;
 import java.util.Scanner;
 import whereismybone.WhereIsMyBone;
 

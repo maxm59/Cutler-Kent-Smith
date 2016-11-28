@@ -401,7 +401,7 @@ public class MapControl {
     public static void movePlayerToStartingLocation(Map map) throws MapControlException
     {
         movePlayer(map, 2, 2);
-}
+    }
     
     public int[] movePlayer(int nRow, int nCol) throws MapControlException
     {
