@@ -51,41 +51,41 @@ public class BackpackView extends View {
         
         switch (charSel) {
             case 'A':
-                System.out.println("Steak Bone you just got it! And it's Gone!");
+                this.console.println("Steak Bone you just got it! And it's Gone!");
                 break;
             case 'B':
-                System.out.println("Ben puts your official K9 badge on.");
+                this.console.println("Ben puts your official K9 badge on.");
                 break;
             case 'C':
-                System.out.println("Bacon, Cat DiVil's favorit snack, too! Keep this.");
+                this.console.println("Bacon, Cat DiVil's favorit snack, too! Keep this.");
                 break;
             case 'D':
-                System.out.println("Its Cat DeVils Bell. She lost it here. Keep this.");
+                this.console.println("Its Cat DeVils Bell. She lost it here. Keep this.");
                 break;
             case 'E':
-                System.out.println("Lets keep the box for evidence. She was in it.");
+                this.console.println("Lets keep the box for evidence. She was in it.");
                 break;
             case 'F':
-                System.out.println("Cat DeVil's red cat colar. Major evidence to keep.");
+                this.console.println("Cat DeVil's red cat colar. Major evidence to keep.");
                 break;
             case 'G':
-                System.out.println("Cat DeVil's Hair. Need that for evidence.");
+                this.console.println("Cat DeVil's Hair. Need that for evidence.");
                 break;
             case 'H':
-                System.out.println("Fishbones! She was here! Need this for evidence!");
+                this.console.println("Fishbones! She was here! Need this for evidence!");
                 break;                
             case 'I':
-                System.out.println("Found the pipe! It smells like Cat DeVil napped here.");
+                this.console.println("Found the pipe! It smells like Cat DeVil napped here.");
                 break;   
             case 'J':
-                System.out.println("Yuk,Cat Hairballs. She spits out all over the place!!");
+                this.console.println("Yuk,Cat Hairballs. She spits out all over the place!!");
                 break; 
                 
             case 'X':
-                System.out.println("Exit the Game Menu");
+                this.console.println("Exit the Game Menu");
                 return true;
             default:
-                System.out.println("Invalid option");
+                this.console.println("Invalid option");
                 break;
         }
         return false;

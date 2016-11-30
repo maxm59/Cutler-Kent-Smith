@@ -5,6 +5,7 @@
  */
 package byui.cit260.whereismybone.model;
 
+import byui.cit260.whereismybone.view.ErrorView;
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Objects;
@@ -42,7 +43,8 @@ public class Map implements Serializable{
     public Map(int noOfRows, int noOfColumns){
         locations = new Location[noOfRows][noOfColumns];
         if (noOfRows < 0 || noOfColumns < 0){
-            System.out.println("The number of rows and columns must be > zero");
+            ErrorView.display(this.getClass().getName(),
+                    "The number of rows and columns must be > zero");
             return;
         }
         

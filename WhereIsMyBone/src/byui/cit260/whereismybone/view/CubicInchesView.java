@@ -58,8 +58,8 @@ public class CubicInchesView extends View {
         int iValue = Integer.parseInt(value);
              
         if(iValue <= 0){
-            System.out.println("\nInvalid value: "
-                    + "  The value must be greater than 0.");
+            ErrorView.display(this.getClass().getName(),
+                    "\nInvalid value: The value must be greater than 0.");
             return false;
         }
          
@@ -108,7 +108,7 @@ public class CubicInchesView extends View {
                 "\n                                                  " +         
                 "\n==================================================" ;
 
-        System.out.println(prompt);
+        this.console.println(prompt);
     }
     
     public void getLength(){
@@ -127,8 +127,8 @@ public class CubicInchesView extends View {
                 iValue = Integer.parseInt(value);
 
                if(iValue <= 0){
-                    System.out.println("\nInvalid value: "
-                        + "  The value must be greater than 0.");
+                    ErrorView.display(this.getClass().getName(),
+                            "\nInvalid value: The value must be greater than 0.");
                     continue;
                 }
                else{
@@ -138,7 +138,8 @@ public class CubicInchesView extends View {
             } 
         }
         catch(Exception ex){
-            System.out.println("Error reading input: " + ex.getMessage());
+            ErrorView.display(this.getClass().getName(),
+                    "Error reading input: " + ex.getMessage());
         }
           
           
@@ -170,7 +171,7 @@ public class CubicInchesView extends View {
                 "\n                                                  " +
                 "\n==================================================" ;    
 
-        System.out.println(prompt);
+        this.console.println(prompt);
     }
     
     public void getHeight(){
@@ -189,8 +190,8 @@ public class CubicInchesView extends View {
                 iValue = Integer.parseInt(value);
 
                if(iValue <= 0){
-                    System.out.println("\nInvalid value: "
-                        + "  The value must be greater than 0.");
+                    ErrorView.display(this.getClass().getName(),
+                            "\nInvalid value: The value must be greater than 0.");
                     continue;
                 }
                else{
@@ -200,7 +201,8 @@ public class CubicInchesView extends View {
             }
         }
         catch(Exception ex){
-            System.out.println("Error reading input: " + ex.getMessage());
+            ErrorView.display(this.getClass().getName(),
+                    "Error reading input: " + ex.getMessage());
         }
           
     }
@@ -230,7 +232,7 @@ public class CubicInchesView extends View {
                 "\n                                                  " +         
                 "\n==================================================" ;
 
-        System.out.println(prompt);
+        this.console.println(prompt);
     }
 
     private void showResult() {
@@ -260,7 +262,7 @@ public class CubicInchesView extends View {
                 "\n                                                  " +         
                 "\n==================================================" ;    
 
-        System.out.println(prompt);
+        this.console.println(prompt);
     }
 
 }

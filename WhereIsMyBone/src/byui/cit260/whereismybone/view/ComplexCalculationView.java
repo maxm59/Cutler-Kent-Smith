@@ -65,7 +65,7 @@ public class ComplexCalculationView extends View{
                 this.displayWattsView();
                 break; 
             default:
-                System.out.println("\n***Invalid Selection*** Try again");
+                this.console.println("\n***Invalid Selection*** Try again");
                 break;
              
         }
@@ -75,22 +75,22 @@ public class ComplexCalculationView extends View{
     
     
     public void displayCubicInchesView(){
-        System.out.println("I see a big box. I wonder if my bone is in it?");
+        this.console.println("I see a big box. I wonder if my bone is in it?");
         CubicInchesView cubicInchesView = new CubicInchesView();
         cubicInchesView.display();
     }
     public void displaySqYardView(){
-        System.out.println("Back in the yard. Where is my bone?");
+        this.console.println("Back in the yard. Where is my bone?");
         SqYardView sqYardView = new SqYardView();
         sqYardView.display();        
     }
     private void displayCylinderAreaView() {
-        System.out.println("I see a big pipe. I wonder if my bone is in it?");
+        this.console.println("I see a big pipe. I wonder if my bone is in it?");
         CylinderAreaView cylinderAreaView = new CylinderAreaView();
         cylinderAreaView.display();        
     }
     public void displayWattsView(){
-        //System.out.println("I see lots of power lines."); 
+        //this.console.println("I see lots of power lines."); 
         WattsView wattsView = new WattsView();
         wattsView.display();        
     }

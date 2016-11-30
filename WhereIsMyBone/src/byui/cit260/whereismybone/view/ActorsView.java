@@ -107,7 +107,8 @@ public class ActorsView extends View {
                 this.displayActorp();
                 break;
             default:
-                System.out.println("\n***Invalid Selection*** Try again");
+                ErrorView.display(this.getClass().getName(),
+                        "\n***Invalid Selection*** Try again");
                 break; 
                 
         }
@@ -116,67 +117,67 @@ public class ActorsView extends View {
     }
 
     private void displayActora() {
-        System.out.print("I am 4yrs old and play at ParkLand with mommy.");
+        this.console.println("I am 4yrs old and play at ParkLand with mommy.");
     }
 
     private void displayActorb() {
-        System.out.println("I am Officer Pete, a K9 unit trainer.");
+        this.console.println("I am Officer Pete, a K9 unit trainer.");
     }
 
     private void displayActorc() {
-        System.out.println("I love being the local veterinarian.");
+        this.console.println("I love being the local veterinarian.");
     }
 
     private void displayActord() {
-        System.out.println("I take of lost or unwanted animals.");
+        this.console.println("I take of lost or unwanted animals.");
     }
 
     private void displayActore() {
-        System.out.println("As your baker, you love my bacon donuts.");
+        this.console.println("As your baker, you love my bacon donuts.");
     }
 
     private void displayActorf() {
-        System.out.println("I am the owner of this steak resturant.");
+        this.console.println("I am the owner of this steak resturant.");
     }
 
     private void displayActorg() {
-        System.out.println("I am the owner of Tex Mix Drive Inn.");
+        this.console.println("I am the owner of Tex Mix Drive Inn.");
     }
 
     private void displayActorh() {
-        System.out.println("I love gliding in the pond at ParkLand Park.");
+        this.console.println("I love gliding in the pond at ParkLand Park.");
     }
 
     private void displayActori() {
-        System.out.println("I am a System Admin. at Senior Care Living.");
+        this.console.println("I am a System Admin. at Senior Care Living.");
     }
 
     private void displayActorj() {
-        System.out.println("We live in your neighborhood.");
+        this.console.println("We live in your neighborhood.");
     }
 
     private void displayActork() {
-        System.out.println("Ben is your K9 handler/officer. Nancy is his wife.");
+        this.console.println("Ben is your K9 handler/officer. Nancy is his wife.");
     }
 
     private void displayActorl() {
-        System.out.println("I am a service animal technician.");
+        this.console.println("I am a service animal technician.");
     }
 
     private void displayActorm() {
-        System.out.println("I am the owner of Seafood Eatery.");
+        this.console.println("I am the owner of Seafood Eatery.");
     }
 
     private void displayActorn() {
-        System.out.println("Elephants, Giraffes, and Tigers at ZooLand.");
+        this.console.println("Elephants, Giraffes, and Tigers at ZooLand.");
     }
 
     private void displayActoro() {
-        System.out.println("I am 8 yrs old student at Trump Elementry.");
+        this.console.println("I am 8 yrs old student at Trump Elementry.");
     }
 
     private void displayActorp() {
-        System.out.println("I am a teacher at Trump Elementry School.");
+        this.console.println("I am a teacher at Trump Elementry School.");
     }
 
     private void waitForEnter() {
@@ -190,7 +191,8 @@ public class ActorsView extends View {
 
                 //Name validation
                 if(value.length() >0){
-                    System.out.println("Please press <ENTER>.");
+                    ErrorView.display(this.getClass().getName(),
+                            "Please press <ENTER>.");
                 }
                 else {
                     isValidEnter = true;
@@ -199,7 +201,8 @@ public class ActorsView extends View {
             }   
         }
         catch(Exception ex){
-            System.out.println("Error reading input: " + ex.getMessage());
+            ErrorView.display(this.getClass().getName(),
+                    "Error reading input: " + ex.getMessage());
         }
 
     }

@@ -80,7 +80,7 @@ public class ClueLog implements Serializable {
     }
 
     public void setClueLog() {
-       System.out.println("DEBUG this area for clueControl");
+        
     }
 
     
