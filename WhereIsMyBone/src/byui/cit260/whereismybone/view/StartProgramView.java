@@ -14,7 +14,7 @@ import whereismybone.WhereIsMyBone;
  *
  * @author Smith-Rick
  */
-public class StartProgramView {
+public class StartProgramView extends View{
     
     //private String promptMessage;
     
@@ -126,74 +126,81 @@ public class StartProgramView {
 
     private String getPlayersName() {
         
-        Scanner keyboard = new Scanner(System.in); //get infile for keyboard
-        String value = ""; //value to be returned
+        String value = null; //value to be returned
         boolean valid = false; //initialize to not valid
         
-        while(!valid){
-            //loop while an invalid value is entered
-            //System.out.println("\n" + this.promptMessage);  
-            try{
-                //get the next line typed on the keyboard
-                value = keyboard.nextLine(); 
-                //trim off leading and trailing blanks
-                value = value.trim();
-                
-                if(value.length() < 1)
-                {
-                    //value is blank
-                    System.out.println("\nInvalid Value: value cannot be blank");
-                    continue;        
+        try{
+            while(!valid){
+                //loop while an invalid value is entered
+                //System.out.println("\n" + this.promptMessage);  
+                try{
+                    //get the next line typed on the keyboard
+                    value = this.keyboard.readLine(); 
+                    //trim off leading and trailing blanks
+                    value = value.trim();
+
+                    if(value.length() < 1)
+                    {
+                        //value is blank
+                        System.out.println("\nInvalid Value: value cannot be blank");
+                        continue;        
+                    }
                 }
-            }
-            catch(Exception ex){
-                ErrorView.display(this.getClass().getName(), 
-                        "Error getting player name");              
-            }
-            
-            break; //end the loop
+                catch(Exception ex){
+                    ErrorView.display(this.getClass().getName(), 
+                            "Error getting player name");              
+                }
+
+                break; //end the loop
+            }   
         }
-        return value; //return the value entered     
+        catch(Exception ex){
+            System.out.println("Error reading input: " + ex.getMessage());
+        }
         
-        
+        return value; 
     }
     private void getPlayerGender(Player player) {
         //We want to prompt for the gender and then set the player gender 
         // attribute.
         boolean isValidGender = false;
         String gender = "";
+        String input = null;
         
-        //Scanner is to read the users input from the keybaord.
-        Scanner keyboard = new Scanner(System.in);
-        
+        try{
         //Keep Looping through until a valid name is entered.
-        while (!isValidGender){
-            String input = keyboard.nextLine();
-            input = input.toUpperCase();
-            
-            //Name validation
-            if(input.contentEquals("M") | input.contentEquals("F"))
-            {
-                isValidGender = true;
-                gender = input;
-                
-                if(input.contentEquals("M") | input.contentEquals("m")){
-                     player.setChildType("son");
+            while (!isValidGender){
+                input = this.keyboard.readLine();
+                input = input.toUpperCase();
+
+                //Name validation
+                if(input.contentEquals("M") | input.contentEquals("F"))
+                {
+                    isValidGender = true;
+                    gender = input;
+
+                    if(input.contentEquals("M") | input.contentEquals("m")){
+                         player.setChildType("son");
+                    }
+                    else{
+
+                        player.setChildType("daughter");
+                    }
+
                 }
                 else{
-                    
-                    player.setChildType("daughter");
+                 System.out.println("Invalid Gender. Please type M or F.");
                 }
-                
             }
-            else{
-             System.out.println("Invalid Gender. Please type M or F.");
-            }
+        }
+        catch(Exception ex){
+            System.out.println("Error reading input: " + ex.getMessage());
         }
             
     }
     
-    private boolean doAction(String playersName) {
+    @Override
+    public boolean doAction(String playersName) {
         
         if(playersName.length() < 2 || playersName == null){
             System.out.println("\nInvalid players name: "
@@ -225,23 +232,27 @@ public class StartProgramView {
     private void waitForEnter()
     {
         boolean isValidEnter = false;
+        String input = null;
         
-        //Scanner is to read the users input from the keybaord.
-        Scanner keyboard = new Scanner(System.in);
-        
-        //Keep Looping through until Enter or any key is pressed.
-        //We really do not care what key they press.
-        while (!isValidEnter){
-            String input = keyboard.nextLine();
-            
-            //Name validation
-            if(input.length() >= 0)
-            {
-                isValidEnter = true;
+        try{
+            //Keep Looping through until Enter or any key is pressed.
+            //We really do not care what key they press.
+            while (!isValidEnter){
+                input = keyboard.readLine();
+
+                //Name validation
+                if(input.length() >= 0)
+                {
+                    isValidEnter = true;
+                }
+                else{
+                 System.out.println("Please press <ENTER>.");
+                }
+                break;
             }
-            else{
-             System.out.println("Please press <ENTER>.");
-            }
+        }
+        catch(Exception ex){
+            System.out.println("Error reading input: " + ex.getMessage());
         }
     }
         

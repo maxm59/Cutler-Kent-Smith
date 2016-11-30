@@ -57,9 +57,6 @@ public abstract class View implements ViewInterface {
     @Override
     public String getInput() {
          
-        //Commenting out, no longer needed per L12 team assignment. ok to delete
-        //Scanner keyboard = new Scanner(System.in);
-        
         boolean exitMenu = false;
         String value = null;
         

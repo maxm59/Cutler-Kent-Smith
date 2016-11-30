@@ -63,13 +63,13 @@ public class SqYardView extends View{
     
     public void getLength(){
    
-        Scanner keyboard = new Scanner(System.in);
         boolean exitMenu = false;   
         Integer iValue;
+        String value = null;
         
-        String value = "";
+        try{
             while (!exitMenu){
-            value = keyboard.nextLine();
+            value = keyboard.readLine();
             value = value.trim();
             //dValue = Double.parseDouble(value);  
                 iValue = Integer.parseInt(value);
@@ -83,7 +83,12 @@ public class SqYardView extends View{
                     }
                 break;
             } 
+        }
+        catch(Exception ex){
+            System.out.println("Error reading input: " + ex.getMessage());
+        }
     }
+        
 
     private void promptForLength() {
 

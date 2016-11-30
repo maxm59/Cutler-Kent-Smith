@@ -71,143 +71,27 @@ public class WattsView extends View {
     private void waitForEnter()
     {
         boolean isValidEnter = false;
+        String input = null;
+        
+        try{
+            while (!isValidEnter){
+                input = this.keyboard.readLine();
 
-        Scanner keyboard = new Scanner(System.in);
-
-        while (!isValidEnter){
-            String input = keyboard.nextLine();
-            
-            //Name validation
-            if(input.length() >= 0)
-            {
-                isValidEnter = true;
-            }
-            else{
-             System.out.println("Please press <ENTER>.");
+                //Name validation
+                if(input.length() >= 0)
+                {
+                    isValidEnter = true;
+                }
+                else{
+                 System.out.println("Please press <ENTER>.");
+                }
+                break;
             }
         }
+        catch(Exception ex){
+            System.out.println("Error reading input: " + ex.getMessage());
+        }
     }
-    
-    //Commented out - changing question and answer to meet team assignments for L11.
-    
-//    public boolean doAction(String value){
-//        
-//        ComplexCalculationsControl ccc = new ComplexCalculationsControl();
-//        
-//        
-//        //double dValue = Double.parseDouble(value);
-//        int iValue = Integer.parseInt(value);
-//        
-//        
-//        if(iValue <= 0){
-//            System.out.println("\nInvalid value: "
-//                    + "  The value must be greater than 0.");
-//            return false;
-//        }
-//         
-//        //Set Width
-//        this.volts = iValue;
-//        
-//        //Get Length
-//        promptForAmps();
-//        getAmps();
-//        
-//        //Run calculation
-//        this.calcResult = ccc.calcWatts(this.volts, this.amps);
-//        
-//        //Display results - Temporary... 
-//        showResult();
-//        
-//        //TODO: Check for correct answer. If answer correct, show displayCorrect
-//        //      else show displayIncorrect.
-//                
-//        return true;  
-//    
-//    }
-    
-//    public void getAmps()
-//    {
-//       Scanner keyboard = new Scanner(System.in);
-//        
-//        boolean exitMenu = false;
-//        String value = "";
-//        //Double dValue;
-//        Integer iValue;
-//        
-//        while (!exitMenu){
-//                       
-//            value = keyboard.nextLine();
-//            value = value.trim();
-//            
-//            //dValue = Double.parseDouble(value);  
-//            iValue = Integer.parseInt(value);
-//                    
-//           if(iValue <= 0){
-//                System.out.println("\nInvalid value: "
-//                    + "  The value must be greater than 0.");
-//                continue;
-//            }
-//           else
-//           {
-//               this.amps = iValue;
-//           }
-//            break;
-//        }   
-//          
-//    }
-
-//    private void promptForAmps() {
-//
-//        String prompt =
-//                  "==================================================" +
-//                "\n               WHERE IS MY BONE?                  " +
-//                "\n            Beware! Down Power Lines!             " +
-//                "\n==================================================" +
-//                "\n             .-.               .-.                " +
-//                "\n            (   `-._________.-'   )               " +
-//                "\n             >=     _______     =<                " +
-//                "\n            (   ,-'`       `'-,   )               " +
-//                "\n             `-'               `-'                " +
-//                "\n                                                  " +
-//                "\n     Thank you, but I don't see the wires that    " +
-//                "\n     are sparking. I don't want to step on a hot  " +
-//                "\n     wire. Help me!!                              " +
-//                "\n                                                  " +
-//                "\n     Volts: " + this.volts         +
-//                "\n                                                  " +
-//                "\n     Please enter a number for the Amps:          " +
-//                "\n                                                  " +         
-//                "\n==================================================" ; 
-//
-//        System.out.println(prompt);
-//    }
-//    
-//        private void showResult() {
-//
-//        String prompt =
-//                  "==================================================" +
-//                "\n               WHERE IS MY BONE?                  " +
-//                "\n            Beware! Down Power Lines!             " +
-//                "\n==================================================" +
-//                "\n             .-.               .-.                " +
-//                "\n            (   `-._________.-'   )               " +
-//                "\n             >=     _______     =<                " +
-//                "\n            (   ,-'`       `'-,   )               " +
-//                "\n             `-'               `-'                " +
-//                "\n                                                  " +
-//                "\n     Ah, I can see the wires that are sparking.   " +
-//                "\n     Thank you for your help. Oh, Oh, there is    " +
-//                "\n     cat DeVil laughing at me.                    " +
-//                "\n                                                  " +
-//                "\n     Volts: " + this.volts                          +
-//                "\n     Amps: " + this.amps                            +
-//                "\n                                                  " +
-//                "\n     Result: " + this.calcResult   +
-//                "\n     I gotta catch that cat!                      " +         
-//                "\n==================================================" ; 
-//
-//        System.out.println(prompt);
-//    }
         
     private void showCorrect() {
 

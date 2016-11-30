@@ -156,21 +156,27 @@ public class MainMenuView extends View {
     private void waitForEnter()
     {
         boolean isValidEnter = false;
+        String input = null;
 
-        Scanner keyboard = new Scanner(System.in);
+        try{
+            while (!isValidEnter){
+                input = keyboard.readLine();
 
-        while (!isValidEnter){
-            String input = keyboard.nextLine();
-            
-            //Name validation
-            if(input.length() >= 0)
-            {
-                isValidEnter = true;
-            }
-            else{
-             System.out.println("Please press <ENTER>.");
+                //Name validation
+                if(input.length() >= 0)
+                {
+                    isValidEnter = true;
+                }
+                else{
+                 System.out.println("Please press <ENTER>.");
+                }
+                break;
             }
         }
+        catch(Exception ex){
+            System.out.println("Error reading input: " + ex.getMessage());
+        }
+        
     }
     
     
