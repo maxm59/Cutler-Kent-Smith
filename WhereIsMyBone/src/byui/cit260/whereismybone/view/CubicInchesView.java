@@ -6,11 +6,12 @@
 package byui.cit260.whereismybone.view;
 
 import byui.cit260.whereismybone.control.ComplexCalculationsControl;
-import java.util.Scanner;
 
 /**
  *
  * @author Brian Kent originator
+ * 
+ * 11/29/16 added exception control
  * 
  * @auther Maxi: Super class this view and
  * coded all equation and left some for Brian to do.
