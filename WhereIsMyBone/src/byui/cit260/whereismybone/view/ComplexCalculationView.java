@@ -34,7 +34,7 @@ public class ComplexCalculationView extends View{
                 "\n            (   ,-'`       `'-,   )               " +
                 "\n             `-'               `-'                " +
                 "\n             A =   Size of a Box                  " +
-                "\n             B =   Backyare Area                  " +
+                "\n             B =   Back yard Area                 " +
                 "\n             C =   Size of a Pipe                 " +
                 "\n             D =   Danger! Electrical Lines       " +
                 "\n                                                  " +
@@ -75,17 +75,14 @@ public class ComplexCalculationView extends View{
     
     
     public void displayCubicInchesView(){
-        this.console.println("I see a big box. I wonder if my bone is in it?");
-        CubicInchesView cubicInchesView = new CubicInchesView();
-        cubicInchesView.display();
+        CalcBoxView cbv = new CalcBoxView();
+        cbv.display();
     }
     public void displaySqYardView(){
-        this.console.println("Back in the yard. Where is my bone?");
         SqYardView sqYardView = new SqYardView();
         sqYardView.display();        
     }
     private void displayCylinderAreaView() {
-        this.console.println("I see a big pipe. I wonder if my bone is in it?");
         CylinderAreaView cylinderAreaView = new CylinderAreaView();
         cylinderAreaView.display();        
     }

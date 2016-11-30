@@ -7,6 +7,7 @@ package byui.cit260.whereismybone.control;
 
 import byui.cit260.whereismybone.exception.ComplexCalcException;
 import byui.cit260.whereismybone.view.ErrorView;
+import java.text.DecimalFormat;
 
 /**
  * Group Assignment
@@ -14,13 +15,13 @@ import byui.cit260.whereismybone.view.ErrorView;
  */
 public class ComplexCalculationsControl {
     
-    public double calcSqYard(int width, int length){
+    public int calcSqYard(int width, int length){
         
             if (width <= 0)
                 return -1;
             if (length <= 0)
                 return -1; 
-            double yard = width * length;
+            int yard = width * length;
             return yard; 
     }
 
@@ -48,7 +49,7 @@ public class ComplexCalculationsControl {
         return cubicInch;
     }
     
-    public double calcCylinderArea(int height, int diameter) //throws ComplexCalcException
+    public long calcCylinderArea(int height, int diameter) //throws ComplexCalcException
     {
         
         if (height <= 0) 
@@ -66,10 +67,18 @@ public class ComplexCalculationsControl {
             return -1;
         }
             
-        double radius = diameter/2;
-        double volume = (Math.PI * radius * radius * height)/1728;
+        int radius = diameter/2;
+        double volume = (Math.PI * radius * radius * height);
         
-        return volume;
+        //Need to format the number so the answer is to the nearest 10th.
+        DecimalFormat df = new DecimalFormat("#.#"); 
+        volume = Double.valueOf(df.format(volume));
+        
+        long l = (new Double(volume)).longValue();
+        
+        //Answer rounded to the nearest 10th
+        //18.8
+        return l;
     }
     
     public long calcWatts(int volts, int amps) 
@@ -108,6 +117,69 @@ public class ComplexCalculationsControl {
             
             ErrorView.display(this.getClass().getName(), "Error validating Watts: "
             + ex.getMessage());
+            
+            throw new ComplexCalcException("A numerical value is required.");
+            
+        }
+    }
+    
+    public boolean validateCubicInches(String guess, int width, int length, int height) 
+            throws ComplexCalcException
+    {
+        
+        try{
+            int answer = this.calcCubicInches(width, length, height);
+            
+            Integer i = Integer.parseInt(guess);
+                                    
+            return i.compareTo(answer) == 0;
+        }
+        catch(NumberFormatException ex){
+            
+            ErrorView.display(this.getClass().getName(), "Error validating "
+                    + "Cubic Inches: " + ex.getMessage());
+            
+            throw new ComplexCalcException("A numerical value is required.");
+            
+        }
+    }
+    
+    public boolean validateSqYard(String guess, int length, int width) 
+            throws ComplexCalcException
+    {
+        
+        try{
+            int answer = this.calcSqYard(length, width);
+
+            Integer i = Integer.parseInt(guess);
+            
+            return i.compareTo(answer) == 0;
+        }
+        catch(NumberFormatException ex){
+            
+            ErrorView.display(this.getClass().getName(), "Error validating "
+                    + "Square Yard: " + ex.getMessage());
+            
+            throw new ComplexCalcException("A numerical value is required.");
+            
+        }
+    }
+    
+    public boolean validateCylindarVolume(String guess, int height, int diameter) 
+            throws ComplexCalcException
+    {
+        
+        try{
+            Long answer = new Long(this.calcCylinderArea(height, diameter));
+            Double i = Double.parseDouble(guess);
+            Long lValue = new Long(i.longValue());
+           
+            return lValue.compareTo(answer) == 0;
+        }
+        catch(NumberFormatException ex){
+            
+            ErrorView.display(this.getClass().getName(), "Error validating "
+                    + "Cubic Inches: " + ex.getMessage());
             
             throw new ComplexCalcException("A numerical value is required.");
             

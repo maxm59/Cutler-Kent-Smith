@@ -1,6 +1,7 @@
 package byui.cit260.whereismybone.view;
 
 import byui.cit260.whereismybone.control.ComplexCalculationsControl;
+import byui.cit260.whereismybone.exception.ComplexCalcException;
 import java.util.Scanner;
 /**
  *
@@ -8,139 +9,86 @@ import java.util.Scanner;
  */
 public class CylinderAreaView extends View {
 
+    private int width;
+    private int length;
     private int height;
-    private int diameter;
-    private double calcResult;
+    private int calcResult;
 
     public CylinderAreaView(){
+        
+        //this.displayMenu();
         
         super(
                   "==================================================" +
                 "\n               WHERE IS MY BONE?                  " +
-                "\n               I found this pipe                  " +
+                "\n               I see a big pipe. I wonder if my bone is in it?                  " +
                 "\n==================================================" +
                 "\n             .-.               .-.                " +
                 "\n            (   `-._________.-'   )               " +
                 "\n             >=     _______     =<                " +
                 "\n            (   ,-'`       `'-,   )               " +
                 "\n             `-'               `-'                " +
-                "\n                                                  " +  
-                "\n      I saw this pipe. I wonder if my bone        " +
-                "\n      is in here? Can you help me find it?        " +
-                "\n      First, lets see if I fit in it.             " +
+                "\n            We found a box that might contain     " +
+                "\n            the bone or Cat DeVil, herself.       " +
+                "\n            The box is approx. 3 inches in        " +
+                "\n            diameter and 6 inches heigh.          " +
                 "\n                                                  " +
-                "\n   Please enter a number for height in inches:    " +
-                "\n                                                  " +         
-                "\n" );           
+                "\n            Please enter the volume of the        " +
+                "\n            cylinder to the nearest tenth decimal:" +
+                "\n                                                  " +          
+                "\n             X =   Exit This View                 " + 
+                "\n                                                  " +
+                "\n==================================================" +
+                "\n== Game Creators - Rick S. | Maxi C. | Brian K. = " +
+                "\n==================================================") ;  
         
     }
 
     @Override
     public boolean doAction(String value){
-
-        int iValue = Integer.parseInt(value);
-        
-        if(iValue <= 0){
-            ErrorView.display(this.getClass().getName(),
-                    "\nInvalid value: The value must be greater than 0.");
-            return false;
-        }  
-        this.height = iValue;
-
-        promptForDiameter();
-        getDiameter();
-        showResult();
         
         ComplexCalculationsControl ccc = new ComplexCalculationsControl();
-        this.calcResult = ccc.calcCylinderArea(this.height, this.diameter);
-
-        return true;  
-    }
-    
-    public void getHeight() {
-               
-        boolean exitMenu = false;
-        String value = null;
-
-        Integer iValue;
-        try{
-            while (!exitMenu){
-
-                value = this.keyboard.readLine();
-                value = value.trim();
-
-                //dValue = Double.parseDouble(value);  
-                iValue = Integer.parseInt(value);
-
-                if(iValue <= 0){
-                    ErrorView.display(this.getClass().getName(),
-                            "\nInvalid value: The value must be greater than 0.");
-                    continue;
-                }
-                else {
-                   this.diameter = iValue;
-               }
-                break;
-            }   
-        }
-        catch(Exception ex){
-            ErrorView.display(this.getClass().getName(),
-                    "Error reading input: " + ex.getMessage());
-        }
-    }
-
-    private void promptForHeight() {
-
-        String prompt =
-                  "==================================================" +
-                "\n               WHERE IS MY BONE?                  " +
-                "\n               I found this pipe                  " +
-                "\n==================================================" +
-                "\n             .-.               .-.                " +
-                "\n            (   `-._________.-'   )               " +
-                "\n             >=     _______     =<                " +
-                "\n            (   ,-'`       `'-,   )               " +
-                "\n             `-'               `-'                " +
-                "\n                                                  " +  
-                "\n      Well, the height looks good, but I need     " +
-                "\n      the diameter. Does my body fit?             " +
-                "\n                                                  " +
-                "\n                                                  " +
-                "\n      Height: " + Double.toString(this.height) + "inches. "+
-                "\n                                                  " +
-                "\n         Please enter a number for the            " +
-                "\n           Diameter in inches:                     " +
-                "\n                                                  " +         
-                "\n" ; 
-
-        this.console.println(prompt);
-    }
-    
-    public void getDiameter() {
-        
-        boolean exitMenu = false;
-        String value = null;
-
-        Integer iValue;
-        try{
+        try{          
             
-            while (!exitMenu){
-                       
-                value = this.keyboard.readLine();
-                value = value.trim();
+            //Did the user guess the right answer? 100
+            boolean result = ccc.validateCylindarVolume(value, 6, 3);
+            
+            if(result)
+            {
+                //they got it right
+                this.showCorrect();
+                return true;
+            }
+            else
+            {
+                this.showNotCorrect();
+                return false;
+            }
+            
+        }
+        catch(ComplexCalcException ex){
+            ErrorView.display(this.getClass().getName(), ex.getMessage());
+            return false;
+        }
+    }
+    
+    private void waitForEnter()
+    {
+        boolean isValidEnter = false;
+        String input = null;
+        
+        try{
+            while (!isValidEnter){
+                input = this.keyboard.readLine();
 
-                //dValue = Double.parseDouble(value);  
-                iValue = Integer.parseInt(value);
-
-               if(iValue <= 0){
-                    ErrorView.display(this.getClass().getName(),
-                            "\nInvalid value: The value must be greater than 0.");
-                    continue;
+                //Name validation
+                if(input.length() >= 0)
+                {
+                    isValidEnter = true;
                 }
-               else
-               {
-                   this.diameter = iValue;
-               }
+                else{
+                 this.console.println("Please press <ENTER>.");
+                }
                 break;
             }
         }
@@ -148,63 +96,32 @@ public class CylinderAreaView extends View {
             ErrorView.display(this.getClass().getName(),
                     "Error reading input: " + ex.getMessage());
         }
-          
     }
+        
+    private void showCorrect() {
 
-    private void promptForDiameter() {
-
-        String prompt =
+        String display =
                   "==================================================" +
                 "\n               WHERE IS MY BONE?                  " +
-                "\n               I found this pipe                  " +
+                "\n              I see a big pipe. I wonder if my bone is in it?                  " +
                 "\n==================================================" +
-                "\n             .-.               .-.                " +
-                "\n            (   `-._________.-'   )               " +
-                "\n             >=     _______     =<                " +
-                "\n            (   ,-'`       `'-,   )               " +
-                "\n             `-'               `-'                " +
-                "\n                                                  " +  
-                "\n      Well, the height looks good, but I need     " +
-                "\n      the diameter. Does my body fit?             " +
                 "\n                                                  " +
-                "\n      Height: " + this.height                       +
-                "\n      Diameter: " + Double.toString(this.diameter)+ "inches  " +
+                "\n                 -= CORRECT!!! =-       " +
                 "\n                                                  " +
-                "\n        Please enter a number for the             " +
-                "\n             Diameter in inches:                  " +
-                "\n" +
-                "\n" ; 
-
-        this.console.println(prompt);
-    }
-    
-    private void showResult() {
-
-        String prompt =
-                  "==================================================" +
-                "\n               WHERE IS MY BONE?                  " +
-                "\n               I found this pipe                  " +
                 "\n==================================================" +
-                "\n             .-.               .-.                " +
-                "\n            (   `-._________.-'   )               " +
-                "\n             >=     _______     =<                " +
-                "\n            (   ,-'`       `'-,   )               " +
-                "\n             `-'               `-'                " +
-                "\n                                                  " +              
-                "\n      I can fit and looked inside, ah no bone.    " +
-                "\n      Thank you for your help. I wonder where     " +
-                "\n      cat DeVille is now. Let's go.               " +
-                "\n                                                  " +
-                "\n                                                  " +
-                "\n      Height: " + this.height                       +
-                "\n      Diameter: " + this.diameter                   +
-                "\n                                                  " +
-                "\n      Result: " + Double.toString(this.calcResult)  +
-                "\n      Great Job. Gotta keep on moving.            " +   
-                "\n                                                  " +
-                "\n==================================================" + 
+                "\n   Press <ENTER> to continue...                   " +
                 "\n==================================================" ; 
 
-        this.console.println(prompt);
+        this.console.println(display);
+        this.waitForEnter();
+    }
+        
+    private void showNotCorrect (){
+
+        String display =
+                  
+                "\n        -= INCORRECT - PLEASE TRY AGAIN! =-       " ; 
+
+        this.console.println(display);
     }
 }

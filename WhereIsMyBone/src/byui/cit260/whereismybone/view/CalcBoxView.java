@@ -51,7 +51,7 @@ public class CalcBoxView extends View {
         try{          
             
             //Did the user guess the right answer? 100
-            boolean result = ccc.calcCubicInches(6, 22, 9);
+            boolean result = ccc.validateCubicInches(value, 6, 22, 9);
             
             if(result)
             {
@@ -103,20 +103,11 @@ public class CalcBoxView extends View {
         String display =
                   "==================================================" +
                 "\n               WHERE IS MY BONE?                  " +
-                "\n            Beware! Down Power Lines!             " +
+                "\n               Is it in the Box?                  " +
                 "\n==================================================" +
                 "\n                                                  " +
                 "\n                 -= CORRECT!!! =-       " +
                 "\n                                                  " +
-                "\n     Ah, I can see the wires that are sparking.   " +
-                "\n     Thank you for your help. Oh, Oh, there is    " +
-                "\n     cat DeVil laughing at me.                    " +
-                "\n                                                  " +
-                "\n     Volts: 100,000"                         +
-                "\n     Amps: 250"                             +
-                "\n                                                  " +
-                "\n     Watts: 100,000,000 Watts" +
-                "\n     Thats a lot of juice! Let's catch that cat!  " +         
                 "\n==================================================" +
                 "\n   Press <ENTER> to continue...                   " +
                 "\n==================================================" ; 

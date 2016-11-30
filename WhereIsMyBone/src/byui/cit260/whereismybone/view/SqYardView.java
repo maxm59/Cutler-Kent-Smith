@@ -1,89 +1,95 @@
 package byui.cit260.whereismybone.view;
 
 import byui.cit260.whereismybone.control.ComplexCalculationsControl;
+import byui.cit260.whereismybone.exception.ComplexCalcException;
 import java.util.Scanner;
 /**
  *
  * @author Maxi Cutler
- * This view class contains the view for the square area 
- * calculation of the backyard.
- * 
  */
-public class SqYardView extends View{
-    
+public class SqYardView extends View {
+
     private int width;
     private int length;
-    private double calcResult;
+    private int calcResult;
 
     public SqYardView(){
+        
+        //this.displayMenu();
         
         super(
                   "==================================================" +
                 "\n               WHERE IS MY BONE?                  " +
-                "\n              This is my backyard                 " +
+                "\n               Back in the yard. Where is my bone?                  " +
                 "\n==================================================" +
                 "\n             .-.               .-.                " +
                 "\n            (   `-._________.-'   )               " +
                 "\n             >=     _______     =<                " +
                 "\n            (   ,-'`       `'-,   )               " +
                 "\n             `-'               `-'                " +
-                "\n                                                  " +          
-                "\n     My bone has to be here, buried in a hole.    " +
-                "\n     Can you help me find it? Lets figure out     " +
-                "\n     the square area of my backyard, to reveal    " +
-                "\n     the secret spot.                             " +
+                "\n            We found a box that might contain     " +
+                "\n            the bone or Cat DeVil, herself.       " +
+                "\n            The box is approx. 10 feet wide      " +
+                "\n            and 33 feet long.       " +
                 "\n                                                  " +
-                "\n     Please enter a number for the width:         " +
-                "\n                                                  " +         
-                "\n==================================================") ;           
+                "\n            Please enter the square area of       " +
+                "\n            my yard:                              " +
+                "\n                                                  " +          
+                "\n             X =   Exit This View                 " + 
+                "\n                                                  " +
+                "\n==================================================" +
+                "\n== Game Creators - Rick S. | Maxi C. | Brian K. = " +
+                "\n==================================================") ;  
         
     }
 
     @Override
     public boolean doAction(String value){
-        int iValue = Integer.parseInt(value);
-        try{
-            if(iValue <= 0){
+        
+        ComplexCalculationsControl ccc = new ComplexCalculationsControl();
+        try{          
+            
+            //Did the user guess the right answer? 100
+            boolean result = ccc.validateSqYard(value, 33, 10);
+            
+            if(result)
+            {
+                //they got it right
+                this.showCorrect();
+                return true;
+            }
+            else
+            {
+                this.showNotCorrect();
                 return false;
-                }         
-                this.width = iValue;
+            }
             
-                ComplexCalculationsControl ccc = new ComplexCalculationsControl();
-                this.calcResult = ccc.calcSqYard(this.width, this.length);
-            
-                promptForLength();
-                getLength();        
-                showResult();
         }
-        catch(Exception e){
-            ErrorView.display(this.getClass().getName(),
-                    "The number must be greater than 0.");
+        catch(ComplexCalcException ex){
+            ErrorView.display(this.getClass().getName(), ex.getMessage());
+            return false;
         }
-        return true;
     }
     
-    public void getLength(){
-   
-        boolean exitMenu = false;   
-        Integer iValue;
-        String value = null;
+    private void waitForEnter()
+    {
+        boolean isValidEnter = false;
+        String input = null;
         
         try{
-            while (!exitMenu){
-            value = keyboard.readLine();
-            value = value.trim();
-            //dValue = Double.parseDouble(value);  
-                iValue = Integer.parseInt(value);
+            while (!isValidEnter){
+                input = this.keyboard.readLine();
 
-                if(iValue <= 0){
-                    continue;
-                    }
-                    else 
-                    {
-                        this.length = iValue;
-                    }
+                //Name validation
+                if(input.length() >= 0)
+                {
+                    isValidEnter = true;
+                }
+                else{
+                 this.console.println("Please press <ENTER>.");
+                }
                 break;
-            } 
+            }
         }
         catch(Exception ex){
             ErrorView.display(this.getClass().getName(),
@@ -91,61 +97,30 @@ public class SqYardView extends View{
         }
     }
         
+    private void showCorrect() {
 
-    private void promptForLength() {
-
-        String prompt =
+        String display =
                   "==================================================" +
                 "\n               WHERE IS MY BONE?                  " +
-                "\n              This is my backyard                 " +
+                "\n               Is it in the Box?                  " +
                 "\n==================================================" +
-                "\n             .-.               .-.                " +
-                "\n            (   `-._________.-'   )               " +
-                "\n             >=     _______     =<                " +
-                "\n            (   ,-'`       `'-,   )               " +
-                "\n             `-'               `-'                " +
-                "\n                                                  " +          
-                "\n      I just sniffed out the width of the yard.   " +
-                "\n      I don't find it. Can you help me find       " +
-                "\n      the length of the yard?                     " +
                 "\n                                                  " +
-                "\n      Width: " + Double.toString(this.width)        +
+                "\n                 -= CORRECT!!! =-       " +
                 "\n                                                  " +
-                "\n      Please enter a number for the Length:       " +
-                "\n                                                  " +         
-                "\n==================================================" ;
+                "\n==================================================" +
+                "\n   Press <ENTER> to continue...                   " +
+                "\n==================================================" ; 
 
-        this.console.println(prompt);
+        this.console.println(display);
+        this.waitForEnter();
     }
-    
-        private void showResult() {
+        
+    private void showNotCorrect (){
 
-        String prompt =
-                  "==================================================" +
-                "\n               WHERE IS MY BONE?                  " +
-                "\n              This is my backyard                 " +
-                "\n==================================================" +
-                "\n             .-.               .-.                " +
-                "\n            (   `-._________.-'   )               " +
-                "\n             >=     _______     =<                " +
-                "\n            (   ,-'`       `'-,   )               " +
-                "\n             `-'               `-'                " +
-                "\n                                                  " +   
-                "\n     I just finished walking and smelling the     " +
-                "\n     entire backyard. I didn't know my yard was   " +
-                "\n     that big. I don't see cat DeVil anywhere!    " +
-                "\n     But, WAIT! what is that? There's my BONE!    " +
-                "\n                                                  " +
-                "\n     Width: " + this.width         +
-                "\n     Length: " + this.length       +
-                "\n                                                   " +
-                "\n     Result: " + Double.toString(this.calcResult)    +
-                "\n     Wow great Job!                                " +
-                "\n                                                   " +         
-                "\n===================================================" ;    
+        String display =
+                  
+                "\n        -= INCORRECT - PLEASE TRY AGAIN! =-       " ; 
 
-        this.console.println(prompt);
+        this.console.println(display);
     }
 }
-
-
