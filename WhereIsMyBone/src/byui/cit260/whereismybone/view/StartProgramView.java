@@ -50,7 +50,7 @@ public class StartProgramView extends View{
                 "\n=  Game Creators - Rick S. | Maxi C. | Brian K.  =" +
                 "\n==================================================" ;   
         
-        System.out.println(welcomeBanner);
+        this.console.println(welcomeBanner);
 
     }
     
@@ -73,7 +73,7 @@ public class StartProgramView extends View{
                 "\n== Game Creators - Rick S. | Maxi C. | Brian K. ==" +
                 "\n==================================================" ;
         
-        System.out.println(welcomeBanner);      
+        this.console.println(welcomeBanner);      
     }
     
     private void displayBannerWithIntro(Player player)
@@ -103,7 +103,7 @@ public class StartProgramView extends View{
                 "\n== Game Creators - Rick S. | Maxi C. | Brian K. ==" +
                 "\n==================================================" ;
         
-        System.out.println(welcomeBanner);
+        this.console.println(welcomeBanner);
     }
     
     public void displayStartProgramView() {
@@ -142,7 +142,7 @@ public class StartProgramView extends View{
                     if(value.length() < 1)
                     {
                         //value is blank
-                        System.out.println("\nInvalid Value: value cannot be blank");
+                        this.console.println("\nInvalid Value: value cannot be blank");
                         continue;        
                     }
                 }
@@ -155,7 +155,8 @@ public class StartProgramView extends View{
             }   
         }
         catch(Exception ex){
-            System.out.println("Error reading input: " + ex.getMessage());
+            ErrorView.display(this.getClass().getName(),
+                    "Error reading input: " + ex.getMessage());
         }
         
         return value; 
@@ -189,12 +190,13 @@ public class StartProgramView extends View{
 
                 }
                 else{
-                 System.out.println("Invalid Gender. Please type M or F.");
+                 this.console.println("Invalid Gender. Please type M or F.");
                 }
             }
         }
         catch(Exception ex){
-            System.out.println("Error reading input: " + ex.getMessage());
+           ErrorView.display(this.getClass().getName(),
+                   "Error reading input: " + ex.getMessage());
         }
             
     }
@@ -203,7 +205,7 @@ public class StartProgramView extends View{
     public boolean doAction(String playersName) {
         
         if(playersName.length() < 2 || playersName == null){
-            System.out.println("\nInvalid players name: "
+            this.console.println("\nInvalid players name: "
                     + "  The name must be greater than two character in lenght");
             return false;
         }
@@ -246,13 +248,14 @@ public class StartProgramView extends View{
                     isValidEnter = true;
                 }
                 else{
-                 System.out.println("Please press <ENTER>.");
+                 this.console.println("Please press <ENTER>.");
                 }
                 break;
             }
         }
         catch(Exception ex){
-            System.out.println("Error reading input: " + ex.getMessage());
+            ErrorView.display(this.getClass().getName(),
+                    "Error reading input: " + ex.getMessage());
         }
     }
         
