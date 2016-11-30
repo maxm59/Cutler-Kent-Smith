@@ -56,13 +56,16 @@ public class CubicInchesView extends View {
         
         //double dValue = Double.parseDouble(value);
         int iValue = Integer.parseInt(value);
-             
+      try{       
         if(iValue <= 0){
             ErrorView.display(this.getClass().getName(),
                     "\nInvalid value: The value must be greater than 0.");
             return false;
         }
-         
+      }
+      catch(Exception ex){
+            System.out.println("Error reading input: " + ex.getMessage());
+      }
         //Set Width
         this.width = iValue;
         
