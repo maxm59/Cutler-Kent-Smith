@@ -111,7 +111,6 @@ public class MainMenuView extends View {
     private void loadExistingGame(){
         
         try{
-            //System.out.println("Load Existing Game");
             LoadGameView lgv = new LoadGameView();
             lgv.display();
             
@@ -126,7 +125,6 @@ public class MainMenuView extends View {
     private void saveGame(){
         
         try{
-            //System.out.println("Save Game");
             SaveGameView sgv = new SaveGameView();
             sgv.display();
             
@@ -140,7 +138,6 @@ public class MainMenuView extends View {
     
     private void displayHelpMenu(){
         try{
-            //System.out.println("Display Help Menu");
             HelpMenuView helpMenuView = new HelpMenuView();
             helpMenuView.display();
             

@@ -46,16 +46,16 @@ public class SaveGameView extends View{
         
         switch (choice) {
             case "A": 
-                System.out.println("\n*** Saving to Space A ***");
+                this.console.println("\n*** Saving to Space A ***");
                 break;
             case "B":
-                System.out.println("\n*** Saving to Space B ***");
+                this.console.println("\n*** Saving to Space B ***");
                 break;
             case "C":
-                System.out.println("\n*** Saving to Space C ***");
+                this.console.println("\n*** Saving to Space C ***");
                 break; 
             default:
-                System.out.println("\n***Invalid Selection*** Try again");
+                this.console.println("\n***Invalid Selection*** Try again");
                 break; 
                 
         }

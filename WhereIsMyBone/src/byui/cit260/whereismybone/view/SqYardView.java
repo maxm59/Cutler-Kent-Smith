@@ -56,7 +56,8 @@ public class SqYardView extends View{
                 showResult();
         }
         catch(Exception e){
-        System.out.println("The number must be greater than 0.");
+            ErrorView.display(this.getClass().getName(),
+                    "The number must be greater than 0.");
         }
         return true;
     }
@@ -85,7 +86,8 @@ public class SqYardView extends View{
             } 
         }
         catch(Exception ex){
-            System.out.println("Error reading input: " + ex.getMessage());
+            ErrorView.display(this.getClass().getName(),
+                    "Error reading input: " + ex.getMessage());
         }
     }
         
@@ -113,7 +115,7 @@ public class SqYardView extends View{
                 "\n                                                  " +         
                 "\n==================================================" ;
 
-        System.out.println(prompt);
+        this.console.println(prompt);
     }
     
         private void showResult() {
@@ -142,7 +144,7 @@ public class SqYardView extends View{
                 "\n                                                   " +         
                 "\n===================================================" ;    
 
-        System.out.println(prompt);
+        this.console.println(prompt);
     }
 }
 

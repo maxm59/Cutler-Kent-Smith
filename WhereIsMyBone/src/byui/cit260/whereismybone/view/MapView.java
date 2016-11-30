@@ -37,7 +37,6 @@ public class MapView extends View {
     {
         choice = choice.toUpperCase();
         
-        //System.out.println("DEBUG: User Chose: " + choice);
         if( this.movePlayerToLocation(choice))
             return true;
          
@@ -55,9 +54,9 @@ public class MapView extends View {
         }
         else
         {
-            System.out.println("\n***Invalid Selection*** Try again");
+            this.console.println("\n***Invalid Selection*** Try again");
         }
-        System.out.println("\n***Invalid Selection*** Try again");
+        this.console.println("\n***Invalid Selection*** Try again");
             return false;
     }
 
@@ -66,7 +65,7 @@ public class MapView extends View {
         Location[][] locations = map.getLocations();
 
         String header = "      0     |     1    |     2    |    3     |    4     |";
-        System.out.println(header);
+        this.console.println(header);
 
         String leftIndicator;
         String rightIndicator;
@@ -74,7 +73,6 @@ public class MapView extends View {
         for (int row = 0; row < locations.length; row++){
 
             String mapLine = row + "|";
-            //System.out.println(row + "   ");
 
             for (Location location : locations[row]) {
                 leftIndicator = "  ";
@@ -83,7 +81,7 @@ public class MapView extends View {
                     leftIndicator = "  ";
                     rightIndicator = "  ";
                     
-                    System.out.println(leftIndicator + "??" + rightIndicator);
+                    this.console.println(leftIndicator + "??" + rightIndicator);
                 } 
                 else {                
                     //isVisited is currently not working. Leaving the indicators blank for now.
@@ -99,7 +97,7 @@ public class MapView extends View {
             mapLine = mapLine + " " + leftIndicator + location.getScene().getMapSymbol() + rightIndicator + " |";
             }
 
-            System.out.println(mapLine);
+            this.console.println(mapLine);
         }
     }
 
@@ -112,7 +110,7 @@ public class MapView extends View {
                 {
                     if (location == WhereIsMyBone.getCurrentGame().getPlayer().getLocation()){
 
-                        System.out.println("You are already there. Try moving to a new location");
+                        this.console.println("You are already there. Try moving to a new location");
                     }
                     else
                     {
