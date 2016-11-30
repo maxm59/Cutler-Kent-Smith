@@ -44,7 +44,7 @@ public class GameOverView extends View{
                 System.exit(0);
                 break;
             default:
-                System.out.println("\n***Invalid Selection*** Try again");
+                this.console.println("\n***Invalid Selection*** Try again");
                 break; 
                 
         }

@@ -47,37 +47,30 @@ public class GameMenuView extends View{
         
         switch (charSel) { 
             case 'B':
-                //System.out.println("Display Backpack Inventory");
                 this.showBackpack();
                 break;
             case 'C':
-                //System.out.println("Display Clue List");
                 this.showClues();
                 break;
             case 'D':
-                //System.out.println("Display Map");
                 this.showMap();
                 break;
             case 'H':
-                //System.out.println("Display Help Menu");
                 this.showHelpMenu();
                 break;
             case 'M':
-                //System.out.println("Display the Move Location View");
                 this.movePlayer();
                 break;
             case 'S':
-                //System.out.println("Search Location");
                 this.searchLocation();
                 break;
             case 'T': //Temporary display of Complex Calculation for testing
                  this.displayComplexCalculationView();
                  break;
             case 'X':
-                //System.out.println("Exit the Game Menu");
                 return true;
             default:
-                System.out.println("Invalid option");
+                this.console.println("Invalid option");
                 break;
         }
         return false;
@@ -89,10 +82,9 @@ public class GameMenuView extends View{
     }
  
     private void showClues() {
-        System.out.println("TODO - Display Clue List");
+        this.console.println("TODO - Display Clue List");
     }
     private void showMap() {
-        //System.out.println("DEBUG: Display Map");
         MapView mapView = new MapView();
         mapView.displayMap();
     }    
@@ -101,12 +93,11 @@ public class GameMenuView extends View{
         helpMenuView.display();
     }
     private void movePlayer() {
-        //System.out.println("TODO - Search Location Results");
         MapView mapView = new MapView();
         mapView.display();  
     }
     private void searchLocation() {
-        System.out.println("TODO - Search Location Results");
+        this.console.println("TODO - Search Location Results");
     }
     private void displayComplexCalculationView() {
         try{

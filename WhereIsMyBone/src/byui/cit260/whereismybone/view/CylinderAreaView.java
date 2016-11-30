@@ -41,8 +41,8 @@ public class CylinderAreaView extends View {
         int iValue = Integer.parseInt(value);
         
         if(iValue <= 0){
-            System.out.println("\nInvalid value: "
-                    + "  The value must be greater than 0.");
+            ErrorView.display(this.getClass().getName(),
+                    "\nInvalid value: The value must be greater than 0.");
             return false;
         }  
         this.height = iValue;
@@ -73,8 +73,8 @@ public class CylinderAreaView extends View {
                 iValue = Integer.parseInt(value);
 
                 if(iValue <= 0){
-                    System.out.println("\nInvalid value: "
-                        + "  The value must be greater than 0.");
+                    ErrorView.display(this.getClass().getName(),
+                            "\nInvalid value: The value must be greater than 0.");
                     continue;
                 }
                 else {
@@ -84,7 +84,8 @@ public class CylinderAreaView extends View {
             }   
         }
         catch(Exception ex){
-            System.out.println("Error reading input: " + ex.getMessage());
+            ErrorView.display(this.getClass().getName(),
+                    "Error reading input: " + ex.getMessage());
         }
     }
 
@@ -112,7 +113,7 @@ public class CylinderAreaView extends View {
                 "\n                                                  " +         
                 "\n" ; 
 
-        System.out.println(prompt);
+        this.console.println(prompt);
     }
     
     public void getDiameter() {
@@ -132,8 +133,8 @@ public class CylinderAreaView extends View {
                 iValue = Integer.parseInt(value);
 
                if(iValue <= 0){
-                    System.out.println("\nInvalid value: "
-                        + "  The value must be greater than 0.");
+                    ErrorView.display(this.getClass().getName(),
+                            "\nInvalid value: The value must be greater than 0.");
                     continue;
                 }
                else
@@ -144,7 +145,8 @@ public class CylinderAreaView extends View {
             }
         }
         catch(Exception ex){
-            System.out.println("Error reading input: " + ex.getMessage());
+            ErrorView.display(this.getClass().getName(),
+                    "Error reading input: " + ex.getMessage());
         }
           
     }
@@ -173,7 +175,7 @@ public class CylinderAreaView extends View {
                 "\n" +
                 "\n" ; 
 
-        System.out.println(prompt);
+        this.console.println(prompt);
     }
     
     private void showResult() {
@@ -203,6 +205,6 @@ public class CylinderAreaView extends View {
                 "\n==================================================" + 
                 "\n==================================================" ; 
 
-        System.out.println(prompt);
+        this.console.println(prompt);
     }
 }

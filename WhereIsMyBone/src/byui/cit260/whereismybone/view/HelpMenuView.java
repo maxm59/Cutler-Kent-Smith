@@ -44,9 +44,7 @@ public class HelpMenuView extends View{
 
 
     private void displayObjectGameMenu(){
-        System.out.println("Display Game Objective");
-        String details = "";
-        details = 
+        String details = 
                   "==================================================" +
                 "\n== HELP: Game Objectives =========================" +
                 "\n==================================================" +
@@ -71,13 +69,11 @@ public class HelpMenuView extends View{
                 "\n==================================================" ;
 
 
-        System.out.println(details);
+        this.console.println(details);
     }
     
     private void displayHowToMove(){
-        System.out.println("Display info on how to move");
-        String details = "";
-        details = 
+        String details = 
                   "==================================================" +
                 "\n== HELP: How To Move =============================" +
                 "\n==================================================" +
@@ -109,13 +105,11 @@ public class HelpMenuView extends View{
                 "\n==================================================" ;
 
 
-        System.out.println(details);
+        this.console.println(details);
     }
     
     private void displayClues(){
-        System.out.println("Display Clue info");       
-        String details;
-        details = 
+        String details = 
                   "==================================================" +
                 "\n== HELP: Clues ===================================" +
                 "\n==================================================" +
@@ -126,12 +120,10 @@ public class HelpMenuView extends View{
                 "\n==================================================" ;
 
 
-        System.out.println(details);
+        this.console.println(details);
     }
     private void displayVillans(){
-        System.out.println("Display Villan info");       
-        String details;
-        details = 
+        String details = 
                   "==================================================" +
                 "\n== HELP: Villain Details =========================" +
                 "\n==================================================" +
@@ -169,7 +161,7 @@ public class HelpMenuView extends View{
                 "\n==================================================" ;
 
 
-        System.out.println(details);
+       this.console.println(details);
     }
     
     private void waitForEnter()
@@ -187,13 +179,14 @@ public class HelpMenuView extends View{
                     isValidEnter = true;
                 }
                 else{
-                 System.out.println("Please press <ENTER>.");
+                 this.console.println("Please press <ENTER>.");
                 }
                 break;
             }            
         }
         catch(Exception ex){
-            System.out.println("Error reading input: " + ex.getMessage());
+            ErrorView.display(this.getClass().getName(),
+                    "Error reading input: " + ex.getMessage());
         }
         
     }
@@ -202,8 +195,6 @@ public class HelpMenuView extends View{
         
         choice = choice.toUpperCase();
         
-        //Debugging 
-        System.out.println("DoAction Switch case on: " + choice);
         
         switch (choice) {
             case "O": //Display Game Objective
@@ -225,7 +216,7 @@ public class HelpMenuView extends View{
                 this.displayVillans();
                 break;                                               
             default:
-                System.out.println("\n***Invalid Selection*** Try again");
+                this.console.println("\n***Invalid Selection*** Try again");
                 break;
              
         }
@@ -234,7 +225,6 @@ public class HelpMenuView extends View{
     }
 
     private void displayActorsView() {
-        System.out.println("Display Actors Details.");
         
         ActorsView actorsView = new ActorsView();
         actorsView.display();
@@ -242,14 +232,12 @@ public class HelpMenuView extends View{
     }
 
     private void displaySceneView() {
-        System.out.println("Display Scene Details.");
         
         SceneView sceneView = new SceneView();
         sceneView.display();
     }
     
     private void displayMap(){
-        System.out.println("Display Map Details");
         
         MapView mapView = new MapView();
         mapView.display();

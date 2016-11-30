@@ -47,16 +47,16 @@ public class LoadGameView extends View{
         
         switch (choice) {
             case "A": 
-                System.out.println("\n*** Loading from Space A ***");
+                this.console.println("\n*** Loading from Space A ***");
                 break;
             case "B":
-                System.out.println("\n*** Loading from Space B ***");
+                this.console.println("\n*** Loading from Space B ***");
                 break;
             case "C":
-                System.out.println("\n*** Loading from Space C ***");
+                this.console.println("\n*** Loading from Space C ***");
                 break;
             default:
-                System.out.println("\n***Invalid Selection*** Try again");
+                this.console.println("\n***Invalid Selection*** Try again");
                 break; 
                 
         }

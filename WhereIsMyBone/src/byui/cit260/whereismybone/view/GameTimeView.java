@@ -11,17 +11,18 @@ import whereismybone.WhereIsMyBone;
  *
  * @author Smith-Rick
  */
-public class GameTimeView{
+public class GameTimeView extends View{
     
     public GameTimeView() {
         
     }
 
+    @Override
     public void display() {
         double currentTime = WhereIsMyBone.getCurrentGame().getGameTime().getTimeRemaining();
         String currentLoc = WhereIsMyBone.getCurrentGame().getPlayer().getLocation().getName();
                 
-        System.out.println(
+        this.console.println(
                 "==================================================" +
                 "\n Your current location is: " + currentLoc +
                 "\n You have " + currentTime + " time left." +
@@ -30,9 +31,15 @@ public class GameTimeView{
     }
     
     public void displayWhenNull(){
-                System.out.println(
+                this.console.println(
                 "==================================================" +
                 "\n  " +
                 "\n==================================================");
+    }
+
+    @Override
+    public boolean doAction(String value) {
+        //do nothing
+        return true;
     }
 }

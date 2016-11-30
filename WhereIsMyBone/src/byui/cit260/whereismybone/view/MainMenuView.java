@@ -64,7 +64,7 @@ public class MainMenuView extends View {
                 "\n==================================================" +
                 "\n==================================================" ;
         
-        System.out.println(menuBanner);
+        this.console.println(menuBanner);
     }
     
     @Override
@@ -86,7 +86,7 @@ public class MainMenuView extends View {
                 this.displayHelpMenu();
                 break; 
             default:
-                System.out.println("\n***Invalid Selection*** Try again");
+                this.console.println("\n***Invalid Selection*** Try again");
                 break;
              
         }
@@ -168,13 +168,14 @@ public class MainMenuView extends View {
                     isValidEnter = true;
                 }
                 else{
-                 System.out.println("Please press <ENTER>.");
+                 this.console.println("Please press <ENTER>.");
                 }
                 break;
             }
         }
         catch(Exception ex){
-            System.out.println("Error reading input: " + ex.getMessage());
+            ErrorView.display(this.getClass().getName(),
+                    "Error reading input: " + ex.getMessage());
         }
         
     }
