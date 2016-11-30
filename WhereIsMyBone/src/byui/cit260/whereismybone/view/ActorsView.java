@@ -182,19 +182,25 @@ public class ActorsView extends View {
     private void waitForEnter() {
         
         boolean isValidEnter = false;
+        String value = null;
 
-        Scanner keyboard = new Scanner(System.in);
+        try{
+            while (!isValidEnter){
+                value = keyboard.readLine();
 
-        while (!isValidEnter){
-            String input = keyboard.nextLine();
-            
-            //Name validation
-            if(input.length() >0){
-                System.out.println("Please press <ENTER>.");
-            }
-            else {
-                isValidEnter = true;
-            }
+                //Name validation
+                if(value.length() >0){
+                    System.out.println("Please press <ENTER>.");
+                }
+                else {
+                    isValidEnter = true;
+                }
+                break;
+            }   
         }
+        catch(Exception ex){
+            System.out.println("Error reading input: " + ex.getMessage());
+        }
+
     }
 }

@@ -5,6 +5,7 @@
  */
 package byui.cit260.whereismybone.view;
 
+import java.io.BufferedReader;
 import java.io.PrintWriter;
 import java.util.Scanner;
 import whereismybone.WhereIsMyBone;
@@ -18,6 +19,9 @@ import whereismybone.WhereIsMyBone;
 public abstract class View implements ViewInterface {
     
     protected String displayMessage;
+    
+    protected final BufferedReader keyboard = WhereIsMyBone.getInFile();
+    protected final PrintWriter console = WhereIsMyBone.getOutFile();
         
     public View(){
     
@@ -52,30 +56,37 @@ public abstract class View implements ViewInterface {
    
     @Override
     public String getInput() {
-                
-        Scanner keyboard = new Scanner(System.in);
+         
+        //Commenting out, no longer needed per L12 team assignment. ok to delete
+        //Scanner keyboard = new Scanner(System.in);
         
         boolean exitMenu = false;
         String value = null;
         
-        while (!exitMenu){
-            
-            System.out.println("\n"+this.displayMessage);
-            this.showGameTime();
-            
-            value = keyboard.nextLine();
-            value = value.trim();
+        try{
+            while (!exitMenu){
 
-            if(value.length()  < 1)
-            {
-                //blank value entered
-                System.out.println("\n*** You must enter a value ***");
-            }
-                
-             break;
-            
-        }   
-            
+                System.out.println("\n"+this.displayMessage);
+                this.showGameTime();
+
+                //value = keyboard.nextLine();
+                value = keyboard.readLine();
+                value = value.trim();
+
+                if(value.length()  < 1)
+                {
+                    //blank value entered
+                    System.out.println("\n*** You must enter a value ***");
+                }
+
+                 break;
+
+            }   
+        }
+        catch (Exception ex){
+            System.out.println("Error reading input: " + ex.getMessage());
+        }
+        
         return value;               
     }
     

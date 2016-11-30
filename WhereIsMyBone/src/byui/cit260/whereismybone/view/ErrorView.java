@@ -6,12 +6,17 @@
 package byui.cit260.whereismybone.view;
 
 import byui.cit260.whereismybone.view.View;
+import java.io.PrintWriter;
+import whereismybone.WhereIsMyBone;
 
 /**
  *
  * @author ricte
  */
 public class ErrorView extends View{
+    
+    private static final PrintWriter errorFile = WhereIsMyBone.getOutFile();
+    private static final PrintWriter logFile = WhereIsMyBone.getLogFile();
     
     //Constructor
     public ErrorView(){
@@ -26,7 +31,10 @@ public class ErrorView extends View{
                 "\n ERROR - " + className + " - " + errorMsg +
                 "\n==================================================" ;
         
-        System.out.println(str);
+        errorFile.println(str);
+        
+        //log error
+        logFile.println(className + " - " + errorMsg);
                 
     }
 

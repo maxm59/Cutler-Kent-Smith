@@ -112,31 +112,35 @@ public class CubicInchesView extends View {
     }
     
     public void getLength(){
-       Scanner keyboard = new Scanner(System.in);
         
         boolean exitMenu = false;
         String value;
 
         Integer iValue;
-        
-        while (!exitMenu){
+        try{
+            while (!exitMenu){
                        
-            value = keyboard.nextLine();
-            value = value.trim();
-            
-            //dValue = Double.parseDouble(value);  
-            iValue = Integer.parseInt(value);
-                    
-           if(iValue <= 0){
-                System.out.println("\nInvalid value: "
-                    + "  The value must be greater than 0.");
-                continue;
-            }
-           else{
-               this.length = iValue;
-           }
-            break;
-        }   
+                value = keyboard.readLine();
+                value = value.trim();
+
+                //dValue = Double.parseDouble(value);  
+                iValue = Integer.parseInt(value);
+
+               if(iValue <= 0){
+                    System.out.println("\nInvalid value: "
+                        + "  The value must be greater than 0.");
+                    continue;
+                }
+               else{
+                   this.length = iValue;
+               }
+               break;
+            } 
+        }
+        catch(Exception ex){
+            System.out.println("Error reading input: " + ex.getMessage());
+        }
+          
           
     }
     
@@ -170,31 +174,34 @@ public class CubicInchesView extends View {
     }
     
     public void getHeight(){
-       Scanner keyboard = new Scanner(System.in);
         
         boolean exitMenu = false;
         String value;
 
         Integer iValue;
-        
-        while (!exitMenu){
+        try{
+            while (!exitMenu){
                        
-            value = keyboard.nextLine();
-            value = value.trim();
-            
-            //dValue = Double.parseDouble(value);  
-            iValue = Integer.parseInt(value);
-                    
-           if(iValue <= 0){
-                System.out.println("\nInvalid value: "
-                    + "  The value must be greater than 0.");
-                continue;
+                value = keyboard.readLine();
+                value = value.trim();
+
+                //dValue = Double.parseDouble(value);  
+                iValue = Integer.parseInt(value);
+
+               if(iValue <= 0){
+                    System.out.println("\nInvalid value: "
+                        + "  The value must be greater than 0.");
+                    continue;
+                }
+               else{
+                   this.height = iValue;
+               }
+                break;
             }
-           else{
-               this.height = iValue;
-           }
-            break;
-        }   
+        }
+        catch(Exception ex){
+            System.out.println("Error reading input: " + ex.getMessage());
+        }
           
     }
     

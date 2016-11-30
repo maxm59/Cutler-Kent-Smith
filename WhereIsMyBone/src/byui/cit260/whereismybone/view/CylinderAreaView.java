@@ -58,32 +58,34 @@ public class CylinderAreaView extends View {
     }
     
     public void getHeight() {
-       Scanner input = new Scanner(System.in);
-        
+               
         boolean exitMenu = false;
-        String value;
+        String value = null;
 
         Integer iValue;
-        
-        while (!exitMenu){
-                       
-            value = input.nextLine();
-            value = value.trim();
-            
-            //dValue = Double.parseDouble(value);  
-            iValue = Integer.parseInt(value);
-                    
-            if(iValue <= 0){
-                System.out.println("\nInvalid value: "
-                    + "  The value must be greater than 0.");
-                continue;
-            }
-            else {
-               this.diameter = iValue;
-           }
-            break;
-        }   
-          
+        try{
+            while (!exitMenu){
+
+                value = this.keyboard.readLine();
+                value = value.trim();
+
+                //dValue = Double.parseDouble(value);  
+                iValue = Integer.parseInt(value);
+
+                if(iValue <= 0){
+                    System.out.println("\nInvalid value: "
+                        + "  The value must be greater than 0.");
+                    continue;
+                }
+                else {
+                   this.diameter = iValue;
+               }
+                break;
+            }   
+        }
+        catch(Exception ex){
+            System.out.println("Error reading input: " + ex.getMessage());
+        }
     }
 
     private void promptForHeight() {
@@ -114,32 +116,36 @@ public class CylinderAreaView extends View {
     }
     
     public void getDiameter() {
-       Scanner input = new Scanner(System.in);
         
         boolean exitMenu = false;
-        String value;
+        String value = null;
 
         Integer iValue;
-        
-        while (!exitMenu){
-                       
-            value = input.nextLine();
-            value = value.trim();
+        try{
             
-            //dValue = Double.parseDouble(value);  
-            iValue = Integer.parseInt(value);
-                    
-           if(iValue <= 0){
-                System.out.println("\nInvalid value: "
-                    + "  The value must be greater than 0.");
-                continue;
+            while (!exitMenu){
+                       
+                value = this.keyboard.readLine();
+                value = value.trim();
+
+                //dValue = Double.parseDouble(value);  
+                iValue = Integer.parseInt(value);
+
+               if(iValue <= 0){
+                    System.out.println("\nInvalid value: "
+                        + "  The value must be greater than 0.");
+                    continue;
+                }
+               else
+               {
+                   this.diameter = iValue;
+               }
+                break;
             }
-           else
-           {
-               this.diameter = iValue;
-           }
-            break;
-        }   
+        }
+        catch(Exception ex){
+            System.out.println("Error reading input: " + ex.getMessage());
+        }
           
     }
 

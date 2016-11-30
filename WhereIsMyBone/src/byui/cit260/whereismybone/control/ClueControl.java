@@ -22,7 +22,9 @@ public class ClueControl {
     }
     
     public static void Clue(String description){
-        Scanner input = new Scanner(System.in);
+        
+        //
+        //Scanner input = new Scanner(System.in);
         String clue = "";
        
         System.out.print("");
