@@ -25,7 +25,7 @@ public class ComplexCalculationsControl {
     }
 
      
-    public double calcCubicInches(int width, int length, int height) //throws ComplexCalcException
+    public int calcCubicInches(int width, int length, int height) //throws ComplexCalcException
     {               
         //All Demensions must be greater than 0
         if (width <=0 || length <= 0 || height <= 0)
@@ -43,7 +43,7 @@ public class ComplexCalculationsControl {
             return -1;    
         }
         
-        double cubicInch = width * length * height;
+        int cubicInch = width * length * height;
 
         return cubicInch;
     }
