@@ -40,14 +40,10 @@ public class WattsView extends View {
     public boolean doAction(String value){
         
         ComplexCalculationsControl ccc = new ComplexCalculationsControl();
-        try{
-            
-            //System.out.println("DEBUG - User entered: " + value);
+        try{          
             
             //Did the user guess the right answer? 100,000,000
-            boolean result = ccc.validateWatts(value, 400000, 250);
-            //System.out.println("DEBUG - Result was: " + result);
-            
+            boolean result = ccc.validateWatts(value, 400000, 250);            
             
             if(result)
             {
@@ -83,13 +79,14 @@ public class WattsView extends View {
                     isValidEnter = true;
                 }
                 else{
-                 System.out.println("Please press <ENTER>.");
+                 this.console.println("Please press <ENTER>.");
                 }
                 break;
             }
         }
         catch(Exception ex){
-            System.out.println("Error reading input: " + ex.getMessage());
+            ErrorView.display(this.getClass().getName(),
+                    "Error reading input: " + ex.getMessage());
         }
     }
         
@@ -116,7 +113,7 @@ public class WattsView extends View {
                 "\n   Press <ENTER> to continue...                   " +
                 "\n==================================================" ; 
 
-        System.out.println(display);
+        this.console.println(display);
         this.waitForEnter();
     }
         
@@ -126,6 +123,6 @@ public class WattsView extends View {
                   
                 "\n        -= INCORRECT - PLEASE TRY AGAIN! =-       " ; 
 
-        System.out.println(display);
+        this.console.println(display);
     }
 }

@@ -71,7 +71,6 @@ public class WhereIsMyBone {
                 
             } catch (IOException ex) {
                 
-                //Logger.getLogger(WhereIsMyBone.class.getName()).log(Level.SEVERE, null, ex);
                 System.out.println("Error closing files");
                 return;
                 

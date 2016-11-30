@@ -63,7 +63,7 @@ public abstract class View implements ViewInterface {
         try{
             while (!exitMenu){
 
-                System.out.println("\n"+this.displayMessage);
+                this.console.println("\n"+this.displayMessage);
                 this.showGameTime();
 
                 //value = keyboard.nextLine();
@@ -73,7 +73,7 @@ public abstract class View implements ViewInterface {
                 if(value.length()  < 1)
                 {
                     //blank value entered
-                    System.out.println("\n*** You must enter a value ***");
+                    this.console.println("\n*** You must enter a value ***");
                 }
 
                  break;
@@ -81,7 +81,8 @@ public abstract class View implements ViewInterface {
             }   
         }
         catch (Exception ex){
-            System.out.println("Error reading input: " + ex.getMessage());
+            ErrorView.display(this.getClass().getName(),
+                    "Error reading input: " + ex.getMessage());
         }
         
         return value;               

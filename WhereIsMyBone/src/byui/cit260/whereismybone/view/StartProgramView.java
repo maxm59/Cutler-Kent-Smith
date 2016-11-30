@@ -107,7 +107,6 @@ public class StartProgramView extends View{
     }
     
     public void displayStartProgramView() {
-        //System.out.println("\n*** displayStartProgram() function called***");
         
         boolean done = false; //set the flag to not done
         do{
@@ -132,7 +131,6 @@ public class StartProgramView extends View{
         try{
             while(!valid){
                 //loop while an invalid value is entered
-                //System.out.println("\n" + this.promptMessage);  
                 try{
                     //get the next line typed on the keyboard
                     value = this.keyboard.readLine(); 
