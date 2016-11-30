@@ -16,11 +16,8 @@ public class ComplexCalculationsControl {
     
     public double calcSqYard(int width, int length){
         
-//        try{
             if (width <= 0)
                 return -1;
-//            } catch (Exception e) {
-//                System.out.println("Input must be an integer and more than 0.");  
             if (length <= 0)
                 return -1; 
             double yard = width * length;
@@ -76,29 +73,21 @@ public class ComplexCalculationsControl {
     }
     
     public long calcWatts(int volts, int amps) 
-    {
-        
-//        System.out.println("DEBUG - Entering Calc Watts");
-//        System.out.println("DEBUG - Volts: " + volts);
-//        System.out.println("DEBUG - Amps: " + amps);
-        
+    {                
         if(amps <= 0 || amps > 250)
         {
 
-            //System.out.println("DEBUG - Failed Amps validation: " + amps);
             return -1;
         }
         
         if (volts <= 0 || volts > 400000)
         {
 
-            //System.out.println("DEBUG - Failed Volgs validation: " + volts);
             return -1;
         }
         
         long watts = volts * amps;
         
-        //System.out.println("DEBUG - Watts result: " + watts);
         return watts;
     }
     
@@ -107,23 +96,16 @@ public class ComplexCalculationsControl {
             throws ComplexCalcException
     {
         
-        //System.out.println("DEBUG - Entering valdiate Watts");
-        //System.out.println("DEBUG - User Guessed: " + guess);
         try{
             Long answer = new Long(this.calcWatts(volts, amps));
             Integer i = Integer.parseInt(guess);
             
             Long lValue = new Long(i.longValue());
-                       
-            
-            //System.out.println("Expected Answer: " + answer);
-            //System.out.println("User Guessed: " + i);
-            
+                        
             return lValue.compareTo(answer) == 0;
         }
         catch(NumberFormatException ex){
             
-            //System.out.println("DEBUG - Number format Exception entered");
             ErrorView.display(this.getClass().getName(), "Error validating Watts: "
             + ex.getMessage());
             

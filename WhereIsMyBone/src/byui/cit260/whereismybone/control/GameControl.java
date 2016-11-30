@@ -37,15 +37,9 @@ public class GameControl {
         //Map map = new Map();
         Map map = MapControl.createMap();
         game.setMap(map);
-        
-        
-//        System.out.println("\n*** Create New Game *** " + map.getCurrentLocation().getName());
-        
-        game.getPlayer().setLocation(map.getCurrentLocation());  
-        
-//        System.out.println("\n*** Create New Game *** " + map.getCurrentLocation().getName());
                 
-        //GameTime gt = new GameTime();
+        game.getPlayer().setLocation(map.getCurrentLocation());  
+                        
         GameTime gt = GameControl.createGameTime();
         game.setGameTime(gt);
 
@@ -66,12 +60,10 @@ public class GameControl {
      }
 
     private static BackpackItem[] createItemList() {
-        System.out.println("\n*** called createItemList() in GameControl ***");
         return null;
     }
 
     private static Clue[] createClueList() {
-        System.out.println("\n*** called createClueList() in GameControl ***");
         return null;
     }
     
@@ -107,13 +99,10 @@ public class GameControl {
     }
 
     private static GameTime createGameTime() {
-        //System.out.println("\n*** called createGameTime() in GameControl ***");
         
         GameTime gameTime = new GameTime();
         gameTime.setTimeRemaining(24.0);
-                
-        //System.out.println("\n***DEBUG: Time remaining is: "+ gameTime.getTimeRemaining() +"  ***");
-        
+                        
         return gameTime;
     }
     

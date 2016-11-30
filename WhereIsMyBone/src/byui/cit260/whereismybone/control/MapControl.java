@@ -41,10 +41,7 @@ public class MapControl {
         Scene[] scenes = createScenes();
         
         //Assign each scene to a location in the map
-        GameControl.assignScenesToLocations(map, scenes);        
-
-        
-//        System.out.println("\n*** MapControl - Setting start Location ***" + map.getLocations()[2][2].getName());//DEBUG
+        GameControl.assignScenesToLocations(map, scenes);    
         map.setCurrentLocation(map.getLocations()[2][2]);
         
         return map;
@@ -52,8 +49,6 @@ public class MapControl {
 
     public static void moveActorsToStartingLocation(Map map) throws MapControlException
     {
-        //System.out.println("\n*** called moveActorsToStartingLocation() in MapControl ***");
-        //movePlayer(map, 2, 2;
         movePlayer(map, 2, 2);
         
     }
