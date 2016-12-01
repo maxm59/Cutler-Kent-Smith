@@ -14,6 +14,11 @@ import byui.cit260.whereismybone.model.Map;
 import byui.cit260.whereismybone.model.Player;
 import byui.cit260.whereismybone.model.Scene;
 import byui.cit260.whereismybone.enums.SceneType;
+import byui.cit260.whereismybone.exception.GameControlException;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import whereismybone.WhereIsMyBone;
 
 /**
@@ -24,11 +29,47 @@ import whereismybone.WhereIsMyBone;
  * 
  */
 public class GameControl {
-    
+
     //Default constructor
     public GameControl(){
     }
     
+    public static void getSaveGame(String filePath) 
+        throws GameControlException {
+        
+        Game game = null;
+        
+        try( FileInputStream fips = new FileInputStream(filePath)){
+            ObjectInputStream input = new ObjectInputStream(fips);
+            
+            game = (Game) input.readObject();//read the game object from file
+
+            
+        }catch(Exception ex)
+        {
+            throw new GameControlException(ex.getMessage());
+        }
+        
+        //close the output file
+        WhereIsMyBone.setCurrentGame(game);
+        
+    }
+    
+    public static void saveGame(Game currentGame, String filePath) 
+        throws GameControlException{
+        
+        try(FileOutputStream fops = new FileOutputStream(filePath)){
+            
+             ObjectOutputStream output = new ObjectOutputStream(fops);
+             
+             output.writeObject(currentGame); //write the game object out to file
+            
+        }catch(Exception ex){
+            throw new GameControlException(ex.getMessage());
+        }
+                
+    }
+        
     public static void createNewGame(Player player) {
         
         Game game = new Game();

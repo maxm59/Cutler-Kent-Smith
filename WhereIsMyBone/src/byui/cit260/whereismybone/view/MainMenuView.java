@@ -81,6 +81,7 @@ public class MainMenuView extends View {
                 break;
             case "S": //save the current game
                 this.saveGame();
+                //this.saveGame2();
                 break;
              case "H": //display the help menu
                 this.displayHelpMenu();
@@ -174,6 +175,40 @@ public class MainMenuView extends View {
             ErrorView.display(this.getClass().getName(),
                     "Error reading input: " + ex.getMessage());
         }
+        
+    }
+
+    private void saveGame2() {
+        this.console.println(
+                  "==================================================" +
+                "\n               WHERE IS MY BONE?                  " +
+                "\n==================================================" +
+                "\n             .-.               .-.                " +
+                "\n            (   `-._________.-'   )               " +
+                "\n             >=     _______     =<                " +
+                "\n            (   ,-'`       `'-,   )               " +
+                "\n             `-'               `-'                " +
+                "\n                                                  " +
+                "\n  SAVE GAME:                                      " +
+                "\n    Enter the file path where you want to save:   " + 
+                "\n                                                  " +         
+                "\n==================================================" +
+                "\n                   " +
+                "\n=================================================="  );
+        
+        String filePath = this.getInput();
+        
+        try{
+            
+            GameControl.saveGame(WhereIsMyBone.getCurrentGame(),
+                filePath);
+            
+        }
+        catch(Exception ex){
+            ErrorView.display(this.getClass().getName(),
+                    "Save Game Error: " + ex.getMessage());
+        }
+        
         
     }
     

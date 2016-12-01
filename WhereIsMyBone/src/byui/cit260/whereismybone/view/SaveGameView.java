@@ -5,8 +5,8 @@
  */
 package byui.cit260.whereismybone.view;
 
-import byui.cit260.whereismybone.control.ComplexCalculationsControl;
-import java.util.Scanner;
+import byui.cit260.whereismybone.control.GameControl;
+import whereismybone.WhereIsMyBone;
 
 /**
  *
@@ -26,38 +26,29 @@ public class SaveGameView extends View{
                 "\n             `-'               `-'                " +
                 "\n                                                  " +
                 "\n  SAVE GAME:                                      " +
-                "\n                                                  " +
-                "\n    A) EMPTY" +
-                "\n    B) EMPTY" +
-                "\n    C) EMPTY" +
-                "\n                                                  " +   
-                "\n    X) Go Back                                    " +   
+                "\n    Enter the file path where you want to save:   " + 
                 "\n                                                  " +         
                 "\n==================================================" +
-                "\n  Please enter your choice: ____                  " +
+                "\n                   " +
                 "\n=================================================="  ); 
         
     }
 
     @Override
-    public boolean doAction(String choice) {
+    public boolean doAction(String filePath) {
            
-        choice = choice.toUpperCase();
-        
-        switch (choice) {
-            case "A": 
-                this.console.println("\n*** Saving to Space A ***");
-                break;
-            case "B":
-                this.console.println("\n*** Saving to Space B ***");
-                break;
-            case "C":
-                this.console.println("\n*** Saving to Space C ***");
-                break; 
-            default:
-                this.console.println("\n***Invalid Selection*** Try again");
-                break; 
+        filePath = filePath.toUpperCase();
                 
+        try{
+            
+            GameControl.saveGame(WhereIsMyBone.getCurrentGame(),
+                filePath);
+            
+            return true;
+        }
+        catch(Exception ex){
+            ErrorView.display(this.getClass().getName(),
+                    "Save Game Error: " + ex.getMessage());
         }
         return false;  
     }

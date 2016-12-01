@@ -6,7 +6,6 @@
 package byui.cit260.whereismybone.model;
 
 import java.io.Serializable;
-import java.util.Objects;
 
 /**
  *
@@ -18,11 +17,12 @@ public class Game implements Serializable{
     //  number, which is why we use a Double vs an Integer.
 //    private Double totalTime; - Using GameTime & GameTimeControl
     
-    private GameTime gameTime;
     private Player player;
     private Map map;
     private Clue[] clueList;
-    private BackpackItem[] itemList;
+    private BackpackItem[] itemList; 
+    private GameTime gameTime;
+   
 
     public Game() {
                 

@@ -7,7 +7,6 @@ package byui.cit260.whereismybone.view;
 
 import java.io.BufferedReader;
 import java.io.PrintWriter;
-import java.util.Scanner;
 import whereismybone.WhereIsMyBone;
 
 /**
