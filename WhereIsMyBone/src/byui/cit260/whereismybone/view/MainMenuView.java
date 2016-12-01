@@ -77,10 +77,10 @@ public class MainMenuView extends View {
                 this.startNewGame();
                 break;
             case "L":  //Load an existing game
-                this.loadExistingGame();
+                this.loadSavedGame();
                 break;
             case "S": //save the current game
-                this.saveGame();
+                this.saveCurrentGame();
                 //this.saveGame2();
                 break;
              case "H": //display the help menu
@@ -178,38 +178,29 @@ public class MainMenuView extends View {
         
     }
 
-    private void saveGame2() {
-        this.console.println(
-                  "==================================================" +
-                "\n               WHERE IS MY BONE?                  " +
-                "\n==================================================" +
-                "\n             .-.               .-.                " +
-                "\n            (   `-._________.-'   )               " +
-                "\n             >=     _______     =<                " +
-                "\n            (   ,-'`       `'-,   )               " +
-                "\n             `-'               `-'                " +
-                "\n                                                  " +
-                "\n  SAVE GAME:                                      " +
-                "\n    Enter the file path where you want to save:   " + 
-                "\n                                                  " +         
-                "\n==================================================" +
-                "\n                   " +
-                "\n=================================================="  );
-        
-        String filePath = this.getInput();
-        
-        try{
-            
+    private void loadSavedGame() {
+        console.println("Enter file name: ");
+        try {
+            String fileName = keyboard.readLine();
+            GameControl.getSaveGame(fileName);
+            GameMenuView gmv = new GameMenuView();
+            gmv.display();
+        } catch (Exception e) {
+            ErrorView.display(this.getClass().getName(), "Error loading game");
+            this.console.println(e.toString());
+        }
+    }
+
+    private void saveCurrentGame() {
+        console.println("Enter file name: ");
+        try {
+            String fileName = keyboard.readLine();
             GameControl.saveGame(WhereIsMyBone.getCurrentGame(),
-                filePath);
-            
+                fileName);
+        } catch (Exception e) {
+            ErrorView.display(this.getClass().getName(), "Error saving game");
+            this.console.println(e.toString());
         }
-        catch(Exception ex){
-            ErrorView.display(this.getClass().getName(),
-                    "Save Game Error: " + ex.getMessage());
-        }
-        
-        
     }
     
     

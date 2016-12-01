@@ -1,2 +1,0 @@
-byui.cit260.whereismybone.view.LoadGameView - Load Game Error: writing aborted; java.io.NotSerializableException: byui.cit260.whereismybone.model.GameTime
-byui.cit260.whereismybone.view.MainMenuView - Error Loading Game.

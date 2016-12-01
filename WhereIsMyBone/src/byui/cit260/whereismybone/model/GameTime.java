@@ -5,6 +5,8 @@
  */
 package byui.cit260.whereismybone.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Smith-Rick
@@ -15,7 +17,7 @@ package byui.cit260.whereismybone.model;
  */
 
 
-public class GameTime {
+public class GameTime implements Serializable{
     
 private Double timeRemaining;
 

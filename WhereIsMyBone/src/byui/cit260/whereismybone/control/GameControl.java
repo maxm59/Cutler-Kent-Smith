@@ -39,7 +39,7 @@ public class GameControl {
         
         Game game = null;
         
-        try( FileInputStream fips = new FileInputStream(filePath)){
+        try(FileInputStream fips = new FileInputStream(filePath)){
             ObjectInputStream input = new ObjectInputStream(fips);
             
             game = (Game) input.readObject();//read the game object from file
@@ -59,10 +59,12 @@ public class GameControl {
         throws GameControlException{
         
         try(FileOutputStream fops = new FileOutputStream(filePath)){
+            ObjectOutputStream output = new ObjectOutputStream(fops);
             
-             ObjectOutputStream output = new ObjectOutputStream(fops);
-             
-             output.writeObject(currentGame); //write the game object out to file
+            //Write the game to the file
+            output.writeObject(currentGame); //write the game object out to file
+            
+            output.close();
             
         }catch(Exception ex){
             throw new GameControlException(ex.getMessage());

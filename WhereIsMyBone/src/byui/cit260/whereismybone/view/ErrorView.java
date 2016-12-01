@@ -5,7 +5,6 @@
  */
 package byui.cit260.whereismybone.view;
 
-import byui.cit260.whereismybone.view.View;
 import java.io.PrintWriter;
 import whereismybone.WhereIsMyBone;
 

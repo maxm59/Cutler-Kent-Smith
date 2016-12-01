@@ -5,13 +5,15 @@
  */
 package byui.cit260.whereismybone.model;
 
+import java.io.Serializable;
+
 
 /**
  *
  * @author Smith-Rick
  * Maxi: added backpack to player
  */
-public class Player {
+public class Player implements Serializable{
     
     private String name = "";
     private String gender = "";    
