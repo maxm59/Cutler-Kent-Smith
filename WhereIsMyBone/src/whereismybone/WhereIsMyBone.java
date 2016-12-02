@@ -17,7 +17,7 @@ public class WhereIsMyBone {
     private static Player player = null;
     private static GameTime gameTime = null;
     
-    
+   //Week 12 assignment line 20 to line 80
     private static PrintWriter outFile = null;
     private static BufferedReader inFile = null;
     
@@ -102,7 +102,7 @@ public class WhereIsMyBone {
     public static void setGameTime(GameTime gameTime) {
         WhereIsMyBone.gameTime = gameTime;
     }
-
+    //week 12 assignment from line 106 to line 126
     public static PrintWriter getOutFile() {
         return outFile;
     }

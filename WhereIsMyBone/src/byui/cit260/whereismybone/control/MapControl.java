@@ -398,7 +398,7 @@ public class MapControl {
         movePlayer(map, 2, 2);
     }
     
-    public int[] movePlayer(int nRow, int nCol) throws MapControlException
+    public int[] movePlayer(int nRow, int nCol) throws MapControlException // get player location and add the items here from the backpack
     {
         if(!validLocation(nRow, nCol))
         {

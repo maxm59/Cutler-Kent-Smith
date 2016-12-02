@@ -37,7 +37,7 @@ public class Backpack implements Serializable{
            }
         }
    }
-    //gives you the total no of items in the backpack
+    //gives you the total no of items in the backpack follow the code on mapcontrol on line 401
     public int TotalNoOfItem(){
         int count = 0;
         

@@ -1,10 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package byui.cit260.whereismybone.view;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 /**
@@ -19,14 +16,13 @@ public class ActorsView extends View {
        super(
               "==================================================" +
             "\n               WHERE IS MY BONE?                  " +
-            "\n             Description of Charactors            " +
+            "\n             Description of Actors                " +
             "\n==================================================" +
             "\n             .-.               .-.                " +
             "\n            (   `-._________.-'   )               " +
             "\n             >=     _______     =<                " +
             "\n            (   ,-'`       `'-,   )               " +
             "\n             `-'               `-'                " +
-            "\n                                                  " + 
             "\n             A  =  Tommy, ParkLand                " + 
             "\n             B  =  Pete, K9 Precinct              " + 
             "\n             C  =  Dr. Mice, Animal Care          " + 
@@ -43,11 +39,12 @@ public class ActorsView extends View {
             "\n             N  =  Animals, Zooland               " + 
             "\n             O  =  Brad, Trump School             " + 
             "\n             P  =  Mr Sneed, Trump School         " + 
+            "\n                                                  " +  
+            "\n         S = Save Actors description to file      " + 
             "\n                                                  " +
-            "\n      To begin, please enter your choice:         " +  
-            "\n                                                  " +
+            "\n        To begin, please enter your choice:       " +  
+            "\n                                                  " +  
             "\n                   X   =  Exit                    " +
-            "\n                                                  " +
             "\n==================================================" +
             "\n     Find out who we are and Are we suspects?     " +
             "\n==================================================" );        
@@ -59,138 +56,87 @@ public class ActorsView extends View {
         
         switch (choice) {
             case "A": 
-                this.displayActora();
+                this.console.println("Tommy");
+                this.console.println("I am 4yrs old and play at ParkLand with mommy.");
                 break;
             case "B":
-                this.displayActorb();
+                this.console.println("Pete");
+                this.console.println("I am Officer Pete, a K9 unit trainer.");
                 break;
             case "C":
-                this.displayActorc();
+                this.console.println("Dr Mice");
+                this.console.println("I love being the local veterinarian.");
                 break;
             case "D":
-                this.displayActord();
+                this.console.println("Mr Sam");
+                this.console.println("I take of lost or unwanted animals.");
                 break; 
             case "E":
-                this.displayActore();
+                this.console.println("Mr Jones");
+                this.console.println("As your baker, you love my bacon donuts.");
                 break;
             case "F": 
-                this.displayActorf();
+                this.console.println("Mr Steele");
+                this.console.println("I am the owner of this steak resturant.");
                 break;
             case "G":
-                this.displayActorg();
+                this.console.println("Ms CoCo");           
+                this.console.println("I am the owner of Tex Mix Drive Inn.");
                 break;
             case "H":
-                this.displayActorh();
+                this.console.println("Ducks");
+                this.console.println("I love gliding in the pond at ParkLand Park.");
                 break;
             case "I":
-                this.displayActori();
+                this.console.println("Miss Ellie");
+                this.console.println("I am a System Admin. at Senior Care Living.");
                 break; 
             case "J":
-                this.displayActorj();
+                this.console.println("The Smiths");
+                this.console.println("We live in your neighborhood.");
                 break;
-            case "K": 
-                this.displayActork();
+            case "K":
+                this.console.println("My Owners: Ben and Nancy");
+                this.console.println("Ben is your K9 handler/officer. Nancy is his wife.");
                 break;
             case "L":
-                this.displayActorl();
+                this.console.println("Mr Nono");
+                this.console.println("I am a service animal technician.");
                 break;
             case "M":
-                this.displayActorm();
+                this.console.println("Mr Catch");
+                this.console.println("I am the owner of Seafood Eatery.");
                 break;
             case "N":
-                this.displayActorn();
+                this.console.println("Zooland Animals");
+                this.console.println("Elephants, Giraffes, and Tigers at ZooLand.");
                 break; 
             case "O":
-                this.displayActoro();
+                this.console.println("Brad");
+                this.console.println("I am 8 yrs old student at Trump Elementry.");
                 break;
             case "P":
-                this.displayActorp();
+                this.console.println("Mr Sneed");
+                this.console.println("I am a teacher at Trump Elementry School.");
+                break;
+            case "S":
+                this.console.println("Saved file located in File Exployer.");
+                this.saveActorsDescription();
                 break;
             default:
                 ErrorView.display(this.getClass().getName(),
-                        "\n***Invalid Selection*** Try again");
-                break; 
-                
+                    "\n***Invalid Selection*** Try again");
+                break;   
         }
         return false;  
-    
     }
-
-    private void displayActora() {
-        this.console.println("I am 4yrs old and play at ParkLand with mommy.");
-    }
-
-    private void displayActorb() {
-        this.console.println("I am Officer Pete, a K9 unit trainer.");
-    }
-
-    private void displayActorc() {
-        this.console.println("I love being the local veterinarian.");
-    }
-
-    private void displayActord() {
-        this.console.println("I take of lost or unwanted animals.");
-    }
-
-    private void displayActore() {
-        this.console.println("As your baker, you love my bacon donuts.");
-    }
-
-    private void displayActorf() {
-        this.console.println("I am the owner of this steak resturant.");
-    }
-
-    private void displayActorg() {
-        this.console.println("I am the owner of Tex Mix Drive Inn.");
-    }
-
-    private void displayActorh() {
-        this.console.println("I love gliding in the pond at ParkLand Park.");
-    }
-
-    private void displayActori() {
-        this.console.println("I am a System Admin. at Senior Care Living.");
-    }
-
-    private void displayActorj() {
-        this.console.println("We live in your neighborhood.");
-    }
-
-    private void displayActork() {
-        this.console.println("Ben is your K9 handler/officer. Nancy is his wife.");
-    }
-
-    private void displayActorl() {
-        this.console.println("I am a service animal technician.");
-    }
-
-    private void displayActorm() {
-        this.console.println("I am the owner of Seafood Eatery.");
-    }
-
-    private void displayActorn() {
-        this.console.println("Elephants, Giraffes, and Tigers at ZooLand.");
-    }
-
-    private void displayActoro() {
-        this.console.println("I am 8 yrs old student at Trump Elementry.");
-    }
-
-    private void displayActorp() {
-        this.console.println("I am a teacher at Trump Elementry School.");
-    }
-
-    private void waitForEnter() {
-        
+    private void waitForEnter() { 
         boolean isValidEnter = false;
         String value = null;
-
         try{
             while (!isValidEnter){
                 value = keyboard.readLine();
-
-                //Name validation
-                if(value.length() >0){
+                if(value.length() >0){ //Name validation
                     ErrorView.display(this.getClass().getName(),
                             "Please press <ENTER>.");
                 }
@@ -204,6 +150,46 @@ public class ActorsView extends View {
             ErrorView.display(this.getClass().getName(),
                     "Error reading input: " + ex.getMessage());
         }
-
     }
+    private void saveActorsDescription() {
+        FileWriter outFile = null;
+        String fileLocation = "Actor's Description.txt";
+        try{
+            //create and open a new file stream for the output file
+            outFile = new FileWriter(fileLocation);
+            //write each actor's description to the file plus a new line charactor
+            outFile.write("\nI am 4yrs old and play at ParkLand with mommy.\r");
+            outFile.write("\nI am Officer Pete, a K9 unit trainer.\r");
+            outFile.write("\nI love being the local veterinarian.\r");
+            outFile.write("\nI take of lost or unwanted animals.\r");
+            outFile.write("\nAs your baker, you love my bacon donuts.\r");
+            outFile.write("\nI am the owner of this steak resturant.\r");
+            outFile.write("\nI am the owner of Tex Mix Drive Inn.\r");
+            outFile.write("\nI love gliding in the pond at ParkLand Park.\r");
+            outFile.write("\nI am a System Admin. at Senior Care Living.\r");
+            outFile.write("\nWe live in your neighborhood.\r");
+            outFile.write("\nBen is your K9 handler/officer. Nancy is his wife.\r");
+            outFile.write("\nI am a service animal technician.\r");
+            outFile.write("\nI am the owner of Seafood Eatery.\r");
+            outFile.write("\nElephants, Giraffes, and Tigers at ZooLand.\r");
+            outFile.write("\nI am 8 yrs old student at Trump Elementry.\r");
+            outFile.write("\nI am a teacher at Trump Elementry School.\r");
+
+            outFile.flush(); // flush pushes it to the harddrive
+        }
+        catch (IOException ex){
+            this.console.println("Error saving Actors background;" + ex.getMessage());  
+        }
+       finally {
+            if (outFile !=null) {
+                try {
+                    outFile.close();
+                
+                } catch (IOException ex){
+                    this.console.println("Error closing;" + ex.getMessage());
+                }
+            }
+        }
+    }      
+        
 }

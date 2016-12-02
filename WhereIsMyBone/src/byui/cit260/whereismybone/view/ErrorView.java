@@ -11,6 +11,8 @@ import whereismybone.WhereIsMyBone;
 /**
  *
  * @author ricte
+ * Team Assignment for Week 12
+ * 
  */
 public class ErrorView extends View{
     

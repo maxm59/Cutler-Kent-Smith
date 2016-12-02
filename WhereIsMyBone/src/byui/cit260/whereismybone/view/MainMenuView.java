@@ -5,7 +5,8 @@
  */
 package byui.cit260.whereismybone.view;
 import byui.cit260.whereismybone.control.GameControl;
-import java.util.Scanner;
+import byui.cit260.whereismybone.exception.GameControlException;
+import java.io.IOException;
 import whereismybone.WhereIsMyBone;
 
 /**
@@ -76,7 +77,7 @@ public class MainMenuView extends View {
             case "N": //Create and start a new game
                 this.startNewGame();
                 break;
-            case "L":  //Load an existing game
+            case "L":  //Load or get and start an existing game
                 this.loadSavedGame();
                 break;
             case "S": //save the current game
@@ -87,7 +88,9 @@ public class MainMenuView extends View {
                 this.displayHelpMenu();
                 break; 
             default:
-                this.console.println("\n***Invalid Selection*** Try again");
+                //updated for Week 12 team assignment
+                ErrorView.display("MainMenuView",
+                        "***Invalid Selection*** Try again");
                 break;
              
         }
@@ -105,7 +108,7 @@ public class MainMenuView extends View {
         }
         catch (Exception ex){
             ErrorView.display(this.getClass().getName(), 
-                    "Error starting New Game.");
+                    "Error in Starting a New Game.");
         }
     }
     
@@ -119,7 +122,7 @@ public class MainMenuView extends View {
         catch(Exception ex)
         {
             ErrorView.display(this.getClass().getName(), 
-                    "Error Loading Game.");
+                    "Error in Loading an Existing Game.");
         }
     }
     
@@ -133,11 +136,12 @@ public class MainMenuView extends View {
         catch(Exception ex)
         {
             ErrorView.display(this.getClass().getName(), 
-                    "Error Saving Game.");
+                    "Error in Saving this Game.");
         }
     }
     
     private void displayHelpMenu(){
+        
         try{
             HelpMenuView helpMenuView = new HelpMenuView();
             helpMenuView.display();
@@ -146,7 +150,7 @@ public class MainMenuView extends View {
         catch(Exception ex)
         {
             ErrorView.display(this.getClass().getName(), 
-                    "Error with Help Menu.");
+                    "Error displaying the Help Menu.");
         }
 
     }
@@ -179,29 +183,49 @@ public class MainMenuView extends View {
     }
 
     private void loadSavedGame() {
+        //week 12 assignment
         console.println("Enter file name: ");
+        
         try {
             String fileName = keyboard.readLine();
             GameControl.getSaveGame(fileName);
             GameMenuView gmv = new GameMenuView();
             gmv.display();
-        } catch (Exception e) {
+        } catch (IOException | GameControlException e) {
             ErrorView.display(this.getClass().getName(), "Error loading game");
             this.console.println(e.toString());
         }
     }
 
     private void saveCurrentGame() {
+        //week 12 assignment
         console.println("Enter file name: ");
+        
         try {
             String fileName = keyboard.readLine();
             GameControl.saveGame(WhereIsMyBone.getCurrentGame(),
                 fileName);
-        } catch (Exception e) {
+        } catch (IOException | GameControlException e) {
             ErrorView.display(this.getClass().getName(), "Error saving game");
             this.console.println(e.toString());
         }
     }
+    
+//    //Week 12 print to text file
+//    public static void saveGame(Game game, String gamefolder)
+//            throws GameControlException{
+//        
+//        String filepath;
+//        
+//        try(FileOutputStream fops = new FileOutputStream(filepath)){
+//            ObjectOutputStream output = new ObjectOutputStream(fops);
+//            
+//            output.writeObject(game);
+//        }
+//        catch(Exception e){
+//            throw new GameControlException(e.getMessage());
+//        }
+//    }
     
     
 }
