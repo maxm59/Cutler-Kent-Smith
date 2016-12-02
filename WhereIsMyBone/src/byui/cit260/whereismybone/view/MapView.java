@@ -36,9 +36,6 @@ public class MapView extends View {
     public boolean doAction(String choice)
     {
         choice = choice.toUpperCase();
-        
-        if( this.movePlayerToLocation(choice))
-            return true;
          
         //Check if the entry is valid
         if(choice.equals("PK")||choice.equals("VH")||choice.equals("K9")||choice.equals("AC")||choice.equals("AS")
@@ -56,8 +53,7 @@ public class MapView extends View {
         {
             this.console.println("\n***Invalid Selection*** Try again");
         }
-        this.console.println("\n***Invalid Selection*** Try again");
-            return false;
+        return false;
     }
 
     public void displayMap(){
@@ -110,13 +106,19 @@ public class MapView extends View {
                 {
                     if (location == WhereIsMyBone.getCurrentGame().getPlayer().getLocation()){
 
-                        this.console.println("You are already there. Try moving to a new location");
+                        this.console.println("You are already at " + 
+                                WhereIsMyBone.getCurrentGame().getPlayer().getLocation().getName()
+                                + ". Try moving to a new location");
                     }
                     else
                     {
                         Scene symb = location.getScene();
+                        this.console.println("DEBUG: Scene = " + symb.getMapSymbol());
+                        this.console.println("DEBUG: Choice = " + choice);
                             if(symb.getMapSymbol().equals(choice))
                             {
+                                this.console.println("DEBUG: Its a match.");
+                                
                                 int row = location.getRow();
                                 int column = location.getCol();
 
@@ -129,20 +131,11 @@ public class MapView extends View {
                                 GameTime gt = new GameTime();
                                 gt.setTimeRemaining(newTime);
 
-                                WhereIsMyBone.getCurrentGame().setGameTime(gt);                    
+                                WhereIsMyBone.getCurrentGame().setGameTime(gt); 
+                                
+                                return true;
                             }
 
-                        //WhereIsMyBone.getCurrentGame().getPlayer().setLocation(loc);
-                        MapControl.movePlayer(map, row, column);
-
-                        double currentTime = WhereIsMyBone.getCurrentGame().getGameTime().getTimeRemaining();
-                        double moveTime = symb.minute;
-                        double newTime = GameTimeControl.calcNewGameTime(currentTime, moveTime);
-                        GameTime gt = new GameTime();
-                        gt.setTimeRemaining(newTime);
-
-                        WhereIsMyBone.getCurrentGame().setGameTime(gt);
-                        return true;
                     }
 
                 }
