@@ -51,7 +51,8 @@ public class MapView extends View {
                 }
                 catch(Exception ex){
                     ErrorView.display(this.getClass().getName(), 
-                            "Error getting player name");              
+                            "Error getting player name"); 
+                    
                 }
 
             return true;
@@ -63,7 +64,7 @@ public class MapView extends View {
         return false;
     }
 
-    public void displayMap(){
+    public void displayMap() throws MapControlException{
         Map map = WhereIsMyBone.getCurrentGame().getMap();
         Location[][] locations = map.getLocations();
 
@@ -73,41 +74,51 @@ public class MapView extends View {
         String leftIndicator;
         String rightIndicator;
         
-        for (int row = 0; row < locations.length; row++){
+        try{
+        
+            for (int row = 0; row < locations.length; row++){
 
-            String mapLine = row + "|";
+                String mapLine = row + "|";
 
-            for (Location location : locations[row]) {
-                leftIndicator = "  ";
-                rightIndicator = "  ";
-                if (location.getScene() == null) {
+                for (Location location : locations[row]) {
                     leftIndicator = "  ";
                     rightIndicator = "  ";
-                    
-                    this.console.println(leftIndicator + "??" + rightIndicator);
-                } 
-                else {                
-                    //isVisited is currently not working. Leaving the indicators blank for now.
-                    if(location.isVisited()){
-                        leftIndicator = "   ";
-                        rightIndicator = "   ";
-                    }
-                    if(location == WhereIsMyBone.getCurrentGame().getPlayer().getLocation()){                       
-                        leftIndicator = "  >";
-                        rightIndicator = "<  ";
-                    }
-                }
-            mapLine = mapLine + " " + leftIndicator + location.getScene().getMapSymbol() + rightIndicator + " |";
-            }
+                    if (location.getScene() == null) {
+                        leftIndicator = "  ";
+                        rightIndicator = "  ";
 
-            this.console.println(mapLine);
+                        this.console.println(leftIndicator + "??" + rightIndicator);
+                    } 
+                    else {                
+                        //isVisited is currently not working. Leaving the indicators blank for now.
+                        if(location.isVisited()){
+                            leftIndicator = "   ";
+                            rightIndicator = "   ";
+                        }
+                        if(location == WhereIsMyBone.getCurrentGame().getPlayer().getLocation()){                       
+                            leftIndicator = "  >";
+                            rightIndicator = "<  ";
+                        }
+                    }
+                mapLine = mapLine + " " + leftIndicator + location.getScene().getMapSymbol() + rightIndicator + " |";
+                }
+
+                this.console.println(mapLine);
+            }
+        }
+        catch(Exception ex){
+            
+            ErrorView.display(this.getClass().getName(), 
+                    "Error displaying map.");  
+            throw new MapControlException("ERROR: There was a problem with display Map.");
+                        
         }
         
         this.console.println("\nPlease press <ENTER> to return to the menu.");
         this.waitForEnter();
     }
     
-    private void waitForEnter()
+    private void waitForEnter() throws MapControlException
     {
         boolean isValidEnter = false;
         String input = null;
@@ -128,8 +139,12 @@ public class MapView extends View {
             }            
         }
         catch(Exception ex){
-            ErrorView.display(this.getClass().getName(),
-                    "Error reading input: " + ex.getMessage());
+            
+            ErrorView.display(this.getClass().getName(), 
+                    "Error waiting for enter.");  
+            throw new MapControlException("ERROR: There was a problem with"
+                    + "waiting for enter.");
+                        
         }
         
     }
@@ -182,10 +197,14 @@ public class MapView extends View {
 
                 }
             }
-        }
+        }     
         catch(Exception ex){
-                                    
-            throw new MapControlException("ERROR: There was a problem with create Map.");
+            
+            ErrorView.display(this.getClass().getName(), 
+                    "Error moving player to location.");  
+            throw new MapControlException("ERROR: There was a problem with "
+                    + "moving player to location.");
+        
         }
         return result;
     }

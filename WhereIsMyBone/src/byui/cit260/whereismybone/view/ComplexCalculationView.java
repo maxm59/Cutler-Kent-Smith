@@ -5,6 +5,7 @@
  */
 package byui.cit260.whereismybone.view;
 
+import byui.cit260.whereismybone.exception.ComplexCalcException;
 import java.util.Scanner;
 /**
  *
@@ -50,8 +51,10 @@ public class ComplexCalculationView extends View{
   
   @Override
     public boolean doAction(String choice){
-          choice = choice.toUpperCase();
-        switch (choice) {
+        
+        choice = choice.toUpperCase();
+        try{
+          switch (choice) {
             case "A": 
                 this.displayCubicInchesView();
                 break;
@@ -69,27 +72,74 @@ public class ComplexCalculationView extends View{
                 break;
              
         }
+        }
+        catch(Exception ex){
+            
+            ErrorView.display(this.getClass().getName(), 
+                    "Error with doAction");  
+                        
+        }  
         return false;  
     
     }
     
     
-    public void displayCubicInchesView(){
+    public void displayCubicInchesView() throws ComplexCalcException{
         CalcBoxView cbv = new CalcBoxView();
-        cbv.display();
+        try{
+            cbv.display();
+        } 
+        catch(Exception ex){
+            
+            ErrorView.display(this.getClass().getName(), 
+                    "Error displaying Cubic Inches View.");  
+            throw new ComplexCalcException("ERROR: There was a problem with display "
+                    + "Cubic Inches View.");
+                        
+        }
     }
-    public void displaySqYardView(){
+    public void displaySqYardView() throws ComplexCalcException{
         SqYardView sqYardView = new SqYardView();
-        sqYardView.display();        
+        try{
+            sqYardView.display();   
+        }
+        catch(Exception ex){
+            
+            ErrorView.display(this.getClass().getName(), 
+                    "Error displaying Cubic Inches View.");  
+            throw new ComplexCalcException("ERROR: There was a problem with display "
+                    + "Square Yard View.");
+                        
+        }
     }
-    private void displayCylinderAreaView() {
+    private void displayCylinderAreaView() throws ComplexCalcException {
         CylinderAreaView cylinderAreaView = new CylinderAreaView();
-        cylinderAreaView.display();        
+        try{
+            cylinderAreaView.display();   
+        }
+        catch(Exception ex){
+            
+            ErrorView.display(this.getClass().getName(), 
+                    "Error displaying Cylinder View.");  
+            throw new ComplexCalcException("ERROR: There was a problem with display "
+                    + "Cylinder View.");
+                        
+        }     
     }
-    public void displayWattsView(){
+    public void displayWattsView() throws ComplexCalcException{
         //this.console.println("I see lots of power lines."); 
         WattsView wattsView = new WattsView();
-        wattsView.display();        
+        try{
+            wattsView.display();  
+        }
+        catch(Exception ex){
+            
+            ErrorView.display(this.getClass().getName(), 
+                    "Error displaying Cubic Inches View.");  
+            throw new ComplexCalcException("ERROR: There was a problem with display "
+                    + "Watts View.");
+                        
+        }  
     }
 }
 
