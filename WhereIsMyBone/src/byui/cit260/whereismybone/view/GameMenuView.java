@@ -5,6 +5,10 @@
  */
 package byui.cit260.whereismybone.view;
 
+import byui.cit260.whereismybone.exception.MapControlException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 
 /**
  *
@@ -23,6 +27,7 @@ public class GameMenuView extends View{
                 "\n         V  =  View Your Backpack Items           " +        
                 "\n         C  =  Clue List                          " +                         
                 "\n         D  =  Display Map                        " +                         
+                "\n         P  =  Print Map to File                  " +                         
                 "\n         H  =  Help Menu                          " +                       
                 "\n         M  =  Move Player                        " +
                 "\n         S  =  Search Location for Clues          " +
@@ -62,6 +67,9 @@ public class GameMenuView extends View{
             case 'T': //Temporary display of Complex Calculation for testing
                  this.displayComplexCalculationView();
                  break;
+            case 'P': //Print Map to File
+                 this.printMapToFileView();
+                 break;
             case 'X':
                 return true;
             default:
@@ -79,9 +87,20 @@ public class GameMenuView extends View{
     private void showClues() {
         this.console.println("TODO - Display Clue List");
     }
-    private void showMap() {
+    private void showMap(){
+        
         MapView mapView = new MapView();
-        mapView.displayMap();
+        
+        try{
+            
+            mapView.displayMap(); 
+            
+        }catch(Exception ex)
+        {
+            ErrorView.display(this.getClass().getName(), 
+                    "Error the Complex Calculation View.");
+            ErrorView.display(this.getClass().getName(), ex.getMessage());
+        }
     }    
     private void showHelpMenu() {
         HelpMenuView helpMenuView = new HelpMenuView();
@@ -109,5 +128,21 @@ public class GameMenuView extends View{
         }
         
     
+    }
+
+    private void printMapToFileView() {
+        
+        PrintMapToFileView pm = new PrintMapToFileView();   
+
+        try{
+            
+            pm.display();
+
+        }catch (Exception ex)
+        {
+            ErrorView.display(this.getClass().getName(), "Error: Problem with print"
+                    + "map to file view.");
+        }
+
     }
 }
