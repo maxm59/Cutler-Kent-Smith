@@ -37,21 +37,23 @@ public class LoadGameView extends View{
     }
 
     @Override
-    public boolean doAction(String filePath) {
+    public boolean doAction(String filePath){
            
         filePath = filePath.toUpperCase();
+        boolean result = false;
                 
         try{
             
             GameControl.getSaveGame(filePath);
             
-            return true;
+            result = true;
+            
         }
         catch(Exception ex){
             ErrorView.display(this.getClass().getName(),
                     "Load Game Error: " + ex.getMessage());
         }
-        return false;  
+        return result;  
     }
     
 }

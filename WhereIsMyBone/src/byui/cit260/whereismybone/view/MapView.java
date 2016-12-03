@@ -7,6 +7,7 @@ package byui.cit260.whereismybone.view;
 
 import byui.cit260.whereismybone.control.MapControl;
 import byui.cit260.whereismybone.control.GameTimeControl;
+import byui.cit260.whereismybone.exception.MapControlException;
 import byui.cit260.whereismybone.model.Location;
 import byui.cit260.whereismybone.model.Map;
 import byui.cit260.whereismybone.model.GameTime;
@@ -44,8 +45,14 @@ public class MapView extends View {
                 ||choice.equals("FM")||choice.equals("ZO")||choice.equals("EC")||choice.equals("GC")||choice.equals("TC")
                 ||choice.equals("SF")||choice.equals("SL")||choice.equals("PG")||choice.equals("TE")||choice.equals("SK"))
         {
-            //make a boolean statement true and false
-            this.movePlayerToLocation(choice);
+                try{
+                    //make a boolean statement true and false
+                    this.movePlayerToLocation(choice);
+                }
+                catch(Exception ex){
+                    ErrorView.display(this.getClass().getName(), 
+                            "Error getting player name");              
+                }
 
             return true;
         }
@@ -95,11 +102,45 @@ public class MapView extends View {
 
             this.console.println(mapLine);
         }
+        
+        this.console.println("\nPlease press <ENTER> to return to the menu.");
+        this.waitForEnter();
+    }
+    
+    private void waitForEnter()
+    {
+        boolean isValidEnter = false;
+        String input = null;
+
+        try{
+            while (!isValidEnter){
+                input = this.keyboard.readLine();
+
+                //Name validation
+                if(input.length() >= 0)
+                {
+                    isValidEnter = true;
+                }
+                else{
+                 this.console.println("Please press <ENTER>.");
+                }
+                break;
+            }            
+        }
+        catch(Exception ex){
+            ErrorView.display(this.getClass().getName(),
+                    "Error reading input: " + ex.getMessage());
+        }
+        
     }
 
-    private boolean movePlayerToLocation(String choice) {
+    private boolean movePlayerToLocation(String choice) throws MapControlException {
+        
+        boolean result = false;
+        
         Map map = WhereIsMyBone.getCurrentGame().getMap();
         Location[][] locations = map.getLocations();
+        try{
             for(Location[] locArr : locations)
             {
                 for(Location location: locArr)
@@ -133,14 +174,20 @@ public class MapView extends View {
 
                                 WhereIsMyBone.getCurrentGame().setGameTime(gt); 
                                 
-                                return true;
+                                result = true;
+                                return result;
                             }
 
                     }
 
                 }
             }
-        return false;
+        }
+        catch(Exception ex){
+                                    
+            throw new MapControlException("ERROR: There was a problem with create Map.");
+        }
+        return result;
     }
 }
 

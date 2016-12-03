@@ -6,8 +6,11 @@
 package byui.cit260.whereismybone.view;
 
 import byui.cit260.whereismybone.control.GameControl;
+import byui.cit260.whereismybone.exception.GameControlException;
 import byui.cit260.whereismybone.model.Player;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import whereismybone.WhereIsMyBone;
 
 /**
@@ -208,11 +211,11 @@ public class StartProgramView extends View{
             return false;
         }
         
-//        Player player = new Player();
-//        player.setName(playersName);
-
-        //call createPLayer() control function
-        WhereIsMyBone.setPlayer(GameControl.createPlayer(playersName));
+        try {
+            WhereIsMyBone.setPlayer(GameControl.createPlayer(playersName));
+        } catch (GameControlException ex) {
+            Logger.getLogger(StartProgramView.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
         Player player = WhereIsMyBone.getPlayer();
         //Gender prompt. 
