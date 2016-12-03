@@ -15,87 +15,131 @@ import java.text.DecimalFormat;
  */
 public class ComplexCalculationsControl {
     
-    public int calcSqYard(int width, int length){
+    public int calcSqYard(int width, int length)
+    throws ComplexCalcException{
+        
+        Integer yard = null;
+        
+        try{
         
             if (width <= 0)
                 return -1;
             if (length <= 0)
                 return -1; 
-            int yard = width * length;
-            return yard; 
+            
+            yard = width * length;
+        }
+        catch(Exception ex){
+                                    
+            throw new ComplexCalcException("ERROR: There was a problem with "
+                    + "calculating square yard.");
+        }
+        
+        return yard; 
     }
 
      
-    public int calcCubicInches(int width, int length, int height) //throws ComplexCalcException
-    {               
-        //All Demensions must be greater than 0
-        if (width <=0 || length <= 0 || height <= 0)
-        {
-//            throw new ComplexCalcException("Invalid entry, value cannot be less"
-//                    + " than 0. Please try again.");
-            return -1;
-        }
+    public int calcCubicInches(int width, int length, int height) throws ComplexCalcException //throws ComplexCalcException
+    {  
+        Integer cubicInch = null;
+        
+        try{
+            //All Demensions must be greater than 0
+            if (width <=0 || length <= 0 || height <= 0)
+            {
+    //            throw new ComplexCalcException("Invalid entry, value cannot be less"
+    //                    + " than 0. Please try again.");
+                return -1;
+            }
 
-        //Input cannot be greater than 48in (4ft)
-        if (width > 48 || length > 48 || height > 48)
-        {
-//            throw new ComplexCalcException("Invalid entry, value cannot be "
-//                    + "greater than 48. Please try again.");
-            return -1;    
+            //Input cannot be greater than 48in (4ft)
+            if (width > 48 || length > 48 || height > 48)
+            {
+    //            throw new ComplexCalcException("Invalid entry, value cannot be "
+    //                    + "greater than 48. Please try again.");
+                return -1;    
+            }
+
+            cubicInch = width * length * height;
+        }
+        catch(Exception ex){
+                                    
+            throw new ComplexCalcException("ERROR: There was a problem with "
+                    + "calculating cubic inch.");
         }
         
-        int cubicInch = width * length * height;
-
         return cubicInch;
     }
     
-    public long calcCylinderArea(int height, int diameter) //throws ComplexCalcException
+    public long calcCylinderArea(int height, int diameter) throws ComplexCalcException //throws ComplexCalcException
     {
+        Long l = null;
         
-        if (height <= 0) 
-        {
-            //throw new ComplexCalcException("Invalid entry, height cannot be "
-            //    + "less than or equal to zero. Please try again.");
-            return -1;
+        try{
+
+            if (height <= 0) 
+            {
+                //throw new ComplexCalcException("Invalid entry, height cannot be "
+                //    + "less than or equal to zero. Please try again.");
+                return -1;
+            }
+
+            if (diameter <= 0 || diameter > 36)
+            {
+                //throw new ComplexCalcException("Invalid entry, diameter cannot be "
+                //    + "less than or equal to zero or greater than 36. "
+                //        + "Please try again.");
+                return -1;
+            }
+
+            int radius = diameter/2;
+            double volume = (Math.PI * radius * radius * height);
+
+            //Need to format the number so the answer is to the nearest 10th.
+            DecimalFormat df = new DecimalFormat("#.#"); 
+            volume = Double.valueOf(df.format(volume));
+
+            l = (new Double(volume)).longValue();
         }
-        
-        if (diameter <= 0 || diameter > 36)
-        {
-            //throw new ComplexCalcException("Invalid entry, diameter cannot be "
-            //    + "less than or equal to zero or greater than 36. "
-            //        + "Please try again.");
-            return -1;
+        catch(Exception ex){
+                                    
+            throw new ComplexCalcException("ERROR: There was a problem with "
+                    + "calculating cylinder.");
         }
-            
-        int radius = diameter/2;
-        double volume = (Math.PI * radius * radius * height);
-        
-        //Need to format the number so the answer is to the nearest 10th.
-        DecimalFormat df = new DecimalFormat("#.#"); 
-        volume = Double.valueOf(df.format(volume));
-        
-        long l = (new Double(volume)).longValue();
         
         //Answer rounded to the nearest 10th
         //18.8
         return l;
     }
     
-    public long calcWatts(int volts, int amps) 
-    {                
-        if(amps <= 0 || amps > 250)
-        {
-
-            return -1;
-        }
+    public long calcWatts(int volts, int amps) throws ComplexCalcException 
+    {
         
-        if (volts <= 0 || volts > 400000)
-        {
-
-            return -1;
-        }
+        Long watts = null;
         
-        long watts = volts * amps;
+        try{
+
+            if(amps <= 0 || amps > 250)
+            {
+
+                return -1;
+            }
+
+            if (volts <= 0 || volts > 400000)
+            {
+
+                return -1;
+            }
+            
+            Integer result = volts * amps;
+
+            watts = result.longValue();
+        }
+        catch(Exception ex){
+                                    
+            throw new ComplexCalcException("ERROR: There was a problem with "
+                    + "calculating cubic inch.");
+        }
         
         return watts;
     }

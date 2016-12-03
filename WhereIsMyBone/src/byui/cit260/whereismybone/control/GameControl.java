@@ -136,7 +136,8 @@ public class GameControl {
     //my thinking is that this coding needs to be in the location.java class? Need to brainstorm with Richard.
     public static void assignScenesToLocations(Map map, Scene[] scenes) throws GameControlException {
         Location[][] locations = map.getLocations();
-            try{
+        
+        try{
 
             locations[0][0].setScene(scenes[SceneType.Parkland.ordinal()]);
             locations[0][1].setScene(scenes[SceneType.VacantHouse.ordinal()]);
