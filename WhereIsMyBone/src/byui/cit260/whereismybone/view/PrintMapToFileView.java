@@ -7,6 +7,7 @@ import whereismybone.WhereIsMyBone;
 /**
  *
  * @author ricte
+ * 
  */
 public class PrintMapToFileView extends View{
     

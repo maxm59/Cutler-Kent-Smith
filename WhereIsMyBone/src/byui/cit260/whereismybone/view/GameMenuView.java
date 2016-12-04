@@ -1,13 +1,11 @@
 package byui.cit260.whereismybone.view;
 
-import byui.cit260.whereismybone.exception.MapControlException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
-
 /**
  *
  * @author Smith-Rick
+ * 
  */
 public class GameMenuView extends View{
 

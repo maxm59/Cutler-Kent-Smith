@@ -1,11 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package byui.cit260.whereismybone.control;
-import byui.cit260.whereismybone.exception.MapControlException;
 
+import byui.cit260.whereismybone.exception.MapControlException;
 import byui.cit260.whereismybone.model.Actor;
 import byui.cit260.whereismybone.model.BackpackItem;
 import byui.cit260.whereismybone.model.Clue;
@@ -14,7 +9,6 @@ import byui.cit260.whereismybone.model.Map;
 import byui.cit260.whereismybone.model.Player;
 import byui.cit260.whereismybone.model.Scene;
 import byui.cit260.whereismybone.enums.SceneType;
-import byui.cit260.whereismybone.view.ErrorView;
 import whereismybone.WhereIsMyBone;
 
 /**

@@ -2,7 +2,6 @@ package byui.cit260.whereismybone.view;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Scanner;
 
 /**
  *
@@ -158,7 +157,9 @@ public class ActorsView extends View {
         try{
             //create and open a new file stream for the output file
             outFile = new FileWriter(fileLocation);
+
             //write each actor's description to the file plus a new line charactor
+            
             outFile.write("\n I am 4yrs old and play at ParkLand with mommy.\r");
             outFile.write("\n I am Officer Pete, a K9 unit trainer.\r");
             outFile.write("\n I love being the local veterinarian.\r");
@@ -191,6 +192,6 @@ public class ActorsView extends View {
                 }
             }
         }
-    }      
+    }
         
 }

@@ -8,9 +8,12 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
+/**
+ * 
+ * @author Rick Smith 
+ * 
+ */
 public class WhereIsMyBone {
     
     private static Game currentGame = null;
@@ -45,7 +48,7 @@ public class WhereIsMyBone {
             StartProgramView startProgramView = new StartProgramView();
             startProgramView.displayStartProgramView();
             
-            return;
+//            return;
         
         }
         catch(Throwable ex){
@@ -54,7 +57,7 @@ public class WhereIsMyBone {
                     "\nCause: " + ex.getCause() +
                     "\nMessage: " + ex.getMessage());
             
-            ex.printStackTrace();
+//            ex.printStackTrace();
         }
         finally{
             try {
@@ -126,5 +129,4 @@ public class WhereIsMyBone {
     public static void setLogFile(PrintWriter logFile) {
         WhereIsMyBone.logFile = logFile;
     }
-
 }

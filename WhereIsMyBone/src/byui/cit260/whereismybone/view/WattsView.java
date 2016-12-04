@@ -2,10 +2,10 @@ package byui.cit260.whereismybone.view;
 
 import byui.cit260.whereismybone.control.ComplexCalculationsControl;
 import byui.cit260.whereismybone.exception.ComplexCalcException;
-import java.util.Scanner;
 /**
  *
  * @author Maxi Cutler
+ * 
  */
 public class WattsView extends View {
 

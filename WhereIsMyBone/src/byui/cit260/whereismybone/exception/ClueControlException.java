@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package byui.cit260.whereismybone.exception;
 
 /**
@@ -11,8 +6,6 @@ package byui.cit260.whereismybone.exception;
  * Note to myself = I might have to code clueControl class
  * Brian did not do it yet, in order to make this exception
  * class function. This is ready to go once ClueControl is done.
- * 
- * 
  * 
  */
 public class ClueControlException {
