@@ -31,6 +31,5 @@ public enum BackpackItem implements Serializable{
     }
     public String getName() {
         return name;
-    }
-    
+    }    
 }

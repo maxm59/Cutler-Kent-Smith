@@ -206,24 +206,6 @@ public class MainMenuView extends View {
             ErrorView.display(this.getClass().getName(), "Error saving game");
             this.console.println(e.toString());
         }
-    }
-    
-//    //Week 12 print to text file
-//    public static void saveGame(Game game, String gamefolder)
-//            throws GameControlException{
-//        
-//        String filepath;
-//        
-//        try(FileOutputStream fops = new FileOutputStream(filepath)){
-//            ObjectOutputStream output = new ObjectOutputStream(fops);
-//            
-//            output.writeObject(game);
-//        }
-//        catch(Exception e){
-//            throw new GameControlException(e.getMessage());
-//        }
-//    }
-    
-    
+    }    
 }
 
