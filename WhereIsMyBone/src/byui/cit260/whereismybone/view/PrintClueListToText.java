@@ -22,7 +22,7 @@ public class PrintClueListToText extends View {
             "\n            (   ,-'`       `'-,   )               " +
             "\n             `-'               `-'                " +
             "\n      P  =  Printout Clue List to text file       " + 
-            "\n                                                  " +
+            "\n                     and or                       " +
             "\n          Open text file and printout             " +  
             "\n                                                  " +  
             "\n                  X   =  Exit                     " +
