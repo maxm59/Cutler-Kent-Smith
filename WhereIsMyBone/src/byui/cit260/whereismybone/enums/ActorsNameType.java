@@ -32,11 +32,3 @@ public enum ActorsNameType {
     Rex, 
     Rats;
 }
-    
-    
-    
-    
-    
-    
-    
-}
