@@ -13,7 +13,7 @@ public class BackpackView extends View {
         super(
                   "==================================================" +
                 "\n               WHERE IS MY BONE?                  " +
-                "\n                   GAME MENU                      " +
+                "\n      Pickup these clues for your backpack        " +
                 "\n==================================================" +
                 "\n             .-.               .-.                " +
                 "\n            (   `-._________.-'   )               " +
@@ -74,7 +74,6 @@ public class BackpackView extends View {
             case 'J':
                 this.console.println("Yuk,Cat Hairballs. She spits out all over the place!!");
                 break; 
-                
             case 'X':
                 this.console.println("Exit the Game Menu");
                 return true;

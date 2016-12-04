@@ -6,7 +6,7 @@ import java.io.IOException;
 /**
  *
  * 12.1.16 by Maxi Cutler
- * for Week 12 Individual
+ * for Week 12 Individual due 12/3/16
  * 
  */
 public class PrintActorsToTextView extends View {
