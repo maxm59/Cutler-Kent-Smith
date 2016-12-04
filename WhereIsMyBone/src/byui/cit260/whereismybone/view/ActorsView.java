@@ -40,7 +40,8 @@ public class ActorsView extends View {
             "\n             O  =  Brad, Trump School             " + 
             "\n             P  =  Mr Sneed, Trump School         " + 
             "\n                                                  " +  
-            "\n         S = Save Actors description to file      " + 
+            "\n         S = Save Actors Name and                 " +
+            "\n                  Description to tex file         " + 
             "\n                                                  " +
             "\n        To begin, please enter your choice:       " +  
             "\n                                                  " +  
@@ -158,22 +159,22 @@ public class ActorsView extends View {
             //create and open a new file stream for the output file
             outFile = new FileWriter(fileLocation);
             //write each actor's description to the file plus a new line charactor
-            outFile.write("\nI am 4yrs old and play at ParkLand with mommy.\r");
-            outFile.write("\nI am Officer Pete, a K9 unit trainer.\r");
-            outFile.write("\nI love being the local veterinarian.\r");
-            outFile.write("\nI take of lost or unwanted animals.\r");
-            outFile.write("\nAs your baker, you love my bacon donuts.\r");
-            outFile.write("\nI am the owner of this steak resturant.\r");
-            outFile.write("\nI am the owner of Tex Mix Drive Inn.\r");
-            outFile.write("\nI love gliding in the pond at ParkLand Park.\r");
-            outFile.write("\nI am a System Admin. at Senior Care Living.\r");
-            outFile.write("\nWe live in your neighborhood.\r");
-            outFile.write("\nBen is your K9 handler/officer. Nancy is his wife.\r");
-            outFile.write("\nI am a service animal technician.\r");
-            outFile.write("\nI am the owner of Seafood Eatery.\r");
-            outFile.write("\nElephants, Giraffes, and Tigers at ZooLand.\r");
-            outFile.write("\nI am 8 yrs old student at Trump Elementry.\r");
-            outFile.write("\nI am a teacher at Trump Elementry School.\r");
+            outFile.write("\n I am 4yrs old and play at ParkLand with mommy.\r");
+            outFile.write("\n I am Officer Pete, a K9 unit trainer.\r");
+            outFile.write("\n I love being the local veterinarian.\r");
+            outFile.write("\n I take of lost or unwanted animals.\r");
+            outFile.write("\n As your baker, you love my bacon donuts.\r");
+            outFile.write("\n I am the owner of this steak resturant.\r");
+            outFile.write("\n I am the owner of Tex Mix Drive Inn.\r");
+            outFile.write("\n I love gliding in the pond at ParkLand Park.\r");
+            outFile.write("\n I am a System Admin. at Senior Care Living.\r");
+            outFile.write("\n We live in your neighborhood.\r");
+            outFile.write("\n Ben is your K9 handler/officer. Nancy is his wife.\r");
+            outFile.write("\n I am a service animal technician.\r");
+            outFile.write("\n I am the owner of Seafood Eatery.\r");
+            outFile.write("\n Elephants, Giraffes, and Tigers at ZooLand.\r");
+            outFile.write("\n I am 8 yrs old student at Trump Elementry.\r");
+            outFile.write("\n I am a teacher at Trump Elementry School.\r");
 
             outFile.flush(); // flush pushes it to the harddrive
         }

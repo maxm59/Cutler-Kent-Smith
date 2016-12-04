@@ -32,6 +32,7 @@ public class HelpMenuView extends View{
                 "\n         C =   How to use Clues                   " +
                 "\n         M =   How to move around                 " +        
                 "\n         A =   Actors Details                     " +
+                "\n         P =   Print Actors Details to File       " +
                 "\n         S =   Scenes Details                     " +   
                 "\n         V =   Villains Details                   " +
                 "\n         X =   Exit Help Menu                     " +
@@ -160,7 +161,6 @@ public class HelpMenuView extends View{
                 "\n=                                                =" +
                 "\n==================================================" ;
 
-
        this.console.println(details);
     }
     
@@ -195,13 +195,15 @@ public class HelpMenuView extends View{
         
         choice = choice.toUpperCase();
         
-        
         switch (choice) {
             case "O": //Display Game Objective
                 this.displayObjectGameMenu();
                 break;
             case "A": //Display List of Actors
                 this.displayActorsView();
+                break;
+            case "P": //Print Actors Details to a text file
+                this.printActorsToFileView();
                 break;
             case "S": //Display The 25 Scenes in the game.
                 this.displaySceneView();
@@ -218,29 +220,30 @@ public class HelpMenuView extends View{
             default:
                 this.console.println("\n***Invalid Selection*** Try again");
                 break;
-             
-        }
-        return false;  
-    
+        } return false;  
     }
 
-    private void displayActorsView() {
+    private void displayActorsView() { 
         
         ActorsView actorsView = new ActorsView();
         actorsView.display();
-
     }
-
+    private void printActorsToFileView() { //week 12 Maxi's individual assignmentr
+        PrintActorsToFileView printActors = new PrintActorsToFileView();
+        printActors.display();
+        try{
+            printActors.display();
+        }catch (Exception ex) {
+            ErrorView.display(this.getClass().getName(), "Error: Problem with printing"//requirement
+                    + "actor's description to text file.");
+        }
+    }
     private void displaySceneView() {
-        
         SceneView sceneView = new SceneView();
         sceneView.display();
     }
-    
     private void displayMap(){
-        
         MapView mapView = new MapView();
         mapView.display();
     }
-
 }

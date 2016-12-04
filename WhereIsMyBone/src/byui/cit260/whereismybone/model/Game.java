@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package byui.cit260.whereismybone.model;
 
 import java.io.Serializable;
@@ -67,5 +62,11 @@ public class Game implements Serializable{
 
     public void setGameTime(GameTime gameTime) {
         this.gameTime = gameTime;
+    }
+
+    public Object getActor() {
+        System.out.println("Error Game.java print call");
+        Object actor = null;
+        return actor;
     }
 }

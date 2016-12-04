@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package byui.cit260.whereismybone.model;
 
 import byui.cit260.whereismybone.view.ErrorView;
@@ -196,7 +191,7 @@ public class Map implements Serializable{
             rtn += "\r\n";
         }
         
-        //add the legend to the final map drawing.
+        //add the actor's name
         rtn += "\r\n" + legend;
 
         return rtn;
