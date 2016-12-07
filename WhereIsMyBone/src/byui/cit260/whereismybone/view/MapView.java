@@ -7,6 +7,8 @@ import byui.cit260.whereismybone.model.Location;
 import byui.cit260.whereismybone.model.Map;
 import byui.cit260.whereismybone.model.GameTime;
 import byui.cit260.whereismybone.model.Scene;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import whereismybone.WhereIsMyBone;
 
 /**
@@ -44,9 +46,14 @@ public class MapView extends View {
                     //make a boolean statement true and false
                     this.movePlayerToLocation(choice);
                 }
-                catch(Exception ex){
+                catch(MapControlException ex){
                     ErrorView.display(this.getClass().getName(), 
                             "Error getting player name"); 
+                    try {
+                        throw new MapControlException("ERROR: There was a problem with display Map.");
+                    } catch (MapControlException ex1) {
+                        Logger.getLogger(MapView.class.getName()).log(Level.SEVERE, null, ex1);
+                    }
                     
                 }
 
@@ -59,7 +66,8 @@ public class MapView extends View {
         return false;
     }
 
-    public void displayMap() throws MapControlException{
+    public void displayMap() throws MapControlException
+    {
         Map map = WhereIsMyBone.getCurrentGame().getMap();
         Location[][] locations = map.getLocations();
 
@@ -109,8 +117,8 @@ public class MapView extends View {
                         
         }
         
-        this.console.println("\nPlease press <ENTER> to return to the menu.");
-        this.waitForEnter();
+        //this.console.println("\nPlease press <ENTER> to return to the menu.");
+        //this.waitForEnter();
     }
     
     private void waitForEnter() throws MapControlException
@@ -164,11 +172,11 @@ public class MapView extends View {
                     else
                     {
                         Scene symb = location.getScene();
-                        this.console.println("DEBUG: Scene = " + symb.getMapSymbol());
-                        this.console.println("DEBUG: Choice = " + choice);
+                        //this.console.println("DEBUG: Scene = " + symb.getMapSymbol());
+                        //this.console.println("DEBUG: Choice = " + choice);
                             if(symb.getMapSymbol().equals(choice))
                             {
-                                this.console.println("DEBUG: Its a match.");
+                                //this.console.println("DEBUG: Its a match.");
                                 
                                 int row = location.getRow();
                                 int column = location.getCol();

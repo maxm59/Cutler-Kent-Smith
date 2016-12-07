@@ -1,5 +1,7 @@
 package byui.cit260.whereismybone.view;
 
+import java.io.IOException;
+
 /**
  *
  * @author Maxine Cutler
@@ -80,7 +82,42 @@ public class BackpackView extends View {
             default:
                 this.console.println("Invalid option");
                 break;
+                
+                
         }
+        
+        this.waitForEnter();
+            
         return false;
+    }
+
+    private void waitForEnter() 
+    {
+        
+        this.console.println("Please press <ENTER> to continue.");
+        boolean isValidEnter = false;
+        String input = null;
+
+        try{
+            while (!isValidEnter){
+                input = this.keyboard.readLine();
+
+                //Name validation
+                if(input.length() >= 0)
+                {
+                    isValidEnter = true;
+                }
+                else{
+                 this.console.println("Please press <ENTER> to continue.");
+                }
+                break;
+            }            
+        }
+        catch(IOException ex){
+            
+            ErrorView.display(this.getClass().getName(), 
+                    "Error waiting for enter.");  
+                        
+        }
     }
 }

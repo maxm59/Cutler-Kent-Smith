@@ -1,5 +1,7 @@
 package byui.cit260.whereismybone.view;
 
+import java.io.IOException;
+
 /**
  * @author Smith-Rick
  * @author Maxi Cutler
@@ -157,8 +159,8 @@ public class HelpMenuView extends View{
        this.console.println(details);
     }
     
-    private void waitForEnter()
-    {
+    private void waitForEnter() { 
+        this.console.println("Please press <ENTER> to continue.");
         boolean isValidEnter = false;
         String input = null;
 
@@ -172,25 +174,20 @@ public class HelpMenuView extends View{
                     isValidEnter = true;
                 }
                 else{
-                 this.console.println("Please press <ENTER>.");
+                 this.console.println("Please press <ENTER> to continue.");
                 }
                 break;
             }            
         }
-        catch(Exception ex){
-            ErrorView.display(this.getClass().getName(),
-                    "Error reading input: " + ex.getMessage());
+        catch(IOException ex){
+            
+            ErrorView.display(this.getClass().getName(), 
+                    "Error waiting for enter.");  
+                        
         }
-        
     }
-//"\n         A =   Object of the game                 " +
-//"\n         B =   How to use Clues                   " +
-//"\n         C =   How to move around                 " +        
-//"\n         D =   Actors Details                     " +
-//"\n         E =   Print Actors Details to File       " +
-//"\n         F =   Scenes Details                     " +   
-//"\n         G =   Villains Details                   " +
-//"\n         X =   Exit Help Menu                     " +
+  
+    
     public boolean doAction(String choice){
         
         choice = choice.toUpperCase();
@@ -198,12 +195,15 @@ public class HelpMenuView extends View{
         switch (choice) {
             case "A": //Display Game Objective
                 this.displayObjectGameMenu();
+                this.waitForEnter();
                 break;
             case "B": //display Clue info
                 this.displayClues();
+                this.waitForEnter();
                 break; 
             case "C": //Display info on how to move
                 this.displayHowToMove();
+                this.waitForEnter();
                 break;
             case "D": //Display List of Actors
                 this.displayActorsView();
@@ -217,6 +217,7 @@ public class HelpMenuView extends View{
                 break;                                           
             case "G": //display Villan info
                 this.displayVillans();
+                this.waitForEnter();
                 break;                                               
             default:
                 this.console.println("\n***Invalid Selection*** Try again");

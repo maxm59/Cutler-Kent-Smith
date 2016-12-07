@@ -117,10 +117,13 @@ public class ClueListView extends View {
                     "\n***Invalid Selection*** Try again");
                 break;   
         }
+        this.waitForEnter();
         return false;  
     }
     
     private void waitForEnter() { 
+        
+        this.console.println("Please press <ENTER> to continue.");
         boolean isValidEnter = false;
         String value = null;
         try{
@@ -128,7 +131,7 @@ public class ClueListView extends View {
                 value = keyboard.readLine();
                 if(value.length() >0){ //Name validation
                     ErrorView.display(this.getClass().getName(),
-                            "Please press <ENTER>.");
+                            "Please press <ENTER> to continue.");
                 }
                 else {
                     isValidEnter = true;

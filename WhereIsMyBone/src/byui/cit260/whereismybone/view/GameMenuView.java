@@ -1,5 +1,7 @@
 package byui.cit260.whereismybone.view;
 
+import java.io.IOException;
+
 /**
  *
  * @author Smith-Rick
@@ -56,7 +58,8 @@ public class GameMenuView extends View{
                 this.searchLocation(); //search location of clues TODO
                 break;
             case 'F':
-                 this.showMap();
+                 this.showMap();      
+                 this.waitForEnter();
                  break;
             case 'P':  //Print Map to File
                 this.printMapToFileView();
@@ -86,6 +89,7 @@ public class GameMenuView extends View{
     }
     private void showBackpackItem() {
         this.console.println("TODO need connection and scripting");
+        this.waitForEnter();
     }
     //Maxi's
     private void showClueList() {
@@ -100,6 +104,7 @@ public class GameMenuView extends View{
     //Brian's
     private void searchLocation() {
         this.console.println("TODO - Search Location Results");
+        this.waitForEnter();
     }
     //Rick's
     private void showMap(){
@@ -116,9 +121,15 @@ public class GameMenuView extends View{
                     "Error the Complex Calculation View.");
             ErrorView.display(this.getClass().getName(), ex.getMessage());
         }
+        
     }
     
     private void movePlayer() {
+        
+        //Show the player the map and then prompt so they already have the visual
+        //  reference for where they need to move to. 
+        this.showMap();
+        
         MapView mapView = new MapView();
         mapView.display();  
     }
@@ -158,6 +169,34 @@ public class GameMenuView extends View{
                     + "map to file view.");
         }
 
+    }
+
+    private void waitForEnter() { 
+        this.console.println("Please press <ENTER> to continue.");
+        boolean isValidEnter = false;
+        String input = null;
+
+        try{
+            while (!isValidEnter){
+                input = this.keyboard.readLine();
+
+                //Name validation
+                if(input.length() >= 0)
+                {
+                    isValidEnter = true;
+                }
+                else{
+                 this.console.println("Please press <ENTER> to continue.");
+                }
+                break;
+            }            
+        }
+        catch(IOException ex){
+            
+            ErrorView.display(this.getClass().getName(), 
+                    "Error waiting for enter.");  
+                        
+        }
     }
 
 }
