@@ -1,11 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package byui.cit260.whereismybone.view;
-
-import java.util.Scanner;
 
 /**
  * @author Smith-Rick
@@ -28,12 +21,13 @@ public class HelpMenuView extends View{
                 "\n            (   ,-'`       `'-,   )               " +
                 "\n             `-'               `-'                " +
                 "\n                                                  " + 
-                "\n         O =   Object of the game                 " +
-                "\n         C =   How to use Clues                   " +
-                "\n         M =   How to move around                 " +        
-                "\n         A =   Actors Details                     " +
-                "\n         S =   Scenes Details                     " +   
-                "\n         V =   Villains Details                   " +
+                "\n         A =   Object of the game                 " +
+                "\n         B =   How to use Clues                   " +
+                "\n         C =   How to move around                 " +        
+                "\n         D =   Actors Details                     " +
+                "\n         E =   Print Actors Details to File       " +
+                "\n         F =   Scenes Details                     " +   
+                "\n         G =   Villains Details                   " +
                 "\n         X =   Exit Help Menu                     " +
                 "\n                                                  " +
                 "\n         To begin, please enter your choice:      " +
@@ -160,7 +154,6 @@ public class HelpMenuView extends View{
                 "\n=                                                =" +
                 "\n==================================================" ;
 
-
        this.console.println(details);
     }
     
@@ -190,57 +183,62 @@ public class HelpMenuView extends View{
         }
         
     }
-    
+//"\n         A =   Object of the game                 " +
+//"\n         B =   How to use Clues                   " +
+//"\n         C =   How to move around                 " +        
+//"\n         D =   Actors Details                     " +
+//"\n         E =   Print Actors Details to File       " +
+//"\n         F =   Scenes Details                     " +   
+//"\n         G =   Villains Details                   " +
+//"\n         X =   Exit Help Menu                     " +
     public boolean doAction(String choice){
         
         choice = choice.toUpperCase();
         
-        
         switch (choice) {
-            case "O": //Display Game Objective
+            case "A": //Display Game Objective
                 this.displayObjectGameMenu();
                 break;
-            case "A": //Display List of Actors
-                this.displayActorsView();
-                break;
-            case "S": //Display The 25 Scenes in the game.
-                this.displaySceneView();
-                break;
-            case "M": //Display info on how to move
+            case "B": //display Clue info
+                this.displayClues();
+                break; 
+            case "C": //Display info on how to move
                 this.displayHowToMove();
                 break;
-            case "C": //display Clue info
-                this.displayClues();
-                break;                                               
-            case "V": //display Villan info
+            case "D": //Display List of Actors
+                this.displayActorsView();
+                break;
+            case "E": //Print Actors Details to a text file
+                this.console.println("Select P to printout Actors List into text.");
+                this.showPrintActorsToTextView();
+                break;
+            case "F": //Display The 25 Scenes in the game.
+                this.displaySceneView();
+                break;                                           
+            case "G": //display Villan info
                 this.displayVillans();
                 break;                                               
             default:
                 this.console.println("\n***Invalid Selection*** Try again");
                 break;
-             
-        }
-        return false;  
-    
+        } return false;  
     }
 
-    private void displayActorsView() {
+    private void displayActorsView() { 
         
         ActorsView actorsView = new ActorsView();
         actorsView.display();
-
     }
-
+    private void showPrintActorsToTextView() { //week 12 Maxi's individual assignmentr
+        PrintActorsToTextView printActors = new PrintActorsToTextView();
+        printActors.display();
+    }
     private void displaySceneView() {
-        
         SceneView sceneView = new SceneView();
         sceneView.display();
     }
-    
     private void displayMap(){
-        
         MapView mapView = new MapView();
         mapView.display();
     }
-
 }

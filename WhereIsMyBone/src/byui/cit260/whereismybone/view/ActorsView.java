@@ -2,11 +2,11 @@ package byui.cit260.whereismybone.view;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Scanner;
 
 /**
  *
- * @author Maxine Cutler
+ * 12.1.16 by Maxi Cutler
+ * for Week 12 Individual
  * 
  */
 public class ActorsView extends View {
@@ -40,7 +40,8 @@ public class ActorsView extends View {
             "\n             O  =  Brad, Trump School             " + 
             "\n             P  =  Mr Sneed, Trump School         " + 
             "\n                                                  " +  
-            "\n         S = Save Actors description to file      " + 
+            "\n         S  =  Select option to printout          " +
+            "\n               this List of Actor's               " + 
             "\n                                                  " +
             "\n        To begin, please enter your choice:       " +  
             "\n                                                  " +  
@@ -120,8 +121,8 @@ public class ActorsView extends View {
                 this.console.println("I am a teacher at Trump Elementry School.");
                 break;
             case "S":
-                this.console.println("Saved file located in File Exployer.");
-                this.saveActorsDescription();
+                this.console.println("Select the P for Print to file.");
+                this.displayPrintActorsListToText();
                 break;
             default:
                 ErrorView.display(this.getClass().getName(),
@@ -151,45 +152,9 @@ public class ActorsView extends View {
                     "Error reading input: " + ex.getMessage());
         }
     }
-    private void saveActorsDescription() {
-        FileWriter outFile = null;
-        String fileLocation = "Actor's Description.txt";
-        try{
-            //create and open a new file stream for the output file
-            outFile = new FileWriter(fileLocation);
-            //write each actor's description to the file plus a new line charactor
-            outFile.write("\nI am 4yrs old and play at ParkLand with mommy.\r");
-            outFile.write("\nI am Officer Pete, a K9 unit trainer.\r");
-            outFile.write("\nI love being the local veterinarian.\r");
-            outFile.write("\nI take of lost or unwanted animals.\r");
-            outFile.write("\nAs your baker, you love my bacon donuts.\r");
-            outFile.write("\nI am the owner of this steak resturant.\r");
-            outFile.write("\nI am the owner of Tex Mix Drive Inn.\r");
-            outFile.write("\nI love gliding in the pond at ParkLand Park.\r");
-            outFile.write("\nI am a System Admin. at Senior Care Living.\r");
-            outFile.write("\nWe live in your neighborhood.\r");
-            outFile.write("\nBen is your K9 handler/officer. Nancy is his wife.\r");
-            outFile.write("\nI am a service animal technician.\r");
-            outFile.write("\nI am the owner of Seafood Eatery.\r");
-            outFile.write("\nElephants, Giraffes, and Tigers at ZooLand.\r");
-            outFile.write("\nI am 8 yrs old student at Trump Elementry.\r");
-            outFile.write("\nI am a teacher at Trump Elementry School.\r");
 
-            outFile.flush(); // flush pushes it to the harddrive
-        }
-        catch (IOException ex){
-            this.console.println("Error saving Actors background;" + ex.getMessage());  
-        }
-       finally {
-            if (outFile !=null) {
-                try {
-                    outFile.close();
-                
-                } catch (IOException ex){
-                    this.console.println("Error closing;" + ex.getMessage());
-                }
-            }
-        }
-    }      
-        
+    private void displayPrintActorsListToText() {
+        PrintActorsToTextView printActorsToText = new PrintActorsToTextView();
+        printActorsToText.display();
+    }
 }

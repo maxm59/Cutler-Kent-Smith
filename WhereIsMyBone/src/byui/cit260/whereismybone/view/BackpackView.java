@@ -1,10 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package byui.cit260.whereismybone.view;
-
 
 /**
  *
@@ -19,7 +13,7 @@ public class BackpackView extends View {
         super(
                   "==================================================" +
                 "\n               WHERE IS MY BONE?                  " +
-                "\n                   GAME MENU                      " +
+                "\n      Pickup these clues for your backpack        " +
                 "\n==================================================" +
                 "\n             .-.               .-.                " +
                 "\n            (   `-._________.-'   )               " +
@@ -80,7 +74,6 @@ public class BackpackView extends View {
             case 'J':
                 this.console.println("Yuk,Cat Hairballs. She spits out all over the place!!");
                 break; 
-                
             case 'X':
                 this.console.println("Exit the Game Menu");
                 return true;

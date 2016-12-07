@@ -1,18 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package byui.cit260.whereismybone.view;
-
-import byui.cit260.whereismybone.exception.MapControlException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 
 /**
  *
  * @author Smith-Rick
+ * 
+ * 12.3.16 Maxi Cutler working on Clue List View
+ * 
  */
 public class GameMenuView extends View{
 
@@ -23,18 +16,19 @@ public class GameMenuView extends View{
                 "\n                    GAME MENU                     " +
                 "\n==================================================" +                      
                 "\n                                                  " +
-                "\n         B  =  Backpack Inventory List            " +
-                "\n         V  =  View Your Backpack Items           " +        
-                "\n         C  =  Clue List                          " +                         
-                "\n         D  =  Display Map                        " +                         
-                "\n         P  =  Print Map to File                  " +                         
-                "\n         H  =  Help Menu                          " +                       
-                "\n         M  =  Move Player                        " +
-                "\n         S  =  Search Location for Clues          " +
+                "\n         A   =  Backpack Inventory List           " +
+                "\n         B   =  View Your Backpack Items          " +        
+                "\n         C   =  Clue List                         " +
+                "\n         D   =  Clue List Print to File           " + 
+                "\n         E   =  Search Location for Clues         " +
+                "\n         F   =  Display Map                       " +                         
+                "\n         P   =  Print Map to File                 " +                                               
+                "\n         M   =  Move Player                       " +
                 "\n                                                  " +
-                "\n         T =   Test Complex Calculations          " +
+                "\n         T   =   Test Complex Calculations        " +
                 "\n                                                  " +
-                "\n         X  =  Exit Game                          " +
+                "\n         H   =  Help Menu                         " + 
+                "\n         X   =  Exit Game                         " +
                 "\n                                                  " +
                 "\n         Please make a selection:                 " +
                 "\n                                                  ");      
@@ -44,32 +38,38 @@ public class GameMenuView extends View{
     public boolean doAction(String value) {
         
         char charSel = value.toUpperCase().charAt(0);
-        
+   
         switch (charSel) { 
-            case 'B':
+            case 'A':
                 this.showBackpack();
                 break;
+            case 'B':
+                this.showBackpackItem();//veiw what is in the backpack
+                break;
             case 'C':
-                this.showClues();
+                this.showClueList();
                 break;
             case 'D':
-                this.showMap();
+                this.showPrintClueListToText();
                 break;
-            case 'H':
-                this.showHelpMenu();
+            case 'E':
+                this.searchLocation(); //search location of clues TODO
+                break;
+            case 'F':
+                 this.showMap();
+                 break;
+            case 'P':  //Print Map to File
+                this.printMapToFileView();
                 break;
             case 'M':
                 this.movePlayer();
                 break;
-            case 'S':
-                this.searchLocation();
-                break;
             case 'T': //Temporary display of Complex Calculation for testing
-                 this.displayComplexCalculationView();
-                 break;
-            case 'P': //Print Map to File
-                 this.printMapToFileView();
-                 break;
+                this.displayComplexCalculationView();
+                break;
+            case 'H':
+                this.showHelpMenu();
+                break;
             case 'X':
                 return true;
             default:
@@ -79,14 +79,29 @@ public class GameMenuView extends View{
         return false;
     }
 
+    //Maxi's
     private void showBackpack() {
         BackpackView backpackView = new BackpackView();
         backpackView.display();
     }
- 
-    private void showClues() {
-        this.console.println("TODO - Display Clue List");
+    private void showBackpackItem() {
+        this.console.println("TODO need connection and scripting");
     }
+    //Maxi's
+    private void showClueList() {
+        ClueListView clueListView = new ClueListView();
+        clueListView.display();
+    }
+    private void showPrintClueListToText() {
+        PrintClueListToText clueListView = new PrintClueListToText();
+        clueListView.display();
+    }
+    
+    //Brian's
+    private void searchLocation() {
+        this.console.println("TODO - Search Location Results");
+    }
+    //Rick's
     private void showMap(){
         
         MapView mapView = new MapView();
@@ -101,18 +116,19 @@ public class GameMenuView extends View{
                     "Error the Complex Calculation View.");
             ErrorView.display(this.getClass().getName(), ex.getMessage());
         }
-    }    
-    private void showHelpMenu() {
-        HelpMenuView helpMenuView = new HelpMenuView();
-        helpMenuView.display();
     }
+    
     private void movePlayer() {
         MapView mapView = new MapView();
         mapView.display();  
     }
-    private void searchLocation() {
-        this.console.println("TODO - Search Location Results");
+    
+    private void showHelpMenu() {
+        HelpMenuView helpMenuView = new HelpMenuView();
+        helpMenuView.display();
     }
+
+    //Rick's
     private void displayComplexCalculationView() {
         try{
 
@@ -126,8 +142,6 @@ public class GameMenuView extends View{
                     "Error the Complex Calculation View.");
             ErrorView.display(this.getClass().getName(), ex.getMessage());
         }
-        
-    
     }
 
     private void printMapToFileView() {
@@ -145,4 +159,5 @@ public class GameMenuView extends View{
         }
 
     }
+
 }
