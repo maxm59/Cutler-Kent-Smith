@@ -52,6 +52,7 @@ public class GameMenuView extends View{
                 this.showClueList();
                 break;
             case 'D':
+                this.console.println("Select Optiong P to save list to text file.");
                 this.showPrintClueListToText();
                 break;
             case 'E':

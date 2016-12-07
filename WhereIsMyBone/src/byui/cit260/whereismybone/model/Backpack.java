@@ -19,6 +19,7 @@ public class Backpack implements Serializable{
         items = new ArrayList<>();
         
     }
+
     public void addItem(BackpackItem item){
         
         items.add(item);  

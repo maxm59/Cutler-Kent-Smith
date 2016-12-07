@@ -393,29 +393,21 @@ public class MapControl {
 
             scenes[SceneType.SteakHeaven.ordinal()] = currentScene;
         }
-        catch(Exception ex){
-                        
-            
-            throw new MapControlException("ERROR: THere was a problem with "
+        catch(Exception ex){         
+            throw new MapControlException("\nERROR: THere was a problem with\r"
                     + "creating scenes.");
-        }
-    
-        return scenes;
+        } return scenes;
     }
 
-    public static boolean validLocation(int row,int column) throws MapControlException
-    {
+    public static boolean validLocation(int row,int column) throws MapControlException {
         try{
             if (row < 0 || row > 4) {
                 return false;
             }            
-        }
-        catch(Exception ex){
-                                    
-            throw new MapControlException("ERROR: There was a problem with "
+        } catch(Exception ex){                                    
+            throw new MapControlException("\nERROR: There was a problem with\r "
                     + "validating location.");
-        }
-        
+        }        
         return !(column < 0 || row > 4);
     }
     
@@ -426,13 +418,12 @@ public class MapControl {
         }
         catch(Exception ex){
                                     
-            throw new MapControlException("ERROR: There was a problem with "
+            throw new MapControlException("\nERROR: There was a problem with\r "
                     + "Moving player to starting location.");
         }
     }
     
-    public static int[] movePlayer(int nRow, int nCol) throws MapControlException // get player location and add the items here from the backpack
-    {
+    public static int[] movePlayer(int nRow, int nCol) throws MapControlException {// get player location and add the items here from the backpack
         int[] newLoc = null;
         
         try{
@@ -441,11 +432,8 @@ public class MapControl {
                 //int[] resultFail = null;
                 return newLoc; //returns null
             }
-
             newLoc = new int[] {nRow, nCol};
-        }
-        catch(Exception ex){
-                                    
+        }catch(Exception ex){                          
             throw new MapControlException("ERROR: There was a problem with "
                     + "Moving the player.");
         }
@@ -454,26 +442,21 @@ public class MapControl {
      }
      public static void movePlayer(Map map, Location location) 
         throws MapControlException {
-        
         Player player = WhereIsMyBone.getCurrentGame().getPlayer();
         
         try{
             player.setLocation(location);
-        
         }
         catch(Exception ex){
                                     
             throw new MapControlException("ERROR: There was a problem with "
                     + "moving the player.");
-        }
-        
-        
+        }  
     }
 
-    public static void movePlayer(Map map, int row, int column) throws MapControlException
-    {
-        try{
-                                        
+    public static void movePlayer(Map map, int row, int column) throws MapControlException {
+        
+        try{                             
             map.setCurrentLocation(map.getLocations()[row][column]);
             map.getCurrentLocation().setVisited(true);
 
@@ -482,8 +465,7 @@ public class MapControl {
 
             WhereIsMyBone.getCurrentGame().getPlayer().setLocation(map.getCurrentLocation());
         }
-        catch(Exception ex){
-                                    
+        catch(Exception ex){             
             throw new MapControlException("ERROR: There was a problem with "
                     + "moving the player.");
         }

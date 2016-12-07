@@ -1,12 +1,14 @@
 package byui.cit260.whereismybone.model;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 
 /**
  *
  * @author Smith-Rick
  * Maxi: added backpack to player
+ * 
  */
 public class Player implements Serializable{
     
@@ -14,21 +16,33 @@ public class Player implements Serializable{
     private String gender = "";    
     private Location location;
     private String childType = ""; //Is set to son or daughter.
-//    private Backpack backpack;
+    private BackpackItem backpack;
 
     public Player() {
-//        backpack = new Backpack();
-//        backpack.addItem(new BackpackItem("Bone", "Steak Bone"));
-//        backpack.addItem(new BackpackItem("Bell", "Cat Devil's lost bell."));
+        
     }
-    
+
+    public Player(Location location, String backpack) {
+        this.location = location;
+    }
+ 
+    public Player(Location location, BackpackItem backpack) {
+        this.location = location;
+        this.backpack = backpack;
+    }
+
+    public BackpackItem getBackpackItem() {
+        return backpack;
+    }
+
+    public void setBackpackItem(BackpackItem backpack) {
+    }
     public Location getLocation() {
         return location;
     }
 
     public void setLocation(Location location) {
-        this.location = location;
-        
+        this.location = location;        
     }
 
     public String getName() {
@@ -54,5 +68,45 @@ public class Player implements Serializable{
     public void setChildType(String childType){
         this.childType = childType;
     }    
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 11 * hash + Objects.hashCode(this.gender);
+        hash = 11 * hash + Objects.hashCode(this.location);
+        hash = 11 * hash + Objects.hashCode(this.childType);
+        hash = 11 * hash + Objects.hashCode(this.backpack);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Player other = (Player) obj;
+        if (!Objects.equals(this.name, other.name)) {
+            return false;
+        }
+        if (!Objects.equals(this.gender, other.gender)) {
+            return false;
+        }
+        if (!Objects.equals(this.childType, other.childType)) {
+            return false;
+        }
+        if (!Objects.equals(this.location, other.location)) {
+            return false;
+        }
+        if (!Objects.equals(this.backpack, other.backpack)) {
+            return false;
+        }
+        return true;
+    }
             
 }

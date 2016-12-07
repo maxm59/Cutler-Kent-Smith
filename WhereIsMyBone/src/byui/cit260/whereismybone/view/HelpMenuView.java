@@ -119,10 +119,11 @@ public class HelpMenuView extends View{
         this.console.println(details);
     }
     private void displayVillans(){
-        String details = 
+        String details =
                   "==================================================" +
                 "\n== HELP: Villain Details =========================" +
                 "\n==================================================" +
+                "\n=                                                =" +
                 "\n= Mrs. Cat DeVil                                 =" +
                 "\n=  Mrs. DeVil is the leader of the Cat DeVil     =" +
                 "\n=  Gang. She and her mangy crew don't like water.=" +
@@ -154,7 +155,7 @@ public class HelpMenuView extends View{
                 "\n= Rex                                            =" +
                 "\n=  You know Rex. T-Rex.                          =" +
                 "\n=                                                =" +
-                "\n==================================================" ;
+                "\n==================================================";
 
        this.console.println(details);
     }

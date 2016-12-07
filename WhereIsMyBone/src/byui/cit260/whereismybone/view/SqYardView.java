@@ -18,7 +18,7 @@ public class SqYardView extends View {
         super(
                   "==================================================" +
                 "\n               WHERE IS MY BONE?                  " +
-                "\n               Back in the yard. Where is my bone?                  " +
+                "\n     Back in the yard. Where is my bone?          " +
                 "\n==================================================" +
                 "\n             .-.               .-.                " +
                 "\n            (   `-._________.-'   )               " +

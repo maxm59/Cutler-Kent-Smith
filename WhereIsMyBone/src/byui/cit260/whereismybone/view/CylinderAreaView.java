@@ -20,20 +20,21 @@ public class CylinderAreaView extends View {
         super(
                   "==================================================" +
                 "\n               WHERE IS MY BONE?                  " +
-                "\n               I see a big pipe. I wonder if my bone is in it?                  " +
+                "\n               I see a big pipe.                  " +
+                "\n          I wonder if my bone is in it?           " +
                 "\n==================================================" +
                 "\n             .-.               .-.                " +
                 "\n            (   `-._________.-'   )               " +
                 "\n             >=     _______     =<                " +
                 "\n            (   ,-'`       `'-,   )               " +
                 "\n             `-'               `-'                " +
-                "\n            We found a box that might contain     " +
-                "\n            the bone or Cat DeVil, herself.       " +
-                "\n            The box is approx. 3 inches in        " +
-                "\n            diameter and 6 inches heigh.          " +
+                "\n        We found a box that might contain         " +
+                "\n        the bone or Cat DeVil, herself.           " +
+                "\n        The box is approx. 3 inches in            " +
+                "\n        diameter and 6 inches heigh.              " +
                 "\n                                                  " +
-                "\n            Please enter the volume of the        " +
-                "\n            cylinder to the nearest tenth decimal:" +
+                "\n         Please enter the volume of the           " +
+                "\n      cylinder to the nearest tenth decimal:      " +
                 "\n                                                  " +          
                 "\n             X =   Exit This View                 " + 
                 "\n                                                  " +
@@ -102,13 +103,14 @@ public class CylinderAreaView extends View {
         String display =
                   "==================================================" +
                 "\n               WHERE IS MY BONE?                  " +
-                "\n              I see a big pipe. I wonder if my bone is in it?                  " +
+                "\n               I see a big pipe.                  " +
+                "\n          I wonder if my bone is in it?           " +
                 "\n==================================================" +
                 "\n                                                  " +
-                "\n                 -= CORRECT!!! =-       " +
+                "\n                 -= CORRECT!!! =-                 " +
                 "\n                                                  " +
                 "\n==================================================" +
-                "\n   Press <ENTER> to continue...                   " +
+                "\n           Press <ENTER> to continue...           " +
                 "\n==================================================" ; 
 
         this.console.println(display);

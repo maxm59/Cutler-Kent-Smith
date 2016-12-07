@@ -59,8 +59,8 @@ public class ComplexCalculationsControl {
         }
         catch(Exception ex){
                                     
-            throw new ComplexCalcException("ERROR: There was a problem with "
-                    + "calculating cubic inch.");
+            throw new ComplexCalcException("\nERROR: There was a problem with\r "
+                    + "\ncalculating cubic inch.");
         }
         
         return cubicInch;
@@ -98,8 +98,8 @@ public class ComplexCalculationsControl {
         }
         catch(Exception ex){
                                     
-            throw new ComplexCalcException("ERROR: There was a problem with "
-                    + "calculating cylinder.");
+            throw new ComplexCalcException("\nERROR: There was a problem with\r"
+                    + "\ncalculating cylinder.");
         }
         
         //Answer rounded to the nearest 10th
@@ -132,8 +132,8 @@ public class ComplexCalculationsControl {
         }
         catch(Exception ex){
                                     
-            throw new ComplexCalcException("ERROR: There was a problem with "
-                    + "calculating cubic inch.");
+            throw new ComplexCalcException("\nERROR: There was a problem with\r"
+                    + "\ncalculating cubic inch.");
         }
         
         return watts;
@@ -175,8 +175,8 @@ public class ComplexCalculationsControl {
         }
         catch(NumberFormatException ex){
             
-            ErrorView.display(this.getClass().getName(), "Error validating "
-                    + "Cubic Inches: " + ex.getMessage());
+            ErrorView.display(this.getClass().getName(), "\nError validating "
+                    + "\rCubic Inches: " + ex.getMessage());
             
             throw new ComplexCalcException("A numerical value is required.");
             
