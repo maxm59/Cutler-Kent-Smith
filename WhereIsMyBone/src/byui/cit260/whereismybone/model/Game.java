@@ -1,6 +1,7 @@
 package byui.cit260.whereismybone.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  *
@@ -14,7 +15,8 @@ public class Game implements Serializable{
     
     private Player player;
     private Map map;
-    private Clue[] clueList;
+    //private Clue[] clueList;
+    private List<Clue> clueList;
     private BackpackItem[] itemList; 
     private GameTime gameTime;
    
@@ -31,13 +33,15 @@ public class Game implements Serializable{
         this.itemList = itemList;
     }
 
-    public Clue[] getClueList() {
+    public List<Clue> getClueList() {
         return clueList;
     }
 
-    public void setClueList(Clue[] clueList) {
+    public void setClueList(List<Clue> clueList) {
         this.clueList = clueList;
     }
+
+
 
     public Map getMap() {
         return map;

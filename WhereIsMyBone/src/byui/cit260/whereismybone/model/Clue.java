@@ -30,6 +30,7 @@ public enum Clue implements Serializable {
     Clue14("A hiding place for the bone.");
     
     private final String description;
+    private boolean clueFound = false;
     
     Clue(String description) {
         this.description = description;
@@ -37,5 +38,13 @@ public enum Clue implements Serializable {
     }
     public String getDescription() {
         return description;
+    }
+    
+    public boolean getClueFound() {
+        return clueFound;
+    }
+
+    public void setClueFound(boolean clueFound) {
+        this.clueFound = clueFound;
     }    
 }

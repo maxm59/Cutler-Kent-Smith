@@ -8,7 +8,7 @@ package byui.cit260.whereismybone.exception;
  * class function. This is ready to go once ClueControl is done.
  * 
  */
-public class ClueControlException {
+public class ClueControlException extends Exception{
     
     //follow week 11 team assignment here begining on page 2
     public ClueControlException() {
