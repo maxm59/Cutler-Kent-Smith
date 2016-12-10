@@ -31,7 +31,7 @@ public class GameMenuView extends View{
                 "\n==================================================" +                      
                 "\n                                                  " +
                 "\n         A   =  Backpack Inventory List           " +
-//                "\n         B   =  View Your Backpack Items          " +        
+//                "\n         B   =  View Your Backpack Items          " + //This is a duplicate of A = Backpack Inventory List        
                 "\n         C   =  Display Clue Log                  " +
                 "\n         E   =  Search Location for Clues         " + //Test calculations removed. Need to incorperate into location search.
                 "\n         F   =  Display Map                       " +                                               
@@ -147,9 +147,11 @@ public class GameMenuView extends View{
                             try
                             {
                                 gc.AddClueToInvnetory(c);
-
-                                this.console.println("Added Clue to log: " + c.getDescription());
-
+                                c.setClueFound(true);
+                                
+                                this.console.println("Added Clue to log: " 
+                                        + c.getDescription());
+                                
                             }
                             catch(ClueControlException ex){
 
@@ -159,14 +161,18 @@ public class GameMenuView extends View{
                             
                             c.setClueFound(true);
                             
-                            //TODO need to write this clue object back into the 
-                            // game class so that when its saved, the states are saved.
-                            
+                            location.setScene(sc);
+                                                        
                             break;
                         }
-                        
-                        
+                        else
+                        {
+                            this.console.println("This clue has already"
+                                            + " been found and added to your "
+                                            + "clue log.");                        
+                        }  
                     }
+                    
                 }
             }
         }catch(Exception ex){
@@ -174,8 +180,8 @@ public class GameMenuView extends View{
             ErrorView.display(this.getClass().getName(), 
                     "Error waiting for enter.");  
         }
- 
-        
+        WhereIsMyBone.getCurrentGame().setMap(map);
+                
         this.waitForEnter();
     }
     //Rick's
