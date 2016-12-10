@@ -2,6 +2,7 @@ package byui.cit260.whereismybone.view;
 
 import byui.cit260.whereismybone.control.ClueControl;
 import byui.cit260.whereismybone.exception.ClueControlException;
+import byui.cit260.whereismybone.exception.MapControlException;
 import byui.cit260.whereismybone.model.Clue;
 import byui.cit260.whereismybone.model.Location;
 import byui.cit260.whereismybone.model.Map;
@@ -156,7 +157,8 @@ public class GameMenuView extends View{
                             catch(ClueControlException ex){
 
                                 ErrorView.display(this.getClass().getName(), 
-                                        "Error waiting for enter.");  
+                                        "Error adding clue to inventory: " 
+                                + ex.toString());  
                             }
                             
                             c.setClueFound(true);
@@ -193,7 +195,7 @@ public class GameMenuView extends View{
             
             mapView.displayMap(); 
             
-        }catch(Exception ex)
+        }catch(MapControlException ex)
         {
             ErrorView.display(this.getClass().getName(), 
                     "Error the Complex Calculation View.");

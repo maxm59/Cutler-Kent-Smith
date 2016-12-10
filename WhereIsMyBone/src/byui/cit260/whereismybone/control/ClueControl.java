@@ -34,8 +34,7 @@ public class ClueControl {
             
             int i = cList.indexOf(c) + 1;
             //System.out.println("Debug index " + i);
-            
-            
+                        
             WhereIsMyBone.getCurrentGame().setClueList(cList);
         }
         catch(Exception ex){
