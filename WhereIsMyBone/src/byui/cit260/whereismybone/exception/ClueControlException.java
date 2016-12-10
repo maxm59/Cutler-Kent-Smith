@@ -3,9 +3,6 @@ package byui.cit260.whereismybone.exception;
 /**
  *
  * @author Maxine Cutler = Week 11 Individual Assignment
- * Note to myself = I might have to code clueControl class
- * Brian did not do it yet, in order to make this exception
- * class function. This is ready to go once ClueControl is done.
  * 
  */
 public class ClueControlException extends Exception{

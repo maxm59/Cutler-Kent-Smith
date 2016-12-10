@@ -33,6 +33,6 @@ public enum SceneType {
     SchoolCafe,
     PlayGround,
     TrumpElementry,
-    SteakHeaven
+    SteakHeaven, length
         
 }
