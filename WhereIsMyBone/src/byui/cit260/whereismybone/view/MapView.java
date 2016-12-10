@@ -2,6 +2,8 @@ package byui.cit260.whereismybone.view;
 
 import byui.cit260.whereismybone.control.MapControl;
 import byui.cit260.whereismybone.control.GameTimeControl;
+import byui.cit260.whereismybone.enums.SceneType;
+import byui.cit260.whereismybone.exception.GameTimeControlException;
 import byui.cit260.whereismybone.exception.MapControlException;
 import byui.cit260.whereismybone.model.Location;
 import byui.cit260.whereismybone.model.Map;
@@ -45,6 +47,8 @@ public class MapView extends View {
                 try{
                     //make a boolean statement true and false
                     this.movePlayerToLocation(choice);
+                    //process location can insert another function in this view
+                    
                 }
                 catch(MapControlException ex){
                     ErrorView.display(this.getClass().getName(), 
@@ -66,6 +70,15 @@ public class MapView extends View {
         return false;
     }
 
+    public void processCurrentLocation(){
+        
+        Map map = WhereIsMyBone.getCurrentGame().getMap();
+        Scene currentScene = map.getCurrentLocation().getScene();
+        
+//         SceneType scenes = SceneType.length];
+    }
+    
+    
     public void displayMap() throws MapControlException
     {
         Map map = WhereIsMyBone.getCurrentGame().getMap();
@@ -201,7 +214,7 @@ public class MapView extends View {
                 }
             }
         }     
-        catch(Exception ex){
+        catch(MapControlException | GameTimeControlException ex){
             
             ErrorView.display(this.getClass().getName(), 
                     "Error moving player to location.");  
