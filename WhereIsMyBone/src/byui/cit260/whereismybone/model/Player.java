@@ -3,11 +3,12 @@ package byui.cit260.whereismybone.model;
 import java.io.Serializable;
 import java.util.Objects;
 
-
 /**
  *
  * @author Smith-Rick
  * Maxi: added backpack to player
+ * 
+ * 12/10/16 Maxi: cleaned up unused coding, comments and proper format
  * 
  */
 public class Player implements Serializable{
@@ -18,8 +19,7 @@ public class Player implements Serializable{
     private String childType = ""; //Is set to son or daughter.
     private BackpackItem backpack;
 
-    public Player() {
-        
+    public Player() {        
     }
 
     public Player(Location location, String backpack) {
@@ -107,6 +107,5 @@ public class Player implements Serializable{
             return false;
         }
         return true;
-    }
-            
+    }            
 }

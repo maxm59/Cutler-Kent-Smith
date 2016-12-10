@@ -6,9 +6,11 @@ import java.util.Objects;
 /**
  *
  * @author Maxi Cutler
+ * 
+ * 12/10/16 Maxi: cleaned up unused coding, comments and proper format
  */
+
 public class TravelLog implements Serializable {
-    
     private String locationHistoryDetails;
 
     public TravelLog() {
@@ -27,8 +29,6 @@ public class TravelLog implements Serializable {
         return "TravelLog{" + "locationHistoryDetails=" + locationHistoryDetails + '}';
     }
 
-    
-    
     @Override
     public int hashCode() {
         int hash = 7;

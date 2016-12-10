@@ -9,6 +9,8 @@ import whereismybone.WhereIsMyBone;
  *
  * @author Maxi Cutler
  * 
+ * 12/10/16 Maxi: cleaned up unused coding, comments and proper format
+ * 
  */
 public class MainMenuView extends View {
 
@@ -17,7 +19,6 @@ public class MainMenuView extends View {
     private double calcResult;
 
     public MainMenuView(){
-
        super(
                   "==================================================" +
                 "\n               WHERE IS MY BONE?                  " +
@@ -41,8 +42,7 @@ public class MainMenuView extends View {
                 "\n==================================================");       
     }
 
-    private void displayBannerWarning(){
-        
+    private void displayBannerWarning(){        
         String menuBanner = 
                   "==================================================" +
                 "\n=============  WHERE IS MY BONE? =================" +
@@ -60,16 +60,13 @@ public class MainMenuView extends View {
                 "\n             Please enter your choice:            " +
                 "\n                                                  " +
                 "\n==================================================" +
-                "\n==================================================" ;
-        
+                "\n==================================================" ;        
         this.console.println(menuBanner);
     }
     
     @Override
-    public boolean doAction(String choice){
-        
-        choice = choice.toUpperCase();
-        
+    public boolean doAction(String choice){        
+        choice = choice.toUpperCase();        
         switch (choice) {
             case "N": //Create and start a new game
                 this.startNewGame();
@@ -88,17 +85,13 @@ public class MainMenuView extends View {
                 //updated for Week 12 team assignment
                 ErrorView.display("MainMenuView",
                         "***Invalid Selection*** Try again");
-                break;
-             
+                break;             
         }
-        return false;  
-    
+        return false;      
     }
-    private void startNewGame(){
-        
+    private void startNewGame(){        
         try{
-            GameControl.createNewGame(WhereIsMyBone.getPlayer());
- 
+            GameControl.createNewGame(WhereIsMyBone.getPlayer()); 
             //Display the Game Menu
             GameMenuView gameMenu = new GameMenuView();
             gameMenu.display();  
@@ -109,61 +102,47 @@ public class MainMenuView extends View {
         }
     }
     
-    private void loadExistingGame(){
-        
+    private void loadExistingGame(){        
         try{
             LoadGameView lgv = new LoadGameView();
-            lgv.display();
-            
+            lgv.display();            
         }
-        catch(Exception ex)
-        {
+        catch(Exception ex) {
             ErrorView.display(this.getClass().getName(), 
                     "Error in Loading an Existing Game.");
         }
     }
     
-    private void saveGame(){
-        
+    private void saveGame(){        
         try{
             SaveGameView sgv = new SaveGameView();
-            sgv.display();
-            
+            sgv.display();            
         }
-        catch(Exception ex)
-        {
+        catch(Exception ex){
             ErrorView.display(this.getClass().getName(), 
                     "Error in Saving this Game.");
         }
     }
     
-    private void displayHelpMenu(){
-        
+    private void displayHelpMenu(){        
         try{
             HelpMenuView helpMenuView = new HelpMenuView();
-            helpMenuView.display();
-            
+            helpMenuView.display();            
         }
-        catch(Exception ex)
-        {
+        catch(Exception ex){
             ErrorView.display(this.getClass().getName(), 
                     "Error displaying the Help Menu.");
         }
-
     }
 
-    private void waitForEnter()
-    {
+    private void waitForEnter(){
         boolean isValidEnter = false;
         String input = null;
-
         try{
             while (!isValidEnter){
                 input = keyboard.readLine();
-
                 //Name validation
-                if(input.length() >= 0)
-                {
+                if(input.length() >= 0){
                     isValidEnter = true;
                 }
                 else{
@@ -175,14 +154,12 @@ public class MainMenuView extends View {
         catch(Exception ex){
             ErrorView.display(this.getClass().getName(),
                     "Error reading input: " + ex.getMessage());
-        }
-        
+        }        
     }
 
     private void loadSavedGame() {
         //week 12 assignment
-        console.println("Enter file name: ");
-        
+        console.println("Enter file name: ");        
         try {
             String fileName = keyboard.readLine();
             GameControl.getSaveGame(fileName);
@@ -196,8 +173,7 @@ public class MainMenuView extends View {
 
     private void saveCurrentGame() {
         //week 12 assignment
-        console.println("Enter file name: ");
-        
+        console.println("Enter file name: ");        
         try {
             String fileName = keyboard.readLine();
             GameControl.saveGame(WhereIsMyBone.getCurrentGame(),

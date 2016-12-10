@@ -11,7 +11,6 @@ import java.util.Objects;
  * 
  */
 public class Location implements Serializable{
-    
     //class instance variables
     private int rowCount;
     private int columnCount;
@@ -26,18 +25,15 @@ public class Location implements Serializable{
     public Location() {
         //Default Setting
         //sceneType = SceneType.Home; 
-        this.visited = false;
-        
+        this.visited = false;   
     }
     
     public Location(Integer rowCount, Integer columnCount, String name) {
         this.rowCount = rowCount;
         this.columnCount = columnCount;
         this.name = name;
-        this.visited = false;
-        
-    }
-    
+        this.visited = false;        
+    }    
     
     public Integer getRowCount() {
         return rowCount;

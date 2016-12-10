@@ -8,7 +8,9 @@ import java.util.Objects;
  *
  * @author Maxi Cutler
  * need 25 locations and brief descriptions
- * also put map position assignments
+ * also put map position assignments. Done
+ * 
+ * 12/10/16 Maxi: cleaned up unused coding, comments and proper format
  * 
  */
 public class Scene implements Serializable {
@@ -20,7 +22,7 @@ public class Scene implements Serializable {
     private Actor actor;        //who is the actor at this location
     private Clue clue;          //gives the user clues for each scene
     private BackpackItem item;  //get items for backpack
-    public Double minute;          //timed per location
+    public Double minute;       //timed per location
     
     public Scene(){ 
         this.description = "";

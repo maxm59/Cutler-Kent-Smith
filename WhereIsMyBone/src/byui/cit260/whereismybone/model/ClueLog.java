@@ -11,6 +11,8 @@ import java.util.Objects;
  * according to UML Model and fix all the errors
  * errors and add this class to the main
  * 
+ * 12/10/16 Maxi: cleaned up unused coding, comments and proper format
+ * 
  */
 public class ClueLog implements Serializable {
     
@@ -19,7 +21,6 @@ public class ClueLog implements Serializable {
 
     public ClueLog() {
     }
-    
     public boolean getClueFound() {
         return clueFound;
     }
@@ -71,13 +72,8 @@ public class ClueLog implements Serializable {
     }
 
     public void setDescripton(String you_have_gotten_this_clue) {
-          // Commmenting this line out, it's breaking the compile.
     }
 
-    public void setClueLog() {
-        
-    }
-
-    
-    
+    public void setClueLog() {        
+    }    
 }

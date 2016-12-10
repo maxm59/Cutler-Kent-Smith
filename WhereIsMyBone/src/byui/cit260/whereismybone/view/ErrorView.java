@@ -8,6 +8,8 @@ import whereismybone.WhereIsMyBone;
  * @author ricte
  * Team Assignment for Week 12
  * 
+ * 12/10/16 Maxi: cleaned up unused coding, comments and proper format
+ * 
  */
 public class ErrorView extends View{
     
@@ -20,25 +22,19 @@ public class ErrorView extends View{
     }
     
     //overload
-    public static void display(String className, String errorMsg){
-        
+    public static void display(String className, String errorMsg){        
         String str = 
                 "\n==================================================" +
                 "\n ERROR - " + className + " - " + errorMsg +
-                "\n==================================================" ;
+                "\n==================================================" ;  
         
         errorFile.println(str);
-        
-        //log error
-        logFile.println(className + " - " + errorMsg);
-                
+        logFile.println(className + " - " + errorMsg);                
     }
 
     @Override
     public boolean doAction(String value) {
         //Nothing to do, just return.
         return true;
-    }
-    
-    
+    }     
 }

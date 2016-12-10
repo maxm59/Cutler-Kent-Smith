@@ -6,6 +6,8 @@ import whereismybone.WhereIsMyBone;
 /**
  *
  * @author Smith-Rick
+ * 
+ * 12/10/16 Maxi: cleaned up unused coding, comments and proper format
  */
 public class SaveGameView extends View{
     
@@ -30,15 +32,11 @@ public class SaveGameView extends View{
     }
 
     @Override
-    public boolean doAction(String filePath) {
-           
-        filePath = filePath.toUpperCase();
-                
-        try{
-            
+    public boolean doAction(String filePath) {           
+        filePath = filePath.toUpperCase();                
+        try{            
             GameControl.saveGame(WhereIsMyBone.getCurrentGame(),
-                filePath);
-            
+                filePath);            
             return true;
         }
         catch(Exception ex){
@@ -46,6 +44,5 @@ public class SaveGameView extends View{
                     "Save Game Error: " + ex.getMessage());
         }
         return false;  
-    }
-    
+    }    
 }

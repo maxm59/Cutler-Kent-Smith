@@ -1,8 +1,5 @@
 package byui.cit260.whereismybone.view;
 
-import java.io.FileWriter;
-import java.io.IOException;
-
 /**
  *
  * 12.3.16 by Maxine Cutler

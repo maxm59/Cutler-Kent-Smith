@@ -3,6 +3,8 @@ package byui.cit260.whereismybone.view;
 /**
  *
  * @author Smith-Rick
+ * 
+ * 12/10/16 Maxi: cleaned up unused coding, comments and proper format
  */
 public class GameWonView extends View{
     
@@ -21,26 +23,20 @@ public class GameWonView extends View{
                 "\n                                                  " +         
                 "\n==================================================" +
                 "\n  Please Q to quit.                               " +
-                "\n=================================================="  ); 
-        
+                "\n=================================================="  );         
     }
 
     @Override
-    public boolean doAction(String choice) {
-           
-        choice = choice.toUpperCase();
-        
-        switch (choice) {
-            
+    public boolean doAction(String choice) {           
+        choice = choice.toUpperCase();        
+        switch (choice) {            
             case "Q":
                 System.exit(0);
                 break;
             default:
                 this.console.println("\n***Invalid Selection*** Try again");
-                break; 
-                
+                break;                 
         }
         return false;  
-    }
-    
+    }    
 }

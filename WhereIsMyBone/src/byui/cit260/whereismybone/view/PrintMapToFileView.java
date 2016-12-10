@@ -8,9 +8,10 @@ import whereismybone.WhereIsMyBone;
  *
  * @author ricte
  * 
+ * 12/10/16 Maxi: cleaned up unused coding, comments and proper format
+ * 
  */
-public class PrintMapToFileView extends View{
-    
+public class PrintMapToFileView extends View{   
     
     public PrintMapToFileView(){
         super("\nWhere would you like to save the printed map file?");
@@ -18,51 +19,31 @@ public class PrintMapToFileView extends View{
 
     @Override
     public boolean doAction(String value) {
-        value = value.toUpperCase();
-        
-        try{
-            
-            this.PrintMapToFile(value);
-            
-            return true;
-            
-        }catch (Exception ex){
-            
-            ErrorView.display(this.getClass().getName(), "Error writing to file. " + ex.getMessage());
-            
+        value = value.toUpperCase();        
+        try{            
+            this.PrintMapToFile(value);            
+            return true;            
+        }catch (Exception ex){            
+            ErrorView.display(this.getClass().getName(), "Error writing to file. " + ex.getMessage());            
         }
-
-        return false;
-    
+        return false;    
     }
 
-    private void PrintMapToFile(String filePath) throws IOException {
-        
+    private void PrintMapToFile(String filePath) throws IOException {        
         FileWriter outputStream = null;
-
-        //Print the map to the file specified
         try{
-            outputStream = new FileWriter(filePath);
-            
-            String strMap = WhereIsMyBone.getCurrentGame().getMap().getMapString();
-            
-            outputStream.write(strMap);
-            
+            outputStream = new FileWriter(filePath);            
+            String strMap = WhereIsMyBone.getCurrentGame().getMap().getMapString();            
+            outputStream.write(strMap);            
             this.console.println("The map was successfully written to the file.");
-
-        }catch (Exception ex){
-            
+        }catch (Exception ex){            
             ErrorView.display(this.getClass().getName(), "There was an error writting"
                     + "the file: " + ex.getMessage());
-
         }
         finally{
             //Close our streams
             if(outputStream != null)
-                outputStream.close();
-        
-        }
-    
-    }
-    
+                outputStream.close();        
+        }    
+    }    
 }

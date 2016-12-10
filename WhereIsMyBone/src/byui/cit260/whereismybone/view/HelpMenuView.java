@@ -5,13 +5,13 @@ import java.io.IOException;
 /**
  * @author Smith-Rick
  * @author Maxi Cutler
+ * 
+ * 12/10/16 Maxi: cleaned up unused coding, comments and proper format
+ * 
  */
 public class HelpMenuView extends View{
-
-//    private String menuOptions = "";
     
     public HelpMenuView() {
-
        super(
                   "==================================================" +
                 "\n               WHERE IS MY BONE?                  " +
@@ -38,7 +38,6 @@ public class HelpMenuView extends View{
                 "\n==================================================" );        
     }
 
-
     private void displayObjectGameMenu(){
         String details = 
                   "==================================================" +
@@ -63,8 +62,6 @@ public class HelpMenuView extends View{
                 "\n=  If time runs out, you will lose the game.     =" +
                 "\n=                                                =" +
                 "\n==================================================" ;
-
-
         this.console.println(details);
     }
     
@@ -99,8 +96,6 @@ public class HelpMenuView extends View{
                 "\n= ___|_______|_______|_______|_______|_______|   =" +
                 "\n=                                                =" +
                 "\n==================================================" ;
-
-
         this.console.println(details);
     }
     
@@ -114,10 +109,9 @@ public class HelpMenuView extends View{
                 "\n= who the criminal might be. Check the clue log. =" +
                 "\n=                                                =" +
                 "\n==================================================" ;
-
-
         this.console.println(details);
     }
+    
     private void displayVillans(){
         String details =
                   "==================================================" +
@@ -156,7 +150,6 @@ public class HelpMenuView extends View{
                 "\n=  You know Rex. T-Rex.                          =" +
                 "\n=                                                =" +
                 "\n==================================================";
-
        this.console.println(details);
     }
     
@@ -164,14 +157,11 @@ public class HelpMenuView extends View{
         this.console.println("Please press <ENTER> to continue.");
         boolean isValidEnter = false;
         String input = null;
-
         try{
             while (!isValidEnter){
                 input = this.keyboard.readLine();
-
                 //Name validation
-                if(input.length() >= 0)
-                {
+                if(input.length() >= 0){
                     isValidEnter = true;
                 }
                 else{
@@ -180,19 +170,14 @@ public class HelpMenuView extends View{
                 break;
             }            
         }
-        catch(IOException ex){
-            
+        catch(IOException ex){            
             ErrorView.display(this.getClass().getName(), 
                     "Error waiting for enter.");  
-                        
         }
     }
   
-    
-    public boolean doAction(String choice){
-        
-        choice = choice.toUpperCase();
-        
+    public boolean doAction(String choice){      
+        choice = choice.toUpperCase();        
         switch (choice) {
             case "A": //Display Game Objective
                 this.displayObjectGameMenu();

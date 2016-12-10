@@ -7,6 +7,8 @@ import java.io.IOException;
  *
  * 12.3.16 by Maxine Cutler
  * 
+* 12/10/16 Maxi: cleaned up unused coding, comments and proper format
+ * 
  */
 public class PrintClueListToText extends View {
 

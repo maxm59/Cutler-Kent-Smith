@@ -8,11 +8,12 @@ import java.io.IOException;
  * 12.1.16 by Maxi Cutler
  * for Week 12 Individual due 12/3/16
  * 
+ * 12/10/16 Maxi: cleaned up unused coding, comments and proper format
+ * 
  */
 public class PrintActorsToTextView extends View {
 
     public PrintActorsToTextView(){
-
        super(
               "==================================================" +
             "\n               WHERE IS MY BONE?                  " +
@@ -40,7 +41,6 @@ public class PrintActorsToTextView extends View {
         choice = choice.toUpperCase();
         
         switch (choice) {
-
             case "P":
                 this.console.println("Saved file located in File Exployer.");
                 this.displayPrintActorsToTextView();
@@ -78,10 +78,8 @@ public class PrintActorsToTextView extends View {
         FileWriter outFile = null;
         String fileLocation = "Actors List.txt";
         try{
-            //create and open a new file stream for the output file
             outFile = new FileWriter(fileLocation);
 
-            //write each actor's description to the file plus a new line charactor
             outFile.write("\nTommy          I am 4 years old and play at ParkLand with Mommy.\r");
             outFile.write("\nPete           I am Officer Pete, a K9 unit trainer.\r");
             outFile.write("\nDr. Mice       I love being a local veterinarian.\r");
@@ -111,7 +109,7 @@ public class PrintActorsToTextView extends View {
             outFile.write("\nRats           We live in the vacant house and do our best to out run\r");
             outFile.write("\n               Cat DeVil and her gang. We are your allies.\r");
             
-            outFile.flush(); // flush pushes it to the harddrive
+            outFile.flush();
         }
         catch (IOException ex){
             this.console.println("Error: List of Actors;" + ex.getMessage());  
@@ -119,8 +117,7 @@ public class PrintActorsToTextView extends View {
         finally {
             if (outFile !=null) {
                 try {
-                    outFile.close();
-                
+                    outFile.close();                
                 } catch (IOException ex){
                     this.console.println("Error closing;" + ex.getMessage());
                 }

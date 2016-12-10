@@ -3,11 +3,12 @@ package byui.cit260.whereismybone.view;
 /**
  *
  * @author Maxine Cutler
+ * 
+ * 12/10/16 Maxi: cleaned up unused coding, comments and proper format
  */
 public class SceneView extends View {
 
     public SceneView() {
-
        super(
               "==================================================" +
             "\n               WHERE IS MY BONE?                  " +
@@ -47,8 +48,7 @@ public class SceneView extends View {
     
     @Override
     public boolean doAction(String choice){   
-        choice = choice.toUpperCase();
-        
+        choice = choice.toUpperCase();        
         switch (choice) {
             case "A": 
                 this.console.println(

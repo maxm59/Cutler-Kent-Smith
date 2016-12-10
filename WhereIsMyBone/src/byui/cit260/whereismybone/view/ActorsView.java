@@ -1,18 +1,16 @@
 package byui.cit260.whereismybone.view;
 
-import java.io.FileWriter;
-import java.io.IOException;
-
 /**
  *
  * 12.1.16 by Maxi Cutler
  * for Week 12 Individual
  * 
+ * 12/10/16 Maxi: cleaned up unused coding, comments and proper format
+ * 
  */
 public class ActorsView extends View {
 
     public ActorsView(){
-
        super(
               "==================================================" +
             "\n               WHERE IS MY BONE?                  " +

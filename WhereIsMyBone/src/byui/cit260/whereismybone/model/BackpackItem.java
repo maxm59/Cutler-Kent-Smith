@@ -1,6 +1,5 @@
 package byui.cit260.whereismybone.model;
 
-
 import java.io.Serializable;
 
 /**
@@ -9,7 +8,7 @@ import java.io.Serializable;
  * class built to get BackpackItems for the backpack requirement
  * Backpack List called from the scene.java
  * 
- * 
+ * 12/10/16 Maxi: cleaned up unused coding, comments and proper format
  */
 public enum BackpackItem implements Serializable{
 

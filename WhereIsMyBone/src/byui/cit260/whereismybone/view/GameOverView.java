@@ -4,6 +4,8 @@ package byui.cit260.whereismybone.view;
  *
  * @author Smith-Rick
  * 
+ * 12/10/16 Maxi: cleaned up unused coding, comments and proper format
+ * 
  */
 public class GameOverView extends View{
     
@@ -22,17 +24,13 @@ public class GameOverView extends View{
                 "\n                                                  " +         
                 "\n==================================================" +
                 "\n  Please Q to quit.                               " +
-                "\n=================================================="  ); 
-        
+                "\n=================================================="  );         
     }
 
     @Override
-    public boolean doAction(String choice) {
-           
-        choice = choice.toUpperCase();
-        
-        switch (choice) {
-            
+    public boolean doAction(String choice) {           
+        choice = choice.toUpperCase();        
+        switch (choice) {            
             case "Q":
                 System.exit(0);
                 break;
@@ -42,6 +40,5 @@ public class GameOverView extends View{
                 
         }
         return false;  
-    }
-    
+    }    
 }

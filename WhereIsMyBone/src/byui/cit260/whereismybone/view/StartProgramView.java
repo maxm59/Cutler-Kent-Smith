@@ -10,17 +10,13 @@ import whereismybone.WhereIsMyBone;
 /**
  *
  * @author Smith-Rick
+ * 
+ * 12/10/16 Maxi: cleaned up unused coding, comments and proper format
  */
 public class StartProgramView extends View{
     
-    //private String promptMessage;
-    
-    
     public StartProgramView(){
-    
-        //Our banner contains the banner plus username prompt/ 
         this.displayBannerAndPrompt();
-        
     }
     
     private void displayBannerAndPrompt() {
@@ -45,10 +41,8 @@ public class StartProgramView extends View{
                 "\n                                                  " +
                 "\n==================================================" +
                 "\n=  Game Creators - Rick S. | Maxi C. | Brian K.  =" +
-                "\n==================================================" ;   
-        
+                "\n==================================================" ;        
         this.console.println(welcomeBanner);
-
     }
     
     private void displayGenderPrompt(Player player) {
@@ -68,14 +62,11 @@ public class StartProgramView extends View{
                 "\n" +
                 "\n==================================================" +
                 "\n== Game Creators - Rick S. | Maxi C. | Brian K. ==" +
-                "\n==================================================" ;
-        
+                "\n==================================================" ;        
         this.console.println(welcomeBanner);      
     }
     
-    private void displayBannerWithIntro(Player player)
-    {
-        
+    private void displayBannerWithIntro(Player player){        
         String welcomeBanner = "";
         welcomeBanner = 
                   "==================================================" +
@@ -98,33 +89,25 @@ public class StartProgramView extends View{
                 "\n" +
                 "\n==================================================" +
                 "\n== Game Creators - Rick S. | Maxi C. | Brian K. ==" +
-                "\n==================================================" ;
-        
+                "\n==================================================" ;        
         this.console.println(welcomeBanner);
     }
     
-    public void displayStartProgramView() {
-        
+    public void displayStartProgramView() {        
         boolean done = false; //set the flag to not done
         do{
             //prompt for and get players name.
             String playersName = this.getPlayersName();
             if (playersName.toUpperCase().equals("Q"))//user wants to quit
-            return; //exit the game
-            
+            return; //exit the game            
                 //do the requested action and display the next view
-                done = this.doAction(playersName);
-            
-        }while (!done);
-        
-        
+                done = this.doAction(playersName);            
+        }while (!done);  
     }
 
-    private String getPlayersName() {
-        
+    private String getPlayersName() {        
         String value = null; //value to be returned
-        boolean valid = false; //initialize to not valid
-        
+        boolean valid = false; //initialize to not valid        
         try{
             while(!valid){
                 //loop while an invalid value is entered
@@ -133,56 +116,43 @@ public class StartProgramView extends View{
                     value = this.keyboard.readLine(); 
                     //trim off leading and trailing blanks
                     value = value.trim();
-
-                    if(value.length() < 1)
-                    {
+                    if(value.length() < 1){
                         //value is blank
                         this.console.println("\nInvalid Value: value cannot be blank");
                         continue;        
                     }
-                }
-                catch(Exception ex){
+                } catch(Exception ex){
                     ErrorView.display(this.getClass().getName(), 
                             "Error getting player name");              
                 }
-
                 break; //end the loop
             }   
-        }
-        catch(Exception ex){
+        } catch(Exception ex){
             ErrorView.display(this.getClass().getName(),
                     "Error reading input: " + ex.getMessage());
-        }
-        
+        }        
         return value; 
     }
+    
     private void getPlayerGender(Player player) {
-        //We want to prompt for the gender and then set the player gender 
-        // attribute.
         boolean isValidGender = false;
         String gender = "";
         String input = null;
-        
         try{
         //Keep Looping through until a valid name is entered.
             while (!isValidGender){
                 input = this.keyboard.readLine();
                 input = input.toUpperCase();
-
                 //Name validation
-                if(input.contentEquals("M") | input.contentEquals("F"))
-                {
+                if(input.contentEquals("M") | input.contentEquals("F")){
                     isValidGender = true;
                     gender = input;
-
                     if(input.contentEquals("M") | input.contentEquals("m")){
                          player.setChildType("son");
                     }
                     else{
-
                         player.setChildType("daughter");
                     }
-
                 }
                 else{
                  this.console.println("Invalid Gender. Please type M or F.");
@@ -192,54 +162,37 @@ public class StartProgramView extends View{
         catch(Exception ex){
            ErrorView.display(this.getClass().getName(),
                    "Error reading input: " + ex.getMessage());
-        }
-            
+        }            
     }
     
     @Override
-    public boolean doAction(String playersName) {
-        
+    public boolean doAction(String playersName) {        
         if(playersName.length() < 2 || playersName == null){
             this.console.println("\nInvalid players name: "
                     + "  The name must be greater than two character in lenght");
             return false;
-        }
-        
+        }        
         try {
             WhereIsMyBone.setPlayer(GameControl.createPlayer(playersName));
         } catch (GameControlException ex) {
             Logger.getLogger(StartProgramView.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
+        }       
         Player player = WhereIsMyBone.getPlayer();
-        //Gender prompt. 
         this.displayGenderPrompt(player);
         this.getPlayerGender(player);
-        
-        //Nice Banner with story Detail
         this.displayBannerWithIntro(player);
         this.waitForEnter();
-        
-        //Display mainMenuView || display next view
-        this.displayNextView(player);
-        
+        this.displayNextView(player);        
         return true;
     }
 
-    private void waitForEnter()
-    {
+    private void waitForEnter(){
         boolean isValidEnter = false;
-        String input = null;
-        
+        String input = null;        
         try{
-            //Keep Looping through until Enter or any key is pressed.
-            //We really do not care what key they press.
             while (!isValidEnter){
                 input = keyboard.readLine();
-
-                //Name validation
-                if(input.length() >= 0)
-                {
+                if(input.length() >= 0){
                     isValidEnter = true;
                 }
                 else{
@@ -255,14 +208,7 @@ public class StartProgramView extends View{
     }
         
     private void displayNextView(Player player) {
-        
-        //NOTE: Do not need to display custom welcome message here.
-        // we are handling this already outside of this method.
-        
-        //Display the MainMenuView 
-        //Create MainMenuView object
         MainMenuView mainMenuView = new MainMenuView();
-        //Display the main menu view
         mainMenuView.display();
     }
 }

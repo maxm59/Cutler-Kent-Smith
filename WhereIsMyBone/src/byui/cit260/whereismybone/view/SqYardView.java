@@ -6,6 +6,8 @@ import byui.cit260.whereismybone.exception.ComplexCalcException;
  *
  * @author Maxi Cutler
  * 
+ * 12/10/16 Maxi: cleaned up unused coding, comments and proper format
+ * 
  */
 public class SqYardView extends View {
 
@@ -14,7 +16,6 @@ public class SqYardView extends View {
     private int calcResult;
 
     public SqYardView(){
-
         super(
                   "==================================================" +
                 "\n               WHERE IS MY BONE?                  " +
@@ -25,15 +26,15 @@ public class SqYardView extends View {
                 "\n             >=     _______     =<                " +
                 "\n            (   ,-'`       `'-,   )               " +
                 "\n             `-'               `-'                " +
-                "\n            We found a box that might contain     " +
-                "\n            the bone or Cat DeVil, herself.       " +
-                "\n            The box is approx. 10 feet wide      " +
-                "\n            and 33 feet long.       " +
+                "\n        We found a box that might contain         " +
+                "\n        the bone or Cat DeVil, herself.           " +
+                "\n        The box is approx. 10 feet wide           " +
+                "\n        and 33 feet long.                         " +
                 "\n                                                  " +
-                "\n            Please enter the square area of       " +
-                "\n            my yard:                              " +
+                "\n        Please enter the square area of           " +
+                "\n        my yard:                                  " +
                 "\n                                                  " +          
-                "\n             X =   Exit This View                 " + 
+                "\n        X =   Exit This View                      " + 
                 "\n                                                  " +
                 "\n==================================================" +
                 "\n== Game Creators - Rick S. | Maxi C. | Brian K. = " +
@@ -79,14 +80,13 @@ public class SqYardView extends View {
     }
         
     private void showCorrect() {
-
         String display =
                   "==================================================" +
                 "\n               WHERE IS MY BONE?                  " +
                 "\n               Is it in the Box?                  " +
                 "\n==================================================" +
                 "\n                                                  " +
-                "\n                 -= CORRECT!!! =-                 " +
+                "\n               -= CORRECT!!! =-                   " +
                 "\n                                                  " +
                 "\n==================================================" +
                 "\n           Press <ENTER> to continue...           " +
@@ -98,8 +98,7 @@ public class SqYardView extends View {
         
     private void showNotCorrect (){
         String display =
-                "\n        -= INCORRECT - PLEASE TRY AGAIN! =-       " ; 
-        
+                "\n        -= INCORRECT - PLEASE TRY AGAIN! =-       " ;         
         this.console.println(display);
     }
 }

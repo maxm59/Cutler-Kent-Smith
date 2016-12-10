@@ -90,27 +90,21 @@ public class GameControl {
             GameTime gt = GameControl.createGameTime();
             game.setGameTime(gt);
             
-            List<Clue> lC = new ArrayList<Clue>();
+            List<Clue> lC = new ArrayList<Clue>(); //selects various clues for the list
             game.setClueList(lC);
-            
-                        
+     
         }
-        catch(Exception ex){
-                                    
+        catch(Exception ex){                      
             throw new GameControlException("ERROR: THere was a problem with " + 
                     "creating new game.");
         }
-        
-
         WhereIsMyBone.setCurrentGame(game);
     }
 
     public static Player createPlayer(String name) throws GameControlException {
-        
         if (name == null){
             return null;
         }
-        
         Player player = new Player();
         try{
             player.setName(name);
@@ -119,11 +113,8 @@ public class GameControl {
             
             throw new GameControlException("ERROR: THere was a problem with " + 
                     "creating Player.");
-            
         }
-        
         return player;
-        
      }
 
     private static BackpackItem[] createItemList() {
@@ -134,12 +125,9 @@ public class GameControl {
         return null;
     }
     
-    //my thinking is that this coding needs to be in the location.java class? Need to brainstorm with Richard.
     public static void assignScenesToLocations(Map map, Scene[] scenes) throws GameControlException {
         Location[][] locations = map.getLocations();
-        
         try{
-
             locations[0][0].setScene(scenes[SceneType.Parkland.ordinal()]);
             locations[0][1].setScene(scenes[SceneType.VacantHouse.ordinal()]);
             locations[0][2].setScene(scenes[SceneType.K9Precinct.ordinal()]);
@@ -167,14 +155,12 @@ public class GameControl {
             locations[4][4].setScene(scenes[SceneType.SteakHeaven.ordinal()]);
          }            
         catch(Exception ex){
-            
             throw new GameControlException("ERROR: THere was a problem with " + 
                     "assigning scenes to lcoation");
         }
     }
 
     private static GameTime createGameTime() throws GameControlException {
-        
         GameTime gameTime = new GameTime();
         try{
             gameTime.setTimeRemaining(24.0);

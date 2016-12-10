@@ -10,6 +10,8 @@ import java.io.Serializable;
  * @author Maxi Cutler-added more actors for
  * interaction and dialog for each location.
  * 
+ * 12/10/16 Maxi: cleaned up unused coding, comments and proper format
+ * 
  */
 public enum Actor implements Serializable{
     

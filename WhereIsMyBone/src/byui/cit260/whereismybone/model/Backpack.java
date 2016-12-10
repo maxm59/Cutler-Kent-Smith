@@ -10,33 +10,29 @@ import java.util.Objects;
  * add items and remove items into the backpack
  * from the different locations on the map
  * 
+ * 12/10/16 Maxi: cleaned up unused coding, comments and proper format
+ * 
  */
 public class Backpack implements Serializable{
     
     private final ArrayList<BackpackItem> items;
-           
     Backpack(){
         items = new ArrayList<>();
-        
     }
-
-    public void addItem(BackpackItem item){
-        
+    public void addItem(BackpackItem item){ 
         items.add(item);  
     }
+    
     public void removeItem(String name) {
-       
-        for(BackpackItem item : items){
-           
+        for(BackpackItem item : items){ 
            if(item.getName().contains(name)) {
                items.remove(item);
            }
         }
    }
-    //gives you the total no of items in the backpack follow the code on mapcontrol on line 401
+    
     public int TotalNoOfItem(){
         int count = 0;
-        
         for(BackpackItem item : items){
             count++;
         }
@@ -45,17 +41,14 @@ public class Backpack implements Serializable{
     
     public BackpackItem getItem(int index){
         int count = 0;
-        
         for(BackpackItem item : items){
             if(count == index)
                 return item;            
             count++;
-            
         }
         return null; 
     }
-
-    //not sure if we still need the hashcode and equals functions
+    
     @Override
     public int hashCode() {
         int hash = 3;
@@ -79,6 +72,5 @@ public class Backpack implements Serializable{
             return false;
         }
         return true;
-    }
-    
+    }    
 }

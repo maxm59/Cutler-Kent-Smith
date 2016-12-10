@@ -6,6 +6,7 @@ import java.text.*;
 /**
  *
  * @author Smith-Rick
+ * 
  */
 public class GameTimeControl {
     

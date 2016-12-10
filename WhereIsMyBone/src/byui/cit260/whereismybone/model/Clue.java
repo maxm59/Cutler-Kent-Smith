@@ -1,6 +1,5 @@
 package byui.cit260.whereismybone.model;
 
-import java.awt.Point;
 import java.io.Serializable;
 /**
  *
@@ -10,6 +9,8 @@ import java.io.Serializable;
  * sync with the MapControl.java and Scenes.java
  * The clues are now inserted in the map for player selection
  * per requirement for week 10
+ * 
+ * 12/10/16 Maxi: cleaned up unused coding, comments and proper format
  * 
  */
 public enum Clue implements Serializable {

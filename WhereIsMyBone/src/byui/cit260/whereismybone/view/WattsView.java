@@ -6,6 +6,8 @@ import byui.cit260.whereismybone.exception.ComplexCalcException;
  *
  * @author Maxi Cutler
  * 
+ * 12/10/16 Maxi: cleaned up unused coding, comments and proper format
+ * 
  */
 public class WattsView extends View {
 
@@ -14,9 +16,6 @@ public class WattsView extends View {
     private int calcResult;
 
     public WattsView(){
-        
-        //this.displayMenu();
-        
         super(
                   "==================================================" +
                 "\n               WHERE IS MY BONE?                  " +
@@ -32,31 +31,24 @@ public class WattsView extends View {
                 "\n                                                  " +
                 "\n     Please enter your answer in Watts:           " +
                 "\n                                                  " +         
-                "\n==================================================" );           
-        
+                "\n==================================================" );       
     }
 
     @Override
-    public boolean doAction(String value){
-        
+    public boolean doAction(String value){        
         ComplexCalculationsControl ccc = new ComplexCalculationsControl();
-        try{          
-            
+        try{                    
             //Did the user guess the right answer? 100,000,000
-            boolean result = ccc.validateWatts(value, 400000, 250);            
-            
-            if(result)
-            {
+            boolean result = ccc.validateWatts(value, 400000, 250);         
+            if(result){
                 //they got it right
                 this.showCorrect();
                 return true;
             }
-            else
-            {
+            else {
                 this.showNotCorrect();
                 return false;
-            }
-            
+            }            
         }
         catch(ComplexCalcException ex){
             ErrorView.display(this.getClass().getName(), ex.getMessage());
@@ -64,18 +56,13 @@ public class WattsView extends View {
         }
     }
     
-    private void waitForEnter()
-    {
+    private void waitForEnter(){
         boolean isValidEnter = false;
-        String input = null;
-        
+        String input = null;        
         try{
             while (!isValidEnter){
                 input = this.keyboard.readLine();
-
-                //Name validation
-                if(input.length() >= 0)
-                {
+                if(input.length() >= 0){
                     isValidEnter = true;
                 }
                 else{
@@ -91,7 +78,6 @@ public class WattsView extends View {
     }
         
     private void showCorrect() {
-
         String display =
                   "==================================================" +
                 "\n               WHERE IS MY BONE?                  " +
@@ -118,11 +104,8 @@ public class WattsView extends View {
     }
         
     private void showNotCorrect (){
-
-        String display =
-                  
+        String display =                  
                 "\n        -= INCORRECT - PLEASE TRY AGAIN! =-       " ; 
-
         this.console.println(display);
     }
 }

@@ -1,13 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package byui.cit260.whereismybone.view;
 
 /**
  *
  * @author Smith-Rick
+ * 
+ * 12/10/16 Maxi: cleaned up unused coding, comments and proper format
+ * 
  */
 public class PrintMenuView extends View{
     
@@ -53,21 +51,13 @@ public class PrintMenuView extends View{
         clueListView.display();
     }
     
-    private void printMapToFileView() {
-        
+    private void printMapToFileView() {        
         PrintMapToFileView pm = new PrintMapToFileView();   
-
-        try{
-            
+        try{            
             pm.display();
-
-        }catch (Exception ex)
-        {
+        }catch (Exception ex){
             ErrorView.display(this.getClass().getName(), "Error: Problem with print"
                     + "map to file view.");
         }
-
-    }    
-        
-    
+    }           
 }

@@ -5,6 +5,8 @@ import byui.cit260.whereismybone.exception.ComplexCalcException;
 /**
  *
  * @author Maxi Cutler
+ * 
+ * 12/10/16 Maxi: cleaned up unused coding, comments and proper format
  */
 public class CalcBoxView extends View {
 
@@ -14,9 +16,6 @@ public class CalcBoxView extends View {
     private int calcResult;
 
     public CalcBoxView(){
-        
-        //this.displayMenu();
-        
         super(
                   "==================================================" +
                 "\n               WHERE IS MY BONE?                  " +
@@ -39,31 +38,24 @@ public class CalcBoxView extends View {
                 "\n                                                  " +
                 "\n==================================================" +
                 "\n== Game Creators - Rick S. | Maxi C. | Brian K. = " +
-                "\n==================================================") ;  
-        
+                "\n==================================================") ;          
     }
 
     @Override
-    public boolean doAction(String value){
-        
+    public boolean doAction(String value){        
         ComplexCalculationsControl ccc = new ComplexCalculationsControl();
-        try{          
-            
+        try{            
             //Did the user guess the right answer? 100
-            boolean result = ccc.validateCubicInches(value, 6, 22, 9);
-            
-            if(result)
-            {
+            boolean result = ccc.validateCubicInches(value, 6, 22, 9);            
+            if(result){
                 //they got it right
                 this.showCorrect();
                 return true;
             }
-            else
-            {
+            else {
                 this.showNotCorrect();
                 return false;
-            }
-            
+            }            
         }
         catch(ComplexCalcException ex){
             ErrorView.display(this.getClass().getName(), ex.getMessage());
@@ -71,18 +63,14 @@ public class CalcBoxView extends View {
         }
     }
     
-    private void waitForEnter()
-    {
+    private void waitForEnter(){
         boolean isValidEnter = false;
-        String input = null;
-        
+        String input = null;        
         try{
             while (!isValidEnter){
                 input = this.keyboard.readLine();
-
                 //Name validation
-                if(input.length() >= 0)
-                {
+                if(input.length() >= 0){
                     isValidEnter = true;
                 }
                 else{
@@ -98,7 +86,6 @@ public class CalcBoxView extends View {
     }
         
     private void showCorrect() {
-
         String display =
                   "==================================================" +
                 "\n               WHERE IS MY BONE?                  " +
@@ -110,17 +97,13 @@ public class CalcBoxView extends View {
                 "\n==================================================" +
                 "\n   Press <ENTER> to continue...                   " +
                 "\n==================================================" ; 
-
         this.console.println(display);
         this.waitForEnter();
     }
         
     private void showNotCorrect (){
-
-        String display =
-                  
+        String display =                  
                 "\n        -= INCORRECT - PLEASE TRY AGAIN! =-       " ; 
-
         this.console.println(display);
     }
 }

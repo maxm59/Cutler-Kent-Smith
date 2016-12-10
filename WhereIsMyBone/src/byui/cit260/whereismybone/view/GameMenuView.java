@@ -9,7 +9,6 @@ import byui.cit260.whereismybone.model.Map;
 import byui.cit260.whereismybone.model.Player;
 import byui.cit260.whereismybone.model.Scene;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -19,7 +18,9 @@ import whereismybone.WhereIsMyBone;
  *
  * @author Smith-Rick
  * 
- * 12.3.16 Maxi Cutler working on Clue List View
+ * 12.3.16 Maxi:Clue list 
+ * 
+ * 12/10/16 Maxi: cleaned up unused coding, comments and proper format
  * 
  */
 public class GameMenuView extends View{
@@ -31,14 +32,13 @@ public class GameMenuView extends View{
                 "\n                    GAME MENU                     " +
                 "\n==================================================" +                      
                 "\n                                                  " +
-                "\n         A   =  Backpack Inventory List           " +
-//                "\n         B   =  View Your Backpack Items          " + //This is a duplicate of A = Backpack Inventory List        
-                "\n         C   =  Display Clue Log                  " +
-                "\n         E   =  Search Location for Clues         " + //Test calculations removed. Need to incorperate into location search.
-                "\n         F   =  Display Map                       " +                                               
+                "\n         A   =  Backpack Inventory List           " +     
+                "\n         B   =  Display Clue Log                  " +
+                "\n         C   =  Search Location for Clues         " +
+                "\n         D   =  Display Map                       " +                                               
                 "\n         M   =  Move Player                       " + 
                 "\n                                                  " +                                              
-                "\n         P   =  Print Menu                        " +//All print to file items moved here
+                "\n         P   =  Print Menu                        " +
                 "\n         H   =  Help Menu                         " + 
                 "\n         X   =  Exit Game                         " +
                 "\n                                                  " +
@@ -55,38 +55,31 @@ public class GameMenuView extends View{
             case 'A':
                 this.showBackpack();
                 break;
-//            case 'B':
-//                this.showBackpackItem();//veiw what is in the backpack
-//                break;
-            case 'C':
+            case 'B':
                 this.showClueList();
                 break;
-//            case 'D':
-//                this.console.println("Select Optiong P to save list to text file.");
-//                this.showPrintClueListToText();
-//                break;
-            case 'E':
-                {
+            case 'C': {
                     try {
-                        this.searchLocation(); //search location of clues TODO
+                      this.searchLocation(); //search location of clues TODO
                     } catch (ClueControlException ex) {
                         Logger.getLogger(GameMenuView.class.getName()).log(Level.SEVERE, null, ex);
                     }
                 }
                 break;
-            case 'F':
+            case 'D':
                  this.showMap();      
                  this.waitForEnter();
                  break;
-            case 'P':  
-                this.showPrintMenu();
-                break;
             case 'M':
                 this.movePlayer();
                 break;
-            case 'T': //Temporary display of Complex Calculation for testing
-                this.displayComplexCalculationView();
+            case 'P':  
+                this.showPrintMenu();
                 break;
+//
+//            case 'T': //Temporary display of Complex Calculation for testing
+//                this.displayComplexCalculationView();
+//                break;
             case 'H':
                 this.showHelpMenu();
                 break;
@@ -104,25 +97,11 @@ public class GameMenuView extends View{
         BackpackView backpackView = new BackpackView();
         backpackView.display();
     }
-    
-    //this is a duplicate of ShowBackpack
-//    private void showBackpackItem() {
-//        this.console.println("TODO need connection and scripting");
-//        this.waitForEnter();
-//    }
-    //Maxi's
-    private void showClueList() {
-//        ClueListView clueListView = new ClueListView();
-//        clueListView.display();
 
+    private void showClueList() {
         this.displayClueLog();
         this.waitForEnter();
-    }
-//    private void showPrintClueListToText() {
-//        PrintClueListToText clueListView = new PrintClueListToText();
-//        clueListView.display();
-//    }
-    
+    }    
     //Brian's
     private void searchLocation() throws ClueControlException
     {
@@ -187,29 +166,21 @@ public class GameMenuView extends View{
         this.waitForEnter();
     }
     //Rick's
-    private void showMap(){
-        
-        MapView mapView = new MapView();
-        
-        try{
-            
-            mapView.displayMap(); 
-            
-        }catch(MapControlException ex)
-        {
+    private void showMap(){        
+        MapView mapView = new MapView();        
+        try{            
+            mapView.displayMap();            
+        }catch(MapControlException ex){
             ErrorView.display(this.getClass().getName(), 
                     "Error the Complex Calculation View.");
             ErrorView.display(this.getClass().getName(), ex.getMessage());
-        }
-        
+        }        
     }
     
-    private void movePlayer() {
-        
+    private void movePlayer() {        
         //Show the player the map and then prompt so they already have the visual
         //  reference for where they need to move to. 
-        this.showMap();
-        
+        this.showMap();        
         MapView mapView = new MapView();
         mapView.display();  
     }
@@ -218,51 +189,28 @@ public class GameMenuView extends View{
         HelpMenuView helpMenuView = new HelpMenuView();
         helpMenuView.display();
     }
-
     //Rick's
     private void displayComplexCalculationView() {
         try{
-
             ComplexCalculationView complexCalculationView = new ComplexCalculationView();
-            complexCalculationView.display();
-  
+            complexCalculationView.display();  
         }
-        catch(Exception ex)
-        {
+        catch(Exception ex){
             ErrorView.display(this.getClass().getName(), 
                     "Error the Complex Calculation View.");
             ErrorView.display(this.getClass().getName(), ex.getMessage());
         }
     }
 
-//    private void printMapToFileView() {
-//        
-//        PrintMapToFileView pm = new PrintMapToFileView();   
-//
-//        try{
-//            
-//            pm.display();
-//
-//        }catch (Exception ex)
-//        {
-//            ErrorView.display(this.getClass().getName(), "Error: Problem with print"
-//                    + "map to file view.");
-//        }
-//
-//    }
-
     private void waitForEnter() { 
         this.console.println("Please press <ENTER> to continue.");
         boolean isValidEnter = false;
         String input = null;
-
         try{
             while (!isValidEnter){
                 input = this.keyboard.readLine();
-
                 //Name validation
-                if(input.length() >= 0)
-                {
+                if(input.length() >= 0){
                     isValidEnter = true;
                 }
                 else{
@@ -271,18 +219,14 @@ public class GameMenuView extends View{
                 break;
             }            
         }
-        catch(IOException ex){
-            
+        catch(IOException ex){            
             ErrorView.display(this.getClass().getName(), 
-                    "Error waiting for enter.");  
-                        
+                    "Error waiting for enter.");                         
         }
     }
 
-    private void displayClueLog() {
-        
-        List<Clue> lC = WhereIsMyBone.getCurrentGame().getClueList();
-        
+    private void displayClueLog() {        
+        List<Clue> lC = WhereIsMyBone.getCurrentGame().getClueList();        
         try{
             String str = 
                       "==================================================" +
@@ -290,48 +234,30 @@ public class GameMenuView extends View{
                     "\n                    CLUE LOG                      " +
                     "\n==================================================" +                      
                     "\n                                                  " ;
-
             this.console.println(str);
-
             int i = 0;
             for(Clue clue : lC){
                 i++;
-
                 String strClue = 
-
                     " " + i + ") " + clue.getDescription() ;
-                
                 this.console.println(strClue);
-
             }
             this.console.println("\n==========================================="
                     + "=======");
         }catch(Exception ex){
             this.console.println("DEBUG - Error trying to display clue log: " 
                     + ex.toString());            
-        }
-
-        
-              
-    
+        } 
     }
 
-    private void showPrintMenu() {
-        
-        PrintMenuView pmv = new PrintMenuView();
-                
-        try{
-            
-            pmv.display();
-            
-        }catch(Exception ex)
-        {
+    private void showPrintMenu() {        
+        PrintMenuView pmv = new PrintMenuView();                
+        try{            
+            pmv.display();            
+        }catch(Exception ex){
             ErrorView.display(this.getClass().getName(), 
                     "Error with Print Menu View.");
             ErrorView.display(this.getClass().getName(), ex.getMessage());
         }
     }
-        
-  
-    
 }

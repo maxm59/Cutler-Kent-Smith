@@ -9,15 +9,13 @@ import java.io.Serializable;
  * Used to contain the game time object. 
  * Starts at 24 hours. It can be reduced by hole numbers or fractions of a 
  *  number, which is why we use a Double vs an Integer.
+ * 
  */
-
 
 public class GameTime implements Serializable{
     
 private Double timeRemaining;
-
-    public GameTime(){
-        
+    public GameTime(){        
     }
 
     public Double getTimeRemaining() {

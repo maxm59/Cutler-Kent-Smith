@@ -6,6 +6,8 @@ import byui.cit260.whereismybone.control.GameControl;
  *
  * @author Smith-Rick
  * 
+ * 12/10/16 Maxi: cleaned up unused coding, comments and proper format
+ * 
  */
 public class LoadGameView extends View{
     
@@ -23,23 +25,17 @@ public class LoadGameView extends View{
                 "\n    Enter the file path where you want to save:   " + 
                 "\n                                                  " +         
                 "\n==================================================" +
-                "\n                   " +
-                "\n=================================================="  ); 
-        
+                "\n                                                  " +
+                "\n=================================================="  );         
     }
 
     @Override
-    public boolean doAction(String filePath){
-           
+    public boolean doAction(String filePath){           
         filePath = filePath.toUpperCase();
-        boolean result = false;
-                
-        try{
-            
-            GameControl.getSaveGame(filePath);
-            
-            result = true;
-            
+        boolean result = false;                
+        try{            
+            GameControl.getSaveGame(filePath);            
+            result = true;            
         }
         catch(Exception ex){
             ErrorView.display(this.getClass().getName(),
@@ -47,5 +43,4 @@ public class LoadGameView extends View{
         }
         return result;  
     }
-    
 }

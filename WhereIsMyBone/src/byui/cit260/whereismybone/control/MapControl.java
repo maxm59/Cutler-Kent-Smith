@@ -22,51 +22,38 @@ import whereismybone.WhereIsMyBone;
  * 
  * 11/26/16 Maxi fixed 11 items for Backpack requirement
  * 14 clues plus 11 items for the Backpack = 25 scenes
- * 
+ * 12/10/16 Maxi: cleaned up unused coding, comments and proper format
  * 
  */
 public class MapControl {
-
     public static Map createMap() throws MapControlException {
-        
         Map map = null;
-        
         try{
             //Create and initialize new map
             map = new Map (5, 5);
-
             //Create all of the scenes for the map
             Scene[] scenes = createScenes();
-
             //Assign each scene to a location in the map
             GameControl.assignScenesToLocations(map, scenes);    
             map.setCurrentLocation(map.getLocations()[2][2]);
         }
-        catch(Exception ex){
-                                    
+        catch(Exception ex){             
             throw new MapControlException("ERROR: There was a problem with create Map.");
         }
-        
         return map;
     }
 
-    public static void moveActorsToStartingLocation(Map map) throws MapControlException
-    {
+    public static void moveActorsToStartingLocation(Map map) throws MapControlException {
         try{
             movePlayer(map, 2, 2);
         }
-        catch(Exception ex){
-                                    
+        catch(Exception ex){                        
             throw new MapControlException("ERROR: There was a problem with create Map.");
-        }
-        
+        } 
     }
 
     private static Scene[] createScenes() throws MapControlException{
-        
         Scene[] scenes = new Scene[SceneType.values().length];
-        
-        
         try{
             
             Scene currentScene = null;
@@ -423,13 +410,10 @@ public class MapControl {
         }
     }
     
-    public static int[] movePlayer(int nRow, int nCol) throws MapControlException {// get player location and add the items here from the backpack
+    public static int[] movePlayer(int nRow, int nCol) throws MapControlException {
         int[] newLoc = null;
-        
         try{
-            if(!validLocation(nRow, nCol))
-            {
-                //int[] resultFail = null;
+            if(!validLocation(nRow, nCol)){
                 return newLoc; //returns null
             }
             newLoc = new int[] {nRow, nCol};
@@ -438,37 +422,30 @@ public class MapControl {
                     + "Moving the player.");
         }
         return newLoc;
-       
      }
      public static void movePlayer(Map map, Location location) 
         throws MapControlException {
         Player player = WhereIsMyBone.getCurrentGame().getPlayer();
-        
         try{
             player.setLocation(location);
         }
-        catch(Exception ex){
-                                    
+        catch(Exception ex){                        
             throw new MapControlException("ERROR: There was a problem with "
                     + "moving the player.");
         }  
     }
 
     public static void movePlayer(Map map, int row, int column) throws MapControlException {
-        
         try{                             
             map.setCurrentLocation(map.getLocations()[row][column]);
             map.getCurrentLocation().setVisited(true);
-            
             map.setCurrentRow(row);
             map.setCurrentColumn(column);
-
             WhereIsMyBone.getCurrentGame().getPlayer().setLocation(map.getCurrentLocation());
         }
         catch(Exception ex){             
             throw new MapControlException("ERROR: There was a problem with "
                     + "moving the player.");
         }
-    }
-        
+    } 
 }

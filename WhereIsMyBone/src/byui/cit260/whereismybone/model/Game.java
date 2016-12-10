@@ -6,12 +6,13 @@ import java.util.List;
 /**
  *
  * @author Smit-Rick
+ * 
  */
 public class Game implements Serializable{
 
-    //Starts at 24 hours. It can be reduced by hole numbers or fractions of a 
+//Starts at 24 hours. It can be reduced by hole numbers or fractions of a 
     //  number, which is why we use a Double vs an Integer.
-//    private Double totalTime; - Using GameTime & GameTimeControl
+    //    private Double totalTime; - Using GameTime & GameTimeControl
     
     private Player player;
     private Map map;
@@ -40,9 +41,7 @@ public class Game implements Serializable{
     public void setClueList(List<Clue> clueList) {
         this.clueList = clueList;
     }
-
-
-
+    
     public Map getMap() {
         return map;
     }
