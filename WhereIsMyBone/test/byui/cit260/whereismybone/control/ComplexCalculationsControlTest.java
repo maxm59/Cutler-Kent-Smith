@@ -5,6 +5,7 @@
  */
 package byui.cit260.whereismybone.control;
 
+import byui.cit260.whereismybone.exception.ComplexCalcException;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -21,7 +22,7 @@ public class ComplexCalculationsControlTest {
      * Test of calcSqYard method, of class ComplexCalculationsControl.
      */
     @Test
-    public void testCalcSqYard() {
+    public void testCalcSqYard() throws ComplexCalcException {
         System.out.println("calcSqYard");
         
         /***********************
@@ -124,7 +125,7 @@ public class ComplexCalculationsControlTest {
      * Test of calcCubicInches method, of class ComplexCalculationsControl.
      */
     @Test
-    public void testCalcCubicInches() {
+    public void testCalcCubicInches() throws ComplexCalcException {
         System.out.println("calcCubicInches");
 
         /***********************
@@ -236,7 +237,7 @@ public class ComplexCalculationsControlTest {
      * Test of calcCylinderArea method, of class ComplexCalculationsControl.
      */
     @Test
-    public void testCalcCylinderArea() {
+    public void testCalcCylinderArea() throws ComplexCalcException {
         System.out.println("calcCylinderArea");
         
         /***********************

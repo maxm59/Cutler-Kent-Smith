@@ -5,6 +5,7 @@
  */
 package byui.cit260.whereismybone.control;
 
+import byui.cit260.whereismybone.exception.GameTimeControlException;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -21,7 +22,7 @@ public class GameTimeControlTest {
      * Test of calcNewGameTime method, of class GameTimeControl.
      */
     @Test
-    public void testCalcNewGameTime() {
+    public void testCalcNewGameTime() throws GameTimeControlException {
         System.out.println("calcNewGameTime");
         
         /***********************
